@@ -620,3 +620,448 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap");
+/* Border gradient border-image: linear-gradient(45deg, #ff6661, #ff9563)  */
+/* Color palette
+#eaded0
+#138086
+#eeb462
+#cd7672 
+#042639 
+#022435
+#7d7d7d hyperlink
+#ff6661
+*/
+/*  */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", "serif";
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  /* background: #f5f5f5; */
+  /* background: #13161c; */
+  /* background: #104048; */
+  /* background: #042639; */
+  background: #f5f5f5;
+  margin: 0;
+  line-height: 1.3;
+}
+
+a {
+  color: #05f;
+  padding: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+p::selection,
+h1::selection {
+  background: #cd7672;
+  color: white;
+}
+
+p::-moz-selection,
+h1::-moz-selection {
+  background: #cd7672;
+  color: white;
+}
+
+h1 {
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+}
+p {
+  line-height: 15px;
+  color: #022435;
+}
+
+.carddescriptionright p {
+  color: white;
+}
+.StateTest {
+  height: 100px;
+  width: 100px;
+  background: #138086;
+}
+/* GENERAL */
+.title {
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+}
+
+.cardtitleleft {
+  grid-area: 1 / 1 / 2 / 1;
+}
+
+.titlebio {
+  color: white;
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.carddescriptionleft {
+  align-self: center;
+  grid-area: 2/ 1 / 3 / 1;
+}
+
+.carddescriptionright {
+  align-self: center;
+  grid-area: 2/ 2 / 3 / 2;
+}
+
+.cardimageright {
+  grid-area: 1 / 2 / 4 / 2;
+}
+
+.cardimageleft {
+  grid-area: 1 / 1 / 4 / 1;
+}
+
+.Cards {
+  display: grid;
+  align-self: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  padding: 0 4em 0em 4em;
+}
+.Framer .Cards .title,
+.Framer .Cards .copy {
+  color: #042639;
+}
+
+.copy {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.learnmore {
+  letter-spacing: 1px;
+  color: #9c9797;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 0.75em;
+  padding: 1em 0em 0em 0em;
+}
+
+.Header-Navigation {
+  z-index: 10;
+}
+
+.Cont-Navigation {
+  bottom: 0px;
+  position: fixed;
+  left: 10%;
+}
+
+/* SECTIONS */
+
+/* OTHERS */
+
+.Header-Navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.WrapperWaveOne {
+  overflow: hidden;
+  width: 572px;
+  right: 0;
+  height: 270px;
+  position: absolute;
+}
+
+.Cont-MyWaveOne {
+  position: relative;
+  z-index: 6;
+  right: -10px;
+  top: -10px;
+}
+
+.WrapperWaveTwo {
+  overflow: hidden;
+  width: 572px;
+  right: 0;
+  height: 270px;
+  position: absolute;
+}
+.Cont-MyWaveTwo {
+  position: relative;
+  z-index: 7;
+  right: -100px;
+  top: -10px;
+}
+
+.Scroller_variants {
+  width: 25px;
+  height: 25px;
+  bottom: 10px;
+  position: fixed;
+  left: 40%;
+  margin-left: 12px;
+}
+
+.Scroller_experimenting {
+  width: 25px;
+  height: 25px;
+  bottom: 10px;
+  position: fixed;
+  left: 60%;
+  margin-left: 12px;
+}
+
+.IconEmail {
+  width: 100px;
+  height: 100px;
+  bottom: 0px;
+  display: none;
+  position: fixed;
+  left: 90%;
+}
+
+.LinkButton {
+  color: black;
+  font-size: 13px;
+}
+
+.Wrap-Name {
+  font-family: "Playfair Display", serif;
+  align-self: center;
+}
+
+.LinkButton {
+  box-align: center;
+}
+
+.portrait {
+  height: 140px;
+  background: url("../images/dscf25012.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  height: 100vh;
+  align-content: center;
+  align-items: center;
+  display: grid;
+  row-gap: 2em;
+  grid-template-columns: 1fr auto auto 1fr 1fr;
+  justify-items: center;
+  grid-template-rows: repeat(2, 50px);
+}
+
+.intro h1 {
+  color: #042639;
+}
+
+.slash {
+  grid-area: 1 / 3 / 2 / 4;
+  justify-self: end;
+}
+.hi {
+  grid-area: 1 / 2 / 2 / 2;
+  justify-self: start;
+}
+
+.name {
+  grid-area: 1 / 2 / 2 / 2;
+  justify-self: start;
+}
+
+.titles {
+  grid-area: 1 / 4 / 2 /5;
+  justify-self: start;
+}
+
+.about {
+  color: #042639;
+  grid-area: 2 / 2 / 3 / 5;
+  justify-self: start;
+}
+
+.intro p {
+  color: #042639;
+}
+/* EDUCATION */
+.grid-Education {
+  display: grid;
+  align-self: center;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  /* grid-row-gap: 50px; */
+  justify-items: start;
+}
+
+.item-Edu {
+  height: 300px;
+  width: 100px;
+}
+
+/* WORK */
+.Bio {
+  height: 100vh;
+  max-height: 700px;
+  /* background: #f0ebdd; */
+  background: #042639;
+  display: flex;
+  justify-content: center;
+}
+
+.imagecard {
+  height: 370px;
+  width: 560px;
+  justify-self: center;
+  background: #f5f5f5;
+}
+
+.imgwrapper {
+  justify-self: center;
+  /* background: #f5f5f5; */
+  /* background: linear-gradient(
+    90deg,
+    rgba(255, 102, 97, 1) 0%,
+    rgba(205, 118, 114, 1) 100%
+  ); */
+  /* background: linear-gradient(90deg, #042639, #1b3544); */
+}
+
+.imagegroningen {
+  width: 95%;
+  top: -10px;
+  left: -10px;
+  height: 95%;
+  position: relative;
+  border: 10px solid;
+  /* border: 10px solid rgb(205, 118, 114); */
+  border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
+}
+
+.imageproject1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 10px solid;
+  border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.neuron {
+  position: relative;
+  right: 0;
+}
+
+/* FRAMER */
+.Framer {
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+}
+
+.Framer .learnmore {
+  grid-area: 2 / 1 / 2 / 1;
+  float: right;
+  padding-top: 1em;
+}
+
+/* BIO */
+.Bio .learnmore {
+  float: left;
+}
+
+/* PROJECTS */
+.projects {
+  height: 100vh;
+  display: grid;
+  align-self: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto auto;
+  grid-column-gap: 50px;
+  justify-items: center;
+}
+
+.projectsTitle {
+  color: #042639;
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.project_1 {
+  grid-area: 3 / 1 / 4 / 2;
+  background: #ff7d62;
+  height: 450px;
+  width: 400px;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.project_2 {
+  grid-area: 3 / 2 / 4 / 3;
+  display: flex;
+  flex-direction: column;
+  background: #fa856e;
+  height: 450px;
+  width: 400px;
+}
+
+.project_3 {
+  grid-area: 3 / 3 / 4 / 4;
+  background: #fcafa0;
+  height: 450px;
+  width: 400px;
+}
+
+.project1description {
+  grid-area: 2 / 1 / 3 / 2;
+
+  height: auto;
+  width: 400px;
+}
+
+.project2description {
+  grid-area: 2 / 2 / 3 / 3;
+
+  height: auto;
+  width: 400px;
+}
+
+.project3description {
+  grid-area: 2 / 3 / 3 / 4;
+
+  height: auto;
+  width: 400px;
+}
+
+.projectdescriptions {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: justify;
+}
