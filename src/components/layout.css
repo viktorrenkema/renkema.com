@@ -680,9 +680,6 @@ p {
   color: #022435;
 }
 
-.carddescriptionright p {
-  color: white;
-}
 .StateTest {
   height: 100px;
   width: 100px;
@@ -700,7 +697,7 @@ p {
 }
 
 .titlebio {
-  color: white;
+  /* color: white; */
   font-size: 40px;
   font-family: "Playfair Display", serif;
   font-weight: bold;
@@ -917,8 +914,8 @@ p {
 .Bio {
   height: 100vh;
   max-height: 700px;
-  /* background: #f0ebdd; */
-  background: #042639;
+  background: #f0ebdd;
+  /* background: #042639; */
   display: flex;
   justify-content: center;
 }

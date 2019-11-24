@@ -30,7 +30,7 @@ export default function Scroller(props) {
         <motion.path
           style={{
             pathLength: modifier,
-            opacity: modifier,
+            // opacity: modifier,
             strokeWidth: "4",
             stroke: "#ff6661",
             fill: "#f5f5f5",
