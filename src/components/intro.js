@@ -18,11 +18,12 @@ export default function Introduction(props) {
       </div>
       <Slash></Slash>
       <div className="titles">
-        <p>Psychologist exploring interaction design</p>
+        <p>PSYCHOLOGIST EXPLORING UX AND INTERACTION DESIGN</p>
       </div>
       <div className="about">
         <p>
-          I find human behaviour and technology pretty neat. Right now I'm
+          I'm very interested in the space where human behaviour and technology
+          meet, from web development to user experience research. Right now I'm
           helping users and organizations become succesful at Framer.
         </p>
       </div>
