@@ -54,8 +54,9 @@ export default function Framer(props) {
             Starting out at Framer, as Community and Support Specialist I
             ensured our users are getting the support they required. This not
             only meant providing direct help via our support channels, but also
-            creating support articles, writing helpful community posts and
-            helping users with organising meetups in their local communities.
+            creating support articles, writing community posts with tips and
+            tricks, and assisting users with organising meetups in their local
+            communities.
             <br></br>
             <br></br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
@@ -65,10 +66,9 @@ export default function Framer(props) {
             accumsan eget lacus a, vehicula accumsan libero. Ut eget lorem et
             felis scelerisque consectetur.
             {/* Currently I moved into the Product Specialist role, where
-            my focus extended to also helping users at organizations such as
+            my focus extended to help users within organizations such as
             KLM, Google and others to become succesful, effective teams that can
-            fully utilize Framer as their prototyping resource. This is done in
-            the form of on-site workshops and online calls. */}
+            fully utilize Framer as their prototyping resource. This is done by giving on-site workshops or jumping in on calls.*/}
           </motion.p>
           <motion.a
             class="learnmore copy"

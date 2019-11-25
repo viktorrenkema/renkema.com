@@ -20,7 +20,7 @@ const image = {
   },
 }
 const header = {
-  hidden: { x: -20, opacity: 0, transition: { duration: 0.5 } },
+  hidden: { x: 20, opacity: 0, transition: { duration: 0.5 } },
   visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 

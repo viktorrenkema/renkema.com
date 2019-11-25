@@ -17,7 +17,7 @@ import { motion } from "framer-motion"
 // }
 
 const nameStagger = {
-  hidden: { x: 20, opacity: 0 },
+  hidden: { x: 10, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
@@ -29,7 +29,7 @@ const nameStagger = {
 }
 
 const roleStagger = {
-  hidden: { x: -60, opacity: 0 },
+  hidden: { x: -20, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
@@ -88,8 +88,8 @@ export default function Introduction(props) {
         animate="visible"
       >
         <p>
-          I'm very interested in the space where human behaviour and technology
-          meet, from web development to user experience research. Right now I'm
+          I'm interested in the space where human behaviour and technology meet,
+          from web development to user experience research. Right now I'm
           helping users and organizations become succesful at Framer.
         </p>
       </motion.div>
