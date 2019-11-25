@@ -7,7 +7,7 @@ import Scroller from "../components/scroller"
 import CornerMotionOne from "../components/waveone"
 import CornerMotionTwo from "../components/wavetwo"
 import Projects from "../components/projects"
-import Framer from "../components/Framer"
+import Framer from "../components/framer"
 
 const IndexPage = () => (
   <Layout>
