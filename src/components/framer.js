@@ -6,7 +6,7 @@ export default function Framer(props) {
     <div className="Framer">
       <div className="Cards">
         <div className="cardtitleleft title">Framer</div>
-        <div className="description" className="carddescriptionleft">
+        <div className="description carddescriptionleft">
           <p className="copy">
             Starting out at Framer, as Community and Support Specialist I
             ensured our users are getting the support they required. This not
@@ -36,7 +36,7 @@ export default function Framer(props) {
           VISIT FRAMER.COM
         </a> */}
 
-        <div className="imagecard cardimageright">
+        <div className="imgright imagecard">
           <FramerImg></FramerImg>
         </div>
       </div>

@@ -2,14 +2,14 @@ import * as React from "react"
 import { motion } from "framer-motion"
 
 export default function Slash(props) {
-  const slash = {
-    normal: {
-      rotate: 180,
-    },
-    hovered: {
-      rotate: 360,
-    },
-  }
+  // const slash = {
+  //   normal: {
+  //     rotate: 180,
+  //   },
+  //   hovered: {
+  //     rotate: 360,
+  //   },
+  // }
 
   // const [hovered, setHovered] = React.useState(false)
 
@@ -29,7 +29,7 @@ export default function Slash(props) {
     >
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="36.5" height="65.5">
         <motion.path
-          variants={slash}
+          // variants={slash}
           // initial="normal"
           // animate={hovered ? "hovered" : "normal"}
           // transition={{
@@ -38,8 +38,9 @@ export default function Slash(props) {
           // }}
           d="M 0 65.5 L 36.5 0"
           strokeWidth="3"
+          strokeLinecap="round"
           stroke="#ff6661"
-          strokeCap="round"
+          // strokeCap="round"
         ></motion.path>
       </motion.svg>
     </motion.div>

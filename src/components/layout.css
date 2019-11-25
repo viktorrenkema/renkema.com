@@ -714,14 +714,6 @@ p {
   grid-area: 2/ 2 / 3 / 2;
 }
 
-.cardimageright {
-  grid-area: 1 / 2 / 4 / 2;
-}
-
-.cardimageleft {
-  grid-area: 1 / 1 / 4 / 1;
-}
-
 .Cards {
   display: grid;
   align-self: center;
@@ -927,6 +919,14 @@ p {
   background: #f5f5f5;
 }
 
+.imgleft {
+  grid-area: 1 / 1 / 4 / 1;
+}
+
+.imgright {
+  grid-area: 1 / 2 / 4 / 2;
+}
+
 .imgwrapper {
   justify-self: center;
   /* background: #f5f5f5; */
@@ -945,7 +945,6 @@ p {
   height: 95%;
   position: relative;
   border: 10px solid;
-  /* border: 10px solid rgb(205, 118, 114); */
   border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
 }
 
@@ -978,6 +977,16 @@ a:hover {
   grid-area: 2 / 1 / 2 / 1;
   float: right;
   padding-top: 1em;
+}
+
+.imgframer {
+  width: 95%;
+  top: -10px;
+  right: -10px;
+  height: 95%;
+  position: relative;
+  border: 10px solid;
+  border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
 }
 
 /* BIO */

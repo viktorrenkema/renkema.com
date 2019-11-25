@@ -1,11 +1,6 @@
 import React from "react"
 import Slash from "../components/slash"
-import {
-  motion,
-  useMotionValue,
-  useViewportScroll,
-  useTransform,
-} from "framer-motion"
+import { motion } from "framer-motion"
 
 // const container = {
 //   hidden: { opacity: 1, scale: 0 },
