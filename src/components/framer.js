@@ -1,13 +1,56 @@
 import React from "react"
-import FramerImg from "./framerimg.js"
+import useIsInViewport from "use-is-in-viewport"
+import { motion } from "framer-motion"
+import framerlogo from "../../src/images/framerlogo.png"
+
+const image = {
+  default: {
+    scale: 1,
+  },
+  hovered: {
+    scale: 1.05,
+  },
+  hidden: { x: 20, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
+const header = {
+  hidden: { x: -20, opacity: 0, transition: { duration: 0.5 } },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+}
+
+const copy = {
+  hidden: { y: -20, opacity: 0, transition: { duration: 0.5 } },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+}
 
 export default function Framer(props) {
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
+
   return (
-    <div className="Framer">
-      <div className="Cards">
-        <div className="cardtitleleft title">Framer</div>
-        <div className="description carddescriptionleft">
-          <p className="copy">
+    <motion.div className="Framer">
+      <motion.div className="Cards">
+        <motion.h1
+          className="titleframer header"
+          variants={header}
+          initial="hidden"
+          animate={isInViewport ? "visible" : "hidden"}
+        >
+          Framer
+        </motion.h1>
+        <motion.div className="description carddescriptionleft">
+          <motion.p
+            className="copy"
+            ref={targetRef}
+            variants={copy}
+            initial="hidden"
+            animate={isInViewport ? "visible" : "hidden"}
+          >
             Starting out at Framer, as Community and Support Specialist I
             ensured our users are getting the support they required. This not
             only meant providing direct help via our support channels, but also
@@ -26,20 +69,61 @@ export default function Framer(props) {
             KLM, Google and others to become succesful, effective teams that can
             fully utilize Framer as their prototyping resource. This is done in
             the form of on-site workshops and online calls. */}
-          </p>
-          <a class="learnmore" href="https://www.framer.com">
+          </motion.p>
+          <motion.a
+            class="learnmore copy"
+            href="https://www.framer.com"
+            target="_blank"
+            variants={copy}
+            initial="hidden"
+            animate={isInViewport ? "visible" : "hidden"}
+            whileHover={{
+              color: "#ff6661",
+            }}
+          >
             VISIT FRAMER.COM
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
-        {/* <a class="learnmore" href="https://www.framer.com">
-          VISIT FRAMER.COM
-        </a> */}
-
-        <div className="imgright imagecard">
+        <motion.div className="imgright imagecard">
           <FramerImg></FramerImg>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+function FramerImg(props) {
+  const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
+
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
+
+  return (
+    <motion.div
+      className="imgwrapper"
+      onHoverStart={onHoverStart}
+      onHoverEnd={onHoverEnd}
+    >
+      <motion.img
+        variants={image}
+        ref={targetRef}
+        initial="hidden"
+        // animate={hovered ? "hovered" : "default"}
+        animate={isInViewportImg ? "visible" : "hidden"}
+        transition={{ duration: 0.5 }}
+        className="imgframer image"
+        src={framerlogo}
+        width={"100%"}
+        height="100%"
+      ></motion.img>
+    </motion.div>
   )
 }

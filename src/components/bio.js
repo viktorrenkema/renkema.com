@@ -15,7 +15,6 @@ const image = {
     x: 0,
     opacity: 1,
     transition: {
-      // delay: 0.3,
       duration: 0.5,
     },
   },
@@ -74,9 +73,13 @@ export default function Background(props) {
           <motion.a
             className="learnmore copy"
             href="mailto:viktor@renkema.com"
+            target="_blank"
             variants={copy}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
+            whileHover={{
+              color: "#ff6661",
+            }}
           >
             ASK ME MORE
           </motion.a>
@@ -110,7 +113,7 @@ function PictureFrame(props) {
         ref={targetRef}
         initial="default"
         initial="hidden"
-        animate={hovered ? "hovered" : "default"}
+        // animate={hovered ? "hovered" : "default"}
         animate={isInViewportImg ? "visible" : "hidden"}
         transition={{ duration: 0.5 }}
         className="imagegroningen image"
