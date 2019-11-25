@@ -18,7 +18,7 @@ const IndexPage = () => (
     <Framer></Framer>
     <Projects></Projects>
     <Scroller></Scroller>
-    <SEO title="Home" />
+    <SEO title="Portfolio Viktor Renkema" />
   </Layout>
 )
 
