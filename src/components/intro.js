@@ -79,7 +79,9 @@ export default function Introduction(props) {
         initial="hidden"
         animate="visible"
       >
-        <p>PSYCHOLOGIST EXPLORING UX AND INTERACTION DESIGN</p>
+        <p className="role_paragraph">
+          PSYCHOLOGIST EXPLORING UX AND INTERACTION DESIGN
+        </p>
       </motion.div>
       <motion.div
         className="about descriptionStagger"

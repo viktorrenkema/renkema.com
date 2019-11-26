@@ -453,6 +453,7 @@ p {
 .titles {
   grid-area: 1 / 4 / 2 /5;
   justify-self: start;
+  align-self: center;
 }
 
 .about {
@@ -464,6 +465,7 @@ p {
 .intro p {
   color: #042639;
   font-size: 13px;
+  padding-bottom: 5px;
   vertical-align: middle;
   line-height: 20px;
 }
@@ -643,4 +645,53 @@ a:hover {
   font-size: 14px;
   line-height: 1.5;
   text-align: justify;
+}
+@media only screen and (max-width: 480px) {
+  .Framer,
+  .projects {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+  .intro {
+    grid-template-columns: 50px 1fr;
+    row-gap: 0em;
+    padding: 0em 1em 0em 1em;
+  }
+
+  .titles {
+    grid-area: 2/ 2 / 2 /3;
+    text-align: end;
+    justify-self: end;
+  }
+  .slash {
+    grid-area: 1 / 1 / 3 / 1;
+    justify-self: start;
+  }
+  .name {
+    grid-area: 1 / 2 / 2 / 2;
+    justify-self: end;
+  }
+  .about {
+    grid-area: 3 / 1 / 4 / 3;
+    justify-self: start;
+    text-align: justify;
+  }
+  .role_paragraph {
+    font-size: 10px;
+    justify-self: end;
+  }
+  .imgleft {
+    grid-area: 3 / 1 / 4 / 1;
+  }
+  .Cards {
+    grid-template-columns: 1fr;
+  }
+  .Bio {
+    display: grid;
+  }
 }
