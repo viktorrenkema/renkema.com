@@ -22,7 +22,7 @@ export default function Projects(props) {
     setHovered(false)
   }
   return (
-    <div className="projects">
+    <section className="projects">
       <div className="projectsTitle">Projects</div>
       <motion.div
         style={{ overflow: "hidden" }}
@@ -83,6 +83,6 @@ export default function Projects(props) {
         </p>
       </div>
       <div className="project_3"></div> */}
-    </div>
+    </section>
   )
 }

@@ -33,8 +33,9 @@ export default function Background(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
 
   return (
-    <motion.div className="Bio">
-      <motion.div className="Cards">
+    <section className="bio">
+      <div className="grid">
+        {/* <motion.div className="Cards"> */}
         <motion.div className="imagecard imgleft">
           <PictureFrame></PictureFrame>
         </motion.div>
@@ -84,8 +85,9 @@ export default function Background(props) {
             ASK ME MORE
           </motion.a>
         </motion.div>
-      </motion.div>
-    </motion.div>
+        {/* </motion.div> */}
+      </div>
+    </section>
   )
 }
 

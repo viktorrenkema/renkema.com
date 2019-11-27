@@ -33,8 +33,8 @@ export default function Framer(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
 
   return (
-    <motion.div className="Framer">
-      <motion.div className="Cards">
+    <section className="framer">
+      <div className="grid">
         <motion.h1
           className="titleframer header"
           variants={header}
@@ -88,8 +88,8 @@ export default function Framer(props) {
         <motion.div className="imgright imagecard">
           <FramerImg></FramerImg>
         </motion.div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </section>
   )
 }
 

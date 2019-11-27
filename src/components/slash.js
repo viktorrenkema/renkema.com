@@ -40,7 +40,6 @@ export default function Slash(props) {
           strokeWidth="3"
           strokeLinecap="round"
           stroke="#ff6661"
-          // strokeCap="round"
         ></motion.path>
       </motion.svg>
     </motion.div>

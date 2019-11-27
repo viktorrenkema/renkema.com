@@ -53,7 +53,7 @@ const descriptionStagger = {
 
 export default function Introduction(props) {
   return (
-    <motion.div
+    <section
       className={"intro container"}
       // variants={container}
       // initial="hidden"
@@ -95,6 +95,6 @@ export default function Introduction(props) {
           helping users and organizations become succesful at Framer.
         </p>
       </motion.div>
-    </motion.div>
+    </section>
   )
 }
