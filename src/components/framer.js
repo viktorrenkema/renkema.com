@@ -107,23 +107,19 @@ function FramerImg(props) {
   }
 
   return (
-    <motion.div
-      className="imgwrapper"
+    <motion.img
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
-    >
-      <motion.img
-        variants={image}
-        ref={targetRef}
-        initial="hidden"
-        // animate={hovered ? "hovered" : "default"}
-        animate={isInViewportImg ? "visible" : "hidden"}
-        transition={{ duration: 0.5 }}
-        className="imgframer image"
-        src={framerlogo}
-        width={"100%"}
-        height="100%"
-      ></motion.img>
-    </motion.div>
+      variants={image}
+      ref={targetRef}
+      initial="hidden"
+      // animate={hovered ? "hovered" : "default"}
+      animate={isInViewportImg ? "visible" : "hidden"}
+      transition={{ duration: 0.5 }}
+      className="imgframer image"
+      src={framerlogo}
+      width={"100%"}
+      height="100%"
+    ></motion.img>
   )
 }

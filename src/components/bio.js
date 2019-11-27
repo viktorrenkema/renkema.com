@@ -35,8 +35,13 @@ export default function Background(props) {
   return (
     <section className="bio">
       <div className="grid">
-        {/* <motion.div className="Cards"> */}
-        <motion.div className="imagecard imgleft">
+        <motion.div
+          variants={image}
+          className="imagecard imgleft"
+          initial="hidden"
+          animate={isInViewport ? "visible" : "hidden"}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
           <PictureFrame></PictureFrame>
         </motion.div>
         <motion.h1
@@ -105,24 +110,19 @@ function PictureFrame(props) {
   }
 
   return (
-    <motion.div
-      className="imgwrapper"
+    <motion.img
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
-    >
-      <motion.img
-        variants={image}
-        ref={targetRef}
-        initial="default"
-        initial="hidden"
-        // animate={hovered ? "hovered" : "default"}
-        animate={isInViewportImg ? "visible" : "hidden"}
-        transition={{ duration: 0.5 }}
-        className="imagegroningen image"
-        src={Groningen}
-        width={"100%"}
-        height="100%"
-      ></motion.img>
-    </motion.div>
+      variants={image}
+      ref={targetRef}
+      initial="default"
+      initial="hidden"
+      animate={isInViewportImg ? "visible" : "hidden"}
+      transition={{ duration: 0.5 }}
+      className="imagegroningen image"
+      src={Groningen}
+      width={"100%"}
+      height="100%"
+    ></motion.img>
   )
 }
