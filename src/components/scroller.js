@@ -18,7 +18,7 @@ export default function Scroller(props) {
         height: "25px",
         bottom: "24px",
         position: "fixed",
-        left: "48%",
+        left: "49.1%",
       }}
     >
       <motion.svg

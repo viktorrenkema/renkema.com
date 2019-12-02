@@ -29,11 +29,22 @@ const copy = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
+const section = {
+  hidden: { opacity: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+}
+
 export default function Background(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
 
   return (
-    <section className="bio">
+    <motion.section
+      className="bio"
+      variants={section}
+      initial="hidden"
+      animate={isInViewport ? "visible" : "hidden"}
+      transition={{ delay: 1.5, duration: 0.5 }}
+    >
       <div className="grid">
         <motion.div
           variants={image}
@@ -92,7 +103,7 @@ export default function Background(props) {
         </motion.div>
         {/* </motion.div> */}
       </div>
-    </section>
+    </motion.section>
   )
 }
 

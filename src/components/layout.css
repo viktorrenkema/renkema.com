@@ -3,6 +3,8 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
+
 body {
   margin: 0;
   /* width: 100% !important;
@@ -493,6 +495,7 @@ p {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 50px 1fr;
   grid-column-gap: 50px;
+  grid-row-gap: 1em;
   padding: 4em;
 }
 
@@ -567,14 +570,38 @@ a:hover {
 
 /* PROJECTS */
 .projects {
-  height: 100vh;
+  min-height: 80vh;
   display: grid;
   align-self: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50px auto auto auto auto;
   grid-column-gap: 50px;
+  justify-items: center;
+  padding: 4em;
+}
 
-  padding: 0 4em 0em 4em;
+.overlay {
+  /* grid-area: 5 / 2 / 5 / 2; */
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle_projects {
+  font-family: "Open Sans", sans-serif;
+  color: #042639;
+  font-size: 9px;
+  grid-area: 2 / 2 / 2 / 2;
+  letter-spacing: 0.5px;
+  line-height: 1.9;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.role_paragraph {
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
 }
 
 .projectsTitle {
@@ -582,15 +609,14 @@ a:hover {
   font-size: 40px;
   font-family: "Playfair Display", serif;
   font-weight: bold;
-  grid-area: 1 / 2 / 1 / 3;
+  grid-area: 1 / 2 / 1 / 2;
 }
 
 .imgFirstProject {
-  grid-area: 2 / 2 / 2 / 3;
+  grid-area: 5 / 2 / 5 / 2;
   background: #ecebe8;
-  height: 380px;
-  width: 820px;
-  justify-self: center;
+  height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
 }
@@ -611,8 +637,27 @@ a:hover {
   width: 400px;
 }
 
+.projecttitle {
+  font-family: "Raleway", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  line-height: 1.9;
+  font-weight: 600;
+}
+
+.projectlabel {
+  grid-area: 4 / 2 / 4 / 2;
+  font-family: "Open Sans", sans-serif;
+  color: #9c9c9c;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  line-height: 1.9;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .project1description {
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 3 / 2 / 3 / 2;
 }
 
 .project2description {

@@ -29,6 +29,11 @@ const copy = {
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
+const imagebackground = {
+  hidden: { opacity: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+}
+
 export default function Framer(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
 
@@ -85,7 +90,12 @@ export default function Framer(props) {
           </motion.a>
         </motion.div>
 
-        <motion.div className="imgright imagecard">
+        <motion.div
+          className="imgright imagecard"
+          variants={imagebackground}
+          initial="hidden"
+          animate={isInViewport ? "visible" : "hidden"}
+        >
           <FramerImg></FramerImg>
         </motion.div>
       </div>
