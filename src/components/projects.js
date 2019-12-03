@@ -15,15 +15,13 @@ export default function Projects(props) {
 
   const overlay = {
     default: {
-      fill: "none",
       opacity: 0,
     },
     hovered: {
-      fill: "#022435",
-      opacity: 0.5,
+      opacity: 1,
     },
   }
-  const [hovered, setHovered] = React.useState(false)
+  const [hovered, setHovered] = React.useState(true)
 
   const onHoverStart = () => {
     console.log("hoverstart")
@@ -37,20 +35,14 @@ export default function Projects(props) {
     <section className="projects">
       <div className="projectsTitle">Projects</div>
       <h2 className="subtitle_projects">Hover to learn more</h2>
+
+      {/* Accordion design card */}
       <motion.div
         style={{ overflow: "hidden" }}
         className="imgFirstProject"
-        onHoverStart={onHoverStart}
-        onHoverEnd={onHoverEnd}
+        // onHoverStart={onHoverStart}
+        // onHoverEnd={onHoverEnd}
       >
-        {" "}
-        {/* <motion.div
-          className="overlay"
-          variants={overlay}
-          initial="default"
-          animate={hovered ? "hovered" : "default"}
-          transition={{ duration: 0.5 }}
-        ></motion.div> */}
         <motion.img
           className="imageplaceholder"
           variants={image}
@@ -61,28 +53,35 @@ export default function Projects(props) {
           width={"100%"}
           height="100%"
         ></motion.img>
+        <motion.div
+          className="overlay"
+          style={{ backgroundColor: "#042639" }}
+          variants={overlay}
+          initial="default"
+          animate={hovered ? "hovered" : "default"}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="projectdescriptions">
+            A three-part tutorial to create a single-select accordion effect
+            within Framer, guiding beginner users through intermediate concepts
+            within React. <br></br>
+            <br></br>These include utilizing React Hooks to give a card
+            toggleable visual states, creating custom animations, and mapping
+            over an array to populate cards with real JSON data.
+          </p>
+          <motion.div className="button_projectdetails">
+            <a
+              href="https://www.framer.com/learn/guide/accordion-design-part-1/"
+              target="_blank"
+            >
+              VIEW ARTICLE
+            </a>
+          </motion.div>
+        </motion.div>
       </motion.div>
 
       <div className="project1description">
         <p class="projecttitle">CREATING AN ACCORDION DESIGN</p>
-
-        <p className="projectdescriptions">
-          {/* Due to Framer’s nature that it allows to bring in (production) code
-          straight to your canvas, Framer’s learning curve can be considered
-          steep.
-          <br></br>
-          <br></br>Framer Learn aims to ease the learning curve, by providing
-          many different forms of educational resources. While learning Framer
-          myself, I recognized trends in the type of knowledge that I wished was
-          shared with me while following tutorials. <br></br>
-          <br></br>This sparked the creation of a three-part tutorial to create
-          a single-select accordion effect. Those new to code should be able to
-          follow along and are being guided through various topics, such as:-
-          utilizing React Hooks to give a card toggleable visual states-
-          creating different animations with the Framer API- mapping over an
-          array to render cards on our canvas- populating elements with ‘real’
-          JSON data objects{" "} */}
-        </p>
       </div>
       <p class="projectlabel">Framer tutorial</p>
 
