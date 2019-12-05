@@ -21,7 +21,7 @@ export default function Projects(props) {
       opacity: 1,
     },
   }
-  const [hovered, setHovered] = React.useState(true)
+  const [hovered, setHovered] = React.useState(false)
 
   const onHoverStart = () => {
     console.log("hoverstart")
@@ -40,8 +40,8 @@ export default function Projects(props) {
       <motion.div
         style={{ overflow: "hidden" }}
         className="imgFirstProject"
-        // onHoverStart={onHoverStart}
-        // onHoverEnd={onHoverEnd}
+        onHoverStart={onHoverStart}
+        onHoverEnd={onHoverEnd}
       >
         <motion.img
           className="imageplaceholder"

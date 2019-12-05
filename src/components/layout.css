@@ -377,7 +377,7 @@ a:hover {
 
 /* PROJECTS */
 .projects {
-  min-height: 80vh;
+  min-height: 70vh;
   display: grid;
   align-self: center;
   grid-template-columns: repeat(3, 1fr);
