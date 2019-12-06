@@ -22,7 +22,7 @@ html {
 #022435
 #7d7d7d hyperlink
 #ff6661
-#ecebe8 // very light gray
+#ececec // new light grey
 #edf0f1 // light gray-blue
 */
 /*  */
@@ -277,7 +277,7 @@ a {
 .bio {
   height: 100vh;
   max-height: 700px;
-  background: #edf0f1;
+  background: #ececec;
   display: flex;
   justify-content: center;
 }
@@ -320,23 +320,14 @@ a {
 .imageplaceholder {
   width: 100%;
   height: auto;
-  display: block;
+  /* display: block; */
   background: #ecebe8;
+  /* left: -50px;
+  bottom: -100px; */
+  position: relative;
 }
-
-.button_projectdetails {
-  min-width: 100px;
-  border: 1px solid white;
-  text-align: center;
-  opacity: 0.8;
-  text-transform: capitalize;
-  color: #ff6661;
-  max-width: 200px;
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  line-height: 1.9;
-  font-weight: 600;
+.wrap_imagecardone {
+  z-index: 2;
 }
 
 a:hover {
@@ -348,10 +339,21 @@ a:hover {
   right: 0;
 }
 
+.copy_projecttitle {
+  min-width: 100px;
+  text-transform: capitalize;
+  color: "white";
+  max-width: 200px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 1.9;
+  font-weight: 600;
+}
+
 /* FRAMER */
 .framer {
-  height: 100vh;
-  max-height: 700px;
+  min-height: 700px;
   display: flex;
   justify-content: center;
 }
@@ -377,24 +379,26 @@ a:hover {
 
 /* PROJECTS */
 .projects {
+  background: #ececec;
   min-height: 70vh;
   display: grid;
   align-self: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50px auto auto auto auto;
+  grid-template-rows: 50px 50px 20px 20px auto;
   grid-column-gap: 50px;
   justify-items: center;
   padding: 4em;
 }
 
 .overlay {
-  position: relative;
-  height: 100%;
+  padding-top: 1rem;
+  position: absolute;
+  /* height: 100%; */
   width: 400px;
   flex-direction: column;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .subtitle_projects {
@@ -422,13 +426,37 @@ a:hover {
   grid-area: 1 / 2 / 1 / 2;
 }
 
-.imgFirstProject {
+.card_projectone {
+  position: relative;
   grid-area: 5 / 2 / 5 / 2;
-  background: #ecebe8;
+  background: #edf0f1;
   height: 400px;
   width: 400px;
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
+}
+
+.card_projecttwo {
+  position: relative;
+  grid-area: 5 / 1 / 5 / 1;
+  background: #e2e2e2;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.card_projectthree {
+  position: relative;
+  grid-area: 5 / 3 / 5 / 3;
+  background: #e2e2e2;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
 .project_2 {
@@ -485,12 +513,26 @@ a:hover {
   width: 400px;
 }
 
+ul {
+  list-style: none; /* Remove default bullets */
+  padding-top: 0.5em;
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #ff6661; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: 0em; /* Also needed for space (tweak if needed) */
+}
+
 .projectdescriptions {
-  font-size: 12px;
-  padding: 0rem 2rem 0rem 2rem;
+  font-size: 13px;
+  padding: 1rem 2rem 0rem 2rem;
   line-height: 1.5;
   text-align: justify;
-  color: white;
+  /* color: white; */
   font-family: "Raleway", sans-serif;
 }
 
