@@ -71,8 +71,6 @@ export default function Projects(props) {
         ref={targetRef}
         style={{ overflow: "hidden" }}
         className="card_projectthree"
-        onHoverStart={onHoverStartImage}
-        onHoverEnd={onHoverEndImage}
       >
         <motion.div>
           <a href="https://www.framer.com/learn/" target="_blank"></a>
@@ -93,7 +91,7 @@ export default function Projects(props) {
               variants={image}
               initial="default"
               animate={hoveredImage ? "hovered" : "default"}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8 }}
               src={accordion}
               width="100%"
               height="100%"
@@ -109,14 +107,15 @@ export default function Projects(props) {
         >
           <p className="copy_projecttitle">Framer Learn tutorial</p>
           <p className="projectdescriptions">
-            To help myself learn React, I wrote a 3-part tutorial to create a
-            single-select accordion effect within Framer. <br></br>
-            <br></br>It aims to guide beginner users through intermediate
-            concepts within React. <br></br>
-            <br></br>These tutorial touches upon various concepts, such as:
+            While learning React, I documented what I worked on which turned
+            into a 3-part tutorial to create a single-select accordion effect
+            within Framer. <br></br>
+            <br></br>The tutorial aims to guide beginner users through
+            intermediate concepts within React. <br></br>
+            <br></br>It touches upon various concepts, such as:
             <br></br>
             <ul>
-              <li>applying React Hooks to toggle between states</li>
+              <li>applying React Hooks to toggle states</li>
               <li>creating custom animations</li>
               <li>mapping over an array with JSON data</li>
             </ul>
@@ -129,13 +128,12 @@ export default function Projects(props) {
         variants={stagger}
         style={{ overflow: "hidden" }}
         className="card_projecttwo"
-        onHoverStart={onHoverStartImage}
-        onHoverEnd={onHoverEndImage}
       >
         <motion.div>
           <a href="https://www.framer.com/learn/" target="_blank"></a>
         </motion.div>
       </motion.div>
+      {/* Headers*/}
       <div className="project1description">
         <p class="projecttitle">CREATING AN ACCORDION DESIGN</p>
       </div>

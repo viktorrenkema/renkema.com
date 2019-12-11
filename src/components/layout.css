@@ -97,7 +97,7 @@ a {
 
 .copy {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 2;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -108,7 +108,7 @@ a {
   font-weight: 900;
   text-decoration: none;
   font-size: 0.65em;
-  padding: 1em 0em 0em 0em;
+  padding: 1rem 0em 0em 0em;
 }
 
 .Header-Navigation {
@@ -286,10 +286,11 @@ a {
   /* copied in here */
   display: grid;
   align-self: center;
-  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  grid-template-columns: repeat(2, 40%);
   grid-template-rows: 50px 1fr;
   grid-column-gap: 50px;
-  grid-row-gap: 2rem;
+  grid-row-gap: 1rem;
   padding: 4em;
 }
 
@@ -344,7 +345,7 @@ a:hover {
   text-transform: capitalize;
   color: "white";
   max-width: 200px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   letter-spacing: 0.5px;
   line-height: 1.9;
@@ -415,7 +416,7 @@ a:hover {
 
 .role_paragraph {
   font-weight: 600;
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .projectsTitle {
@@ -476,7 +477,7 @@ a:hover {
 }
 
 .projecttitle {
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   letter-spacing: 0.5px;
   line-height: 1.9;
@@ -486,8 +487,8 @@ a:hover {
 .projectlabel {
   grid-area: 4 / 2 / 4 / 2;
   font-family: "Open Sans", sans-serif;
-  color: #9c9c9c;
-  font-size: 9px;
+  color: #5f5f5f;
+  font-size: 11px;
   letter-spacing: 0.5px;
   line-height: 1.9;
   font-weight: 600;
@@ -533,7 +534,7 @@ ul li::before {
   line-height: 1.5;
   text-align: justify;
   /* color: white; */
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {

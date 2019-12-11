@@ -20,12 +20,12 @@ const image = {
   },
 }
 const header = {
-  hidden: { x: 20, opacity: 0, transition: { duration: 0.5 } },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
+  hidden: { y: -20, opacity: 0, transition: { duration: 0.5 } },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
 const copy = {
-  hidden: { y: -20, opacity: 0, transition: { duration: 0.5 } },
+  hidden: { y: 20, opacity: 0, transition: { duration: 0.5 } },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
@@ -43,7 +43,6 @@ export default function Background(props) {
       variants={section}
       initial="hidden"
       animate={isInViewport ? "visible" : "hidden"}
-      transition={{ delay: 1.5, duration: 0.5 }}
     >
       <div className="grid">
         <motion.div
@@ -51,7 +50,6 @@ export default function Background(props) {
           className="imagecard imgleft"
           initial="hidden"
           animate={isInViewport ? "visible" : "hidden"}
-          transition={{ delay: 1.5, duration: 0.5 }}
         >
           <PictureFrame></PictureFrame>
         </motion.div>

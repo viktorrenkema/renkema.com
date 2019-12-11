@@ -65,7 +65,7 @@ export default function Introduction(props) {
         initial="hidden"
         animate="visible"
       >
-        <h1>Viktor Renkema.</h1>
+        <h1>Viktor Renkema</h1>
       </motion.div>
       <Slash
         className={"nameStagger"}
