@@ -41,7 +41,7 @@ export default function Projects(props) {
     },
   }
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 30 })
-  const [hoveredImage, setHoveredImage] = React.useState(false)
+  const [hoveredImage, setHoveredImage] = React.useState(false) // set to false
 
   const onHoverStartImage = () => {
     console.log("onHoverStartImage")
@@ -61,7 +61,7 @@ export default function Projects(props) {
       animate={isInViewport ? "visible" : "hidden"}
     >
       <div className="projectsTitle">Projects</div>
-      <h2 className="subtitle_projects">Hover to learn more</h2>
+      {/* <h2 className="subtitle_projects">Hover to learn more</h2> */}
       {/* Placeholder card 1*/}
       <motion.div
         variants={stagger}
@@ -103,6 +103,7 @@ export default function Projects(props) {
             ></motion.img>
           </a>
         </motion.div>
+
         <motion.div
           className="overlay"
           variants={overlay}
@@ -110,13 +111,13 @@ export default function Projects(props) {
           initial="default"
           transition={{ duration: 0.5 }}
         >
-          <p className="copy_projecttitle">Framer Learn tutorial</p>
+          <p className="copy_projecttitle">Creating an accordion design</p>
+          <p class="copy_projectlabel">Framer Learn tutorial</p>
           <p className="projectdescriptions">
-            While learning React, I documented what I worked on which turned
-            into a 3-part tutorial to create a single-select accordion effect
-            within Framer. <br></br>
-            <br></br>The tutorial aims to guide beginner users through
-            intermediate concepts within React. <br></br>
+            While learning React, I enjoyed documenting projects that I worked
+            on. One of these turned into a 3-part tutorial, which guides users
+            through creating a single-select accordion effect within Framer.{" "}
+            <br></br>
             <br></br>It touches upon various concepts, such as:
             <br></br>
             <ul>
@@ -143,10 +144,10 @@ export default function Projects(props) {
         </motion.div>
       </motion.div>
       {/* Headers*/}
-      <div className="project1description">
+      {/* <div className="project1description">
         <p class="projecttitle">CREATING AN ACCORDION DESIGN</p>
       </div>
-      <p class="projectlabel">Framer tutorial</p>
+      <p class="projectlabel">Framer tutorial</p> */}
     </motion.section>
   )
 }
