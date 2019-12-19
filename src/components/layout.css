@@ -387,7 +387,7 @@ a:hover {
   align-self: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 50px 50px 20px 20px auto;
-  /* grid-column-gap: 50px; */
+  grid-column-gap: 50px;
   justify-items: center;
   padding: 4em;
 }
@@ -433,7 +433,7 @@ a:hover {
   grid-area: 5 / 2 / 5 / 2;
   background: #edf0f1;
   height: 400px;
-  width: 100%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -444,7 +444,7 @@ a:hover {
   grid-area: 5 / 1 / 5 / 1;
   background: #e2e2e2;
   height: 400px;
-  width: 100%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -455,7 +455,7 @@ a:hover {
   grid-area: 5 / 3 / 5 / 3;
   background: #e2e2e2;
   height: 400px;
-  width: 100%;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
