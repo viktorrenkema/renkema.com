@@ -10,7 +10,13 @@ const image = {
   hovered: {
     scale: 1.05,
   },
-  hidden: { x: 20, opacity: 0 },
+  hidden: {
+    x: 20,
+    opacity: 0,
+    transition: {
+      duration: 2,
+    },
+  },
   visible: {
     x: 0,
     opacity: 1,
@@ -20,17 +26,17 @@ const image = {
   },
 }
 const header = {
-  hidden: { y: -20, opacity: 0, transition: { duration: 0.5 } },
+  hidden: { y: -20, opacity: 0, transition: { duration: 1.3 } },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
 const copy = {
-  hidden: { y: 20, opacity: 0, transition: { duration: 0.5 } },
+  hidden: { y: 20, opacity: 0, transition: { duration: 1.3 } },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
 const imagebackground = {
-  hidden: { opacity: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, transition: { duration: 1.3 } },
   visible: { opacity: 1, transition: { duration: 0.5 } },
 }
 
@@ -125,7 +131,6 @@ function FramerImg(props) {
       initial="hidden"
       // animate={hovered ? "hovered" : "default"}
       animate={isInViewportImg ? "visible" : "hidden"}
-      transition={{ duration: 0.5 }}
       className="imgframer image"
       src={framerlogo}
       width={"100%"}

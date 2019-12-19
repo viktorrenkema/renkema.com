@@ -1,7 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import accordion from "../../src/images/accordion3.gif"
+// import accordion from "../../src/images/accordion3.gif"
+import accordion from "../../src/images/Accordion.gif"
 
 export default function Projects(props) {
   const image = {
@@ -112,7 +113,7 @@ export default function Projects(props) {
           transition={{ duration: 0.5 }}
         >
           <p className="copy_projecttitle">Creating an accordion design</p>
-          <p class="copy_projectlabel">Framer Learn tutorial</p>
+          <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
           <p className="projectdescriptions">
             While learning React, I enjoyed documenting projects that I worked
             on. One of these turned into a 3-part tutorial, which guides users

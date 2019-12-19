@@ -37,7 +37,7 @@ export default function Slash(props) {
           //   fill: { duration: 2, ease: [1, 0, 0.8, 1] },
           // }}
           d="M 0 65.5 L 36.5 0"
-          strokeWidth="3"
+          strokeWidth="4"
           strokeLinecap="round"
           stroke="#ff6661"
         ></motion.path>

@@ -20,17 +20,17 @@ const image = {
   },
 }
 const header = {
-  hidden: { y: -20, opacity: 0, transition: { duration: 0.5 } },
+  hidden: { y: -20, opacity: 0, transition: { duration: 1.3 } },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
 const copy = {
-  hidden: { y: 20, opacity: 0, transition: { duration: 0.5 } },
+  hidden: { y: 20, opacity: 0, transition: { duration: 1.3 } },
   visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
 }
 
 const section = {
-  hidden: { opacity: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, transition: { duration: 1.3 } },
   visible: { opacity: 1, transition: { duration: 0.5 } },
 }
 
@@ -126,7 +126,6 @@ function PictureFrame(props) {
       ref={targetRef}
       initial="hidden"
       animate={isInViewportImg ? "visible" : "hidden"}
-      transition={{ duration: 0.5 }}
       className="imagegroningen image"
       src={Groningen}
       width={"100%"}

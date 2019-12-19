@@ -2,22 +2,8 @@ import React from "react"
 import Slash from "../components/slash"
 import { motion } from "framer-motion"
 
-// const container = {
-//   hidden: { opacity: 1, scale: 0 },
-//   visible: {
-//     opacity: 1,
-//     scale: 1,
-//     transition: {
-//       // delay: 0.3,
-//       // when: "beforeChildren",
-//       staggerChildren: 0.3,
-//       duration: 0,
-//     },
-//   },
-// }
-
 const nameStagger = {
-  hidden: { x: 10, opacity: 0 },
+  hidden: { x: 20, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
