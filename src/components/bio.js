@@ -89,6 +89,7 @@ export default function Background(props) {
             className="learnmore copy"
             href="mailto:viktor@renkema.com"
             target="_blank"
+            rel="noopener noreferrer"
             variants={copy}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
@@ -99,7 +100,6 @@ export default function Background(props) {
             ASK ME MORE
           </motion.a>
         </motion.div>
-        {/* </motion.div> */}
       </div>
     </motion.section>
   )
@@ -108,7 +108,7 @@ export default function Background(props) {
 function PictureFrame(props) {
   const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
-  const [hovered, setHovered] = React.useState(false)
+  const [, setHovered] = React.useState(false)
 
   const onHoverStart = () => {
     setHovered(true)
@@ -124,7 +124,6 @@ function PictureFrame(props) {
       onHoverEnd={onHoverEnd}
       variants={image}
       ref={targetRef}
-      initial="default"
       initial="hidden"
       animate={isInViewportImg ? "visible" : "hidden"}
       transition={{ duration: 0.5 }}

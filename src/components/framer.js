@@ -106,7 +106,7 @@ export default function Framer(props) {
 function FramerImg(props) {
   const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
-  const [hovered, setHovered] = React.useState(false)
+  const [, setHovered] = React.useState(false)
 
   const onHoverStart = () => {
     setHovered(true)

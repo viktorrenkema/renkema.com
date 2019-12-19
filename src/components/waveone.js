@@ -21,22 +21,22 @@ const wave = {
     fill: "#f1f1f1",
     opacity: 1,
   },
-  hovered: {
-    d:
-      "M 571.498 1.78 L 0 2.03 C 0 2.03 438.117 -82.293 490 -26 C 515.941 2.147 578.485 -27.094 604 -5 C 629.515 17.094 562.534 80.926 604 88.5 C 686.933 103.647 565.874 146.782 604 161.5 C 642.126 176.218 571.497 267.78 571.497 267.78",
-    opacity: 0,
-    transition: { duration: 0.5 },
-  },
+  // hovered: {
+  //   d:
+  //     "M 571.498 1.78 L 0 2.03 C 0 2.03 438.117 -82.293 490 -26 C 515.941 2.147 578.485 -27.094 604 -5 C 629.515 17.094 562.534 80.926 604 88.5 C 686.933 103.647 565.874 146.782 604 161.5 C 642.126 176.218 571.497 267.78 571.497 267.78",
+  //   opacity: 0,
+  //   transition: { duration: 0.5 },
+  // },
 }
 
 export default function CornerMotionOne(props) {
-  const [hovered, setHovered] = React.useState(false)
+  // const [hovered, setHovered] = React.useState(false)
   return (
     <motion.div className="WrapperWaveOne">
       <motion.div
         className="Cont-MyWaveOne"
-        onHoverStart={(() => setHovered(true), console.log("hovered"))}
-        onHoverEnd={(() => setHovered(false), console.log("unhovered"))}
+        // onHoverStart={(() => setHovered(true), console.log("hovered"))}
+        // onHoverEnd={(() => setHovered(false), console.log("unhovered"))}
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,9 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-
-import accordiondesignarticle from "../../src/images/accordiondesignarticle.png"
-// import accordion from "../../src/images/accordion.mp4"
 import accordion from "../../src/images/accordion3.gif"
 
 export default function Projects(props) {
@@ -73,7 +70,11 @@ export default function Projects(props) {
         className="card_projectthree"
       >
         <motion.div>
-          <a href="https://www.framer.com/learn/" target="_blank"></a>
+          {/* <a
+            href="https://www.framer.com/learn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a> */}
         </motion.div>
       </motion.div>
       {/* Placeholder card 2 / Accordion effect*/}
@@ -85,7 +86,11 @@ export default function Projects(props) {
         onHoverEnd={onHoverEndImage}
       >
         <motion.div className="wrap_imagecardone">
-          <a href="https://www.framer.com/learn/" target="_blank">
+          <a
+            href="https://www.framer.com/learn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <motion.img
               className="imageplaceholder"
               variants={image}
@@ -130,7 +135,11 @@ export default function Projects(props) {
         className="card_projecttwo"
       >
         <motion.div>
-          <a href="https://www.framer.com/learn/" target="_blank"></a>
+          {/* <a
+            href="https://www.framer.com/learn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a> */}
         </motion.div>
       </motion.div>
       {/* Headers*/}
