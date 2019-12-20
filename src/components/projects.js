@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import Accordion from "../../src/images/Accordion.gif"
+import accordion from "../../src/images/accordion.gif"
 
 export default function Projects(props) {
   const image = {
@@ -97,7 +97,7 @@ export default function Projects(props) {
               initial="default"
               animate={hoveredImage ? "hovered" : "default"}
               transition={{ duration: 0.8 }}
-              src={Accordion}
+              src={accordion}
               width="100%"
               height="100%"
             ></motion.img>

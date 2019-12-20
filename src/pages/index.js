@@ -8,6 +8,7 @@ import CornerMotionOne from "../components/waveone"
 import CornerMotionTwo from "../components/wavetwo"
 import Projects from "../components/projects"
 import Framer from "../components/framer"
+import Footer from "../components/footer"
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <Framer></Framer>
     <Projects></Projects>
     <Scroller></Scroller>
+    <Footer></Footer>
     <SEO title="Portfolio Viktor Renkema" />
   </Layout>
 )
