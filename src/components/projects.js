@@ -1,7 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-// import accordion from "../../src/images/accordion3.gif"
 import Accordion from "../../src/images/Accordion.gif"
 
 export default function Projects(props) {
