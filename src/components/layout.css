@@ -377,10 +377,10 @@ a:hover {
 .projects {
   background: #ececec;
   min-height: 70vh;
-  display: grid;
+  display: flex;
   align-self: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50px 0px 0px 0px auto;
+  grid-template-rows: 50px auto;
   /* grid-column-gap: 50px; */
   justify-items: center;
   padding: 4em 4em 0em 4em;
@@ -426,10 +426,9 @@ a:hover {
 
 .card_projectone {
   position: relative;
-  grid-area: 5 / 2 / 5 / 2;
   background: #edf0f1;
   height: 400px;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -437,10 +436,8 @@ a:hover {
 
 .card_projecttwo {
   position: relative;
-  grid-area: 5 / 1 / 5 / 1;
-  background: #e2e2e2;
+  background: #ff6661;
   height: 400px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
