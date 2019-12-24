@@ -63,11 +63,11 @@ a {
   text-decoration: none;
   color: #ff6661;
 }
-.StateTest {
-  height: 100px;
-  width: 100px;
-  background: #138086;
+
+li {
+  padding-bottom: 0.5rem;
 }
+
 /* GENERAL */
 
 .titleframer {
@@ -323,8 +323,8 @@ a {
 }
 .wrap_imagecardone {
   z-index: 2;
-  width: 300px;
-  height: 100%;
+  width: 400px;
+  height: 400px;
 }
 
 a:hover {
@@ -338,11 +338,8 @@ a:hover {
 
 .copy_projecttitle {
   min-width: 100px;
-  color: "white";
-  /* max-width: 200px; */
-  font-family: "Lato", sans-serif;
-  padding: 0rem 0rem 0rem 2rem;
-  font-size: 20px;
+  padding: 2rem 0rem 0rem 2rem;
+  font-size: 28px;
   letter-spacing: 0.5px;
   line-height: 1.9;
   font-weight: 600;
@@ -387,11 +384,8 @@ a:hover {
 }
 
 .overlay {
-  padding-top: 1rem;
-  padding-left: 300px;
-  position: absolute;
-  /* height: 100%; */
-  /* width: 400px; */
+  position: relative;
+  height: 0;
   flex-direction: column;
   display: flex;
   align-items: start;
@@ -399,8 +393,6 @@ a:hover {
 }
 
 .subtitle_projects {
-  font-family: "Lato", sans-serif;
-
   color: #042639;
   font-size: 9px;
   grid-area: 2 / 2 / 2 / 2;
@@ -413,7 +405,6 @@ a:hover {
 
 .role_paragraph {
   font-weight: 400;
-  font-family: "Lato", sans-serif;
 }
 
 .projectsTitle {
@@ -427,10 +418,9 @@ a:hover {
 .card_projectone {
   position: relative;
   background: #edf0f1;
-  height: 400px;
+  height: 100%;
   /* width: 100%; */
   display: flex;
-  flex-direction: column;
   margin-top: 1rem;
 }
 
@@ -481,8 +471,6 @@ a:hover {
 }
 
 .projecttitle {
-  font-family: "Lato", sans-serif;
-
   font-size: 12px;
   letter-spacing: 0.5px;
   line-height: 1.9;
@@ -490,8 +478,6 @@ a:hover {
 }
 
 .copy_projectlabel {
-  grid-area: 4 / 2 / 4 / 2;
-  font-family: "Lato", sans-serif;
   padding: 0rem 0rem 0rem 2rem;
   font-size: 11px;
   letter-spacing: 0.5px;
@@ -525,21 +511,25 @@ ul {
 }
 
 ul li::before {
-  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  content: ""; /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: #ff6661; /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
+  width: 20px; /* Also needed for space (tweak if needed) */
+  height: 20px;
+  vertical-align: middle;
   margin-left: 0em; /* Also needed for space (tweak if needed) */
+  background-image: url("../../src/images/bullet2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .projectdescriptions {
-  font-size: 13px;
+  font-size: 14px;
   padding: 1rem 2rem 0rem 2rem;
   line-height: 1.5;
   text-align: justify;
-  /* color: white; */
-  font-family: "Lato", sans-serif;
+  width: 40%;
 }
 
 .footer {
