@@ -541,6 +541,28 @@ ul li::before {
   content: none;
 }
 
+.footer-col {
+  text-align: center;
+  flex: 1;
+}
+
+.footer p {
+  font-size: 12px;
+  line-height: 170%;
+  letter-spacing: -0.02em;
+  color: #626265;
+  margin: 8px 0 8px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 64px;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+}
+
 @media only screen and (max-width: 480px) {
   h1 {
     font-size: 24px;

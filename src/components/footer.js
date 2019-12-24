@@ -3,13 +3,13 @@ import { motion } from "framer-motion"
 
 export default function Footer(props) {
   return (
-    <motion.section className="footer">
-      <div className="">
-        <ul>
-          <li>Created with Gatsby and Framer Motion</li>
-          <li>© 2019 | Viktor Renkema </li>
-        </ul>
+    <section className="footer">
+      <div className="container">
+        <div className="footer-col">
+          <p>Created with Gatsby and Framer Motion</p>
+          <p>© 2019 Viktor Renkema</p>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

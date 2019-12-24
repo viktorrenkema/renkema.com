@@ -19,7 +19,7 @@ const IndexPage = () => (
     <Framer></Framer>
     <Projects></Projects>
     <Scroller></Scroller>
-    {/* <Footer></Footer> */}
+    <Footer></Footer>
     <SEO title="Portfolio Viktor Renkema" />
   </Layout>
 )

@@ -72,7 +72,10 @@ export default function ProjectOne(props) {
             <br></br>
           </p>
           <ul className="projectdescriptions">
-            <p>It touches upon various concepts, such as:</p>
+            <p style={{ paddingBottom: "1rem" }}>
+              The tutorial touches upon various concepts within React,
+              Javascript and Framer, such as:
+            </p>
             <li>applying React Hooks to toggle states</li>
             <li>creating custom animations</li>
             <li>mapping over an array with JSON data</li>

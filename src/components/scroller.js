@@ -21,8 +21,13 @@ export default function Scroller(props) {
         left: "49.1%",
         zIndex: "3",
       }}
+      animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >
       <motion.svg
+        onTap={() => {
+          console.log("tapped")
+          window.scrollTo(0, 100)
+        }}
         xmlns="http://www.w3.org/2000/svg"
         width="50"
         height="52"
