@@ -341,6 +341,7 @@ a:hover {
   color: "white";
   /* max-width: 200px; */
   font-family: "Lato", sans-serif;
+  padding: 0rem 0rem 0rem 2rem;
   font-size: 20px;
   letter-spacing: 0.5px;
   line-height: 1.9;
@@ -393,7 +394,7 @@ a:hover {
   /* width: 400px; */
   flex-direction: column;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: flex-start;
 }
 
@@ -491,8 +492,7 @@ a:hover {
 .copy_projectlabel {
   grid-area: 4 / 2 / 4 / 2;
   font-family: "Lato", sans-serif;
-
-  /* color: #5f5f5f; */
+  padding: 0rem 0rem 0rem 2rem;
   font-size: 11px;
   letter-spacing: 0.5px;
   line-height: 1.9;
