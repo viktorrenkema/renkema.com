@@ -1,23 +1,16 @@
 import React from "react"
 import { motion } from "framer-motion"
-import useIsInViewport from "use-is-in-viewport"
+import placeholdertwo from "../../src/images/Placeholdertwo.png"
 
 export default function ProjectTwo(props) {
   const cardHover = {
     inactive: {
       width: "300px",
+      transition: { duration: 0.6 },
     },
     active: {
-      width: "600px",
-    },
-  }
-
-  const image = {
-    default: {
-      top: "0%",
-    },
-    hovered: {
-      top: "70%",
+      width: "2500px",
+      transition: { duration: 0.4 },
     },
   }
 
@@ -27,18 +20,17 @@ export default function ProjectTwo(props) {
     },
     hovered: {
       opacity: 1,
+      transition: { delay: 0.4 },
     },
   }
 
   const [hoveredImage, setHoveredImage] = React.useState(false) // default should be set to false
 
   const onHoverStartImage = () => {
-    console.log("onHoverStartImage")
     setHoveredImage(true)
   }
 
   const onHoverEndImage = () => {
-    console.log("onHoverEndImage")
     setHoveredImage(false)
   }
 
@@ -52,8 +44,20 @@ export default function ProjectTwo(props) {
       initial="inactive"
       animate={hoveredImage ? "active" : "inactive"}
     >
-      <motion.div style={{ backgroundColor: "cyan" }}></motion.div>
-
+      <motion.div className="wrap_imagecardone">
+        <a
+          href="https://www.framer.com/learn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <motion.img
+            className="imageplaceholder"
+            src={placeholdertwo}
+            width="100%"
+            height="100%"
+          ></motion.img>
+        </a>
+      </motion.div>
       <motion.div
         className="overlay"
         variants={overlay}
@@ -62,7 +66,7 @@ export default function ProjectTwo(props) {
         transition={{ duration: 0.5 }}
       >
         <p className="copy_projecttitle">Project number two</p>
-        <p class="copy_projectlabel">SECOND PROJET</p>
+        <p class="copy_projectlabel">SECOND PROJECT</p>
         <p className="projectdescriptions">
           Bladiebla hier komt een hoop tekst terecht.
         </p>

@@ -6,51 +6,33 @@ export default function ProjectOne(props) {
   const cardHover = {
     inactive: {
       width: "300px",
+      transition: { duration: 0.6 },
     },
     active: {
-      width: "600px",
-    },
-  }
-
-  const image = {
-    default: {
-      right: "0%",
-    },
-    hovered: {
-      right: "70%",
+      width: "2500px",
+      transition: { duration: 0.4 },
     },
   }
 
   const overlay = {
-    default: {
-      opacity: 0,
-    },
-    hovered: {
-      opacity: 1,
-    },
-  }
-  const stagger = {
-    visible: {
-      transition: {
-        when: "beforeChildren",
-        staggerChildren: 0.3,
-      },
-    },
     hidden: {
-      transition: {
-        when: "afterChildren",
-      },
+      opacity: 0,
+      // x: -100,
+    },
+    visible: {
+      opacity: 1,
+      // x: 0,
+      transition: { delay: 0.4 },
     },
   }
+
   const [hoveredImage, setHoveredImage] = React.useState(false) // default should be set to false
 
   const onHoverStartImage = () => {
-    console.log("onHoverStartImage")
     setHoveredImage(true)
   }
 
   const onHoverEndImage = () => {
-    console.log("onHoverEndImage")
     setHoveredImage(false)
   }
 
@@ -63,6 +45,7 @@ export default function ProjectOne(props) {
       onHoverEnd={onHoverEndImage}
       initial="inactive"
       animate={hoveredImage ? "active" : "inactive"}
+      transition={{ duration: 0.5 }}
     >
       <motion.div className="wrap_imagecardone">
         <a
@@ -72,10 +55,6 @@ export default function ProjectOne(props) {
         >
           <motion.img
             className="imageplaceholder"
-            variants={image}
-            initial="default"
-            animate={hoveredImage ? "hovered" : "default"}
-            transition={{ duration: 0.8 }}
             src={accordion}
             width="100%"
             height="100%"
@@ -86,9 +65,9 @@ export default function ProjectOne(props) {
       <motion.div
         className="overlay"
         variants={overlay}
-        animate={hoveredImage ? "hovered" : "default"}
-        initial="default"
-        transition={{ duration: 0.5 }}
+        animate={hoveredImage ? "visible" : "hidden"}
+        initial="hidden"
+        transition={{ duration: 0.1 }}
       >
         <p className="copy_projecttitle">Creating an accordion design</p>
         <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
