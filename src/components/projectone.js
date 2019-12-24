@@ -3,28 +3,16 @@ import { motion } from "framer-motion"
 import accordion from "../../src/images/accordion.gif"
 
 export default function ProjectOne(props) {
-  // const cardHover = {
-  //   inactive: {
-  //     width: "300px",
-  //     transition: { duration: 0.6 },
-  //   },
-  //   active: {
-  //     width: "2500px",
-  //     transition: { duration: 0.4 },
-  //   },
-  // }
-
   const overlay = {
     hidden: {
-      display: "none",
       opacity: 0,
       width: "0px",
+      transition: { duration: 1 },
     },
     visible: {
-      display: "flex",
       opacity: 1,
       width: "900px",
-      transition: { duration: 0.4 },
+      transition: { duration: 0.6 },
     },
   }
 
@@ -44,7 +32,10 @@ export default function ProjectOne(props) {
       onHoverEnd={onHoverEndImage}
       className="card_projectone"
     >
-      <motion.div className="wrap_imagecardone">
+      <motion.div
+        className="wrap_imagecardone"
+        style={{ width: hoveredImage ? "400px" : undefined }}
+      >
         <a
           href="https://www.framer.com/learn/"
           target="_blank"
@@ -61,10 +52,14 @@ export default function ProjectOne(props) {
 
       <motion.div
         className="overlay"
+        style={{
+          display: hoveredImage ? "flex" : "none",
+          // overflow: hoveredImage ? "visible" : "hidden",
+        }}
         variants={overlay}
         animate={hoveredImage ? "visible" : "hidden"}
         initial="hidden"
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 1 }}
       >
         <p className="copy_projecttitle">Creating an accordion design</p>
         <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>

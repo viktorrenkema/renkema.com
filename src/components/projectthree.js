@@ -3,24 +3,16 @@ import { motion } from "framer-motion"
 import placeholderthree from "../../src/images/Placeholderthree.png"
 
 export default function ProjectThree(props) {
-  const cardHover = {
-    inactive: {
-      width: "300px",
-      transition: { duration: 0.6 },
-    },
-    active: {
-      width: "2500px",
-      transition: { duration: 0.4 },
-    },
-  }
-
   const overlay = {
-    default: {
+    hidden: {
       opacity: 0,
+      width: "0px",
+      transition: { duration: 1 },
     },
-    hovered: {
+    visible: {
       opacity: 1,
-      transition: { delay: 0.4 },
+      width: "900px",
+      transition: { duration: 0.6 },
     },
   }
 
@@ -36,15 +28,14 @@ export default function ProjectThree(props) {
 
   return (
     <motion.div
-      variants={cardHover}
-      style={{ overflow: "hidden" }}
-      className="card_projectthree"
       onHoverStart={onHoverStartImage}
       onHoverEnd={onHoverEndImage}
-      initial="inactive"
-      animate={hoveredImage ? "active" : "inactive"}
+      className="card_projectone"
     >
-      <motion.div className="wrap_imagecardone">
+      <motion.div
+        className="wrap_imagecardone"
+        style={{ width: hoveredImage ? "400px" : undefined }}
+      >
         <a
           href="https://www.framer.com/learn/"
           target="_blank"
@@ -61,16 +52,32 @@ export default function ProjectThree(props) {
 
       <motion.div
         className="overlay"
+        style={{
+          display: hoveredImage ? "flex" : "none",
+          // overflow: hoveredImage ? "visible" : "hidden",
+        }}
         variants={overlay}
-        animate={hoveredImage ? "hovered" : "default"}
-        initial="default"
-        transition={{ duration: 0.5 }}
+        animate={hoveredImage ? "visible" : "hidden"}
+        initial="hidden"
+        transition={{ duration: 1 }}
       >
-        <p className="copy_projecttitle">Project number two</p>
-        <p class="copy_projectlabel">SECOND PROJECT</p>
-        <p className="projectdescriptions">
-          Bladiebla hier komt een hoop tekst terecht.
-        </p>
+        <p className="copy_projecttitle">Creating an accordion design</p>
+        <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
+        <div style={{ display: "flex" }}>
+          <p className="projectdescriptions">
+            While learning React, I enjoyed documenting projects that I worked
+            on. One of these turned into a 3-part tutorial, which guides users
+            through creating a single-select accordion effect within Framer.{" "}
+            <br></br>
+            <br></br>
+          </p>
+          <ul className="projectdescriptions">
+            <p>It touches upon various concepts, such as:</p>
+            <li>applying React Hooks to toggle states</li>
+            <li>creating custom animations</li>
+            <li>mapping over an array with JSON data</li>
+          </ul>
+        </div>
       </motion.div>
     </motion.div>
   )
