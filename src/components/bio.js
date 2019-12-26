@@ -54,7 +54,7 @@ export default function Background(props) {
           <PictureFrame></PictureFrame>
         </motion.div>
         <motion.h1
-          className={"titlebio header"}
+          className={"subject subject-bio header"}
           variants={header}
           initial="hidden"
           animate={isInViewport ? "visible" : "hidden"}

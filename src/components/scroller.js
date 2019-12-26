@@ -13,13 +13,15 @@ export default function Scroller(props) {
 
   return (
     <motion.div
+      className="scroller"
       style={{
-        width: "25px",
-        height: "25px",
-        bottom: "24px",
+        width: "28px",
+        height: "26px",
+        bottom: "25px",
         position: "fixed",
-        left: "49.1%",
+        left: "50%",
         zIndex: "3",
+        marginLeft: "-13px",
       }}
       animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >

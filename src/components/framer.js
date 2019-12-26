@@ -47,7 +47,7 @@ export default function Framer(props) {
     <section className="framer">
       <div className="grid">
         <motion.h1
-          className="titleframer header"
+          className="subject subject-framer header"
           variants={header}
           initial="hidden"
           animate={isInViewport ? "visible" : "hidden"}
@@ -129,7 +129,6 @@ function FramerImg(props) {
       variants={image}
       ref={targetRef}
       initial="hidden"
-      // animate={hovered ? "hovered" : "default"}
       animate={isInViewportImg ? "visible" : "hidden"}
       className="imgframer image"
       src={framerlogo}
