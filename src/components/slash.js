@@ -6,16 +6,17 @@ export default function Slash(props) {
     <motion.div className="slash">
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        width="46"
-        height="82"
+        width="55"
+        height="81"
         overflow="visible"
       >
         <motion.path
-          d="M 43 6 L 5 73.5 L 2 72 L 40 4.5 Z"
-          strokeWidth="1"
+          d="M 42.5 3 L 46.5 3 L 17.5 78 L 13.5 78 Z"
+          strokeWidth="3"
           stroke="#ff6661"
           // stroke="rgb(255,102,97)"
           fill="transparent"
+          strokeLinejoin="round"
         ></motion.path>
       </motion.svg>
     </motion.div>

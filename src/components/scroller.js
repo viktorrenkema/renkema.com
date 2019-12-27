@@ -23,27 +23,30 @@ export default function Scroller(props) {
         zIndex: "3",
         marginLeft: "-13px",
       }}
-      animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
+
+      // animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >
       <motion.svg
         onTap={() => {
-          console.log("tapped")
           window.scrollTo(0, 100)
         }}
         xmlns="http://www.w3.org/2000/svg"
-        width="50"
-        height="52"
-        viewBox="0 0 201 201"
+        width="30"
+        height="33"
       >
         <motion.path
           style={{
             pathLength: modifier,
-            // opacity: modifier,
-            strokeWidth: "4",
+            strokeWidth: "1",
             stroke: "#ff6661",
-            fill: "#f5f5f5",
+            fill: "transparent",
+            opacity: modifier > 0.5 ? 0 : 1,
           }}
-          d="M 0.5 0.5 L 0.5 47 L 54.5 101 L 109 46.5 L 109 0.5 L 54.5 55 Z"
+          // visibility={modifier > 0.5 ? "hidden" : "visible"}
+          // opacity={modifier > 0.5 ? 0 : 1}
+          d="M 3 4.5 L 3 16 L 15 30 L 27 16 L 27 4.5 L 15 18 Z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           strokeDasharray="0 1"
         />
       </motion.svg>

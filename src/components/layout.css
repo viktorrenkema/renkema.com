@@ -546,6 +546,9 @@ ul li::before {
 .footer {
   width: 100%;
   background: #f5f5f5;
+  height: 20%;
+  position: absolute;
+  display: flex;
 }
 .footer li::before {
   content: none;
@@ -566,9 +569,21 @@ ul li::before {
 .container {
   width: 100%;
   max-width: 1200px;
+  z-index: 5;
+  align-self: center;
   margin-left: auto;
   margin-right: auto;
   padding: 0 64px;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  text-align: center;
+}
+
+.wrap_contact {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  padding: 0px 5px;
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import Slash from "../components/slash"
+import Contact from "../components/contact"
 import { motion } from "framer-motion"
 
 const nameStagger = {
@@ -59,6 +60,7 @@ export default function Introduction(props) {
         initial="hidden"
         animate="visible"
       ></Slash>
+      <Contact></Contact>
       <motion.div
         className={"titles roleStagger"}
         variants={roleStagger}
