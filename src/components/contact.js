@@ -7,16 +7,17 @@ import {
 } from "framer-motion"
 
 export default function Contact(props) {
-  // const icon = {
-  //   hidden: {
-  //     opacity: 0,
-  //     pathLength: 0,
-  //   },
-  //   visible: {
-  //     opacity: 1,
-  //     pathLength: 1,
-  //   },
-  // }
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
+
+  // WIP, add useState for hover states on social icons
 
   return (
     <motion.div className="wrap_contact">
@@ -39,11 +40,11 @@ export default function Contact(props) {
       {/* Email */}
       <motion.div className="icon">
         <a
-          href="https://www.twitter.com/vrenkema"
+          href="mailto: vrenkema@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <motion.svg xmlns="http://www.w3.org/2000/svg" width="20" height="15">
+          <motion.svg xmlns="http://www.w3.org/2000/svg" width="19" height="19">
             <motion.path
               whileHover={{ fill: "#ff6661" }}
               d="M 19 14.918 C 19 14.957 19.01 14.996 19.007 15.035 L 13.212 9.623 L 19.014 4.032 C 19.015 4.053 19 4.074 19 4.096 Z M 18.344 16.101 C 18.151 16.209 17.929 16.281 17.692 16.281 L 1.363 16.281 C 1.204 16.281 1.051 16.241 0.91 16.19 L 6.743 10.568 L 9.105 12.769 C 9.22 12.876 9.371 12.935 9.528 12.935 C 9.688 12.935 9.842 12.873 9.957 12.762 L 12.326 10.483 Z M 0.506 3.052 C 0.739 2.86 1.037 2.733 1.363 2.733 L 17.692 2.733 C 17.942 2.733 18.176 2.813 18.376 2.932 L 9.521 11.463 Z M 5.819 9.722 L 0.058 15.269 C 0.028 15.157 -0 15.04 -0 14.918 L -0 4.304 Z"
@@ -56,7 +57,7 @@ export default function Contact(props) {
       {/* Linkedin */}
       <motion.div className="icon">
         <a
-          href="https://www.twitter.com/vrenkema"
+          href="https://www.linkedin.com/in/viktor-renkema-7b3505133/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -73,7 +74,7 @@ export default function Contact(props) {
       {/* Github */}
       <motion.div className="icon">
         <a
-          href="https://www.twitter.com/vrenkema"
+          href="https://github.com/viktorrenkema"
           target="_blank"
           rel="noopener noreferrer"
         >
