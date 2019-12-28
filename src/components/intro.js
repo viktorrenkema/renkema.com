@@ -1,6 +1,6 @@
 import React from "react"
 import Slash from "../components/slash"
-import Contact from "../components/contact"
+import Contact from "../components/contact-intro"
 import { motion } from "framer-motion"
 
 const nameStagger = {
