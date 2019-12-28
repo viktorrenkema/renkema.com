@@ -11,11 +11,10 @@ export default function Slash(props) {
         overflow="visible"
       >
         <motion.path
-          d="M 42.5 3 L 46.5 3 L 17.5 78 L 13.5 78 Z"
+          d="M 43 3 L 45.5 3 L 16.5 78 L 14 78 Z"
           strokeWidth="3"
           stroke="#ff6661"
-          // stroke="rgb(255,102,97)"
-          fill="transparent"
+          fill="#ff6661"
           strokeLinejoin="round"
         ></motion.path>
       </motion.svg>
