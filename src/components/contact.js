@@ -1,10 +1,5 @@
 import * as React from "react"
-import {
-  motion,
-  useMotionValue,
-  useViewportScroll,
-  createMotionComponent,
-} from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function Contact(props) {
   const [hovered, setHovered] = React.useState(false)
