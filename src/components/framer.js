@@ -41,10 +41,10 @@ const imagebackground = {
 }
 
 export default function Framer(props) {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
-    <section className="framer">
+    <section className="framer" ref={targetRef}>
       <div className="grid">
         <motion.h1
           className="subject subject-framer header"
@@ -57,7 +57,6 @@ export default function Framer(props) {
         <motion.div className="description carddescriptionleft">
           <motion.p
             className="copy"
-            ref={targetRef}
             variants={copy}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}

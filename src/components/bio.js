@@ -35,10 +35,11 @@ const section = {
 }
 
 export default function Background(props) {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 70 })
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
+      ref={targetRef}
       className="bio"
       variants={section}
       initial="hidden"
@@ -63,7 +64,6 @@ export default function Background(props) {
         </motion.h1>
         <motion.div className="description carddescriptionright">
           <motion.p
-            ref={targetRef}
             className="copy"
             variants={copy}
             initial="hidden"
