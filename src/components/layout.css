@@ -43,7 +43,7 @@ main {
 }
 p::selection,
 h1::selection {
-  background: #cd7672;
+  background: #ff6661;
   color: white;
 }
 
@@ -262,6 +262,10 @@ li {
   padding-bottom: 5px;
   vertical-align: middle;
   line-height: 20px;
+  text-align: start;
+}
+
+.about p {
   text-align: justify;
 }
 /* EDUCATION */
@@ -282,7 +286,7 @@ li {
 
 /* WORK */
 .bio {
-  height: 100vh;
+  min-height: 100vh;
   max-height: 700px;
   background: #ececec;
   display: flex;

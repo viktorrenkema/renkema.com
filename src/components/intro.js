@@ -68,7 +68,9 @@ export default function Introduction(props) {
         animate="visible"
       >
         <p className="role_paragraph">
-          PSYCHOLOGIST EXPLORING UX AND INTERACTION DESIGN
+          {/* I am a psychologist interested in UX and interaction
+          design */}
+          PSYCHOLOGIST WORKING IN UX AND INTERACTION DESIGN
         </p>
       </motion.div>
       <motion.div
