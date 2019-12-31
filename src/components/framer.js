@@ -80,21 +80,20 @@ export default function Framer(props) {
             KLM, Google and others to become succesful, effective teams that can
             fully utilize Framer as their prototyping resource. This is done by giving on-site workshops or jumping in on calls.*/}
           </motion.p>
-          <motion.a
-            class="learnmore copy"
-            href="https://www.framer.com"
-            target="_blank"
-            variants={copy}
-            initial="hidden"
-            animate={isInViewport ? "visible" : "hidden"}
-            whileHover={{
-              color: "#ff6661",
-            }}
-          >
-            VISIT FRAMER.COM
-          </motion.a>
         </motion.div>
-
+        <motion.a
+          class="learnmore copy"
+          href="https://www.framer.com"
+          target="_blank"
+          variants={copy}
+          initial="hidden"
+          animate={isInViewport ? "visible" : "hidden"}
+          whileHover={{
+            color: "#ff6661",
+          }}
+        >
+          VISIT FRAMER.COM
+        </motion.a>
         <motion.div
           className="imgright imagecard"
           variants={imagebackground}
@@ -129,7 +128,7 @@ function FramerImg(props) {
       ref={targetRef}
       initial="hidden"
       animate={isInViewportImg ? "visible" : "hidden"}
-      className="imgframer image"
+      className="img-framer image"
       src={framerlogo}
       width={"100%"}
       height="100%"

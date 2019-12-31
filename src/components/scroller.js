@@ -39,7 +39,7 @@ export default function Scroller(props) {
             pathLength: modifier,
             strokeWidth: "1",
             stroke: "#ff6661",
-            fill: "transparent",
+            fill: "#f5f5f5c4",
             opacity: modifier > 0.5 ? 0 : 1,
           }}
           // visibility={modifier > 0.5 ? "hidden" : "visible"}

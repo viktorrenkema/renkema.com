@@ -320,11 +320,14 @@ li {
   background: #edf0f1;
 }
 
-.imagegroningen {
+.img-groningen {
   height: auto;
   width: 100%;
   position: relative;
   border: 10px solid;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
 }
 
@@ -342,9 +345,9 @@ li {
   height: 400px;
 }
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 .neuron {
   position: relative;
@@ -373,11 +376,12 @@ a:hover {
   padding-top: 1em;
 }
 
-.imgframer {
-  top: -15px;
-  left: -15px;
+.img-framer {
   position: relative;
   border: 10px solid;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
 }
 
