@@ -34,7 +34,7 @@
   .grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    padding: 2rem;
+    padding: 3rem 2rem 3rem 2rem;
   }
 
   h1 {
