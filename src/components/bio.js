@@ -85,21 +85,21 @@ export default function Background(props) {
             manage our thriving communities and make sure all our users and
             organizations are receiving the technical support they require.
           </motion.p>
+          <motion.a
+            className="learnmore copy"
+            href="mailto:viktor@renkema.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            variants={copy}
+            initial="hidden"
+            animate={isInViewport ? "visible" : "hidden"}
+            whileHover={{
+              color: "#ff6661",
+            }}
+          >
+            ASK ME MORE
+          </motion.a>
         </motion.div>{" "}
-        <motion.a
-          className="learnmore copy"
-          href="mailto:viktor@renkema.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          variants={copy}
-          initial="hidden"
-          animate={isInViewport ? "visible" : "hidden"}
-          whileHover={{
-            color: "#ff6661",
-          }}
-        >
-          ASK ME MORE
-        </motion.a>
       </div>
     </motion.section>
   )
