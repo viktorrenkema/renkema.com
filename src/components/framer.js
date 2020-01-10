@@ -94,7 +94,6 @@ export default function Framer(props) {
             VISIT FRAMER.COM
           </motion.a>
         </motion.div>
-
         <motion.div
           className="imgright imagecard"
           variants={imagebackground}

@@ -30,10 +30,10 @@ export default function ProjectFour(props) {
     <motion.div
       onHoverStart={onHoverStartImage}
       onHoverEnd={onHoverEndImage}
-      className="card_projectone"
+      className="card_projectfour"
     >
       <motion.div
-        className="wrap_imagecardone"
+        className="wrap_imagecardone newclass"
         style={{ width: hoveredImage ? "400px" : undefined }}
       >
         <a

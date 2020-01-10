@@ -27,28 +27,20 @@ export default function Projects(props) {
     },
   }
 
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
       className="projects"
       variants={container}
-      initial="hidden"
-      ref={targetRef}
-      animate={isInViewport ? "visible" : "hidden"}
+      initial="visible"
+      // ref={targetRef}
+      // animate={isInViewport ? "visible" : "hidden"}
     >
-      <motion.div variants={item}>
-        <ProjectOne></ProjectOne>
-      </motion.div>
-      <motion.div variants={item}>
-        <ProjectTwo></ProjectTwo>
-      </motion.div>
-      <motion.div variants={item}>
-        <ProjectThree></ProjectThree>
-      </motion.div>
-      <motion.div variants={item}>
-        <ProjectFour></ProjectFour>
-      </motion.div>
+      <ProjectOne variants={item}></ProjectOne>
+      <ProjectTwo variants={item}></ProjectTwo>
+      <ProjectThree variants={item}></ProjectThree>
+      <ProjectFour variants={item}></ProjectFour>
     </motion.section>
   )
 }

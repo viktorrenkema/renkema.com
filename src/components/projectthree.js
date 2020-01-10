@@ -30,7 +30,7 @@ export default function ProjectThree(props) {
     <motion.div
       onHoverStart={onHoverStartImage}
       onHoverEnd={onHoverEndImage}
-      className="card_projectone"
+      className="card_projectthree"
     >
       <motion.div
         className="wrap_imagecardone"
