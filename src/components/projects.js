@@ -37,10 +37,20 @@ export default function Projects(props) {
       // ref={targetRef}
       // animate={isInViewport ? "visible" : "hidden"}
     >
-      <ProjectOne variants={item}></ProjectOne>
-      <ProjectTwo variants={item}></ProjectTwo>
-      <ProjectThree variants={item}></ProjectThree>
-      <ProjectFour variants={item}></ProjectFour>
+      <motion.section className="section_project">
+        <ProjectOne variants={item}></ProjectOne>
+        <motion.div
+          style={{ width: "400px", height: "400px", color: "transparant" }}
+        ></motion.div>
+      </motion.section>
+      <motion.section className="section_project">
+        <motion.div
+          style={{ width: "400px", height: "400px", color: "transparant" }}
+        ></motion.div>
+        <ProjectTwo variants={item}></ProjectTwo>
+        {/* <ProjectThree variants={item}></ProjectThree>
+      <ProjectFour variants={item}></ProjectFour> */}
+      </motion.section>
     </motion.section>
   )
 }

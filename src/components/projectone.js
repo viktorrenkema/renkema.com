@@ -33,24 +33,6 @@ export default function ProjectOne(props) {
       className="card_projectone"
     >
       <motion.div
-        className="wrap_imagecardone"
-        style={{ width: hoveredImage ? "400px" : undefined }}
-      >
-        <a
-          href="https://www.framer.com/learn/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <motion.img
-            className="imageplaceholder"
-            src={accordion}
-            width="100%"
-            height="100%"
-          ></motion.img>
-        </a>
-      </motion.div>
-
-      <motion.div
         className="overlay"
         style={{
           display: hoveredImage ? "flex" : "none",
@@ -81,6 +63,23 @@ export default function ProjectOne(props) {
             <li>mapping over an array with JSON data</li>
           </ul>
         </div>
+      </motion.div>
+      <motion.div
+        className="wrap_imagecardone"
+        style={{ width: hoveredImage ? "400px" : undefined }}
+      >
+        <a
+          href="https://www.framer.com/learn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <motion.img
+            className="imageplaceholder"
+            src={accordion}
+            width="100%"
+            height="100%"
+          ></motion.img>
+        </a>
       </motion.div>
     </motion.div>
   )

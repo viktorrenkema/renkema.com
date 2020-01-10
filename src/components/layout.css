@@ -390,11 +390,16 @@ li {
   background: #ececec;
   overflow: hidden;
   min-height: 70vh;
-  display: grid;
+  display: flex;
   align-self: center;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: auto auto;
+  /* grid-template-columns: repeat(2, 50%);
+  grid-template-rows: auto auto; */
   padding: 4em 4em 0em 4em;
+  justify-content: center;
+}
+
+.section_project {
+  width: 100%;
 }
 
 .wrap_imagecardone {
@@ -423,10 +428,9 @@ li {
   grid-area: 1 / 1 / 1 / 1;
   position: relative;
   background: #edf0f1;
-  height: 100%;
-  /* width: 100%; */
   display: flex;
-  margin-top: 1rem;
+  justify-self: end;
+  padding-right: 1rem;
 }
 
 .card_projecttwo {
@@ -434,10 +438,10 @@ li {
   position: relative;
   background: #edf0f1;
   height: 400px;
-  /* width: 100%; */
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .card_projectthree {
