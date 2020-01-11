@@ -33,7 +33,7 @@ export default function ProjectFour(props) {
       className="card_projectfour"
     >
       <motion.div
-        className="wrap_imagecardone newclass"
+        className="wrap_imagecardone"
         style={{ width: hoveredImage ? "400px" : undefined }}
       >
         <a

@@ -39,18 +39,23 @@ export default function Projects(props) {
     >
       <motion.section className="section_project">
         <ProjectOne variants={item}></ProjectOne>
-        <motion.div
-          style={{ width: "400px", height: "400px", color: "transparant" }}
-        ></motion.div>
       </motion.section>
+
       <motion.section className="section_project">
-        <motion.div
-          style={{ width: "400px", height: "400px", color: "transparant" }}
-        ></motion.div>
         <ProjectTwo variants={item}></ProjectTwo>
-        {/* <ProjectThree variants={item}></ProjectThree>
-      <ProjectFour variants={item}></ProjectFour> */}
+      </motion.section>
+
+      <motion.section className="section_project">
+        <ProjectThree variants={item}></ProjectThree>
+      </motion.section>
+
+      <motion.section className="section_project">
+        <ProjectFour variants={item}></ProjectFour>
       </motion.section>
     </motion.section>
   )
 }
+
+// <motion.div
+// style={{ width: "400px", height: "400px", color: "transparant" }}
+// ></motion.div>

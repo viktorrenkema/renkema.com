@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import placeholdertwo from "../../src/images/Placeholdertwo.png"
 
-export default function ProjectTwo(props) {
+export default function ProjectOne(props) {
   const overlay = {
     hidden: {
       opacity: 0,
@@ -11,7 +11,7 @@ export default function ProjectTwo(props) {
     },
     visible: {
       opacity: 1,
-      width: "900px",
+      width: "700px",
       transition: { duration: 0.6 },
     },
   }
@@ -32,24 +32,6 @@ export default function ProjectTwo(props) {
       onHoverEnd={onHoverEndImage}
       className="card_projecttwo"
     >
-      <motion.div
-        className="wrap_imagecardone"
-        style={{ width: hoveredImage ? "400px" : undefined }}
-      >
-        <a
-          href="https://www.framer.com/learn/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <motion.img
-            className="imageplaceholder"
-            src={placeholdertwo}
-            width="100%"
-            height="100%"
-          ></motion.img>
-        </a>
-      </motion.div>
-
       <motion.div
         className="overlay"
         style={{
@@ -72,12 +54,32 @@ export default function ProjectTwo(props) {
             <br></br>
           </p>
           <ul className="projectdescriptions">
-            <p>It touches upon various concepts, such as:</p>
+            <p style={{ paddingBottom: "1rem" }}>
+              The tutorial touches upon various concepts within React,
+              Javascript and Framer, such as:
+            </p>
             <li>applying React Hooks to toggle states</li>
             <li>creating custom animations</li>
             <li>mapping over an array with JSON data</li>
           </ul>
         </div>
+      </motion.div>
+      <motion.div
+        className="wrap_imagecardone"
+        style={{ width: hoveredImage ? "400px" : undefined }}
+      >
+        <a
+          href="https://www.framer.com/learn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <motion.img
+            className="imageplaceholder"
+            src={placeholdertwo}
+            width="100%"
+            height="100%"
+          ></motion.img>
+        </a>
       </motion.div>
     </motion.div>
   )
