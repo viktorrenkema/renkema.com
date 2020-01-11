@@ -91,7 +91,7 @@ export default function Framer(props) {
               color: "#ff6661",
             }}
           >
-            VISIT FRAMER.COM
+            VISIT FRAMER.COM ›
           </motion.a>
         </motion.div>
         <motion.div

@@ -27,31 +27,44 @@ export default function Projects(props) {
     },
   }
 
-  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+  const header = {
+    hidden: { y: -20, opacity: 0, transition: { duration: 1.3 } },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  }
+
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 
   return (
     <motion.section
       className="projects"
       variants={container}
       initial="visible"
-      // ref={targetRef}
+      ref={targetRef}
       // animate={isInViewport ? "visible" : "hidden"}
     >
-      <motion.section className="section_project">
+      <motion.h1
+        className="h1-projects header"
+        variants={header}
+        initial="hidden"
+        animate={isInViewport ? "visible" : "hidden"}
+      >
+        Projects
+      </motion.h1>
+      <motion.div className="section_project">
         <ProjectOne variants={item}></ProjectOne>
-      </motion.section>
+      </motion.div>
 
-      <motion.section className="section_project">
+      <motion.div className="section_project">
         <ProjectTwo variants={item}></ProjectTwo>
-      </motion.section>
+      </motion.div>
 
-      <motion.section className="section_project">
+      <motion.div className="section_project">
         <ProjectThree variants={item}></ProjectThree>
-      </motion.section>
+      </motion.div>
 
-      <motion.section className="section_project">
+      <motion.div className="section_project">
         <ProjectFour variants={item}></ProjectFour>
-      </motion.section>
+      </motion.div>
     </motion.section>
   )
 }

@@ -85,6 +85,11 @@ li {
   grid-area: 1 / 1 / 2 / 1;
 }
 
+.h1-projects {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
 .subject-bio {
   grid-area: 1 / 2 / 2 / 3;
 }
@@ -394,7 +399,7 @@ li {
   align-self: center;
   /* grid-template-columns: repeat(2, 50%);
   grid-template-rows: auto auto; */
-  padding: 4em 4em 0em 4em;
+  padding: 4em 4em 4em 4em;
   justify-content: center;
 }
 
@@ -407,32 +412,29 @@ li {
   position: relative;
   display: flex;
   margin: 0 auto;
-  justify-self: end;
-  padding-right: 1rem;
+  margin-right: 30rem;
+  background: #f3f3f3;
 }
 
 .card_projecttwo {
   position: relative;
   display: flex;
   margin: 0 auto;
-  justify-self: end;
-  padding-left: 1rem;
+  padding-left: 30rem;
 }
 
 .card_projectthree {
   position: relative;
   display: flex;
   margin: 0 auto;
-  justify-self: end;
-  padding-right: 1rem;
+  padding-right: 30rem;
 }
 
 .card_projectfour {
   position: relative;
   display: flex;
   margin: 0 auto;
-  justify-self: end;
-  padding-left: 1rem;
+  padding-left: 30rem;
 }
 
 .wrap_imagecardone {
@@ -564,7 +566,6 @@ ul li::before {
   padding: 1rem 2rem 0rem 2rem;
   line-height: 1.5;
   text-align: justify;
-  width: 40%;
   min-width: 300px;
 }
 

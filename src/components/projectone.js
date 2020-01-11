@@ -1,6 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import accordion from "../../src/images/accordion.gif"
+import accordion from "../../src/images/proj_accordion_noshadow.gif"
 
 export default function ProjectOne(props) {
   const overlay = {
@@ -11,7 +11,7 @@ export default function ProjectOne(props) {
     },
     visible: {
       opacity: 1,
-      width: "700px",
+      width: "600px",
       transition: { duration: 0.6 },
     },
   }
@@ -37,7 +37,7 @@ export default function ProjectOne(props) {
         style={{ width: hoveredImage ? "400px" : undefined }}
       >
         <a
-          href="https://www.framer.com/learn/"
+          href="https://learn-accordion-design-part-1--framer-next.netlify.com/learn/guide/accordion-design-part-1/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -62,7 +62,7 @@ export default function ProjectOne(props) {
       >
         <p className="copy_projecttitle">Creating an accordion design</p>
         <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
-        <div style={{ display: "flex" }}>
+        <div>
           <p className="projectdescriptions">
             While learning React, I enjoyed documenting projects that I worked
             on. One of these turned into a 3-part tutorial, which guides users

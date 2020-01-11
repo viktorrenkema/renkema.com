@@ -97,7 +97,7 @@ export default function Background(props) {
               color: "#ff6661",
             }}
           >
-            ASK ME MORE
+            ASK ME MORE ›
           </motion.a>
         </motion.div>{" "}
       </div>

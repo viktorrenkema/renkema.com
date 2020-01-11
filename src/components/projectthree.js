@@ -11,7 +11,7 @@ export default function ProjectThree(props) {
     },
     visible: {
       opacity: 1,
-      width: "900px",
+      width: "600px",
       transition: { duration: 0.6 },
     },
   }
@@ -61,22 +61,16 @@ export default function ProjectThree(props) {
         initial="hidden"
         transition={{ duration: 1 }}
       >
-        <p className="copy_projecttitle">Creating an accordion design</p>
-        <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
+        <p className="copy_projecttitle">Project Three</p>
+        <p class="copy_projectlabel">Web App</p>
         <div style={{ display: "flex" }}>
           <p className="projectdescriptions">
-            While learning React, I enjoyed documenting projects that I worked
-            on. One of these turned into a 3-part tutorial, which guides users
-            through creating a single-select accordion effect within Framer.{" "}
+            Magna est ipsum ipsum commodo labore aliquip ad mollit ex tempor
+            culpa. Mollit exercitation irure in enim reprehenderit ea amet
+            adipisicing esse proident.
             <br></br>
             <br></br>
           </p>
-          <ul className="projectdescriptions">
-            <p>It touches upon various concepts, such as:</p>
-            <li>applying React Hooks to toggle states</li>
-            <li>creating custom animations</li>
-            <li>mapping over an array with JSON data</li>
-          </ul>
         </div>
       </motion.div>
     </motion.div>
