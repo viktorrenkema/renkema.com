@@ -26,6 +26,11 @@ html {
 #edf0f1 // light gray-blue
 /*  */
 
+/* COLORS
+Background light-grey: #f1f1f1 
+
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -57,6 +62,7 @@ h1 {
   font-size: 40px;
   font-family: "Playfair Display", serif;
   font-weight: bold;
+  line-height: 1;
 }
 p {
   line-height: 15px;
