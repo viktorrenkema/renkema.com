@@ -12,7 +12,7 @@ export default function ProjectThree(props) {
     visible: {
       opacity: 1,
       width: "600px",
-      transition: { duration: 0.6 },
+      transition: { duration: 0.3 },
     },
   }
 
@@ -52,10 +52,6 @@ export default function ProjectThree(props) {
 
       <motion.div
         className="overlay"
-        style={{
-          display: hoveredImage ? "flex" : "none",
-          // overflow: hoveredImage ? "visible" : "hidden",
-        }}
         variants={overlay}
         animate={hoveredImage ? "visible" : "hidden"}
         initial="hidden"
