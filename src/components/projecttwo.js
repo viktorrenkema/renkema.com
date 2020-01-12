@@ -7,13 +7,26 @@ export default function ProjectOne(props) {
     hidden: {
       opacity: 0,
       width: "0px",
-      transition: { duration: 1 },
+      transition: {
+        when: "afterChildren",
+        duration: 0.3,
+        staggerChildren: 0.01,
+      },
     },
     visible: {
       opacity: 1,
       width: "600px",
-      transition: { duration: 0.3 },
+      transition: {
+        when: "beforeChildren",
+        duration: 0.4,
+        staggerChildren: 0.05,
+      },
     },
+  }
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -10 },
   }
 
   const [hoveredImage, setHoveredImage] = React.useState(false) // default should be set to false
@@ -37,11 +50,14 @@ export default function ProjectOne(props) {
         variants={overlay}
         animate={hoveredImage ? "visible" : "hidden"}
         initial="hidden"
-        transition={{ duration: 1 }}
       >
-        <p className="copy_projecttitle">Project Two</p>
-        <p class="copy_projectlabel">Web App</p>
-        <div style={{ display: "flex" }}>
+        <motion.p variants={item} className="copy_projecttitle">
+          Project Two
+        </motion.p>
+        <motion.p variants={item} class="copy_projectlabel">
+          Web App
+        </motion.p>
+        <motion.div variants={item} style={{ display: "flex" }}>
           <p className="projectdescriptions">
             Magna est ipsum ipsum commodo labore aliquip ad mollit ex tempor
             culpa. Mollit exercitation irure in enim reprehenderit ea amet
@@ -49,7 +65,7 @@ export default function ProjectOne(props) {
             <br></br>
             <br></br>
           </p>
-        </div>
+        </motion.div>
       </motion.div>
       <motion.div
         className="wrap_imagecardone"

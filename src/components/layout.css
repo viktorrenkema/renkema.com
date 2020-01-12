@@ -406,6 +406,7 @@ li {
 .section_project {
   width: 100%;
   display: inline-flex;
+  padding-bottom: 2rem;
 }
 
 .card_projectone {
@@ -549,7 +550,7 @@ ul {
 
 ul li::before {
   content: ""; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #ff6661; /* Change the color */
+  color: #ff2b65; /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
   width: 20px; /* Also needed for space (tweak if needed) */

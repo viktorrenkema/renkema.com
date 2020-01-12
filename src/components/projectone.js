@@ -7,13 +7,26 @@ export default function ProjectOne(props) {
     hidden: {
       opacity: 0,
       width: "0px",
-      transition: { duration: 0.3 },
+      transition: {
+        when: "afterChildren",
+        duration: 0.3,
+        staggerChildren: 0.01,
+      },
     },
     visible: {
       opacity: 1,
       width: "600px",
-      transition: { duration: 0.6 },
+      transition: {
+        when: "beforeChildren",
+        duration: 0.4,
+        staggerChildren: 0.05,
+      },
     },
+  }
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -10 },
   }
 
   const [hoveredImage, setHoveredImage] = React.useState(false) // default should be set to false
@@ -37,28 +50,29 @@ export default function ProjectOne(props) {
         variants={overlay}
         animate={hoveredImage ? "visible" : "hidden"}
         initial="hidden"
-        transition={{ duration: 1 }}
       >
-        <p className="copy_projecttitle">Creating an accordion design</p>
-        <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
-        <div>
+        <motion.p variants={item} className="copy_projecttitle">
+          Creating an accordion design
+        </motion.p>
+        <motion.p variants={item} class="copy_projectlabel">
+          FRAMER LEARN TUTORIAL
+        </motion.p>
+        <motion.div variants={item}>
           <p className="projectdescriptions">
-            While learning React, I enjoyed documenting projects that I worked
-            on. One of these turned into a 3-part tutorial, which guides users
-            through creating a single-select accordion effect within Framer.{" "}
-            <br></br>
+            While learning React, I enjoyed documenting the projects I worked
+            on. One of these turned into a 3-part tutorial, guiding users
+            through creating a single-select accordion effect within Framer.
             <br></br>
           </p>
           <ul className="projectdescriptions">
             <p style={{ paddingBottom: "1rem" }}>
-              The tutorial touches upon various concepts within React,
-              Javascript and Framer, such as:
+              Some of the topics addressed include:
             </p>
             <li>applying React Hooks to toggle states</li>
             <li>creating custom animations</li>
             <li>mapping over an array with JSON data</li>
           </ul>
-        </div>
+        </motion.div>
       </motion.div>
       <motion.div
         className="wrap_imagecardone"
