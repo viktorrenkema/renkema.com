@@ -64,7 +64,8 @@ h1 {
   font-weight: bold;
   line-height: 1;
 }
-p {
+p,
+li {
   line-height: 15px;
   color: #022435;
 }
@@ -92,7 +93,7 @@ li {
 }
 
 .h1-projects {
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
   text-align: center;
 }
 
@@ -427,21 +428,24 @@ li {
   position: relative;
   display: flex;
   margin: 0 auto;
-  padding-left: 30rem;
+  margin-right: 20rem;
+  background: #f3f3f3;
 }
 
 .card_projectthree {
   position: relative;
   display: flex;
   margin: 0 auto;
-  padding-right: 30rem;
+  margin-left: 20rem;
+  background: #f3f3f3;
 }
 
 .card_projectfour {
   position: relative;
   display: flex;
   margin: 0 auto;
-  padding-left: 30rem;
+  margin-right: 20rem;
+  background: #f3f3f3;
 }
 
 .wrap_imagecardone {
@@ -615,6 +619,7 @@ ul li::before {
 .wrap_contact {
   display: flex;
   justify-content: center;
+  margin: 8px 0 8px;
 }
 
 .wrap_contactintro {

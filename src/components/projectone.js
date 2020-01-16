@@ -59,9 +59,9 @@ export default function ProjectOne(props) {
         </motion.p>
         <motion.div variants={item}>
           <p className="projectdescriptions">
-            While learning React, I enjoyed documenting the projects I worked
-            on. One of these turned into a 3-part tutorial, guiding users
-            through creating a single-select accordion effect within Framer.
+            While learning React, I documented some of the projects I worked on.
+            One of these turned into a 3-part tutorial, guiding users through
+            creating a single-select accordion effect within Framer.
             <br></br>
           </p>
           <ul className="projectdescriptions">

@@ -46,6 +46,26 @@ export default function ProjectThree(props) {
       className="card_projectthree"
     >
       <motion.div
+        className="overlay"
+        variants={overlay}
+        animate={hoveredImage ? "visible" : "hidden"}
+        initial="hidden"
+      >
+        <motion.p variants={item} className="copy_projecttitle">
+          Project Three
+        </motion.p>
+        <motion.p variants={item} class="copy_projectlabel">
+          ARTICLE
+        </motion.p>
+        <motion.div variants={item} style={{ display: "flex" }}>
+          <p className="projectdescriptions">
+            Magna est ipsum ipsum commodo labore aliquip ad mollit ex tempor
+            culpa. Mollit exercitation irure in enim reprehenderit ea amet
+            adipisicing esse proident.
+          </p>
+        </motion.div>
+      </motion.div>
+      <motion.div
         className="wrap_imagecardone"
         style={{ width: hoveredImage ? "400px" : undefined }}
       >
@@ -61,27 +81,6 @@ export default function ProjectThree(props) {
             height="100%"
           ></motion.img>
         </a>
-      </motion.div>
-
-      <motion.div
-        className="overlay"
-        variants={overlay}
-        animate={hoveredImage ? "visible" : "hidden"}
-        initial="hidden"
-      >
-        <motion.p variants={item} className="copy_projecttitle">
-          Project Three
-        </motion.p>
-        <motion.p variants={item} class="copy_projectlabel">
-          Web App
-        </motion.p>
-        <motion.div variants={item} style={{ display: "flex" }}>
-          <p className="projectdescriptions">
-            Magna est ipsum ipsum commodo labore aliquip ad mollit ex tempor
-            culpa. Mollit exercitation irure in enim reprehenderit ea amet
-            adipisicing esse proident.
-          </p>
-        </motion.div>
       </motion.div>
     </motion.div>
   )
