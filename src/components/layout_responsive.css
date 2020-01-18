@@ -27,7 +27,7 @@
     width: auto;
   }
 
-  .intro p {
+  .grid_intro p {
     font-size: 12px;
   }
 
@@ -40,7 +40,7 @@
   h1 {
     font-size: 28px;
   }
-  .intro {
+  .grid_intro {
     grid-template-columns: 50px 1fr;
     row-gap: 0em;
     padding: 0em 1em 0em 1em;

@@ -226,19 +226,17 @@ li {
 
 /* INTRODUCTION */
 
-.intro {
+.grid_intro {
   height: 100vh;
   align-content: center;
   align-items: center;
   display: grid;
-  /* row-gap: 2em; */
-  column-gap: 1em;
-  grid-template-columns: 30% 40%;
+  grid-template-columns: 100%;
   justify-items: center;
   grid-template-rows: repeat(3, 50px);
 }
 
-.intro h1 {
+.grid_intro h1 {
   color: #042639;
 }
 
@@ -252,20 +250,21 @@ li {
 }
 
 .name {
-  grid-area: 1 / 2 / 2 / 2;
-  justify-self: start;
+  grid-area: 1 / 1 / 2 / 1;
+  justify-self: center;
 }
 
 .titles {
-  grid-area: 2 / 2 / 2 /2;
-  justify-self: start;
+  grid-area: 2 / 1 / 2 / 1;
+  justify-self: center;
   align-self: center;
 }
 
 .about {
   color: #042639;
-  grid-area: 3 / 2 / 3 / 2;
-  justify-self: start;
+  grid-area: 3 / 1 / 3 / 1;
+  width: 60%;
+  justify-self: center;
 }
 
 .intro p {
@@ -604,15 +603,11 @@ ul li::before {
   margin: 8px 0 8px;
 }
 .container {
-  width: 100%;
-  max-width: 1200px;
+  width: 50%;
   z-index: 5;
   align-self: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 64px;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
   text-align: center;
 }
 
