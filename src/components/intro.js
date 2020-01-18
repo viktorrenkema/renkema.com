@@ -54,13 +54,13 @@ export default function Introduction(props) {
       >
         <h1>Viktor Renkema</h1>
       </motion.div>
-      <Slash
+      {/* <Slash
         className={"nameStagger"}
         variants={nameStagger}
         initial="hidden"
         animate="visible"
-      ></Slash>
-      <Contact></Contact>
+      ></Slash> */}
+      {/* <Contact></Contact> */}
       <motion.div
         className={"titles roleStagger"}
         variants={roleStagger}

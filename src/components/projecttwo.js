@@ -1,19 +1,32 @@
 import React from "react"
 import { motion } from "framer-motion"
-import placeholdertwo from "../../src/images/Placeholdertwo.png"
+import placeholdertwo from "../../src/images/proj_two.png"
 
-export default function ProjectTwo(props) {
+export default function ProjectOne(props) {
   const overlay = {
     hidden: {
       opacity: 0,
       width: "0px",
-      transition: { duration: 1 },
+      transition: {
+        when: "afterChildren",
+        duration: 0.3,
+        staggerChildren: 0.01,
+      },
     },
     visible: {
       opacity: 1,
-      width: "900px",
-      transition: { duration: 0.6 },
+      width: "600px",
+      transition: {
+        when: "beforeChildren",
+        duration: 0.4,
+        staggerChildren: 0.05,
+      },
     },
+  }
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -10 },
   }
 
   const [hoveredImage, setHoveredImage] = React.useState(false) // default should be set to false
@@ -30,7 +43,7 @@ export default function ProjectTwo(props) {
     <motion.div
       onHoverStart={onHoverStartImage}
       onHoverEnd={onHoverEndImage}
-      className="card_projectone"
+      className="card_projecttwo"
     >
       <motion.div
         className="wrap_imagecardone"
@@ -49,35 +62,27 @@ export default function ProjectTwo(props) {
           ></motion.img>
         </a>
       </motion.div>
-
       <motion.div
         className="overlay"
-        style={{
-          display: hoveredImage ? "flex" : "none",
-          // overflow: hoveredImage ? "visible" : "hidden",
-        }}
         variants={overlay}
         animate={hoveredImage ? "visible" : "hidden"}
         initial="hidden"
-        transition={{ duration: 1 }}
       >
-        <p className="copy_projecttitle">Creating an accordion design</p>
-        <p class="copy_projectlabel">FRAMER LEARN TUTORIAL</p>
-        <div style={{ display: "flex" }}>
+        <motion.p variants={item} className="copy_projecttitle">
+          Project Two
+        </motion.p>
+        <motion.p variants={item} class="copy_projectlabel">
+          WEB APP
+        </motion.p>
+        <motion.div variants={item} style={{ display: "flex" }}>
           <p className="projectdescriptions">
-            While learning React, I enjoyed documenting projects that I worked
-            on. One of these turned into a 3-part tutorial, which guides users
-            through creating a single-select accordion effect within Framer.{" "}
+            Magna est ipsum ipsum commodo labore aliquip ad mollit ex tempor
+            culpa. Mollit exercitation irure in enim reprehenderit ea amet
+            adipisicing esse proident.
             <br></br>
             <br></br>
           </p>
-          <ul className="projectdescriptions">
-            <p>It touches upon various concepts, such as:</p>
-            <li>applying React Hooks to toggle states</li>
-            <li>creating custom animations</li>
-            <li>mapping over an array with JSON data</li>
-          </ul>
-        </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   )

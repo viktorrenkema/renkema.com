@@ -9,19 +9,36 @@ import CornerMotionTwo from "../components/wavetwo"
 import Projects from "../components/projects"
 import Framer from "../components/framer"
 import Footer from "../components/footer"
+import useIsInViewport from "use-is-in-viewport"
 
-const IndexPage = () => (
-  <Layout>
-    <CornerMotionOne></CornerMotionOne>
-    <CornerMotionTwo></CornerMotionTwo>
-    <Intro></Intro>
-    <Bio></Bio>
-    <Framer></Framer>
-    <Projects></Projects>
-    <Scroller></Scroller>
-    <Footer></Footer>
-    <SEO title="Portfolio Viktor Renkema" />
-  </Layout>
-)
+// const IndexPage = () => (
+//   <Layout>
+//     <CornerMotionOne></CornerMotionOne>
+//     <CornerMotionTwo></CornerMotionTwo>
+//     <Intro></Intro>
+//     <Bio></Bio>
+//     <Framer></Framer>
+//     <Projects></Projects>
+//     <Scroller></Scroller>
+//     <Footer></Footer>
+//     <SEO title="Portfolio Viktor Renkema" />
+//   </Layout>
+// )
 
-export default IndexPage
+// export default IndexPage
+
+export default function IndexPage(props) {
+  return (
+    <Layout>
+      <CornerMotionOne></CornerMotionOne>
+      <CornerMotionTwo></CornerMotionTwo>
+      <Intro></Intro>
+      <Bio></Bio>
+      <Framer></Framer>
+      <Projects></Projects>
+      <Scroller></Scroller>
+      <Footer></Footer>
+      <SEO title="Portfolio Viktor Renkema" />
+    </Layout>
+  )
+}
