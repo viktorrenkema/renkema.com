@@ -18,7 +18,7 @@ export default function ProjectOne(props) {
       width: "600px",
       transition: {
         when: "beforeChildren",
-        duration: 0.4,
+        duration: 0.6,
         staggerChildren: 0.05,
       },
     },

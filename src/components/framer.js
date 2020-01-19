@@ -62,23 +62,22 @@ export default function Framer(props) {
             animate={isInViewport ? "visible" : "hidden"}
           >
             Starting out at Framer, as Community and Support Specialist I
-            ensured our users are getting the support they required. This not
-            only meant providing direct help via our support channels, but also
-            creating support articles, writing community posts with tips and
-            tricks, and assisting users with organising meetups in their local
-            communities.
+            ensured our users are getting the support they required. Next to
+            providing direct help via our support channels I wrote support
+            articles, created community posts with tips and tricks, and assisted
+            users with organising meetups in their local communities.
             <br></br>
             <br></br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            Currently I moved into the Product Specialist role, where my focus
+            extends to also help organizations like KLM, Google, and others
+            become succesful, effective teams that excel with Framer as their
+            prototyping resource, for instance with on-site workshops.
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             iaculis venenatis risus non rutrum. Phasellus ut pharetra massa. Nam
             elementum tellus venenatis sapien venenatis, sed pulvinar neque
             malesuada. Etiam eu ante id lacus interdum sagittis. Nullam ex eros,
             accumsan eget lacus a, vehicula accumsan libero. Ut eget lorem et
-            felis scelerisque consectetur.
-            {/* Currently I moved into the Product Specialist role, where
-            my focus extended to help users within organizations such as
-            KLM, Google and others to become succesful, effective teams that can
-            fully utilize Framer as their prototyping resource. This is done by giving on-site workshops or jumping in on calls.*/}
+            felis scelerisque consectetur. */}
           </motion.p>{" "}
           <motion.a
             class="learnmore copy"

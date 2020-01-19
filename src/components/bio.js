@@ -74,15 +74,15 @@ export default function Background(props) {
             of (web) technology and human behaviour. To pursue this, I started
             learning more about web development and digital user experiences.
             <br></br>
-            <br></br>My first experiences with the former was when I got to
-            create a/b tests for an online webshop, while learning more about
-            user experiences when I started working at the University Medical
-            Center Groningen. By researching the workflows of medical staff I
-            helped build and implement custom interfaces of the hospital-wide
+            <br></br>My first experience with web technology was when I got to
+            create A/B tests for an online webshop. After this, I got to learn
+            more about UX when I started working at the University Medical
+            Center Groningen. Here I studied the workflows of medical staff, for
+            whom I built and implemented custom interfaces of the hospital-wide
             electronic medical record (Epic).
             <br></br>
             <br></br>About a year later I started working at Framer, where I
-            manage our thriving communities and make sure all our users and
+            manage our thriving communities and ensure all our users and
             organizations are receiving the technical support they require.
           </motion.p>
           <motion.a
