@@ -1,12 +1,9 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import ProjectOne from "../components/projectone"
-import ProjectTwo from "../components/projecttwo"
-import ProjectThree from "../components/projectthree"
-import ProjectFour from "../components/projectfour"
+import Sm_ProjectOne from "../components/sm_projectone"
 
-export default function Projects(props) {
+export default function ProjectsMobile(props) {
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,20 +36,20 @@ export default function Projects(props) {
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 40 })
-  const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 40 })
-  const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
-  const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
+  // const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 40 })
+  // const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
+  // const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
       initial="hidden"
       animate={isInViewport ? "visible" : "hidden"}
-      className="projects projects_desktop"
+      className="projects projects_mobile"
       ref={targetRef}
       variants={container}
     >
       <motion.h1
-        className="h1-projects header"
+        className="subject proj_subject header"
         variants={header}
         initial="hidden"
         animate={isInViewport ? "visible" : "hidden"}
@@ -61,15 +58,15 @@ export default function Projects(props) {
       </motion.h1>
       <motion.div
         className="section_project"
-        ref={targetRef1}
         animate={FirstCardInViewport ? "visible" : "hidden"}
         variants={card}
         initial="hidden"
+        ref={targetRef1}
       >
-        <ProjectOne variants={item}></ProjectOne>
+        <Sm_ProjectOne variants={item}></Sm_ProjectOne>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         className="section_project"
         ref={targetRef2}
         animate={SecondCardInViewport ? "visible" : "hidden"}
@@ -97,7 +94,7 @@ export default function Projects(props) {
         initial="hidden"
       >
         <ProjectFour variants={item}></ProjectFour>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   )
 }

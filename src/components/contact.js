@@ -2,15 +2,15 @@ import * as React from "react"
 import { motion } from "framer-motion"
 
 export default function Contact(props) {
-  const [hovered, setHovered] = React.useState(false)
+  const [, setHovered] = React.useState(false)
 
-  const onHoverStart = () => {
-    setHovered(true)
-  }
+  // const onHoverStart = () => {
+  //   setHovered(true)
+  // }
 
-  const onHoverEnd = () => {
-    setHovered(false)
-  }
+  // const onHoverEnd = () => {
+  //   setHovered(false)
+  // }
 
   // WIP, add useState for hover states on social icons
 

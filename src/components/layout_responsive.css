@@ -1,4 +1,46 @@
 @media (max-width: 480px) {
+  .projects_desktop {
+    display: none;
+  }
+
+  .projects {
+    padding: 4em 0em;
+  }
+
+  .sm_overlay {
+    position: relative;
+    height: 200px;
+    padding: 1.5rem;
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+  }
+
+  .sm_copy_projecttitle {
+    min-width: 100px;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    font-weight: 600;
+  }
+
+  .sm_copy_projectlabel {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    font-weight: 600;
+    font-style: normal;
+    padding-bottom: 1rem;
+  }
+
+  .sm_projectdescriptions {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+    min-width: 300px;
+  }
+
   /* the h1 for the main content sections */
   .subject {
     grid-area: 1/1/1/1;
@@ -6,6 +48,10 @@
     font-size: 40px;
     justify-self: start;
     padding: 0rem 1.5rem;
+  }
+
+  .proj_subject {
+    padding: 3rem 1.5rem;
   }
 
   .description {
@@ -37,6 +83,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     padding: 0rem;
+    row-gap: 1.5rem;
   }
 
   h1 {

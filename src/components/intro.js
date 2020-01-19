@@ -1,6 +1,4 @@
 import React from "react"
-import Slash from "../components/slash"
-import Contact from "../components/contact-intro"
 import { motion } from "framer-motion"
 
 const name_stagger = {

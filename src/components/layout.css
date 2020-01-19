@@ -333,15 +333,6 @@ li {
   object-fit: cover;
 }
 
-/* a:hover {
-  text-decoration: underline;
-} */
-
-.neuron {
-  position: relative;
-  right: 0;
-}
-
 .copy_projecttitle {
   min-width: 100px;
   padding: 2rem 0rem 0rem 2rem;
@@ -426,6 +417,34 @@ li {
   display: flex;
   margin: 0 auto;
   margin-right: 20rem;
+  background: #f3f3f3;
+}
+
+.card_sm_projectone {
+  position: relative;
+  /* display: flex; */
+  margin: 0 auto;
+  background: #f3f3f3;
+}
+
+.card_sm_projecttwo {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  background: #f3f3f3;
+}
+
+.card_sm_projectthree {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  background: #f3f3f3;
+}
+
+.card_sm_projectfour {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
   background: #f3f3f3;
 }
 
