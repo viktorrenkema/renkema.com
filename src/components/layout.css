@@ -116,6 +116,7 @@ li {
   font-size: 14px;
   line-height: 1.8;
   text-align: justify;
+  letter-spacing: 0.1px;
   text-justify: inter-word;
 }
 
@@ -177,24 +178,6 @@ li {
   top: -10px;
 }
 
-.Scroller_variants {
-  width: 25px;
-  height: 25px;
-  bottom: 10px;
-  position: fixed;
-  left: 40%;
-  margin-left: 12px;
-}
-
-.Scroller_experimenting {
-  width: 25px;
-  height: 25px;
-  bottom: 10px;
-  position: fixed;
-  left: 60%;
-  margin-left: 12px;
-}
-
 .IconEmail {
   width: 100px;
   height: 100px;
@@ -229,12 +212,13 @@ li {
 
 .grid_intro {
   height: 100vh;
+  justify-items: start;
   align-content: center;
-  align-items: center;
   display: grid;
   grid-template-columns: 100%;
-  justify-items: center;
-  grid-template-rows: repeat(3, 50px);
+
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 1rem;
 }
 
 .grid_intro h1 {
@@ -252,19 +236,16 @@ li {
 
 .name {
   grid-area: 1 / 1 / 2 / 1;
-  justify-self: center;
 }
 
 .titles {
   grid-area: 2 / 1 / 2 / 1;
-  justify-self: center;
-  align-self: center;
 }
 
 .about {
   color: #042639;
   grid-area: 3 / 1 / 3 / 1;
-  width: 60%;
+  width: 100%;
   justify-self: center;
 }
 

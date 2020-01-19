@@ -38,7 +38,7 @@ export default function IndexPage(props) {
       <Projects></Projects>
       <Scroller></Scroller>
       <Footer></Footer>
-      <SEO title="Portfolio Viktor Renkema" />
+      <SEO title="Viktor Renkema" />
     </Layout>
   )
 }

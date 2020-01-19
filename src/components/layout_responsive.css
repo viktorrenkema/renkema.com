@@ -5,13 +5,13 @@
     opacity: 1;
     font-size: 40px;
     justify-self: start;
-    padding: 0rem 3rem;
+    padding: 0rem 1.5rem;
   }
 
   .description {
     grid-area: 2 / 1 / 3 / 1;
     text-align: center;
-    padding: 0rem 3rem;
+    padding: 0rem 1.5rem;
   }
 
   .learnmore {
@@ -52,20 +52,16 @@
   .titles {
     width: 60%;
     grid-area: 2 / 1 / 2 / 1;
-    place-self: center;
     /* align-self: center; */
   }
   .slash {
     grid-area: 1 / 1 / 3 / 1;
-    place-self: start;
   }
   .name {
     grid-area: 1 / 1 / 2 / 1;
-    place-self: center;
   }
   .about {
     grid-area: 3 / 1 / 4 / 1;
-    place-self: center;
     text-align: justify;
   }
   .role_paragraph {
@@ -75,17 +71,24 @@
   .Cards {
     grid-template-columns: 1fr;
   }
+
   .bio {
     display: inherit;
     max-height: none;
+    padding: 3rem 0rem;
   }
+
+  .framer {
+    padding: 3rem 0rem;
+  }
+
   .copy {
     font-size: 14px;
     opacity: 1;
   }
 
   .img-groningen {
-    border: 0px solid;
+    border: 5px solid;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -93,7 +96,7 @@
   }
 
   .img-framer {
-    border: 0px solid;
+    border: 5px solid;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
