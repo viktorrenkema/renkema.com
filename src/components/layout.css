@@ -388,7 +388,7 @@ li {
   padding-bottom: 2rem;
 }
 
-.card_projectone {
+.card_lg_projectone {
   position: relative;
   display: flex;
   margin: 0 auto;
@@ -396,7 +396,7 @@ li {
   background: #f3f3f3;
 }
 
-.card_projecttwo {
+.card_lg_projecttwo {
   position: relative;
   display: flex;
   margin: 0 auto;
@@ -404,7 +404,7 @@ li {
   background: #f3f3f3;
 }
 
-.card_projectthree {
+.card_lg_projectthree {
   position: relative;
   display: flex;
   margin: 0 auto;
@@ -412,7 +412,7 @@ li {
   background: #f3f3f3;
 }
 
-.card_projectfour {
+.card_lg_projectfour {
   position: relative;
   display: flex;
   margin: 0 auto;
@@ -424,28 +424,24 @@ li {
   position: relative;
   /* display: flex; */
   margin: 0 auto;
-  background: #f3f3f3;
 }
 
 .card_sm_projecttwo {
   position: relative;
   display: flex;
   margin: 0 auto;
-  background: #f3f3f3;
 }
 
 .card_sm_projectthree {
   position: relative;
   display: flex;
   margin: 0 auto;
-  background: #f3f3f3;
 }
 
 .card_sm_projectfour {
   position: relative;
   display: flex;
   margin: 0 auto;
-  background: #f3f3f3;
 }
 
 .wrap_imagecardone {

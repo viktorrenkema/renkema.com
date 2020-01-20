@@ -1,3 +1,9 @@
+@media (min-width: 480px) {
+  .projects_mobile {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .projects_desktop {
     display: none;
@@ -10,11 +16,12 @@
   .sm_overlay {
     position: relative;
     height: 200px;
-    padding: 1.5rem;
+    padding: 0rem 1.5rem;
     flex-direction: column;
     display: flex;
     align-items: start;
     justify-content: flex-start;
+    background: #f3f3f3;
   }
 
   .sm_copy_projecttitle {

@@ -35,7 +35,7 @@ export default function IndexPage(props) {
       <Intro></Intro>
       <Bio></Bio>
       <Framer></Framer>
-      <Projects class="projects_desktop"></Projects>
+      <Projects></Projects>
       <ProjectsMobile></ProjectsMobile>
       <Scroller></Scroller>
       <Footer></Footer>

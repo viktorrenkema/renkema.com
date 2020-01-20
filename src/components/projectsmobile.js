@@ -1,7 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import Sm_ProjectOne from "../components/sm_projectone"
+import { Sm_ProjectOne } from "../components/projectone"
+import { Sm_ProjectTwo } from "../components/projecttwo"
 
 export default function ProjectsMobile(props) {
   const container = {
@@ -35,8 +36,8 @@ export default function ProjectsMobile(props) {
   }
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
-  const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 40 })
-  // const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 40 })
+  const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 20 })
+  const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 20 })
   // const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
   // const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
 
@@ -66,16 +67,16 @@ export default function ProjectsMobile(props) {
         <Sm_ProjectOne variants={item}></Sm_ProjectOne>
       </motion.div>
 
-      {/* <motion.div
+      <motion.div
         className="section_project"
         ref={targetRef2}
         animate={SecondCardInViewport ? "visible" : "hidden"}
         variants={card}
         initial="hidden"
       >
-        <ProjectTwo variants={item}></ProjectTwo>
+        <Sm_ProjectTwo variants={item}></Sm_ProjectTwo>
       </motion.div>
-
+      {/* 
       <motion.div
         className="section_project"
         ref={targetRef3}

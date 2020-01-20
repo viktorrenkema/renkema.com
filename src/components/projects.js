@@ -1,8 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import ProjectOne from "../components/projectone"
-import ProjectTwo from "../components/projecttwo"
+import { ProjectOne } from "../components/projectone"
+import { ProjectTwo } from "../components/projecttwo"
 import ProjectThree from "../components/projectthree"
 import ProjectFour from "../components/projectfour"
 
