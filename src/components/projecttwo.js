@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-import placeholdertwo from "../../src/images/proj_two.png"
+import placeholdertwo from "../../src/images/proj_accordion_noshadow.gif"
+// import placeholdertwo from "../../src/images/proj_two.png"
 
 export function ProjectTwo(props) {
   const overlay = {
@@ -12,6 +13,7 @@ export function ProjectTwo(props) {
         duration: 0.3,
         staggerChildren: 0.01,
       },
+      visibility: "hidden",
     },
     visible: {
       opacity: 1,
@@ -20,6 +22,22 @@ export function ProjectTwo(props) {
         when: "beforeChildren",
         duration: 0.6,
         staggerChildren: 0.05,
+      },
+      visibility: "visible",
+    },
+  }
+
+  const wrapper = {
+    small: {
+      width: "400px",
+      transition: {
+        duration: 0.3,
+      },
+    },
+    large: {
+      width: "700px",
+      transition: {
+        duration: 0.2,
       },
     },
   }
@@ -47,7 +65,9 @@ export function ProjectTwo(props) {
     >
       <motion.div
         className="wrap_imagecardone"
-        style={{ width: hoveredImage ? "400px" : undefined }}
+        variants={wrapper}
+        animate={hoveredImage ? "small" : "large"}
+        initial="large"
       >
         <a
           href="https://www.framer.com/learn/"

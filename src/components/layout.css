@@ -121,7 +121,7 @@ li {
 }
 
 .learnmore {
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   display: inline-block;
   color: #022435;
   font-weight: 900;
@@ -291,8 +291,7 @@ li {
   display: grid;
   align-self: center;
   justify-content: center;
-  grid-template-columns: repeat(2, 40%);
-  grid-template-rows: 50px 1fr;
+  grid-template-columns: repeat(2, auto);
   grid-column-gap: 10%;
   grid-row-gap: 1rem;
   padding: 4em;
@@ -300,8 +299,15 @@ li {
 
 .imagecard {
   justify-self: center;
-  background: #f5f5f5;
+  background: #ededed;
   align-self: center;
+}
+
+.imagecard img {
+  box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
+    0 1.9px 13.8px -5px rgba(0, 0, 0, 0.025),
+    0 4.2px 33.2px -5px rgba(0, 0, 0, 0.033),
+    0 10px 110px -5px rgba(0, 0, 0, 0.05);
 }
 
 .imgleft {
@@ -365,7 +371,8 @@ li {
 }
 
 /* BIO */
-.bio .learnmore {
+.bio .learnmore,
+.framer .learnmore {
   float: left;
 }
 
@@ -382,42 +389,44 @@ li {
   justify-content: center;
 }
 
+.separator {
+  margin: 0 auto;
+  width: 30%;
+  height: 1px;
+  background: #e4e1e1;
+  background-repeat: no-repeat;
+}
+
 .section_project {
   width: 100%;
   display: inline-flex;
-  padding-bottom: 2rem;
+  padding: 5rem 0rem;
 }
 
-.card_lg_projectone {
-  position: relative;
-  display: flex;
-  margin: 0 auto;
-  margin-left: 20rem;
-  background: #f3f3f3;
-}
-
-.card_lg_projecttwo {
-  position: relative;
-  display: flex;
-  margin: 0 auto;
-  margin-right: 20rem;
-  background: #f3f3f3;
-}
-
+.card_lg_projectone,
 .card_lg_projectthree {
   position: relative;
   display: flex;
   margin: 0 auto;
-  margin-left: 20rem;
+  /* margin-left: 10%; */
   background: #f3f3f3;
+  box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
+    0 1.9px 13.8px -5px rgba(0, 0, 0, 0.025),
+    0 4.2px 33.2px -5px rgba(0, 0, 0, 0.033),
+    0 10px 110px -5px rgba(0, 0, 0, 0.05);
 }
 
+.card_lg_projecttwo,
 .card_lg_projectfour {
   position: relative;
   display: flex;
   margin: 0 auto;
-  margin-right: 20rem;
+  /* margin-right: 5%; */
   background: #f3f3f3;
+  box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
+    0 1.9px 13.8px -5px rgba(0, 0, 0, 0.025),
+    0 4.2px 33.2px -5px rgba(0, 0, 0, 0.033),
+    0 10px 110px -5px rgba(0, 0, 0, 0.05);
 }
 
 .card_sm_projectone {
@@ -446,7 +455,6 @@ li {
 
 .wrap_imagecardone {
   z-index: 2;
-  max-width: 400px;
   height: 400px;
 }
 

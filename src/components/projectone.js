@@ -12,6 +12,7 @@ export function ProjectOne(props) {
         duration: 0.3,
         staggerChildren: 0.01,
       },
+      visibility: "hidden",
     },
     visible: {
       opacity: 1,
@@ -20,6 +21,22 @@ export function ProjectOne(props) {
         when: "beforeChildren",
         duration: 0.6,
         staggerChildren: 0.05,
+      },
+      visibility: "visible",
+    },
+  }
+
+  const wrapper = {
+    small: {
+      width: "400px",
+      transition: {
+        duration: 0.3,
+      },
+    },
+    large: {
+      width: "700px",
+      transition: {
+        duration: 0.2,
       },
     },
   }
@@ -76,7 +93,9 @@ export function ProjectOne(props) {
       </motion.div>
       <motion.div
         className="wrap_imagecardone"
-        style={{ width: hoveredImage ? "400px" : undefined }}
+        variants={wrapper}
+        animate={hoveredImage ? "small" : "large"}
+        initial="large"
       >
         <a
           href="https://learn-accordion-design-part-1--framer-next.netlify.com/learn/guide/accordion-design-part-1/"

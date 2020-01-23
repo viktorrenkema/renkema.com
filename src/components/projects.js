@@ -59,6 +59,10 @@ export default function Projects(props) {
       >
         Projects
       </motion.h1>
+      {/* <p className="copy-projects">
+        Projects, big or small in any shape or form. From published articles to
+        web applications, these give a glimpse into previous work.
+      </p> */}
       <motion.div
         className="section_project"
         ref={targetRef1}
@@ -68,7 +72,7 @@ export default function Projects(props) {
       >
         <ProjectOne variants={item}></ProjectOne>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef2}
@@ -78,7 +82,7 @@ export default function Projects(props) {
       >
         <ProjectTwo variants={item}></ProjectTwo>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef3}
@@ -88,7 +92,7 @@ export default function Projects(props) {
       >
         <ProjectThree variants={item}></ProjectThree>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef4}
