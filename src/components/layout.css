@@ -98,7 +98,7 @@ li {
 }
 
 .h1-projects {
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   text-align: center;
 }
 
@@ -289,6 +289,8 @@ li {
 }
 .copy-projects {
   text-align: center;
+  margin: 0 auto;
+  width: 400px;
 }
 
 .about p {
