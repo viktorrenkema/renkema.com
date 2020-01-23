@@ -59,10 +59,10 @@ export default function Projects(props) {
       >
         Projects
       </motion.h1>
-      {/* <p className="copy-projects">
-        Projects, big or small in any shape or form. From published articles to
-        web applications, these give a glimpse into previous work.
-      </p> */}
+      <p className="copy-projects copy">
+        Various work, varying from passion projects to articles and other
+        content created to help users upskill with React.
+      </p>
       <motion.div
         className="section_project"
         ref={targetRef1}

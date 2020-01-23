@@ -85,9 +85,9 @@ export function ProjectOne(props) {
             <p style={{ paddingBottom: "1rem" }}>
               Some of the topics addressed include:
             </p>
-            <li>applying React Hooks to toggle states</li>
-            <li>creating custom animations</li>
-            <li>mapping over an array with JSON data</li>
+            <li>› applying React Hooks to toggle states</li>
+            <li>› creating custom animations</li>
+            <li>› mapping over an array with JSON data</li>
           </ul>
         </motion.div>
       </motion.div>
