@@ -34,7 +34,25 @@ const section = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
 }
 
+const learnmore_separator = {
+  hidden: {
+    width: "30%",
+  },
+  visible: {
+    width: "100%",
+  },
+}
+
 export default function Background(props) {
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
@@ -70,16 +88,17 @@ export default function Background(props) {
             animate={isInViewport ? "visible" : "hidden"}
           >
             While obtaining my Master's degree in Psychology in the beautiful
-            city of Groningen, I got more and more interested in the combination
-            of (web) technology and human behaviour. To pursue this, I started
-            learning more about web development and digital user experiences.
+            city of Groningen, my interest in behaviour started to extend to the
+            combination of both human behaviour and (web) technology. To pursue
+            this field, I started learning more about web development and
+            digital user experiences.
             <br></br>
             <br></br>My first experience with web technology was when I got to
             create A/B tests for an online webshop. After this, I got to learn
             more about UX when I started working at the University Medical
             Center Groningen. Here I studied the workflows of medical staff, for
-            whom I built and implemented custom interfaces of the hospital-wide
-            electronic medical record (Epic).
+            whom I helped build and implement custom interfaces of the
+            hospital-wide electronic medical record (Epic).
             <br></br>
             <br></br>About a year later I started working at Framer, where I
             manage our thriving communities and ensure all our users and
@@ -93,11 +112,16 @@ export default function Background(props) {
             variants={copy}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
-            whileHover={{
-              color: "#ff6661",
-            }}
+            onHoverStart={onHoverStart}
+            onHoverEnd={onHoverEnd}
           >
             ASK ME MORE ›
+            <motion.div
+              className="learnmore_separator"
+              variants={learnmore_separator}
+              initial="hidden"
+              animate={hovered ? "visible" : "hidden"}
+            ></motion.div>
           </motion.a>
         </motion.div>{" "}
       </div>

@@ -105,11 +105,15 @@ li {
 .carddescriptionleft {
   align-self: start;
   grid-area: 2/ 1 / 3 / 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .carddescriptionright {
   align-self: start;
   grid-area: 2/ 2 / 3 / 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .copy {
@@ -124,6 +128,7 @@ li {
   letter-spacing: 1px;
   display: inline-block;
   color: #022435;
+  width: max-content;
   font-weight: 900;
   /* text-decoration: underline solid #ff6661; */
   font-size: 0.65em;
@@ -249,10 +254,9 @@ li {
   justify-self: center;
 }
 
-.intro p {
+.copy-intro {
   color: #042639;
   font-size: 13px;
-  padding-bottom: 5px;
   vertical-align: middle;
   line-height: 20px;
   text-align: start;
@@ -291,6 +295,7 @@ li {
   display: grid;
   align-self: center;
   justify-content: center;
+  grid-template-rows: max-content auto;
   grid-template-columns: repeat(2, auto);
   grid-column-gap: 10%;
   grid-row-gap: 1rem;
@@ -394,6 +399,15 @@ li {
   width: 30%;
   height: 1px;
   background: #e4e1e1;
+  background-repeat: no-repeat;
+}
+
+.learnmore_separator {
+  margin: 0 auto;
+  width: 30%;
+  float: left;
+  height: 1px;
+  background: #ff6d68;
   background-repeat: no-repeat;
 }
 

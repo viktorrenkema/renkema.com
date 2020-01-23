@@ -47,14 +47,28 @@ const email_stagger = {
   },
 }
 
+const learnmore_separator = {
+  hidden: {
+    width: "30%",
+  },
+  visible: {
+    width: "100%",
+  },
+}
+
 export default function Introduction(props) {
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
+
   return (
-    <section
-      className={"intro"}
-      // variants={container}
-      // initial="hidden"
-      // animate="visible"
-    >
+    <section className={"intro"}>
       <div className={"grid_intro container"}>
         <motion.div
           className={"name nameStagger"}
@@ -64,22 +78,13 @@ export default function Introduction(props) {
         >
           <h1>Viktor Renkema</h1>
         </motion.div>
-        {/* <Slash
-        className={"nameStagger"}
-        variants={nameStagger}
-        initial="hidden"
-        animate="visible"
-      ></Slash> */}
-        {/* <Contact></Contact> */}
         <motion.div
           className={"titles roleStagger"}
           variants={role_stagger}
           initial="hidden"
           animate="visible"
         >
-          <p className="role_paragraph">
-            {/* I am a psychologist interested in UX and interaction
-          design */}
+          <p className="role_paragraph copy-intro">
             PSYCHOLOGIST WORKING IN UX AND INTERACTION DESIGN
           </p>
         </motion.div>
@@ -89,7 +94,7 @@ export default function Introduction(props) {
           initial="hidden"
           animate="visible"
         >
-          <p>
+          <p className="copy-intro">
             I'm interested in the space where human behaviour and technology
             meet, from web development to user experience research. Right now
             I'm helping users and organizations become succesful at Framer.
@@ -106,7 +111,19 @@ export default function Introduction(props) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p className="role_paragraph">Reach out ›</p>
+            <motion.p
+              className="learnmore copy"
+              onHoverStart={onHoverStart}
+              onHoverEnd={onHoverEnd}
+            >
+              REACH OUT ›
+            </motion.p>
+            <motion.div
+              className="learnmore_separator"
+              variants={learnmore_separator}
+              initial="hidden"
+              animate={hovered ? "visible" : "hidden"}
+            ></motion.div>
           </a>
         </motion.div>
       </div>
