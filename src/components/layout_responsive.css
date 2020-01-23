@@ -1,4 +1,120 @@
+/* Large desktop */
+/* @media (min-width: 1200px) {
+} */
+
+/* Portrait tablet to landscape and desktop */
+/* @media (min-width: 768px) and (max-width: 979px) {
+} */
+
+/* Landscape phone to portrait tablet */
+/* @media (max-width: 767px) {
+} */
+
+/* Landscape phones and down */
+/* @media (max-width: 480px) {
+} */
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .grid {
+    padding: 3%;
+    column-gap: 5%;
+  }
+  .img-groningen {
+    border: 7px solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
+  }
+
+  .img-framer {
+    border: 7px solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+
+/* Landscape phones and down */
 @media (max-width: 480px) {
+}
+
+@media (min-width: 768px) {
+  .projects_mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .projects_desktop {
+    display: none;
+  }
+
+  .Cont-MyWaveOne {
+    position: relative;
+    right: -50px;
+    top: -40px;
+  }
+
+  .Cont-MyWaveTwo {
+    position: relative;
+    right: -150px;
+    top: -45px;
+  }
+  .Container-Wave3 {
+    left: -130px;
+    bottom: -10px;
+  }
+
+  .projects {
+    padding: 4em 0em;
+  }
+
+  .sm_overlay {
+    position: relative;
+    height: 200px;
+    padding: 0rem 1.5rem;
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    background: #f3f3f3;
+  }
+
+  .sm_copy_projecttitle {
+    min-width: 100px;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    font-weight: 600;
+  }
+
+  .sm_copy_projectlabel {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    font-weight: 600;
+    font-style: normal;
+    padding-bottom: 1rem;
+  }
+
+  .sm_projectdescriptions {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+    min-width: 300px;
+  }
+
   /* the h1 for the main content sections */
   .subject {
     grid-area: 1/1/1/1;
@@ -6,6 +122,10 @@
     font-size: 40px;
     justify-self: start;
     padding: 0rem 1.5rem;
+  }
+
+  .proj_subject {
+    padding: 3rem 1.5rem;
   }
 
   .description {
@@ -37,6 +157,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     padding: 0rem;
+    row-gap: 1.5rem;
   }
 
   h1 {
@@ -83,8 +204,9 @@
   }
 
   .copy {
-    font-size: 14px;
+    font-size: 12px;
     opacity: 1;
+    float: left;
   }
 
   .img-groningen {
@@ -92,7 +214,7 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
+    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
   }
 
   .img-framer {
@@ -100,12 +222,30 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
+    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
   }
 
   .wrap_contactintro {
     grid-area: 4 / 1 / 4/ 3;
     justify-self: auto;
+  }
+}
+
+@media (max-width: 376px) {
+  .Cont-MyWaveOne {
+    position: relative;
+    right: -70px;
+    top: -70px;
+  }
+
+  .Cont-MyWaveTwo {
+    position: relative;
+    right: -150px;
+    top: -65px;
+  }
+  .Container-Wave3 {
+    left: -130px;
+    bottom: -10px;
   }
 }
 
@@ -120,3 +260,12 @@
     grid-template-columns: repeat(2, 45%);
   }
 } */
+
+@media (hover: none) {
+  .projects_desktop {
+    display: inherit;
+  }
+  .projects_mobile {
+    display: none;
+  }
+}

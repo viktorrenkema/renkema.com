@@ -1,8 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import ProjectOne from "../components/projectone"
-import ProjectTwo from "../components/projecttwo"
+import { ProjectOne } from "../components/projectone"
+import { ProjectTwo } from "../components/projecttwo"
 import ProjectThree from "../components/projectthree"
 import ProjectFour from "../components/projectfour"
 
@@ -47,7 +47,7 @@ export default function Projects(props) {
     <motion.section
       initial="hidden"
       animate={isInViewport ? "visible" : "hidden"}
-      className="projects"
+      className="projects projects_desktop"
       ref={targetRef}
       variants={container}
     >
@@ -59,6 +59,10 @@ export default function Projects(props) {
       >
         Projects
       </motion.h1>
+      <p className="copy-projects copy">
+        Various work, varying from passion projects to articles and other
+        content created to help users upskill with React.
+      </p>
       <motion.div
         className="section_project"
         ref={targetRef1}
@@ -68,7 +72,7 @@ export default function Projects(props) {
       >
         <ProjectOne variants={item}></ProjectOne>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef2}
@@ -78,7 +82,7 @@ export default function Projects(props) {
       >
         <ProjectTwo variants={item}></ProjectTwo>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef3}
@@ -88,7 +92,7 @@ export default function Projects(props) {
       >
         <ProjectThree variants={item}></ProjectThree>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef4}
@@ -101,7 +105,3 @@ export default function Projects(props) {
     </motion.section>
   )
 }
-
-// <motion.div
-// style={{ width: "400px", height: "400px", color: "transparant" }}
-// ></motion.div>

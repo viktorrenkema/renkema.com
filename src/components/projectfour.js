@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-import placeholderfour from "../../src/images/Placeholderfour.png"
+import placeholderfour from "../../src/images/proj_accordion_noshadow.gif"
+// import placeholderfour from "../../src/images/Placeholderfour.png"
 
 export default function ProjectOne(props) {
   const overlay = {
@@ -12,6 +13,7 @@ export default function ProjectOne(props) {
         duration: 0.3,
         staggerChildren: 0.01,
       },
+      visibility: "hidden",
     },
     visible: {
       opacity: 1,
@@ -20,6 +22,22 @@ export default function ProjectOne(props) {
         when: "beforeChildren",
         duration: 0.6,
         staggerChildren: 0.05,
+      },
+      visibility: "visible",
+    },
+  }
+
+  const wrapper = {
+    small: {
+      width: "400px",
+      transition: {
+        duration: 0.3,
+      },
+    },
+    large: {
+      width: "700px",
+      transition: {
+        duration: 0.2,
       },
     },
   }
@@ -43,11 +61,13 @@ export default function ProjectOne(props) {
     <motion.div
       onHoverStart={onHoverStartImage}
       onHoverEnd={onHoverEndImage}
-      className="card_projectfour"
+      className="card_lg_projectfour"
     >
       <motion.div
         className="wrap_imagecardone"
-        style={{ width: hoveredImage ? "400px" : undefined }}
+        variants={wrapper}
+        animate={hoveredImage ? "small" : "large"}
+        initial="large"
       >
         <a
           href="https://www.framer.com/learn/"

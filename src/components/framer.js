@@ -40,7 +40,26 @@ const imagebackground = {
   visible: { opacity: 1, transition: { duration: 0.5 } },
 }
 
+const learnmore_separator = {
+  hidden: {
+    width: "30%",
+  },
+  visible: {
+    width: "100%",
+  },
+}
+
 export default function Framer(props) {
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
+
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
@@ -86,11 +105,16 @@ export default function Framer(props) {
             variants={copy}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
-            whileHover={{
-              color: "#ff6661",
-            }}
+            onHoverStart={onHoverStart}
+            onHoverEnd={onHoverEnd}
           >
             VISIT FRAMER.COM ›
+            <motion.div
+              className="learnmore_separator"
+              variants={learnmore_separator}
+              initial="hidden"
+              animate={hovered ? "visible" : "hidden"}
+            ></motion.div>
           </motion.a>
         </motion.div>
         <motion.div
