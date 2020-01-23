@@ -7,7 +7,7 @@ export default function CornerMotionTwo(props) {
   const mytransition = {
     yoyo: Infinity,
     ease: "linear",
-    duration: 6,
+    duration: 4,
   }
   const wave = {
     first: {

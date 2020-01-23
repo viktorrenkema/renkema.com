@@ -116,7 +116,7 @@ export default function Introduction(props) {
               onHoverStart={onHoverStart}
               onHoverEnd={onHoverEnd}
             >
-              REACH OUT ›
+              SHOOT ME A MESSAGE ›
             </motion.p>
             <motion.div
               className="learnmore_separator"

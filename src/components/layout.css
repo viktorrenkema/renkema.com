@@ -29,6 +29,10 @@ html {
 
 /* COLORS
 Background light-grey: #f1f1f1 
+1 - #FF285E
+2 - #FC3B6B
+3 - #FC4A77
+4 - #FC5982
 
 */
 
@@ -49,13 +53,13 @@ main {
 }
 p::selection,
 h1::selection {
-  background: #ff6661;
+  background: #fc5982;
   color: white;
 }
 
 p::-moz-selection,
 h1::-moz-selection {
-  background: #cd7672;
+  background: #fc5982;
   color: white;
 }
 
@@ -72,7 +76,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: #ff6661;
+  color: #ff285e;
 }
 
 li {
@@ -81,8 +85,8 @@ li {
 
 /* GENERAL */
 .scroller {
-  width: 28px;
-  height: 26px;
+  width: fit-content;
+  height: fit-content;
   bottom: 25px;
   position: fixed;
   left: 50%;
@@ -130,7 +134,7 @@ li {
   color: #022435;
   width: max-content;
   font-weight: 900;
-  /* text-decoration: underline solid #ff6661; */
+  /* text-decoration: underline solid #FF285E; */
   font-size: 0.65em;
   padding: 1rem 0em 0em 0em;
 }
@@ -186,6 +190,7 @@ li {
 
 .Wrapper-Wave3 {
   overflow: hidden;
+  z-index: 5;
   width: 572px;
   left: 0;
   bottom: 0;
@@ -352,11 +357,11 @@ li {
   height: auto;
   width: 100%;
   position: relative;
-  border: 10px solid;
+  border: 8px solid;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
+  border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
 }
 
 .imageplaceholder {
@@ -392,11 +397,11 @@ li {
 
 .img-framer {
   position: relative;
-  border: 10px solid;
+  border: 8px solid;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-image: linear-gradient(220deg, #ff6661, #ff9563) 1;
+  border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
 }
 
 /* BIO */
@@ -431,7 +436,7 @@ li {
   width: 30%;
   float: left;
   height: 1px;
-  background: #ff6d68;
+  background: #ff285e;
   background-repeat: no-repeat;
 }
 

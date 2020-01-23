@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const mytransition = {
   yoyo: Infinity,
   ease: "linear",
-  duration: 6,
+  duration: 3,
 }
 const wave = {
   first: {
