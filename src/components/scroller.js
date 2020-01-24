@@ -42,7 +42,7 @@ export default function Scroller(props) {
       }}
       animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >
-      <motion.svg
+      {/* <motion.svg
         width="14"
         height="7"
         style={{ margin: "0 auto", display: "block" }}
@@ -59,7 +59,7 @@ export default function Scroller(props) {
           strokeLinecap="round"
           strokeLinejoin="round"
         ></motion.path>
-      </motion.svg>
+      </motion.svg> */}
 
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="30" height="33">
         <motion.path
