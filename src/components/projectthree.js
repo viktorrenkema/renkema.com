@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-import placeholderthree from "../../src/images/proj_accordion_noshadow.gif"
-// import placeholderthree from "../../src/images/Placeholderthree.png"
+// import placeholderthree from "../../src/images/proj_accordion.gif"
+import placeholderthree from "../../src/images/placeholderthree.png"
 
 export default function ProjectThree(props) {
   const overlay = {

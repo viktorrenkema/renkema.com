@@ -59,6 +59,7 @@ export default function Projects(props) {
       >
         Projects
       </motion.h1>
+      {/* <div className="separator-sm"></div> */}
       <p className="copy-projects copy">
         Various work, varying from passion projects to articles and other
         content created to help users upskill with React.

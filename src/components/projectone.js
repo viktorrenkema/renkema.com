@@ -1,6 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import accordion from "../../src/images/proj_accordion_noshadow.gif"
+import accordion from "../../src/images/proj_accordion.gif"
 
 export function ProjectOne(props) {
   const overlay = {

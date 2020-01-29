@@ -231,14 +231,6 @@ li {
 .LinkButton {
   box-align: center;
 }
-
-.portrait {
-  height: 140px;
-  background: url("../images/dscf25012.jpeg");
-  background-size: cover;
-  background-position: center;
-}
-
 /* INTRODUCTION */
 
 .grid_intro {
@@ -316,7 +308,7 @@ li {
 .bio {
   min-height: 100vh;
   max-height: 700px;
-  background: #ececec;
+  /* background: #ececec; */
   display: flex;
   justify-content: center;
 }
@@ -414,7 +406,7 @@ li {
 
 /* PROJECTS */
 .projects {
-  background: #ececec;
+  /* background: #ececec; */
   overflow: hidden;
   /* min-height: 70vh; */
   /* display: flex; */
@@ -423,6 +415,14 @@ li {
   grid-template-rows: auto auto; */
   padding: 4em 4em 4em 4em;
   justify-content: center;
+}
+
+.separator-sm {
+  margin: 0 auto;
+  width: 15%;
+  height: 1px;
+  background: #e4e1e1;
+  background-repeat: no-repeat;
 }
 
 .separator {
