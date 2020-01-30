@@ -254,14 +254,8 @@
 
 @media (max-width: 992px) {
 }
-/* 
-@media (max-width: 1200px) {
-  .grid {
-    grid-template-columns: repeat(2, 45%);
-  }
-} */
 
-@media (hover: none) {
+@media (hover: true) {
   .projects_desktop {
     display: inherit;
   }

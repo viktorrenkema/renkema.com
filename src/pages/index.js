@@ -8,25 +8,12 @@ import CornerMotionOne from "../components/waveone"
 import CornerMotionTwo from "../components/wavetwo"
 import Wave3 from "../components/wavethree"
 import Projects from "../components/projects"
-import ProjectsMobile from "../components/projectsmobile"
+
+import ProjectsMobile from "../components/exp-projectsmobile"
+// import ProjectsMobile from "../components/projectsmobile"
+
 import Framer from "../components/framer"
 import Footer from "../components/footer"
-
-// const IndexPage = () => (
-//   <Layout>
-//     <CornerMotionOne></CornerMotionOne>
-//     <CornerMotionTwo></CornerMotionTwo>
-//     <Intro></Intro>
-//     <Bio></Bio>
-//     <Framer></Framer>
-//     <Projects></Projects>
-//     <Scroller></Scroller>
-//     <Footer></Footer>
-//     <SEO title="Portfolio Viktor Renkema" />
-//   </Layout>
-// )
-
-// export default IndexPage
 
 export default function IndexPage(props) {
   return (

@@ -1,26 +1,13 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import { Sm_ProjectOne } from "../components/projectone"
-import { Sm_ProjectTwo } from "../components/projecttwo"
-import globalHook, { Store } from "use-global-hook"
-
-const useGlobal = globalHook(React, initialState, actions)
-
-const initialState = {
-  opened: false,
-}
-
-const actions = {
-  setOpened: store => {
-    store.setState({ opened: true })
-  },
-}
+import { Sm_ProjectOne } from "./projectone"
+import { Sm_ProjectTwo } from "./projecttwo"
 
 export default function ProjectsMobile(props) {
-  const [globalState, globalActions] = useGlobal()
+  const [Project, setOpenProject] = React.useState(false)
 
-  console.log(initialState)
+  // console.log(Project)
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -54,8 +41,6 @@ export default function ProjectsMobile(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 20 })
   const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 20 })
-  // const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
-  // const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
@@ -81,7 +66,7 @@ export default function ProjectsMobile(props) {
         ref={targetRef1}
       >
         <Sm_ProjectOne
-          onClick={() => globalActions.setOpened(true)}
+          onClick={() => setOpenProject(true)}
           variants={item}
         ></Sm_ProjectOne>
       </motion.div>
@@ -95,26 +80,6 @@ export default function ProjectsMobile(props) {
       >
         <Sm_ProjectTwo variants={item}></Sm_ProjectTwo>
       </motion.div>
-      {/* 
-      <motion.div
-        className="section_project"
-        ref={targetRef3}
-        animate={ThirdCardInViewport ? "visible" : "hidden"}
-        variants={card}
-        initial="hidden"
-      >
-        <ProjectThree variants={item}></ProjectThree>
-      </motion.div>
-
-      <motion.div
-        className="section_project"
-        ref={targetRef4}
-        animate={FourthCardInViewport ? "visible" : "hidden"}
-        variants={card}
-        initial="hidden"
-      >
-        <ProjectFour variants={item}></ProjectFour>
-      </motion.div> */}
     </motion.section>
   )
 }

@@ -149,10 +149,7 @@ export function Sm_ProjectOne(props) {
 
   return (
     <motion.div onClick={onClick} className="card_sm_projectone">
-      <motion.div
-        className="wrap_imagecardone"
-        // style={{ width: clicked ? "400px" : undefined }}
-      >
+      <motion.div className="wrap_imagecardone">
         <motion.img
           className="imageplaceholder"
           src={accordion}
