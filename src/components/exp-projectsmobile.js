@@ -7,7 +7,6 @@ import { Sm_ProjectTwo } from "./projecttwo"
 export default function ProjectsMobile(props) {
   const [Project, setOpenProject] = React.useState(false)
 
-  // console.log(Project)
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -70,7 +69,7 @@ export default function ProjectsMobile(props) {
           variants={item}
         ></Sm_ProjectOne>
       </motion.div>
-
+      <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef2}
@@ -80,6 +79,7 @@ export default function ProjectsMobile(props) {
       >
         <Sm_ProjectTwo variants={item}></Sm_ProjectTwo>
       </motion.div>
+      <div className="separator"></div>
     </motion.section>
   )
 }
