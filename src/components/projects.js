@@ -61,14 +61,14 @@ export function Projects(props) {
       >
         Projects
       </motion.h1>
-      {/* <div className="separator-sm"></div> */}
       <p className="copy-projects copy">
-        Various work, varying from passion projects to articles and other
+        Various examples of passion projects, educational articles, and other
         content created to help users upskill with React.
       </p>
       <div className="separator-sm"></div>
       <motion.div
         className="section_project"
+        id="section-project-1"
         ref={targetRef1}
         animate={FirstCardInViewport ? "visible" : "hidden"}
         variants={card}
@@ -164,8 +164,8 @@ export function ProjectsMobile(props) {
         Projects
       </motion.h1>
       <p className="copy-projects copy">
-        Various differing work, varying from passion projects, articles, and
-        other content created to help users upskill with React.
+        Various examples of passion projects, educational articles, and other
+        content created to help users upskill with React.
       </p>
       <div className="separator-sm"></div>
       <motion.div

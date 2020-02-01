@@ -223,7 +223,10 @@
   .copy {
     font-size: 12px;
     opacity: 1;
-    float: left;
+  }
+
+  .copy-projects {
+    margin: 0rem 1rem;
   }
 
   .img-groningen {
