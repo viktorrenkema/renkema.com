@@ -69,13 +69,13 @@
 
   .Cont-MyWaveOne {
     position: relative;
-    right: -50px;
+    right: -70px;
     top: -40px;
   }
 
   .Cont-MyWaveTwo {
     position: relative;
-    right: -150px;
+    right: -170px;
     top: -45px;
   }
   .Container-Wave3 {
@@ -145,7 +145,7 @@
   .description {
     grid-area: 2 / 1 / 3 / 1;
     text-align: center;
-    padding: 0rem 1.5rem;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
   }
 
   .learnmore {
@@ -179,14 +179,14 @@
     font-size: 28px;
   }
   .grid_intro {
-    row-gap: 1rem;
+    row-gap: 0.5rem;
     padding: 0em 1em 0em 1em;
     width: auto;
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(4, auto);
   }
 
   .titles {
-    width: 60%;
+    width: 100%;
     grid-area: 2 / 1 / 2 / 1;
     /* align-self: center; */
   }
@@ -199,6 +199,8 @@
   .about {
     grid-area: 3 / 1 / 4 / 1;
     text-align: justify;
+    width: 100%;
+    justify-self: start;
   }
   .role_paragraph {
     font-size: 10px;

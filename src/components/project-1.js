@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import accordion from "../../src/images/proj_accordion.gif"
 
-export function ProjectOne(props) {
+export function Project1(props) {
   const overlay = {
     hidden: {
       opacity: 0,
@@ -119,6 +119,7 @@ export function Sm_ProjectOne(props) {
     hidden: {
       opacity: 0,
       height: "0px",
+      display: "none",
       transition: {
         when: "afterChildren",
         duration: 0.3,
@@ -128,6 +129,7 @@ export function Sm_ProjectOne(props) {
     visible: {
       opacity: 1,
       height: "auto",
+      display: "none",
       transition: {
         when: "beforeChildren",
         duration: 0.6,

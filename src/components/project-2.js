@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 // import placeholdertwo from "../../src/images/proj_accordion.gif"
 import placeholdertwo from "../../src/images/placeholdertwo.png"
 
-export function ProjectTwo(props) {
+export function Project2(props) {
   const overlay = {
     hidden: {
       opacity: 0,

@@ -7,11 +7,7 @@ import Scroller from "../components/scroller"
 import CornerMotionOne from "../components/waveone"
 import CornerMotionTwo from "../components/wavetwo"
 import Wave3 from "../components/wavethree"
-import Projects from "../components/projects"
-
-import ProjectsMobile from "../components/exp-projectsmobile"
-// import ProjectsMobile from "../components/projectsmobile"
-
+import { Projects, ProjectsMobile } from "../components/projects"
 import Framer from "../components/framer"
 import Footer from "../components/footer"
 
