@@ -163,10 +163,14 @@ export function ProjectsMobile(props) {
       >
         Projects
       </motion.h1>
-      <p className="copy-projects copy">
-        Various examples of passion projects, educational articles, and other
-        content created to help users upskill with React.
-      </p>
+      <div className="projects--wrapper">
+        {" "}
+        <p className="copy-projects copy">
+          Various examples of passion projects, educational articles, and other
+          content created to help users upskill with React.
+        </p>
+      </div>
+
       <div className="separator-sm"></div>
       <motion.div
         className="section_project"
