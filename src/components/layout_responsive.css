@@ -120,30 +120,25 @@
   }
 
   .sm_copy_projecttitle {
-    min-width: 100px;
+    min-width: fit-content;
     font-size: 18px;
     letter-spacing: 0.5px;
     line-height: 1.9;
     font-weight: 600;
-    margin: 0rem 1rem;
+    margin-left: 1rem;
+    grid-area: 1 / 1 / 1 / 1;
   }
 
   .sm_copy_projectlabel {
+    min-width: fit-content;
     font-size: 10px;
     letter-spacing: 0.5px;
     line-height: 1.9;
     font-weight: 600;
-    font-style: normal;
-    padding-bottom: 1rem;
-    margin: 0rem 1rem;
-  }
-
-  .sm_projectdescriptions {
-    font-size: 12px;
-    line-height: 1.5;
-    text-align: justify;
-    min-width: fit-content;
-    margin: 0rem 1rem;
+    margin-right: 1rem;
+    grid-area: 1 / 2 / 1 / 2;
+    justify-self: end;
+    align-self: center;
   }
 
   /* the h1 for the main content sections */

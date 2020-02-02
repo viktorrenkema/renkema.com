@@ -166,27 +166,36 @@ export function Sm_ProjectOne(props) {
         initial="hidden"
       >
         {" "}
-        <motion.p variants={item} className="sm_copy_projecttitle">
-          Creating an accordion design
-        </motion.p>
-        <motion.p variants={item} class="sm_copy_projectlabel">
-          FRAMER LEARN TUTORIAL
-        </motion.p>
+        <motion.div className="wrapper--project-1-heading">
+          {" "}
+          <motion.p variants={item} className="sm_copy_projecttitle">
+            Creating an accordion design
+          </motion.p>
+          <motion.p variants={item} class="sm_copy_projectlabel">
+            TUTORIAL
+          </motion.p>
+        </motion.div>
         <motion.div variants={item}>
           <p className="sm_projectdescriptions">
             While learning React, I documented some of the projects I worked on.
-            One of these turned into a 3-part tutorial, guiding users through
-            creating a single-select accordion effect within Framer.
+            One of these turned into a tutorial, guiding users through creating
+            a single-select accordion effect within Framer.
             <br></br>
           </p>
-          <ul className="sm_projectdescriptions">
+          <p className="sm_projectdescriptions">
+            The three-part tutorial covers various topics, including using React
+            hooks to toggle state, creating custom animations, and mapping over
+            JSON data.
+            <br></br>
+          </p>
+          {/* <ul className="sm_projectdescriptions">
             <p style={{ paddingBottom: "1rem" }}>
               Some of the topics addressed include:
             </p>
             <li>applying React Hooks to toggle states</li>
             <li>creating custom animations</li>
             <li>mapping over an array with JSON data</li>
-          </ul>
+          </ul> */}
         </motion.div>
       </motion.div>
     </motion.div>
