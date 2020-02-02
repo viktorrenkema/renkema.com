@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const mytransition = {
   yoyo: Infinity,
   ease: "linear",
-  duration: 4,
+  duration: 6,
 }
 const wave = {
   first: {
@@ -24,7 +24,7 @@ const wave = {
   },
 }
 
-export default function CornerMotionOne(props) {
+export default function Wave1(props) {
   // const [hovered, setHovered] = React.useState(false)
 
   // const onHoverStart = () => {
@@ -36,8 +36,8 @@ export default function CornerMotionOne(props) {
   // }
 
   return (
-    <motion.div className="WrapperWaveOne">
-      <motion.div className="Cont-MyWaveOne">
+    <motion.div className="Outter-Wave1">
+      <motion.div className="Inner-Wave1">
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width="572"

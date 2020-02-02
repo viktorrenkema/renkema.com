@@ -1,6 +1,5 @@
 import React from "react"
 import { motion } from "framer-motion"
-// import placeholdertwo from "../../src/images/proj_accordion.gif"
 import placeholdertwo from "../../src/images/placeholdertwo.png"
 
 export function Project2(props) {

@@ -87,22 +87,22 @@ export default function Background(props) {
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
           >
-            While obtaining my Master's degree in Psychology in the beautiful
-            city of Groningen, my interest in behaviour started to extend to the
-            combination of both human behaviour and (web) technology. To pursue
-            this field, I started learning more about web development and
-            digital user experiences.
+            While obtaining my Master's degree in Psychology in Groningen, my
+            interest in human behaviour started to extend to include the
+            combination of behaviour and web technology. To pursue this field, I
+            began learning more about web development and digital user
+            experiences.
             <br></br>
-            <br></br>My first experience with web technology was when I got to
-            create A/B tests for an online webshop. After this, I got to learn
-            more about UX when I started working at the University Medical
-            Center Groningen. Here I studied the workflows of medical staff, for
-            whom I helped build and implement custom interfaces of the
-            hospital-wide electronic medical record (Epic).
+            <br></br>After starting out learning about web technologies creating
+            A/B tests for an online webshop. After this, I got to learn more
+            about the UX side when I started working at the Medical Center
+            Groningen. I studied the workflows of medical staff for whom we
+            built and implemented custom user interfaces in Epic, the
+            hospital-wide electronic medical record.
             <br></br>
-            <br></br>About a year later I started working at Framer, where I
+            {/* <br></br>About a year later I started working at Framer, where I
             manage our thriving communities and ensure all our users and
-            organizations are receiving the technical support they require.
+            organizations are receiving the technical support they require. */}
           </motion.p>
           <motion.a
             className="learnmore copy"

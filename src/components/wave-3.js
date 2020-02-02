@@ -1,36 +1,36 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 
-// Left wave
+// Bottom left wave
 
 const mytransition = {
   yoyo: Infinity,
   ease: "linear",
-  duration: 3,
+  duration: 6,
 }
 const wave = {
   first: {
     d:
-      "M 263 0 L 0 0 C 0 0 71.502 0.825 99.5 18.5 C 127.498 36.175 119.571 99.524 157 117.5 C 175.714 126.488 190.399 130.899 219 159.5 C 248.667 189.167 232.294 250.213 243.5 272 C 254.706 293.787 263 306 263 306 Z",
-    fill: "#efefef",
+      "M 183 0 L 0 0 C 0 0 18.002 4.325 46 22 C 73.998 39.675 77.571 97.024 115 115 C 135.86 125.019 161.09 131.63 171.5 141.5 C 181.91 151.37 183 160 183 160 Z",
+    fill: "#E8E8E8",
     // boxShadow: "inset 0px 0px 10px rgba(0,0,0,0.5)",
   },
   second: {
     d:
-      "M 249.5 0 L 0 0 C 0 0 42.502 9.825 70.5 27.5 C 98.498 45.175 110.071 90.024 147.5 108 C 166.214 116.988 179.899 124.399 208.5 153 C 238.167 182.667 220.294 232.213 231.5 254 C 242.706 275.787 249.5 284.5 249.5 284.5 Z",
-    fill: "#efefef",
+      "M 183.093 0 L 0.093 0 C 0.093 0 -2.904 5.325 25.093 23 C 53.091 40.675 61.665 33.524 99.093 51.5 C 133.123 67.843 126.763 114.852 158.093 131.5 C 189.424 148.148 183.093 160 183.093 160 Z",
+    fill: "#E8E8E8",
     // boxShadow: "inset 0px 0px 10px rgba(0,0,0,0.5)",
   },
 }
 
 export default function Wave3(props) {
   return (
-    <motion.div className="Wrapper-Wave3">
-      <motion.div className="Container-Wave3">
+    <motion.div className="Outter-Wave3">
+      <motion.div className="Inner-Wave3">
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
-          width="343"
-          height="337"
+          width="183"
+          height="160"
           style={{ transform: "rotate(180deg)" }}
         >
           <motion.path

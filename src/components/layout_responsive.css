@@ -15,7 +15,17 @@
 } */
 
 /* Large desktop */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
+} */
+
+/* If a device can't hover, then only show the mobile project layout */
+@media (hover: true) {
+  .projects_desktop {
+    display: inherit;
+  }
+  .projects_mobile {
+    display: none;
+  }
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -49,7 +59,7 @@
 @media (max-width: 480px) {
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .projects_mobile {
     display: none;
   }
@@ -67,20 +77,16 @@
     display: none;
   }
 
-  .Cont-MyWaveOne {
+  .Inner-Wave1 {
     position: relative;
     right: -70px;
     top: -40px;
   }
 
-  .Cont-MyWaveTwo {
+  .Inner-Wave2 {
     position: relative;
     right: -170px;
     top: -45px;
-  }
-  .Container-Wave3 {
-    left: -130px;
-    bottom: -10px;
   }
 
   .projects {
@@ -252,20 +258,16 @@
 }
 
 @media (max-width: 376px) {
-  .Cont-MyWaveOne {
+  .Inner-Wave1 {
     position: relative;
     right: -70px;
     top: -70px;
   }
 
-  .Cont-MyWaveTwo {
+  .Inner-Wave2 {
     position: relative;
     right: -150px;
     top: -65px;
-  }
-  .Container-Wave3 {
-    left: -130px;
-    bottom: -10px;
   }
 }
 
@@ -273,13 +275,4 @@
 }
 
 @media (max-width: 992px) {
-}
-
-@media (hover: true) {
-  .projects_desktop {
-    display: inherit;
-  }
-  .projects_mobile {
-    display: none;
-  }
 }
