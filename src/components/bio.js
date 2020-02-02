@@ -63,7 +63,7 @@ export default function Background(props) {
       initial="hidden"
       animate={isInViewport ? "visible" : "hidden"}
     >
-      <div className="grid">
+      <div className="grid grid--bio">
         <motion.div
           variants={image}
           className="imagecard imgleft"

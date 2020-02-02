@@ -31,9 +31,18 @@
 /* Show thinner frames around images */
 @media (min-width: 768px) and (max-width: 1200px) {
   .grid {
-    padding: 3%;
+    padding: 1.5rem;
     column-gap: 5%;
   }
+
+  .grid--bio {
+    grid-template-columns: 50% auto;
+  }
+
+  .grid--framer {
+    grid-template-columns: auto 50%;
+  }
+
   .img-groningen {
     border: 7px solid;
     box-sizing: border-box;
@@ -78,8 +87,8 @@
     top: -80px;
   }
 }
-
-@media (max-width: 1025px) {
+/* try out 767 vs 1025 */
+@media (max-width: 767px) {
   .wrap_imagecardone {
     z-index: 2;
     width: 100%;
@@ -97,6 +106,7 @@
 
   .sm_overlay {
     position: relative;
+    top: -5px;
     width: 100%;
     margin: 0 auto;
     flex-direction: column;

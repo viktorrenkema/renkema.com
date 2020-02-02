@@ -330,8 +330,8 @@ li {
 
 .imagecard {
   justify-self: center;
-  background: #ededed;
   align-self: center;
+  max-width: 90%;
 }
 
 .imagecard img {
@@ -346,7 +346,7 @@ li {
 }
 
 .imgright {
-  grid-area: 1 / 2 / 4 / 2;
+  grid-area: 1 / 2 / 3 / 2;
   background: #edf0f1;
 }
 

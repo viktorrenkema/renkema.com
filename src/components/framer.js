@@ -64,7 +64,7 @@ export default function Framer(props) {
 
   return (
     <section className="framer" ref={targetRef}>
-      <div className="grid">
+      <div className="grid grid--framer">
         <motion.h1
           className="subject subject-framer header"
           variants={header}
