@@ -129,7 +129,7 @@ export function Sm_ProjectOne(props) {
     visible: {
       opacity: 1,
       height: "auto",
-      display: "none",
+      display: "block",
       transition: {
         when: "beforeChildren",
         duration: 0.6,
