@@ -19,14 +19,6 @@
 } */
 
 /* If a device can't hover, then only show the mobile project layout */
-@media (hover: true) {
-  .projects_desktop {
-    display: inherit;
-  }
-  .projects_mobile {
-    display: none;
-  }
-}
 
 /* Show thinner frames around images */
 @media (min-width: 768px) and (max-width: 1200px) {
@@ -57,20 +49,6 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
-  }
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-}
-
-@media (min-width: 1025px) {
-  .projects_mobile {
-    display: none;
   }
 }
 
@@ -273,5 +251,28 @@
   .sm_overlay {
     min-width: 400px;
     max-width: 500px;
+  }
+}
+
+@media (hover: true) {
+  .projects_desktop {
+    display: inherit;
+  }
+  .projects_mobile {
+    display: none;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
+
+@media (min-width: 767px) {
+  .projects_mobile {
+    display: none;
   }
 }

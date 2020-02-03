@@ -40,7 +40,7 @@ export default function Scroller(props) {
       onTap={() => {
         window.scrollTo(0, 100)
       }}
-      animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
+      // animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="30" height="33">
         <motion.path
@@ -52,8 +52,6 @@ export default function Scroller(props) {
             fill: "#f5f5f5",
             opacity: opacity,
           }}
-          // visibility={modifier > 0.5 ? "hidden" : "visible"}
-          // opacity={modifier > 0.5 ? 0 : 1}
           d="M 3 4.5 L 3 16 L 15 30 L 27 16 L 27 4.5 L 15 18 Z"
           strokeLinecap="round"
           strokeLinejoin="round"

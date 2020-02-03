@@ -193,6 +193,7 @@ li {
 }
 
 .Outter-Wave3 {
+  pointer-events: none;
   overflow: hidden;
   z-index: 5;
   width: 183px;
