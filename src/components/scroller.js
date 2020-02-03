@@ -8,25 +8,25 @@ import {
 
 export default function Scroller(props) {
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
-  const yRange = useTransform(scrollYProgress, [0, 1], [1, 0]) // First is the page second is the object
-  const modifier = useSpring(yRange)
-  console.log("scrollyprogress is " + scrollYProgress)
-  const inverseModifier = useSpring(scrollYProgress)
+  const modifier = useTransform(scrollYProgress, x => {
+    if (x > 1) {
+      return 0
+    }
+    if (x < 0) {
+      return 1
+    }
+    return 1 - x
+  })
 
-  const [endReached, endReachedSet] = React.useState(false)
-
-  const checkEnd = () => {
-    console.log(modifier, yRange, scrollYProgress)
-    modifier > 0.5 ? endReachedSet(true) : endReachedSet(false)
-  }
-
-  const fireOnScroll = () => {
-    console.log("Fire!")
-  }
+  const opacity = useTransform(modifier, x => {
+    if (x <= 0) {
+      return 0
+    }
+    return 1
+  })
 
   return (
     <motion.div
-      onScroll={fireOnScroll}
       className="scroller"
       style={{
         width: "fit-content",
@@ -42,25 +42,6 @@ export default function Scroller(props) {
       }}
       animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >
-      {/* <motion.svg
-        width="14"
-        height="7"
-        style={{ margin: "0 auto", display: "block" }}
-      >
-        <motion.path
-          style={{
-            opacity: inverseModifier,
-            margin: "0 auto",
-            display: "block",
-          }}
-          d="M 11 6 L 7 1.5 L 3 6"
-          fill="transparent"
-          stroke="#ff285e"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        ></motion.path>
-      </motion.svg> */}
-
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="30" height="33">
         <motion.path
           style={{
@@ -69,7 +50,7 @@ export default function Scroller(props) {
             strokeWidth: "1.1",
             stroke: "#ff285e",
             fill: "#f5f5f5",
-            opacity: modifier > 0.5 ? 0 : 1,
+            opacity: opacity,
           }}
           // visibility={modifier > 0.5 ? "hidden" : "visible"}
           // opacity={modifier > 0.5 ? 0 : 1}
