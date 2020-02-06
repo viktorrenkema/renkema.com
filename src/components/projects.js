@@ -7,7 +7,6 @@ import Project3 from "./project-3"
 import Project4 from "./project-4"
 import { Sm_ProjectOne } from "./project-1"
 import { Sm_ProjectTwo } from "./project-2"
-import Chevron from "./chevron"
 
 export function Projects(props) {
   const container = {
@@ -156,7 +155,6 @@ export function ProjectsMobile(props) {
       ref={targetRef}
       variants={container}
     >
-      <Chevron></Chevron>
       <motion.h1
         className="subject proj_subject header"
         variants={header}
@@ -182,9 +180,10 @@ export function ProjectsMobile(props) {
         initial="hidden"
         ref={targetRef1}
       >
-        <Sm_ProjectOne onClick={() => setOpenProject(true)} variants={item}>
-          <Chevron></Chevron>
-        </Sm_ProjectOne>
+        <Sm_ProjectOne
+          onClick={() => setOpenProject(true)}
+          variants={item}
+        ></Sm_ProjectOne>
       </motion.div>
       <div className="separator"></div>
       <motion.div

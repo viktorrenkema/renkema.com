@@ -1,6 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import accordion from "../../src/images/proj_accordion.gif"
+import Chevron from "./chevron"
 
 export function Project1(props) {
   const overlay = {
@@ -152,12 +153,14 @@ export function Sm_ProjectOne(props) {
   return (
     <motion.div onClick={onClick} className="card_sm_projectone">
       <motion.div className="wrap_imagecardone">
+        {" "}
         <motion.img
           className="imageplaceholder"
           src={accordion}
           width="100%"
           height="100%"
         ></motion.img>
+        <Chevron></Chevron>
       </motion.div>
       <motion.div
         className="sm_overlay"

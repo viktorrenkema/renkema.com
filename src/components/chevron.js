@@ -5,6 +5,8 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion"
+import useGlobalState from "../components/useGlobalState"
+import useGlobal from "reactn"
 
 const chevron = {
   first: {
@@ -19,6 +21,18 @@ const chevron = {
 }
 
 export default function Chevron(props) {
+  // const [cards, setCards] = useGlobal("cards") gives error when doing
+
+  // const globalState = useGlobalState()
+
+  // const currentDoggie = globalState.doggie
+
+  // const mulder = {
+  //   activeCard: true,
+  // }
+
+  // globalState.setDoggie(mulder)
+
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -26,9 +40,11 @@ export default function Chevron(props) {
       className="chevron"
       style={{
         bottom: "25px",
-        position: "fixed",
-        left: "30%",
+        position: "relative",
         zIndex: "3",
+        width: "20px",
+        display: "block",
+        margin: "0 auto",
       }}
       onTap={() => {
         open ? setOpen(false) : setOpen(true)
@@ -42,7 +58,7 @@ export default function Chevron(props) {
           // transition={mytransition}
           style={{
             strokeWidth: "2.5",
-            stroke: "blue",
+            stroke: "white",
             strokeLinejoin: "round",
             strokeLinecap: "round",
             fill: "transparent",
