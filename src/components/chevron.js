@@ -5,8 +5,8 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion"
-import useGlobalState from "../components/useGlobalState"
-import useGlobal from "reactn"
+import { useGlobal } from "reactn"
+// import useGlobal from "reactn"
 
 const chevron = {
   first: {
@@ -21,19 +21,11 @@ const chevron = {
 }
 
 export default function Chevron(props) {
-  // const [cards, setCards] = useGlobal("cards") gives error when doing
-
-  // const globalState = useGlobalState()
-
-  // const currentDoggie = globalState.doggie
-
-  // const mulder = {
-  //   activeCard: true,
-  // }
-
-  // globalState.setDoggie(mulder)
+  const [global, setGlobalState] = useGlobal()
 
   const [open, setOpen] = React.useState(false)
+
+  console.log("chevron global state ", global)
 
   return (
     <motion.div
@@ -47,6 +39,9 @@ export default function Chevron(props) {
         margin: "0 auto",
       }}
       onTap={() => {
+        setGlobalState({
+          foo: "foo",
+        })
         open ? setOpen(false) : setOpen(true)
       }}
     >

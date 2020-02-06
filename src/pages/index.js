@@ -1,5 +1,5 @@
-import React from "react"
-import setGlobal from "reactn"
+import React, { useEffect } from "react"
+import { initState } from "../state"
 import Intro from "../components/intro"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -11,20 +11,12 @@ import Wave3 from "../components/wave-3"
 import { Projects, ProjectsMobile } from "../components/projects"
 import Framer from "../components/framer"
 import Footer from "../components/footer"
-import GlobalStateProvider from "../components/useGlobalState"
+
+initState()
 
 export default function IndexPage(props) {
-  // setGlobal({
-  //   cards: [],
-  //   disabled: false,
-  //   initial: "values",
-  //   x: 1,
-  // })
-
-  // gives error when using
-
+  console.log(global)
   return (
-    // <GlobalStateProvider>
     <Layout>
       <Wave1></Wave1>
       <Wave2></Wave2>
@@ -38,6 +30,5 @@ export default function IndexPage(props) {
       <Footer></Footer>
       <SEO title="Viktor Renkema" />
     </Layout>
-    // </GlobalStateProvider>
   )
 }
