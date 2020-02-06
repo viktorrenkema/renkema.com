@@ -193,6 +193,7 @@ li {
 }
 
 .Outter-Wave3 {
+  pointer-events: none;
   overflow: hidden;
   z-index: 5;
   width: 183px;
@@ -477,6 +478,15 @@ li {
     0 10px 110px -5px rgba(0, 0, 0, 0.05);
 }
 
+.sm_projectdescriptions {
+  font-size: 14px;
+  color: var(--CopyGrey, #969696);
+  line-height: 1.5;
+  text-align: justify;
+  min-width: fit-content;
+  margin: 0rem 1rem 1rem 1rem;
+}
+
 .card_sm_projectone {
   position: relative;
   /* display: flex; */
@@ -529,6 +539,11 @@ li {
   display: flex;
   align-items: start;
   justify-content: flex-start;
+}
+
+.wrapper--project-1-heading {
+  display: inline-grid;
+  width: 100%;
 }
 
 .subtitle_projects {

@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { initState } from "../state"
 import Intro from "../components/intro"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -11,7 +12,10 @@ import { Projects, ProjectsMobile } from "../components/projects"
 import Framer from "../components/framer"
 import Footer from "../components/footer"
 
+initState()
+
 export default function IndexPage(props) {
+  console.log(global)
   return (
     <Layout>
       <Wave1></Wave1>
