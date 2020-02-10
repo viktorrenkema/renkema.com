@@ -1,6 +1,5 @@
 import React from "react"
 import { motion } from "framer-motion"
-// import { useGlobal } from "reactn"
 
 const chevron = {
   first: {
@@ -15,8 +14,6 @@ const chevron = {
 }
 
 export default function Chevron() {
-  // const [global, setGlobalState] = useGlobal()
-
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -31,12 +28,6 @@ export default function Chevron() {
         margin: "0 auto",
       }}
       onTap={() => {
-        // setGlobalState(
-        //   {
-        //     accordion: !global.accordion,
-        //   },
-        //   console.log(global.accordion)
-        // )
         open ? setOpen(false) : setOpen(true)
       }}
     >

@@ -146,44 +146,26 @@ export function Sm_ProjectOne() {
   }
   const [global, setGlobalState] = useGlobal()
 
-  const [clicked, setClicked] = React.useState(false)
-
   const onClick = () => {
-    setClicked(!clicked),
-      console.log("clicked"),
-      setGlobalState(
-        {
-          accordion: !global.accordion,
-        },
-        console.log(global.accordion)
-      )
+    setGlobalState(
+      {
+        projectCard: global.projectCard === "project1" ? "nothing" : "project1",
+      },
+      console.log(global.projectCard)
+    )
   }
 
-  // const handleChevronTap = () => {
-  //   setGlobalState(
-  //     {
-  //       accordion: !global.accordion,
-  //     },
-  //     console.log(global.accordion)
-  //   )
-  // }
-
   return (
-    <motion.div onClick={onClick} className="card_sm_projectone">
+    <motion.div key="project1" onClick={onClick} className="card_sm_projectone">
       <motion.div className="wrap_imagecardone">
         {" "}
-        <motion.img
-          className="imageplaceholder"
-          src={accordion}
-          width="100%"
-          height="100%"
-        ></motion.img>
+        <motion.img className="imageplaceholder" src={accordion}></motion.img>
         <Chevron></Chevron>
       </motion.div>
       <motion.div
         className="sm_overlay"
         variants={sm_overlay}
-        animate={clicked ? "visible" : "hidden"}
+        animate={global.projectCard === "project1" ? "visible" : "hidden"}
         initial="hidden"
       >
         {" "}
@@ -209,14 +191,6 @@ export function Sm_ProjectOne() {
             JSON data.
             <br></br>
           </p>
-          {/* <ul className="sm_projectdescriptions">
-            <p style={{ paddingBottom: "1rem" }}>
-              Some of the topics addressed include:
-            </p>
-            <li>applying React Hooks to toggle states</li>
-            <li>creating custom animations</li>
-            <li>mapping over an array with JSON data</li>
-          </ul> */}
         </motion.div>
       </motion.div>
     </motion.div>

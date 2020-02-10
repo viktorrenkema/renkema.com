@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 // import placeholdertwo from "../../src/images/placeholdertwo.png"
 import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
-// import { useGlobal } from "reactn"
+import { useGlobal } from "reactn"
 
 export function Project2() {
   const overlay = {
@@ -110,7 +110,7 @@ export function Project2() {
   )
 }
 
-export function Sm_ProjectTwo() {
+export function Sm_ProjectTwo(props) {
   const sm_overlay = {
     hidden: {
       opacity: 0,
@@ -137,30 +137,30 @@ export function Sm_ProjectTwo() {
     hidden: { opacity: 0, x: -10 },
   }
 
-  const [clicked, setClicked] = React.useState(false)
+  const [global, setGlobalState] = useGlobal()
 
   const onClick = () => {
-    setClicked(!clicked)
+    setGlobalState(
+      {
+        projectCard: global.projectCard === "project2" ? "nothing" : "project2",
+      },
+      console.log(global.projectCard)
+    )
   }
 
   return (
-    <motion.div onClick={onClick} className="card_sm_projectone">
+    <motion.div key="project2" onClick={onClick} className="card_sm_projectone">
       <motion.div
         className="wrap_imagecardone"
         // style={{ width: clicked ? "400px" : undefined }}
       >
-        <motion.img
-          className="imageplaceholder"
-          src={accordion}
-          // width="100%"
-          // height="100%"
-        ></motion.img>
+        <motion.img className="imageplaceholder" src={accordion}></motion.img>
         <Chevron></Chevron>
       </motion.div>
       <motion.div
         className="sm_overlay"
         variants={sm_overlay}
-        animate={clicked ? "visible" : "hidden"}
+        animate={global.projectCard === "project2" ? "visible" : "hidden"}
         initial="hidden"
       >
         {" "}
@@ -173,18 +173,8 @@ export function Sm_ProjectTwo() {
         <motion.div variants={item}>
           <p className="sm_projectdescriptions">
             While learning React, I documented some of the projects I worked on.
-            One of these turned into a 3-part tutorial, guiding users through
-            creating a single-select accordion effect within Framer.
             <br></br>
           </p>
-          <ul className="sm_projectdescriptions">
-            <p style={{ paddingBottom: "1rem" }}>
-              Some of the topics addressed include:
-            </p>
-            <li>applying React Hooks to toggle states</li>
-            <li>creating custom animations</li>
-            <li>mapping over an array with JSON data</li>
-          </ul>
         </motion.div>
       </motion.div>
     </motion.div>
