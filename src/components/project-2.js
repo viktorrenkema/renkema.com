@@ -149,7 +149,7 @@ export function Sm_ProjectTwo() {
       >
         <motion.img
           className="imageplaceholder"
-          src={placeholdertwo}
+          src={accordion}
           width="100%"
           height="100%"
         ></motion.img>
