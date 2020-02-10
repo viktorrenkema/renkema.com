@@ -7,8 +7,9 @@ import Project3 from "./project-3"
 import Project4 from "./project-4"
 import { Sm_ProjectOne } from "./project-1"
 import { Sm_ProjectTwo } from "./project-2"
+// import Chevron from "./chevron"
 
-export function Projects(props) {
+export function Projects() {
   const container = {
     hidden: { opacity: 0 },
     visible: {

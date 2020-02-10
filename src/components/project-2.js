@@ -2,6 +2,8 @@ import React from "react"
 import { motion } from "framer-motion"
 // import placeholdertwo from "../../src/images/placeholdertwo.png"
 import accordion from "../../src/images/proj_accordion.gif"
+import Chevron from "./chevron"
+// import { useGlobal } from "reactn"
 
 export function Project2() {
   const overlay = {
@@ -150,9 +152,10 @@ export function Sm_ProjectTwo() {
         <motion.img
           className="imageplaceholder"
           src={accordion}
-          width="100%"
-          height="100%"
+          // width="100%"
+          // height="100%"
         ></motion.img>
+        <Chevron></Chevron>
       </motion.div>
       <motion.div
         className="sm_overlay"

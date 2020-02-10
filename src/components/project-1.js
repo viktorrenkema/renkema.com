@@ -2,8 +2,9 @@ import React from "react"
 import { motion } from "framer-motion"
 import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
+import { useGlobal } from "reactn"
 
-export function Project1(props) {
+export function Project1() {
   const overlay = {
     hidden: {
       opacity: 0,
@@ -115,7 +116,7 @@ export function Project1(props) {
   )
 }
 
-export function Sm_ProjectOne(props) {
+export function Sm_ProjectOne() {
   const sm_overlay = {
     hidden: {
       opacity: 0,
@@ -143,12 +144,29 @@ export function Sm_ProjectOne(props) {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -10 },
   }
+  const [global, setGlobalState] = useGlobal()
 
   const [clicked, setClicked] = React.useState(false)
 
   const onClick = () => {
-    setClicked(!clicked)
+    setClicked(!clicked),
+      console.log("clicked"),
+      setGlobalState(
+        {
+          accordion: !global.accordion,
+        },
+        console.log(global.accordion)
+      )
   }
+
+  // const handleChevronTap = () => {
+  //   setGlobalState(
+  //     {
+  //       accordion: !global.accordion,
+  //     },
+  //     console.log(global.accordion)
+  //   )
+  // }
 
   return (
     <motion.div onClick={onClick} className="card_sm_projectone">

@@ -1,45 +1,46 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { useGlobal } from "reactn"
+// import { useGlobal } from "reactn"
 
 const chevron = {
   first: {
-    d: "M 0 0 L 9 9 L 18 0",
+    d: "M 5 9 L 14 18 L 23 9",
   },
   second: {
-    d: "M 0 9 L 9 0 L 18 0",
+    d: "M 5 18 L 14 9 L 23 9",
   },
   third: {
-    d: "M 0 9 L 9 0 L 18 9",
+    d: "M 5 18 L 14 9 L 23 18",
   },
 }
 
 export default function Chevron() {
-  const [global, setGlobalState] = useGlobal()
+  // const [global, setGlobalState] = useGlobal()
 
   const [open, setOpen] = React.useState(false)
-
-  console.log("chevron global state ", global)
 
   return (
     <motion.div
       className="chevron"
       style={{
-        bottom: "25px",
+        bottom: "35px",
         position: "relative",
         zIndex: "3",
-        width: "20px",
+        width: "fit-content",
         display: "block",
         margin: "0 auto",
       }}
       onTap={() => {
-        setGlobalState({
-          foo: "foo",
-        })
+        // setGlobalState(
+        //   {
+        //     accordion: !global.accordion,
+        //   },
+        //   console.log(global.accordion)
+        // )
         open ? setOpen(false) : setOpen(true)
       }}
     >
-      <motion.svg xmlns="http://www.w3.org/2000/svg" width="18" height="9">
+      <motion.svg xmlns="http://www.w3.org/2000/svg" width="27" height="27">
         <motion.path
           variants={chevron}
           initial={open ? "first" : "third"}

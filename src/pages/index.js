@@ -14,8 +14,7 @@ import Footer from "../components/footer"
 
 initState()
 
-export default function IndexPage(props) {
-  console.log(global)
+export default function IndexPage() {
   return (
     <Layout>
       <Wave1></Wave1>
