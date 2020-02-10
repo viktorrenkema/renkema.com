@@ -2,7 +2,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import placeholdertwo from "../../src/images/placeholdertwo.png"
 
-export function Project2(props) {
+export function Project2() {
   const overlay = {
     hidden: {
       opacity: 0,
@@ -107,7 +107,7 @@ export function Project2(props) {
   )
 }
 
-export function Sm_ProjectTwo(props) {
+export function Sm_ProjectTwo() {
   const sm_overlay = {
     hidden: {
       opacity: 0,

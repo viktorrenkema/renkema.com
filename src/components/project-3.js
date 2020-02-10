@@ -1,9 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
-// import placeholderthree from "../../src/images/proj_accordion.gif"
 import placeholderthree from "../../src/images/placeholderthree.png"
 
-export default function Project3(props) {
+export default function Project3() {
   const overlay = {
     hidden: {
       opacity: 0,
