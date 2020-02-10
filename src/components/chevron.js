@@ -1,12 +1,6 @@
 import React from "react"
-import {
-  motion,
-  useViewportScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion"
+import { motion } from "framer-motion"
 import { useGlobal } from "reactn"
-// import useGlobal from "reactn"
 
 const chevron = {
   first: {
@@ -20,7 +14,7 @@ const chevron = {
   },
 }
 
-export default function Chevron(props) {
+export default function Chevron() {
   const [global, setGlobalState] = useGlobal()
 
   const [open, setOpen] = React.useState(false)
