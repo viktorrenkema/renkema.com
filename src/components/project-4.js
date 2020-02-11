@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-// import placeholderfour from "../../src/images/placeholderfour.png"
-import accordion from "../../src/images/proj_accordion.gif"
+import placeholderfour from "../../src/images/placeholderfour.jpg"
+// import accordion from "../../src/images/proj_accordion.gif"
 
 export default function ProjectOne() {
   const overlay = {
@@ -76,7 +76,7 @@ export default function ProjectOne() {
         >
           <motion.img
             className="imageplaceholder"
-            src={accordion}
+            src={placeholderfour}
             width="100%"
             height="100%"
           ></motion.img>
