@@ -70,6 +70,7 @@
   .wrap_imagecardone {
     z-index: 2;
     width: 100%;
+    position: relative;
     margin: 0 auto;
   }
 
@@ -98,7 +99,7 @@
 
   .sm_copy_projecttitle {
     min-width: fit-content;
-    font-size: 18px;
+    font-size: 1rem;
     letter-spacing: 0.5px;
     line-height: 1.9;
     font-weight: 600;
@@ -108,7 +109,7 @@
 
   .sm_copy_projectlabel {
     min-width: fit-content;
-    font-size: 10px;
+    font-size: 0.5rem;
     letter-spacing: 0.5px;
     line-height: 1.9;
     font-weight: 600;

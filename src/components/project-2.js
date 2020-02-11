@@ -1,6 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import placeholdertwo from "../../src/images/placeholdertwo.png"
+import placeholdertwo from "../../src/images/placeholdertwo.jpg"
 // import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
