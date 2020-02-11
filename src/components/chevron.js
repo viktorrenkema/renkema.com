@@ -20,12 +20,14 @@ export default function Chevron(props) {
     <motion.div
       className="chevron"
       style={{
-        bottom: "35px",
-        position: "relative",
+        bottom: "5px",
+        position: "absolute",
         zIndex: "3",
         width: "fit-content",
         display: "block",
-        margin: "0 auto",
+        margin: "auto",
+        left: "0",
+        right: "0",
       }}
       onTap={() => {
         open ? setOpen(false) : setOpen(true)

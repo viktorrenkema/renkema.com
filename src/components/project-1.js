@@ -1,5 +1,5 @@
 import React from "react"
-import { motion } from "framer-motion"
+import { motion, createMotionComponent } from "framer-motion"
 import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
@@ -140,6 +140,16 @@ export function Sm_ProjectOne() {
     },
   }
 
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
+
   const item = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -10 },
@@ -153,18 +163,22 @@ export function Sm_ProjectOne() {
       console.log("Tapped 1, current state is " + global.toggle)
   }
 
+  const learnmore_separator = {
+    hidden: {
+      width: "30%",
+    },
+    visible: {
+      width: "100%",
+    },
+  }
+
   return (
-    <motion.div
-      key="project1"
-      onClick={onClickAccordion}
-      className="card_sm_projectone"
-    >
-      <motion.div className="wrap_imagecardone">
-        {" "}
-        <motion.img className="imageplaceholder" src={accordion}></motion.img>
+    <motion.div key="project1" className="card_sm_projectone">
+      <motion.div className="wrap_imagecardone" onClick={onClickAccordion}>
         <Chevron
           chevronVariant={global.toggle === "toggle1" ? "third" : "first"}
         ></Chevron>
+        <motion.img className="imageplaceholder" src={accordion}></motion.img>
       </motion.div>
       <motion.div
         className="sm_overlay"
@@ -195,6 +209,25 @@ export function Sm_ProjectOne() {
             JSON data.
             <br></br>
           </p>
+          <a
+            href="https://learn-accordion-design-part-1--framer-next.netlify.com/learn/guide/accordion-design-part-1/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.p
+              className="learnmore--projectcards"
+              onHoverStart={onHoverStart}
+              onHoverEnd={onHoverEnd}
+            >
+              LEARN MORE ›
+              <motion.div
+                className="learnmore_separator"
+                variants={learnmore_separator}
+                initial="hidden"
+                animate={hovered ? "visible" : "hidden"}
+              ></motion.div>
+            </motion.p>
+          </a>
         </motion.div>
       </motion.div>
     </motion.div>

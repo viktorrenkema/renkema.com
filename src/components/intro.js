@@ -95,9 +95,9 @@ export default function Introduction(props) {
           animate="visible"
         >
           <p className="copy-intro">
-            I'm interested in the space where human behaviour and technology
+            I’m interested in the space where human behaviour and technology
             meet, from web development to user experience research. Right now
-            I'm helping users and organizations become succesful at Framer.
+            I’m helping users and organizations become succesful at Framer.
           </p>
         </motion.div>
         <motion.div

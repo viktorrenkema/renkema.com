@@ -168,17 +168,14 @@ export function Sm_ProjectTwo(props) {
         initial={global.toggle === "toggle2" ? "visible" : "hidden"}
       >
         {" "}
-        <motion.p variants={item} className="sm_copy_projecttitle">
-          Creating an accordion design
-        </motion.p>
-        <motion.p variants={item} class="sm_copy_projectlabel">
-          FRAMER LEARN TUTORIAL
-        </motion.p>
-        <motion.div variants={item}>
-          <p className="sm_projectdescriptions">
-            While learning React, I documented some of the projects I worked on.
-            <br></br>
-          </p>
+        <motion.div className="wrapper--project-1-heading">
+          {" "}
+          <motion.p variants={item} className="sm_copy_projecttitle">
+            Project number two
+          </motion.p>
+          <motion.p variants={item} class="sm_copy_projectlabel">
+            TUTORIAL
+          </motion.p>
         </motion.div>
       </motion.div>
     </motion.div>
