@@ -1,5 +1,5 @@
 import React from "react"
-import { motion, createMotionComponent } from "framer-motion"
+import { motion } from "framer-motion"
 import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
@@ -10,8 +10,8 @@ export function Project1() {
       opacity: 0,
       width: "0px",
       transition: {
-        when: "afterChildren",
-        duration: 0.3,
+        when: "beforeChildren",
+        duration: 0.4,
         staggerChildren: 0.01,
       },
       visibility: "hidden",
@@ -59,10 +59,11 @@ export function Project1() {
   }
 
   return (
+    // <motion.div>
     <motion.div
+      className="card_lg_projectone"
       onHoverStart={onHoverStartImage}
       onHoverEnd={onHoverEndImage}
-      className="card_lg_projectone"
     >
       <motion.div
         className="overlay"
@@ -113,6 +114,7 @@ export function Project1() {
         </a>
       </motion.div>
     </motion.div>
+    // </motion.div>
   )
 }
 

@@ -259,6 +259,11 @@
     max-width: 500px;
   }
 }
+@media (min-width: 1400px) {
+  .imagecard {
+    max-width: 80%;
+  }
+}
 
 @media (hover: true) {
   .projects_desktop {

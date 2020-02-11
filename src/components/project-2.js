@@ -11,8 +11,8 @@ export function Project2() {
       opacity: 0,
       width: "0px",
       transition: {
-        when: "afterChildren",
-        duration: 0.3,
+        when: "beforeChildren",
+        duration: 0.4,
         staggerChildren: 0.01,
       },
       visibility: "hidden",

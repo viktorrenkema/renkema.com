@@ -1,7 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import placeholderfour from "../../src/images/placeholderfour.jpg"
-// import accordion from "../../src/images/proj_accordion.gif"
 
 export default function ProjectOne() {
   const overlay = {
@@ -9,8 +8,8 @@ export default function ProjectOne() {
       opacity: 0,
       width: "0px",
       transition: {
-        when: "afterChildren",
-        duration: 0.3,
+        when: "beforeChildren",
+        duration: 0.4,
         staggerChildren: 0.01,
       },
       visibility: "hidden",
