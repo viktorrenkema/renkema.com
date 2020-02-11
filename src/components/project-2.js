@@ -1,7 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
-// import placeholdertwo from "../../src/images/placeholdertwo.png"
-import accordion from "../../src/images/proj_accordion.gif"
+import placeholdertwo from "../../src/images/placeholdertwo.png"
+// import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
 
@@ -78,7 +78,7 @@ export function Project2() {
         >
           <motion.img
             className="imageplaceholder"
-            src={accordion}
+            src={placeholdertwo}
             width="100%"
             height="100%"
           ></motion.img>
@@ -139,29 +139,33 @@ export function Sm_ProjectTwo(props) {
 
   const [global, setGlobalState] = useGlobal()
 
-  const onClick = () => {
-    setGlobalState(
-      {
-        projectCard: global.projectCard === "project2" ? "nothing" : "project2",
-      },
-      console.log(global.projectCard)
-    )
+  const onClick2 = () => {
+    setGlobalState({
+      toggle: global.toggle === "toggle2" ? "none" : "toggle2",
+    }),
+      console.log("Tapped 2, current state is " + global.toggle)
   }
 
   return (
-    <motion.div key="project2" onClick={onClick} className="card_sm_projectone">
-      <motion.div
-        className="wrap_imagecardone"
-        // style={{ width: clicked ? "400px" : undefined }}
-      >
-        <motion.img className="imageplaceholder" src={accordion}></motion.img>
-        <Chevron></Chevron>
+    <motion.div
+      key="project2"
+      onClick={onClick2}
+      className="card_sm_projectone"
+    >
+      <motion.div className="wrap_imagecardone">
+        <motion.img
+          className="imageplaceholder"
+          src={placeholdertwo}
+        ></motion.img>
+        <Chevron
+          chevronVariant={global.toggle === "toggle2" ? "third" : "first"}
+        ></Chevron>
       </motion.div>
       <motion.div
         className="sm_overlay"
         variants={sm_overlay}
-        animate={global.projectCard === "project2" ? "visible" : "hidden"}
-        initial="hidden"
+        animate={global.toggle === "toggle2" ? "visible" : "hidden"}
+        initial={global.toggle === "toggle2" ? "visible" : "hidden"}
       >
         {" "}
         <motion.p variants={item} className="sm_copy_projecttitle">

@@ -13,7 +13,7 @@ const chevron = {
   },
 }
 
-export default function Chevron() {
+export default function Chevron(props) {
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -34,9 +34,10 @@ export default function Chevron() {
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="27" height="27">
         <motion.path
           variants={chevron}
-          initial={open ? "first" : "third"}
-          animate={open ? "first" : "third"}
-          // transition={mytransition}
+          initial={props.chevronVariant}
+          animate={props.chevronVariant}
+          // initial={open ? "first" : "third"}
+          // animate={open ? "first" : "third"}
           style={{
             strokeWidth: "2.5",
             stroke: "white",

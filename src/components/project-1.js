@@ -146,27 +146,31 @@ export function Sm_ProjectOne() {
   }
   const [global, setGlobalState] = useGlobal()
 
-  const onClick = () => {
-    setGlobalState(
-      {
-        projectCard: global.projectCard === "project1" ? "nothing" : "project1",
-      },
-      console.log(global.projectCard)
-    )
+  const onClickAccordion = () => {
+    setGlobalState({
+      toggle: global.toggle === "toggle1" ? "none" : "toggle1",
+    }),
+      console.log("Tapped 1, current state is " + global.toggle)
   }
 
   return (
-    <motion.div key="project1" onClick={onClick} className="card_sm_projectone">
+    <motion.div
+      key="project1"
+      onClick={onClickAccordion}
+      className="card_sm_projectone"
+    >
       <motion.div className="wrap_imagecardone">
         {" "}
         <motion.img className="imageplaceholder" src={accordion}></motion.img>
-        <Chevron></Chevron>
+        <Chevron
+          chevronVariant={global.toggle === "toggle1" ? "third" : "first"}
+        ></Chevron>
       </motion.div>
       <motion.div
         className="sm_overlay"
         variants={sm_overlay}
-        animate={global.projectCard === "project1" ? "visible" : "hidden"}
-        initial="hidden"
+        animate={global.toggle === "toggle1" ? "visible" : "hidden"}
+        initial={global.toggle === "toggle1" ? "visible" : "hidden"}
       >
         {" "}
         <motion.div className="wrapper--project-1-heading">

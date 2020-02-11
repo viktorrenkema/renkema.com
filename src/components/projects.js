@@ -8,6 +8,7 @@ import Project4 from "./project-4"
 import { Sm_ProjectOne } from "./project-1"
 import { Sm_ProjectTwo } from "./project-2"
 // import Chevron from "./chevron"
+import { useGlobal } from "reactn"
 
 export function Projects() {
   const container = {
@@ -148,6 +149,15 @@ export function ProjectsMobile(props) {
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 20 })
   const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 20 })
 
+  const [global, setGlobalState] = useGlobal()
+
+  const onClick1 = () => {
+    setGlobalState({
+      toggle: global.toggle === "toggle1" ? "none" : "toggle1",
+    }),
+      console.log("Tapped 1, current state is " + global.toggle)
+  }
+
   return (
     <motion.section
       initial="hidden"
@@ -156,6 +166,14 @@ export function ProjectsMobile(props) {
       ref={targetRef}
       variants={container}
     >
+      {" "}
+      <motion.div
+        onClick={onClick1}
+        style={{
+          display: "none",
+          width: global.toggle === "toggle1" ? "0px" : "1px",
+        }}
+      ></motion.div>
       <motion.h1
         className="subject proj_subject header"
         variants={header}
@@ -171,7 +189,6 @@ export function ProjectsMobile(props) {
           content created to help users upskill with React.
         </p>
       </div>
-
       <div className="separator-sm"></div>
       <motion.div
         className="section_project"
