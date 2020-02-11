@@ -95,6 +95,7 @@ li {
 }
 .subject-framer {
   grid-area: 1 / 1 / 2 / 1;
+  padding-bottom: 1rem;
 }
 
 .h1-projects {
@@ -104,6 +105,7 @@ li {
 
 .subject-bio {
   grid-area: 1 / 2 / 2 / 3;
+  padding-bottom: 1rem;
 }
 
 .carddescriptionleft {
@@ -331,10 +333,9 @@ li {
   display: grid;
   align-self: center;
   justify-content: center;
-  grid-template-rows: max-content auto;
+  grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(2, auto);
   grid-column-gap: 10%;
-  grid-row-gap: 1rem;
   padding: 4em;
 }
 
@@ -352,11 +353,11 @@ li {
 }
 
 .imgleft {
-  grid-area: 1 / 1 / 3 / 1;
+  grid-area: 1 / 1 / 1 / 1;
 }
 
 .imgright {
-  grid-area: 1 / 2 / 3 / 2;
+  grid-area: 1 / 2 / 1 / 2;
   background: #edf0f1;
 }
 
