@@ -134,7 +134,7 @@
     opacity: 1;
     font-size: 40px;
     justify-self: start;
-    padding: 0rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 
   .proj_subject {
@@ -172,7 +172,6 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     padding: 0rem;
-    row-gap: 1.5rem;
   }
 
   h1 {

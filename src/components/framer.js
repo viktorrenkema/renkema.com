@@ -65,57 +65,67 @@ export default function Framer(props) {
   return (
     <section className="framer" ref={targetRef}>
       <div className="grid grid--framer">
-        <motion.h1
-          className="subject subject-framer header"
-          variants={header}
-          initial="hidden"
-          animate={isInViewport ? "visible" : "hidden"}
+        <motion.div
+          style={{
+            flexDirection: "column",
+            opacity: "1",
+            transform: "none",
+            display: "flex",
+            placeContent: "start",
+          }}
         >
-          Framer
-        </motion.h1>
-        <motion.div className="description carddescriptionleft">
-          <motion.p
-            className="copy"
-            variants={copy}
+          <motion.h1
+            className="subject subject-framer header"
+            variants={header}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
           >
-            Starting out at Framer, as Community and Support Specialist I
-            ensured our users are getting the support they required. Next to
-            providing direct help via our support channels I wrote support
-            articles, created community posts with tips and tricks, and assisted
-            users with organising meetups in their local communities.
-            <br></br>
-            <br></br>
-            Currently I moved into the Product Specialist role, where my focus
-            extends to also help organizations like KLM, Google, and others
-            become succesful, effective teams that excel with Framer as their
-            prototyping resource, for instance with on-site workshops.
-            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            Framer
+          </motion.h1>
+          <motion.div className="description carddescriptionleft">
+            <motion.p
+              className="copy"
+              variants={copy}
+              initial="hidden"
+              animate={isInViewport ? "visible" : "hidden"}
+            >
+              Starting out at Framer, as Community and Support Specialist I
+              ensured our users are getting the support they required. Next to
+              providing direct help via our support channels I wrote support
+              articles, created community posts with tips and tricks, and
+              assisted users with organising meetups in their local communities.
+              <br></br>
+              <br></br>
+              Currently I moved into the Product Specialist role, where my focus
+              extends to also help organizations like KLM, Google, and others
+              become succesful, effective teams that excel with Framer as their
+              prototyping resource, for instance with on-site workshops.
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             iaculis venenatis risus non rutrum. Phasellus ut pharetra massa. Nam
             elementum tellus venenatis sapien venenatis, sed pulvinar neque
             malesuada. Etiam eu ante id lacus interdum sagittis. Nullam ex eros,
             accumsan eget lacus a, vehicula accumsan libero. Ut eget lorem et
             felis scelerisque consectetur. */}
-          </motion.p>{" "}
-          <motion.a
-            class="learnmore copy"
-            href="https://www.framer.com"
-            target="_blank"
-            variants={copy}
-            initial="hidden"
-            animate={isInViewport ? "visible" : "hidden"}
-            onHoverStart={onHoverStart}
-            onHoverEnd={onHoverEnd}
-          >
-            VISIT FRAMER.COM ›
-            <motion.div
-              className="learnmore_separator"
-              variants={learnmore_separator}
+            </motion.p>{" "}
+            <motion.a
+              class="learnmore copy"
+              href="https://www.framer.com"
+              target="_blank"
+              variants={copy}
               initial="hidden"
-              animate={hovered ? "visible" : "hidden"}
-            ></motion.div>
-          </motion.a>
+              animate={isInViewport ? "visible" : "hidden"}
+              onHoverStart={onHoverStart}
+              onHoverEnd={onHoverEnd}
+            >
+              VISIT FRAMER.COM ›
+              <motion.div
+                className="learnmore_separator"
+                variants={learnmore_separator}
+                initial="hidden"
+                animate={hovered ? "visible" : "hidden"}
+              ></motion.div>
+            </motion.a>
+          </motion.div>
         </motion.div>
         <motion.div
           className="imgright imagecard"

@@ -72,57 +72,67 @@ export default function Background(props) {
         >
           <PictureFrame></PictureFrame>
         </motion.div>
-        <motion.h1
-          className={"subject subject-bio header"}
-          variants={header}
-          initial="hidden"
-          animate={isInViewport ? "visible" : "hidden"}
+        <motion.div
+          style={{
+            flexDirection: "column",
+            opacity: "1",
+            transform: "none",
+            display: "flex",
+            placeContent: "start",
+          }}
         >
-          Bio
-        </motion.h1>
-        <motion.div className="description carddescriptionright">
-          <motion.p
-            className="copy"
-            variants={copy}
+          <motion.h1
+            className={"subject subject-bio header"}
+            variants={header}
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
           >
-            While obtaining my Master's degree in Psychology in Groningen, my
-            interest in human behaviour started to extend to include the
-            combination of behaviour and web technology. To pursue this field, I
-            began learning more about web development and digital user
-            experiences.
-            <br></br>
-            <br></br>After starting out learning about web technologies creating
-            A/B tests for an online webshop. After this, I got to learn more
-            about the UX side when I started working at the Medical Center
-            Groningen. I studied the workflows of medical staff for whom we
-            built and implemented custom user interfaces in Epic, the
-            hospital-wide electronic medical record.
-            <br></br>
-            {/* <br></br>About a year later I started working at Framer, where I
+            Bio
+          </motion.h1>
+          <motion.div className="description carddescriptionright">
+            <motion.p
+              className="copy"
+              variants={copy}
+              initial="hidden"
+              animate={isInViewport ? "visible" : "hidden"}
+            >
+              While obtaining my Master's degree in Psychology in Groningen, my
+              interest in human behaviour started to extend to include the
+              combination of behaviour and web technology. To pursue this field,
+              I began learning more about web development and digital user
+              experiences.
+              <br></br>
+              <br></br>After starting out learning about web technologies
+              creating A/B tests for an online webshop. After this, I got to
+              learn more about the UX side when I started working at the Medical
+              Center Groningen. I studied the workflows of medical staff for
+              whom we built and implemented custom user interfaces in Epic, the
+              hospital-wide electronic medical record.
+              <br></br>
+              {/* <br></br>About a year later I started working at Framer, where I
             manage our thriving communities and ensure all our users and
             organizations are receiving the technical support they require. */}
-          </motion.p>
-          <motion.a
-            className="learnmore copy"
-            href="mailto:viktor@renkema.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            variants={copy}
-            initial="hidden"
-            animate={isInViewport ? "visible" : "hidden"}
-            onHoverStart={onHoverStart}
-            onHoverEnd={onHoverEnd}
-          >
-            ASK ME MORE ›
-            <motion.div
-              className="learnmore_separator"
-              variants={learnmore_separator}
+            </motion.p>
+            <motion.a
+              className="learnmore copy"
+              href="mailto:viktor@renkema.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              variants={copy}
               initial="hidden"
-              animate={hovered ? "visible" : "hidden"}
-            ></motion.div>
-          </motion.a>
+              animate={isInViewport ? "visible" : "hidden"}
+              onHoverStart={onHoverStart}
+              onHoverEnd={onHoverEnd}
+            >
+              ASK ME MORE ›
+              <motion.div
+                className="learnmore_separator"
+                variants={learnmore_separator}
+                initial="hidden"
+                animate={hovered ? "visible" : "hidden"}
+              ></motion.div>
+            </motion.a>
+          </motion.div>
         </motion.div>{" "}
       </div>
     </motion.section>
