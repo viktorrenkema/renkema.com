@@ -101,7 +101,7 @@ export function Project1() {
         initial="large"
       >
         <a
-          href="https://learn-accordion-design-part-1--framer-next.netlify.com/learn/guide/accordion-design-part-1/"
+          href="https://www.framer.com/learn/guide/accordion-design-part-1/"
           target="_blank"
           rel="noopener noreferrer"
         >

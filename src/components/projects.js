@@ -43,9 +43,9 @@ export function Projects() {
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 40 })
-  const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 40 })
-  const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
-  const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
+  // const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 40 })
+  // const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
+  // const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
@@ -78,7 +78,7 @@ export function Projects() {
       >
         <Project1 variants={item}></Project1>
       </motion.div>
-      <div className="separator"></div>
+      {/* <div className="separator"></div>
       <motion.div
         className="section_project"
         ref={targetRef2}
@@ -107,7 +107,7 @@ export function Projects() {
         initial="hidden"
       >
         <Project4 variants={item}></Project4>
-      </motion.div>
+      </motion.div> */}
     </motion.section>
   )
 }
@@ -147,7 +147,7 @@ export function ProjectsMobile(props) {
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 20 })
-  const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 20 })
+  // const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 20 })
 
   const [global, setGlobalState] = useGlobal()
 
@@ -204,7 +204,7 @@ export function ProjectsMobile(props) {
         ></Sm_ProjectOne>
       </motion.div>
       <div className="separator"></div>
-      <motion.div
+      {/* <motion.div
         className="section_project"
         ref={targetRef2}
         animate={SecondCardInViewport ? "visible" : "hidden"}
@@ -212,7 +212,7 @@ export function ProjectsMobile(props) {
         initial="hidden"
       >
         <Sm_ProjectTwo variants={item}></Sm_ProjectTwo>
-      </motion.div>
+      </motion.div> */}
       <div className="separator"></div>
     </motion.section>
   )
