@@ -110,6 +110,7 @@ export default function LearnmoreBlob(props) {
             {props.text}
           </motion.p>
         </motion.a>
+
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width="8"

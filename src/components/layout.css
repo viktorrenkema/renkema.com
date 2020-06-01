@@ -51,6 +51,7 @@ body {
 
 main {
   overflow: hidden;
+  position: relative;
 }
 p::selection,
 h1::selection {
@@ -66,7 +67,8 @@ h1::-moz-selection {
 
 h1 {
   font-size: 40px;
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: "Lato", sans-serif;
+  /* font-family: "Hind Siliguri", sans-serif; */
   /* font-family: "Playfair Display", serif; */
   font-weight: 600;
   line-height: 1;
@@ -77,8 +79,9 @@ li {
   color: #171717;
 }
 a {
-  text-decoration: none;
+  /* text-decoration: none; */
   color: #ff285e;
+  text-decoration: underline #ff285e;
 }
 
 li {
@@ -211,7 +214,6 @@ li {
   z-index: 5;
   width: 183px;
   left: 0;
-  bottom: -80px;
   height: 160px;
   position: relative;
 }
@@ -261,10 +263,10 @@ li {
 }
 
 .grid_intro h1 {
-  /* color: #042639; */
-  padding: 10px 0px;
+  color: #171717;
+  /* padding: 10px 0px;
   background: #ff285e;
-  color: white;
+  color: white; */
 }
 
 .slash {
@@ -314,8 +316,7 @@ li {
 .copy-projects {
   text-align: center;
   margin: 0 auto;
-  max-width: 400px;
-  padding-bottom: 2.2em;
+  max-width: 500px;
 }
 
 /* EDUCATION */
@@ -435,10 +436,10 @@ li {
 
 /* PROJECTS */
 .projects {
-  background: #efefef;
+  /* background: #efefef; */
   overflow: hidden;
   align-self: center;
-  padding: 4em 4em 4em 4em;
+  padding: 6em 4em 6em 4em;
   justify-content: center;
 }
 
@@ -470,13 +471,8 @@ li {
 .section_project {
   width: 100%;
   display: inline-flex;
-  padding: 5rem 0rem;
   justify-content: space-evenly;
   align-items: center;
-}
-
-#section-project-1 {
-  padding-top: 2.5rem;
 }
 
 .card_lg_projectone,
@@ -621,14 +617,15 @@ li {
 }
 
 .copy_projectlabel {
-  color: white;
-  padding: 0rem 0rem 0rem 2rem;
+  color: #ff2c64;
+  background: white;
+  margin: 0rem 0rem 1rem 2rem;
+  padding: 0px 2px;
   font-size: 11px;
   letter-spacing: 0.5px;
   line-height: 1.9;
   font-weight: 600;
   font-style: normal;
-  padding-bottom: 1rem;
 }
 
 .project1description {
@@ -679,12 +676,17 @@ ul li::before {
 }
 
 .footer {
-  width: 100%;
-  background: #eaeaea;
-  height: 20%;
+  display: inline-flex;
   position: absolute;
-  display: flex;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 60%;
+  margin: 0 auto;
+  border-top: 2px solid #ececec;
+  height: 70px;
 }
+
 .footer li::before {
   content: none;
 }

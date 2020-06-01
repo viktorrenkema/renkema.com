@@ -67,9 +67,6 @@
 }
 
 @media (min-width: 768px) {
-  .wrap_imagecardone {
-    height: 400px;
-  }
   .imageplaceholder {
     height: 100%;
   }

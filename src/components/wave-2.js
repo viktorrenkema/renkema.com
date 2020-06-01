@@ -7,7 +7,7 @@ export default function Wave2(props) {
   const mytransition = {
     yoyo: Infinity,
     ease: "easeInOut",
-    duration: 6,
+    duration: 5,
   }
   const wave = {
     first: {

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 const mytransition = {
   yoyo: Infinity,
   ease: "linear",
-  duration: 6,
+  duration: 5,
 }
 const wave = {
   first: {
@@ -25,16 +25,6 @@ const wave = {
 }
 
 export default function Wave1(props) {
-  // const [hovered, setHovered] = React.useState(false)
-
-  // const onHoverStart = () => {
-  //   setHovered(true)
-  // }
-
-  // const onHoverEnd = () => {
-  //   setHovered(false)
-  // }
-
   return (
     <motion.div className="Outter-Wave1">
       <motion.div className="Inner-Wave1">
@@ -43,13 +33,9 @@ export default function Wave1(props) {
           width="572"
           height="270"
           className="SVG-MyWaveOne"
-          // onHoverStart={onHoverStart}
-          // onHoverEnd={onHoverEnd}
         >
           <motion.path
             variants={wave}
-            // initial="first"
-            // animate="second"
             initial={"first"}
             animate={"second"}
             transition={mytransition}

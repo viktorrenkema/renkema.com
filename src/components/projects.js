@@ -66,8 +66,7 @@ export function Projects() {
         Projects
       </motion.h1>
       <p className="copy-projects copy">
-        Various passion projects, educational articles, and any other content
-        related to web development.
+        Various passion projects, educational articles, and other web content.
       </p>
       {/* <div className="separator-sm"></div> */}
       <motion.div
@@ -188,8 +187,7 @@ export function ProjectsMobile(props) {
       <div className="projects--wrapper">
         {" "}
         <p className="copy-projects copy">
-          Various passion projects, educational articles, and any other content
-          related to web development.
+          Various passion projects, educational articles, and other web content.
         </p>
       </div>
       {/* <div className="separator-sm"></div> */}

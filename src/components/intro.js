@@ -123,7 +123,7 @@ export default function Introduction(props) {
             Hey! I’m Viktor, a psychologist exploring design and web
             development.
           </h1> */}
-          <h1>Hey, my name is Viktor.</h1>
+          <h1>Hey, my name is Viktor</h1>
           {/* <h1>Hey, my name is Viktor.</h1> */}
         </motion.div>
         <motion.div
@@ -156,13 +156,13 @@ export default function Introduction(props) {
             </a>{" "}
             or{" "}
             <a
-              href="https://www.twitter.com/vrenkema"
+              href="mailto:viktor@renkema.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               by email
             </a>{" "}
-            if you want to chat motorcycles or neurotransmitters.
+            to chat motorcycles or neurotransmitters (or anything, really).
           </p>
           {/* <p className="copy-intro">
             I’m interested in the space where human behaviour and technology

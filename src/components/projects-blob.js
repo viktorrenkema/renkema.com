@@ -3,12 +3,26 @@ import { motion } from "framer-motion"
 import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
+import LearnmoreStaticBlob from "../components/learnmore-staticblob"
 
 export default function ProjectsBlob(props) {
+  // Setting and controlling state
+
+  const [hovered, setHovered] = React.useState(false)
+
+  const onHoverStart = () => {
+    setHovered(true)
+  }
+
+  const onHoverEnd = () => {
+    setHovered(false)
+  }
+
+  // Variants
+
   const overlay = {
     hidden: {
       opacity: 0,
-
       width: "0px",
       transition: {
         when: "beforeChildren",
@@ -19,7 +33,6 @@ export default function ProjectsBlob(props) {
     },
     visible: {
       opacity: 1,
-
       width: "600px",
       transition: {
         when: "beforeChildren",
@@ -45,16 +58,6 @@ export default function ProjectsBlob(props) {
         duration: 0.3,
       },
     },
-  }
-
-  const [hovered, setHovered] = React.useState(false)
-
-  const onHoverStart = () => {
-    setHovered(true)
-  }
-
-  const onHoverEnd = () => {
-    setHovered(false)
   }
 
   const blob = {
@@ -97,6 +100,7 @@ export default function ProjectsBlob(props) {
       },
     },
   }
+
   const item = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -10 },
@@ -104,7 +108,7 @@ export default function ProjectsBlob(props) {
 
   const blobwrapper = {
     height: "600px",
-    width: "100%",
+    width: "600px",
     position: "relative",
     display: "flex",
     justifyContent: "space-evenly",
@@ -151,13 +155,19 @@ export default function ProjectsBlob(props) {
               <li style={{ color: "white" }}>
                 mapping over an array with JSON data
               </li>
+              <LearnmoreStaticBlob
+                destination={
+                  "https://www.framer.com/learn/guide/accordion-design-part-1/"
+                }
+                text={"Read the tutorial"}
+              ></LearnmoreStaticBlob>
             </ul>
           </motion.div>
         </motion.div>
         <motion.div
           className="wrap_imagecardone"
           variants={imgwrapper}
-          style={{ width: "400px", margin: "auto" }}
+          style={{ width: "300px", margin: "auto" }}
           animate={hovered ? "large" : "small"}
           initial="small"
         >
