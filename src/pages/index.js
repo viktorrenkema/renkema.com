@@ -19,7 +19,7 @@ export default function IndexPage() {
     <Layout>
       <Wave1></Wave1>
       <Wave2></Wave2>
-      <Wave3></Wave3>
+
       <Intro></Intro>
       <Bio></Bio>
       <Framer></Framer>
@@ -27,6 +27,7 @@ export default function IndexPage() {
       <ProjectsMobile></ProjectsMobile>
       <Scroller></Scroller>
       <Footer></Footer>
+      <Wave3></Wave3>
       <SEO title="Viktor Renkema" />
     </Layout>
   )

@@ -10,6 +10,8 @@ import { Sm_ProjectTwo } from "./project-2"
 // import Chevron from "./chevron"
 import { useGlobal } from "reactn"
 
+import ProjectsBlob from "../components/projects-blob"
+
 export function Projects() {
   const container = {
     hidden: { opacity: 0 },
@@ -76,7 +78,8 @@ export function Projects() {
         variants={card}
         initial="hidden"
       >
-        <Project1 variants={item}></Project1>
+        {/* <Project1 variants={item}></Project1> */}
+        <ProjectsBlob></ProjectsBlob>
       </motion.div>
       {/* <div className="separator"></div>
       <motion.div
