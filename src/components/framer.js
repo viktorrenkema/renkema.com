@@ -39,15 +39,6 @@ const imagebackground = {
   visible: { opacity: 1, transition: { duration: 1 } },
 }
 
-const learnmore_separator = {
-  hidden: {
-    width: "30%",
-  },
-  visible: {
-    width: "100%",
-  },
-}
-
 export default function Framer(props) {
   const [hovered, setHovered] = React.useState(false)
 

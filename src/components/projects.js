@@ -1,12 +1,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import { Project1 } from "./project-1"
-import { Project2 } from "./project-2"
-import Project3 from "./project-3"
-import Project4 from "./project-4"
 import { Sm_ProjectOne } from "./project-1"
-import { Sm_ProjectTwo } from "./project-2"
 // import Chevron from "./chevron"
 import { useGlobal } from "reactn"
 
@@ -45,9 +40,6 @@ export function Projects() {
 
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 40 })
-  // const [SecondCardInViewport, targetRef2] = useIsInViewport({ threshold: 40 })
-  // const [ThirdCardInViewport, targetRef3] = useIsInViewport({ threshold: 40 })
-  // const [FourthCardInViewport, targetRef4] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
@@ -68,7 +60,6 @@ export function Projects() {
       <p className="copy-projects copy">
         Various passion projects, educational articles, and other web content.
       </p>
-      {/* <div className="separator-sm"></div> */}
       <motion.div
         className="section_project"
         id="section-project-1"
@@ -77,39 +68,8 @@ export function Projects() {
         variants={card}
         initial="hidden"
       >
-        {/* <Project1 variants={item}></Project1> */}
         <ProjectsBlob></ProjectsBlob>
       </motion.div>
-      {/* <div className="separator"></div>
-      <motion.div
-        className="section_project"
-        ref={targetRef2}
-        animate={SecondCardInViewport ? "visible" : "hidden"}
-        variants={card}
-        initial="hidden"
-      >
-        <Project2 variants={item}></Project2>
-      </motion.div>
-      <div className="separator"></div>
-      <motion.div
-        className="section_project"
-        ref={targetRef3}
-        animate={ThirdCardInViewport ? "visible" : "hidden"}
-        variants={card}
-        initial="hidden"
-      >
-        <Project3 variants={item}></Project3>
-      </motion.div>
-      <div className="separator"></div>
-      <motion.div
-        className="section_project"
-        ref={targetRef4}
-        animate={FourthCardInViewport ? "visible" : "hidden"}
-        variants={card}
-        initial="hidden"
-      >
-        <Project4 variants={item}></Project4>
-      </motion.div> */}
     </motion.section>
   )
 }
@@ -204,17 +164,6 @@ export function ProjectsMobile(props) {
           variants={item}
         ></Sm_ProjectOne>
       </motion.div>
-      {/* <div className="separator"></div> */}
-      {/* <motion.div
-        className="section_project"
-        ref={targetRef2}
-        animate={SecondCardInViewport ? "visible" : "hidden"}
-        variants={card}
-        initial="hidden"
-      >
-        <Sm_ProjectTwo variants={item}></Sm_ProjectTwo>
-      </motion.div> */}
-      {/* <div className="separator"></div> */}
     </motion.section>
   )
 }

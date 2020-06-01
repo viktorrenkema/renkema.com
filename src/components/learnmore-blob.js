@@ -123,7 +123,8 @@ export default function LearnmoreBlob(props) {
           <motion.path
             d="M 0 2.479 L 6.578 2.479 L 4.65 0.455 L 5.083 0 L 7.749 2.801 L 5.082 5.601 L 4.65 5.147 L 6.579 3.122 L 0 3.122 Z"
             transform="translate(0.125 0.199) rotate(-45 3.875 2.801)"
-            fill={hovered ? "#ff285e" : "hsl(0, 0%, 100%)"}
+            fill={hovered ? "#ff285e" : "none"}
+            // fill={hovered ? "#ff285e" : "hsl(0, 0%, 100%)"}
           ></motion.path>
         </motion.svg>
       </motion.div>

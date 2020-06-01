@@ -212,7 +212,7 @@ li {
 .Outter-Wave3 {
   pointer-events: none;
   overflow: hidden;
-  z-index: 5;
+  z-index: -5;
   width: 183px;
   left: 0;
   height: 160px;
@@ -445,31 +445,6 @@ li {
   justify-content: center;
 }
 
-.separator-sm {
-  margin: 0 auto;
-  width: 15%;
-  height: 1px;
-  background: #e4e1e1;
-  background-repeat: no-repeat;
-}
-
-.separator {
-  margin: 0 auto;
-  width: 30%;
-  height: 1px;
-  background: #e4e1e1;
-  background-repeat: no-repeat;
-}
-
-.learnmore_separator {
-  margin: 0 auto;
-  width: 30%;
-  float: left;
-  height: 1px;
-  background: #ff285e;
-  background-repeat: no-repeat;
-}
-
 .section_project {
   width: 100%;
   display: inline-flex;
@@ -678,6 +653,7 @@ ul li::before {
 }
 
 .footer {
+  background: #f5f5f5;
   display: inline-flex;
   position: absolute;
   bottom: 0;
