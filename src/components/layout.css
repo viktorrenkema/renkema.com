@@ -659,10 +659,11 @@ ul li::before {
   color: #ff2b65; /* Change the color */
   font-weight: bold; /* If you want it to be bold */
   display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 20px; /* Also needed for space (tweak if needed) */
-  height: 20px;
+  width: 10px; /* Also needed for space (tweak if needed) */
+  height: 8px;
   vertical-align: middle;
   margin-left: 0em; /* Also needed for space (tweak if needed) */
+  margin-right: 5px; /* Also needed for space (tweak if needed) */
   background-image: url("../../src/images/bullet2.svg");
   background-size: contain;
   background-repeat: no-repeat;

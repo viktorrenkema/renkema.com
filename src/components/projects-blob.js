@@ -8,7 +8,7 @@ export default function ProjectsBlob(props) {
   const overlay = {
     hidden: {
       opacity: 0,
-      left: "0%",
+
       width: "0px",
       transition: {
         when: "beforeChildren",
@@ -19,7 +19,7 @@ export default function ProjectsBlob(props) {
     },
     visible: {
       opacity: 1,
-      left: "20%",
+
       width: "600px",
       transition: {
         when: "beforeChildren",
@@ -33,14 +33,12 @@ export default function ProjectsBlob(props) {
   const imgwrapper = {
     small: {
       transform: "scale(0.5)",
-      right: "auto",
       transition: {
         ease: "linear",
         duration: 0.3,
       },
     },
     large: {
-      right: "25%",
       transform: "scale(1)",
       transition: {
         ease: "linear",
@@ -120,57 +118,62 @@ export default function ProjectsBlob(props) {
       onHoverEnd={onHoverEnd}
     >
       <motion.div
-        className="overlay"
-        variants={overlay}
-        animate={hovered ? "visible" : "hidden"}
-        initial="hidden"
+        className="flexwrapper-blob"
+        style={{ display: "flex", width: "800px", justifyContent: "center" }}
       >
-        <motion.p variants={item} className="copy_projecttitle">
-          Creating an accordion design
-        </motion.p>
-        <motion.p variants={item} class="copy_projectlabel">
-          FRAMER LEARN TUTORIAL
-        </motion.p>
-        <motion.div variants={item}>
-          <p className="projectdescriptions">
-            While learning React, I documented some of the projects I worked on.
-            One of these turned into a 3-part tutorial, guiding users through
-            creating a single-select accordion effect within Framer.
-            <br></br>
-          </p>
-          <ul className="projectdescriptions">
-            <p style={{ paddingBottom: "1rem", color: "white" }}>
-              Some of the topics addressed include:
-            </p>
-            <li style={{ color: "white" }}>
-              applying React Hooks to toggle states
-            </li>
-            <li style={{ color: "white" }}>creating custom animations</li>
-            <li style={{ color: "white" }}>
-              mapping over an array with JSON data
-            </li>
-          </ul>
-        </motion.div>
-      </motion.div>
-      <motion.div
-        className="wrap_imagecardone"
-        variants={imgwrapper}
-        style={{ position: "absolute", width: "400px" }}
-        animate={hovered ? "large" : "small"}
-        initial="small"
-      >
-        <a
-          href="https://www.framer.com/learn/guide/accordion-design-part-1/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <motion.div
+          className="overlay"
+          variants={overlay}
+          animate={hovered ? "visible" : "hidden"}
+          initial="hidden"
         >
-          <motion.img
-            className="imageplaceholder"
-            src={accordion}
-            width="100%"
-            height="100%"
-          ></motion.img>
-        </a>
+          <motion.p variants={item} className="copy_projecttitle">
+            Creating an accordion design
+          </motion.p>
+          <motion.p variants={item} class="copy_projectlabel">
+            FRAMER LEARN TUTORIAL
+          </motion.p>
+          <motion.div variants={item}>
+            <p className="projectdescriptions">
+              While learning React, I documented some of the projects I worked
+              on. One of these turned into a 3-part tutorial, guiding users
+              through creating a single-select accordion effect within Framer.
+              <br></br>
+            </p>
+            <ul className="projectdescriptions">
+              <p style={{ paddingBottom: "1rem", color: "white" }}>
+                Some of the topics addressed include:
+              </p>
+              <li style={{ color: "white" }}>
+                applying React Hooks to toggle states
+              </li>
+              <li style={{ color: "white" }}>creating custom animations</li>
+              <li style={{ color: "white" }}>
+                mapping over an array with JSON data
+              </li>
+            </ul>
+          </motion.div>
+        </motion.div>
+        <motion.div
+          className="wrap_imagecardone"
+          variants={imgwrapper}
+          style={{ width: "400px", margin: "auto" }}
+          animate={hovered ? "large" : "small"}
+          initial="small"
+        >
+          <a
+            href="https://www.framer.com/learn/guide/accordion-design-part-1/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.img
+              className="imageplaceholder"
+              src={accordion}
+              width="100%"
+              height="100%"
+            ></motion.img>
+          </a>
+        </motion.div>
       </motion.div>
       <motion.div className="svg-wrapper" style={{ position: "absolute" }}>
         <motion.svg

@@ -69,7 +69,7 @@ export function Projects() {
         Various passion projects, educational articles, and any other content
         related to web development.
       </p>
-      <div className="separator-sm"></div>
+      {/* <div className="separator-sm"></div> */}
       <motion.div
         className="section_project"
         id="section-project-1"
@@ -192,7 +192,7 @@ export function ProjectsMobile(props) {
           related to web development.
         </p>
       </div>
-      <div className="separator-sm"></div>
+      {/* <div className="separator-sm"></div> */}
       <motion.div
         className="section_project"
         id="section-project-1"
@@ -206,7 +206,7 @@ export function ProjectsMobile(props) {
           variants={item}
         ></Sm_ProjectOne>
       </motion.div>
-      <div className="separator"></div>
+      {/* <div className="separator"></div> */}
       {/* <motion.div
         className="section_project"
         ref={targetRef2}
@@ -216,7 +216,7 @@ export function ProjectsMobile(props) {
       >
         <Sm_ProjectTwo variants={item}></Sm_ProjectTwo>
       </motion.div> */}
-      <div className="separator"></div>
+      {/* <div className="separator"></div> */}
     </motion.section>
   )
 }
