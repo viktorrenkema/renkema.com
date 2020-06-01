@@ -47,7 +47,7 @@ export default function Scroller(props) {
           style={{
             pathLength: 0,
             pathLength: modifier,
-            strokeWidth: "1.8",
+            strokeWidth: "1.5",
             stroke: "#ff285e",
             fill: "#f5f5f5",
             opacity: opacity,

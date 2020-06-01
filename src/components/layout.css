@@ -138,6 +138,7 @@ li {
 .learnmore {
   /* letter-spacing: 1px; */
   display: inline-block;
+  user-select: none;
   color: #022435;
   width: max-content;
   font-weight: 600;
@@ -264,6 +265,7 @@ li {
 
 .grid_intro h1 {
   color: #171717;
+  text-align: start;
   /* padding: 10px 0px;
   background: #ff285e;
   color: white; */

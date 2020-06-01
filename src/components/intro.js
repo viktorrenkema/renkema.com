@@ -13,18 +13,6 @@ const name_stagger = {
   },
 }
 
-const role_stagger = {
-  hidden: { x: -20, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      delay: 0.8,
-      duration: 0.4,
-    },
-  },
-}
-
 const description_stagger = {
   hidden: { opacity: 0 },
   visible: {
@@ -127,12 +115,6 @@ export default function Introduction(props) {
           {/* <h1>Hey, my name is Viktor.</h1> */}
         </motion.div>
         <motion.div
-          className={"titles roleStagger"}
-          variants={role_stagger}
-          initial="hidden"
-          animate="visible"
-        ></motion.div>
-        <motion.div
           className="about descriptionStagger"
           variants={description_stagger}
           initial="hidden"
@@ -162,7 +144,7 @@ export default function Introduction(props) {
             >
               by email
             </a>{" "}
-            to chat motorcycles or neurotransmitters (or anything, really).
+            to chat motorcycles, neurotransmitters, or anything, really.
           </p>
           {/* <p className="copy-intro">
             I’m interested in the space where human behaviour and technology

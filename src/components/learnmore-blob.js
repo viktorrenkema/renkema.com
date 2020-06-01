@@ -74,6 +74,9 @@ export default function LearnmoreBlob(props) {
       style={blobwrapper}
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
+      onTapStart={onHoverStart}
+      onTapCancel={onHoverEnd}
+      // whileTap={onHoverStart}
     >
       <motion.svg
         variants={blob}
@@ -110,7 +113,6 @@ export default function LearnmoreBlob(props) {
             {props.text}
           </motion.p>
         </motion.a>
-
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width="8"
