@@ -23,7 +23,7 @@ export default function IndexPage() {
       <Bio></Bio>
       <Framer></Framer>
       <Projects></Projects>
-      <ProjectsMobile></ProjectsMobile>
+      {/* <ProjectsMobile></ProjectsMobile> */}
       <Scroller></Scroller>
       <Footer></Footer>
       {/* <Wave3></Wave3> */}

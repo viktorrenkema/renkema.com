@@ -1,6 +1,5 @@
 import React from "react"
 import { motion } from "framer-motion"
-import accordion from "../../src/images/proj_accordion.gif"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
 import LearnmoreStaticBlob from "../components/learnmore-staticblob"
@@ -16,6 +15,12 @@ export default function ProjectsBlob(props) {
 
   const onHoverEnd = () => {
     setHovered(false)
+  }
+
+  const tapBlob = () => {
+    window.matchMedia("(any-hover: none)").matches
+      ? setHovered(!hovered)
+      : "null"
   }
 
   // Variants
@@ -106,6 +111,15 @@ export default function ProjectsBlob(props) {
     hidden: { opacity: 0, x: -10 },
   }
 
+  const blobwrap = {
+    inactive: {
+      zIndex: 3,
+    },
+    active: {
+      zIndex: 4,
+    },
+  }
+
   const blobwrapper = {
     height: "600px",
     width: "600px",
@@ -117,9 +131,13 @@ export default function ProjectsBlob(props) {
   return (
     <motion.div
       id="ProjectsBlob"
+      variants={blobwrap}
+      animate={hovered ? "active" : "inactive"}
+      initial="inactive"
       style={blobwrapper}
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
+      onTap={tapBlob}
     >
       <motion.div
         className="flexwrapper-blob"
@@ -132,34 +150,26 @@ export default function ProjectsBlob(props) {
           initial="hidden"
         >
           <motion.p variants={item} className="copy_projecttitle">
-            Creating an accordion design
+            {props.h1}
           </motion.p>
           <motion.p variants={item} class="copy_projectlabel">
-            FRAMER LEARN TUTORIAL
+            {props.label}
           </motion.p>
           <motion.div variants={item}>
             <p className="projectdescriptions">
-              While learning React, I documented some of the projects I worked
-              on. One of these turned into a 3-part tutorial, guiding users
-              through creating a single-select accordion effect within Framer.
+              {props.mainbody}
               <br></br>
             </p>
             <ul className="projectdescriptions">
               <p style={{ paddingBottom: "1rem", color: "white" }}>
-                Some of the topics addressed include:
+                {props.listintro}
               </p>
-              <li style={{ color: "white" }}>
-                applying React Hooks to toggle states
-              </li>
-              <li style={{ color: "white" }}>creating custom animations</li>
-              <li style={{ color: "white" }}>
-                mapping over an array with JSON data
-              </li>
+              <li style={{ color: "white" }}>{props.list1}</li>
+              <li style={{ color: "white" }}>{props.list2}</li>
+              <li style={{ color: "white" }}>{props.list3}</li>
               <LearnmoreStaticBlob
-                destination={
-                  "https://www.framer.com/learn/guide/accordion-design-part-1/"
-                }
-                text={"Read the tutorial"}
+                destination={props.link}
+                text={props.linktext}
               ></LearnmoreStaticBlob>
             </ul>
           </motion.div>
@@ -171,18 +181,18 @@ export default function ProjectsBlob(props) {
           animate={hovered ? "large" : "small"}
           initial="small"
         >
-          <a
+          {/* <a
             href="https://www.framer.com/learn/guide/accordion-design-part-1/"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <motion.img
-              className="imageplaceholder"
-              src={accordion}
-              width="100%"
-              height="100%"
-            ></motion.img>
-          </a>
+          > */}
+          <motion.img
+            className="imageplaceholder"
+            src={props.assetfill}
+            width="100%"
+            height="100%"
+          ></motion.img>
+          {/* </a> */}
         </motion.div>
       </motion.div>
       <motion.div className="svg-wrapper" style={{ position: "absolute" }}>
@@ -203,7 +213,7 @@ export default function ProjectsBlob(props) {
             variants={blobpath}
             initial={"first"}
             animate={"second"}
-            fill="#ff2b64"
+            fill={props.blobfill}
           ></motion.path>
         </motion.svg>
       </motion.div>

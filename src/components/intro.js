@@ -25,6 +25,18 @@ const description_stagger = {
   },
 }
 
+const reachout_stagger = {
+  hidden: { x: 20, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 0.8,
+    transition: {
+      delay: 1,
+      duration: 0.5,
+    },
+  },
+}
+
 export default function Introduction(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
@@ -44,11 +56,10 @@ export default function Introduction(props) {
         <motion.div
           ref={targetRef}
           className={"name nameStagger"}
-          variants={name_stagger}
           initial="hidden"
           animate="visible"
         >
-          <h1>Hey, my name is Viktor</h1>
+          <motion.h1 variants={name_stagger}>Hey, my name is Viktor</motion.h1>
         </motion.div>
         <motion.div
           className="about descriptionStagger"
@@ -56,11 +67,11 @@ export default function Introduction(props) {
           initial="hidden"
           animate="visible"
         >
-          <p className="copy-intro">
+          <motion.p variants={name_stagger} className="copy-intro">
             I’m a psychologist exploring design and web development. Right now
             I’m helping people make fun prototypes at Framer.
-          </p>
-          <p className="subcopy-intro">
+          </motion.p>
+          <motion.p variants={reachout_stagger} className="subcopy-intro">
             Feel free to reach out{" "}
             <a
               href="https://www.twitter.com/vrenkema"
@@ -78,7 +89,7 @@ export default function Introduction(props) {
               by email
             </a>{" "}
             to chat motorcycles, neurotransmitters, or anything, really.
-          </p>
+          </motion.p>
         </motion.div>
       </motion.div>
     </motion.section>

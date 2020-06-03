@@ -80,9 +80,9 @@
     margin: 0 auto;
   }
 
-  .projects_desktop {
+  /* .projects_desktop {
     display: none;
-  }
+  } */
 
   .projects {
     padding: 4em 0em;
@@ -247,13 +247,13 @@
   }
 }
 
-@media (min-width: 415px) and (max-width: 1025px) {
+/* @media (min-width: 415px) and (max-width: 1025px) {
   .wrap_imagecardone,
   .sm_overlay {
     min-width: 400px;
     max-width: 500px;
   }
-}
+} */
 @media (min-width: 1400px) {
   .imagecard {
     /* max-width: 80%; */
@@ -264,9 +264,9 @@
   .projects_desktop {
     display: inherit;
   }
-  .projects_mobile {
+  /* .projects_mobile {
     display: none;
-  }
+  } */
 }
 
 /* Landscape phone to portrait tablet */
@@ -274,10 +274,12 @@
   .container {
     width: 80%;
   }
-}
-
-@media (min-width: 768px) {
-  .projects_mobile {
-    display: none;
+  .flexwrapper-blob {
+    width: 200px !important;
   }
 }
+
+/* @media (min-width: 768px) {
+  .projects_mobile {
+    display: none;
+  } */

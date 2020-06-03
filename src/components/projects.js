@@ -2,9 +2,8 @@ import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
 import { Sm_ProjectOne } from "./project-1"
-// import Chevron from "./chevron"
 import { useGlobal } from "reactn"
-
+import accordion from "../../src/images/proj_accordion.gif"
 import ProjectsBlob from "../components/projects-blob"
 
 export function Projects() {
@@ -58,7 +57,7 @@ export function Projects() {
         Projects
       </motion.h1>
       <p className="copy-projects copy">
-        Various passion projects, educational articles, and other web content.
+        Various passion projects, educational articles, and other things.
       </p>
       <motion.div
         className="section_project"
@@ -68,7 +67,36 @@ export function Projects() {
         variants={card}
         initial="hidden"
       >
-        <ProjectsBlob></ProjectsBlob>
+        <ProjectsBlob
+          h1={"Creating an accordion design"}
+          label={"FRAMER LEARN TUTORIAL"}
+          mainbody={
+            "While learning React, I documented some of the projects I worked on. One of these turned into a 3-part tutorial, guiding users through creating a single-select accordion effect within Framer."
+          }
+          listintro={"Some of the topics addressed include:"}
+          list1={"applying React Hooks to toggle states"}
+          list2={"creating custom animations"}
+          list3={"mapping over an array with JSON data"}
+          link={"https://www.framer.com/learn/guide/accordion-design-part-1/"}
+          blobfill={"#ff2b64"}
+          linktext={"Read the tutorial"}
+          assetfill={accordion}
+        ></ProjectsBlob>
+        <ProjectsBlob
+          h1={"La Dimora"}
+          label={"WEBSITE"}
+          mainbody={
+            "For La Dimora, a restored holiday farmhouse in Italy at Lake Como, I created a website to present the home to potential renters. It presents various carousels with an impression of the home, information about the area, and a calendar to show live availability synced with Airbnb."
+          }
+          listintro={"Some of the topics addressed include:"}
+          list1={"applying React Hooks to toggle states"}
+          list2={"creating custom animations"}
+          list3={"mapping over an array with JSON data"}
+          link={"https://www.ladimora.org"}
+          blobfill={"#FC5982"}
+          linktext={"Visit the site"}
+          // assetfill={accordion}
+        ></ProjectsBlob>
       </motion.div>
     </motion.section>
   )
