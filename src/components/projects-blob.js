@@ -1,26 +1,28 @@
-import React from "react"
-import { motion } from "framer-motion"
+import React, { useEffect } from "react"
+import { motion, useDomEvent } from "framer-motion"
 import Chevron from "./chevron"
 import { useGlobal } from "reactn"
+import { useState, useRef } from "react"
+
 import LearnmoreStaticBlob from "../components/learnmore-staticblob"
 
 export default function ProjectsBlob(props) {
   // Setting and controlling state
 
-  const [hovered, setHovered] = React.useState(false)
+  useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
+
+  const [isOpen, setOpen] = React.useState(false)
 
   const onHoverStart = () => {
-    setHovered(true)
+    setOpen(true)
   }
 
   const onHoverEnd = () => {
-    setHovered(false)
+    setOpen(false)
   }
 
   const tapBlob = () => {
-    window.matchMedia("(any-hover: none)").matches
-      ? setHovered(!hovered)
-      : "null"
+    window.matchMedia("(any-hover: none)").matches ? setOpen(!isOpen) : "null"
   }
 
   // Variants
@@ -29,6 +31,7 @@ export default function ProjectsBlob(props) {
     hidden: {
       opacity: 0,
       width: "0px",
+      height: "0px",
       transition: {
         when: "beforeChildren",
         duration: 0.4,
@@ -38,6 +41,7 @@ export default function ProjectsBlob(props) {
     },
     visible: {
       opacity: 1,
+      height: "auto",
       width: "600px",
       transition: {
         when: "beforeChildren",
@@ -132,7 +136,7 @@ export default function ProjectsBlob(props) {
     <motion.div
       id="ProjectsBlob"
       variants={blobwrap}
-      animate={hovered ? "active" : "inactive"}
+      animate={isOpen ? "active" : "inactive"}
       initial="inactive"
       style={blobwrapper}
       onHoverStart={onHoverStart}
@@ -146,7 +150,7 @@ export default function ProjectsBlob(props) {
         <motion.div
           className="overlay"
           variants={overlay}
-          animate={hovered ? "visible" : "hidden"}
+          animate={isOpen ? "visible" : "hidden"}
           initial="hidden"
         >
           <motion.p variants={item} className="copy_projecttitle">
@@ -178,7 +182,7 @@ export default function ProjectsBlob(props) {
           className="wrap_imagecardone"
           variants={imgwrapper}
           style={{ width: "300px", margin: "auto" }}
-          animate={hovered ? "large" : "small"}
+          animate={isOpen ? "large" : "small"}
           initial="small"
         >
           {/* <a
@@ -204,7 +208,7 @@ export default function ProjectsBlob(props) {
             verticalAlign: "middle",
           }}
           initial="normal"
-          animate={hovered ? "hovered" : "normal"}
+          animate={isOpen ? "hovered" : "normal"}
           xmlns="http://www.w3.org/2000/svg"
           width="400"
           height="355"

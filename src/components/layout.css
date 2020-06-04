@@ -393,7 +393,7 @@ li {
 .imageplaceholder {
   width: 100%;
   height: auto;
-  background: #ecebe8;
+
   position: relative;
   object-fit: cover;
 }
@@ -401,10 +401,10 @@ li {
 .copy_projecttitle {
   color: white;
   min-width: 100px;
-  padding: 2rem 0rem 0rem 2rem;
+  padding: 2rem 0rem 1rem 2rem;
   font-size: 28px;
   letter-spacing: 0.5px;
-  line-height: 1.9;
+  line-height: 1.2;
   font-weight: 600;
 }
 
@@ -714,4 +714,21 @@ ul li::before {
 
 #svg-github {
   padding-top: 2px;
+}
+
+@media (max-width: 767px) {
+  .flexwrapper-blob {
+    flex-direction: column;
+  }
+  .overlay {
+    margin: 0 auto;
+    width: 300px !important;
+  }
+
+  .wrap_imagecardone {
+    padding-top: 2rem;
+  }
+  .projectdescriptions {
+    min-width: unset;
+  }
 }

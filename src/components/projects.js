@@ -1,7 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
-import { Sm_ProjectOne } from "./project-1"
 import { useGlobal } from "reactn"
 import accordion from "../../src/images/proj_accordion.gif"
 import ProjectsBlob from "../components/projects-blob"

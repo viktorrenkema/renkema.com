@@ -75,7 +75,7 @@
 @media (max-width: 767px) {
   .wrap_imagecardone {
     z-index: 2;
-    width: 100%;
+    width: 200px !important;
     position: relative;
     margin: 0 auto;
   }
@@ -274,9 +274,9 @@
   .container {
     width: 80%;
   }
-  .flexwrapper-blob {
+  /* .flexwrapper-blob {
     width: 200px !important;
-  }
+  } */
 }
 
 /* @media (min-width: 768px) {
