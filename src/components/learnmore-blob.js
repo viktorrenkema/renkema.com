@@ -64,7 +64,6 @@ export default function LearnmoreBlob(props) {
   }
 
   const blobwrapper = {
-    width: "100px",
     // height: "200px",
     position: "relative",
     paddingTop: "1rem",
@@ -76,7 +75,7 @@ export default function LearnmoreBlob(props) {
       onHoverEnd={onHoverEnd}
       onTapStart={onHoverStart}
       onTapCancel={onHoverEnd}
-      // whileTap={onHoverStart}
+      whileTap={onHoverStart}
     >
       <motion.svg
         variants={blob}
@@ -117,8 +116,7 @@ export default function LearnmoreBlob(props) {
           xmlns="http://www.w3.org/2000/svg"
           width="8"
           height="6"
-          paddingLeft="5px"
-          paddingTop="3px"
+          style={{ paddingLeft: "3px", paddingTop: "3px" }}
         >
           <motion.path
             d="M 0 2.479 L 6.578 2.479 L 4.65 0.455 L 5.083 0 L 7.749 2.801 L 5.082 5.601 L 4.65 5.147 L 6.579 3.122 L 0 3.122 Z"

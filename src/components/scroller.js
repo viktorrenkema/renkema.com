@@ -1,13 +1,9 @@
 import React from "react"
-import {
-  motion,
-  useViewportScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 
 export default function Scroller(props) {
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
+
   const modifier = useTransform(scrollYProgress, x => {
     if (x > 1) {
       return 0

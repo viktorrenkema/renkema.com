@@ -143,7 +143,7 @@ li {
   width: max-content;
   font-weight: 600;
   /* text-decoration: underline solid #FF285E; */
-  font-size: 0.85em;
+  font-size: 0.9em;
   /* padding: 1rem 0em 0em 0em; */
 }
 
@@ -438,7 +438,7 @@ li {
 
 /* PROJECTS */
 .projects {
-  /* background: #efefef; */
+  background: #efefef;
   overflow: hidden;
   align-self: center;
   padding: 6em 4em 6em 4em;
@@ -660,8 +660,8 @@ ul li::before {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 60%;
-  z-index: -1;
+  width: 100%;
+  /* z-index: -1; */
   margin: 0 auto;
   border-top: 2px solid #ececec;
   height: 70px;
@@ -685,7 +685,6 @@ ul li::before {
 }
 .container {
   width: 50%;
-  z-index: 5;
   align-self: center;
   margin-left: auto;
   margin-right: auto;
