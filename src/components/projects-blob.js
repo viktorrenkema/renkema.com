@@ -54,6 +54,7 @@ export default function ProjectsBlob(props) {
       transition: {
         when: "beforeChildren",
         duration: 0.4,
+        ease: "linear",
         staggerChildren: 0.01,
       },
       visibility: "hidden",
@@ -63,6 +64,7 @@ export default function ProjectsBlob(props) {
       height: "auto",
       width: "600px",
       transition: {
+        ease: "linear",
         when: "beforeChildren",
         duration: 0.6,
         staggerChildren: 0.05,
