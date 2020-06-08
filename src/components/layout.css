@@ -393,9 +393,8 @@ li {
 .imageplaceholder {
   width: 100%;
   height: auto;
-
   position: relative;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 .copy_projecttitle {
@@ -451,6 +450,7 @@ li {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  margin: 5rem 0rem;
 }
 
 .card_lg_projectone,
@@ -721,13 +721,39 @@ ul li::before {
   }
   .overlay {
     margin: 0 auto;
-    width: 300px !important;
+    width: 100vw !important;
+    /* width: 300px !important; */
   }
 
-  .wrap_imagecardone {
+  /* .wrap_imagecardone {
     padding-top: 2rem;
-  }
+  } */
   .projectdescriptions {
     min-width: unset;
+  }
+}
+
+/* @media (max-width: 450px) {
+  #ladimoraimgwrapper {
+    width: 130vw !important;
+  }
+} */
+
+@media (max-width: 500px) {
+  #ladimoraimgwrapper {
+    width: 100vw !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  #ladimoraimgwrapper {
+    width: 80vw !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  #ladimoraimgwrapper {
+    width: 70vw !important;
   }
 }

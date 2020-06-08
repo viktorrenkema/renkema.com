@@ -4,5 +4,6 @@ export function initState() {
   setGlobal({
     projectCard: "nothing",
     toggle: "none",
+    blob: 0,
   })
 }

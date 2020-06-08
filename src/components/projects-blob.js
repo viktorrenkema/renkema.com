@@ -27,7 +27,6 @@ export default function ProjectsBlob(props) {
   // }, [])
 
   // Setting and controlling state
-
   const [isOpen, setOpen] = React.useState(false)
 
   // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
@@ -41,8 +40,17 @@ export default function ProjectsBlob(props) {
   }
 
   const tapBlob = () => {
-    window.matchMedia("(any-hover: none)").matches ? setOpen(!isOpen) : "null"
+    window.matchMedia("(any-hover: none)").matches ? setOpen(!isOpen) : "null",
+      console.log(props.key)
   }
+
+  // const [global, setGlobalState] = useGlobal()
+
+  // const onClickBlob = () => {
+  //   // setGlobalState({
+  //   //   blob: global.blob === props.key ? props.key : "null",
+  //   // }),
+  // }
 
   // Variants
 
@@ -54,19 +62,19 @@ export default function ProjectsBlob(props) {
       transition: {
         when: "beforeChildren",
         duration: 0.4,
-        ease: "linear",
+        ease: "easeIn",
         staggerChildren: 0.01,
       },
       visibility: "hidden",
     },
     visible: {
       opacity: 1,
-      height: "auto",
+      height: "400px",
       width: "600px",
       transition: {
-        ease: "linear",
+        ease: "easeIn",
         when: "beforeChildren",
-        duration: 0.6,
+        duration: 0.4,
         staggerChildren: 0.05,
       },
       visibility: "visible",
@@ -75,17 +83,17 @@ export default function ProjectsBlob(props) {
 
   const imgwrapper = {
     small: {
-      transform: "scale(0.5)",
+      transform: `scale(${props.scaleasset})`,
       transition: {
-        ease: "linear",
-        duration: 0.3,
+        ease: "easeIn",
+        duration: 0.4,
       },
     },
     large: {
       transform: "scale(1)",
       transition: {
-        ease: "linear",
-        duration: 0.3,
+        ease: "easeIn",
+        duration: 0.4,
       },
     },
   }
@@ -94,15 +102,15 @@ export default function ProjectsBlob(props) {
     normal: {
       transform: "scale(1)",
       transition: {
-        ease: "linear",
-        duration: 0.3,
+        ease: "easeIn",
+        duration: 0.4,
       },
     },
     hovered: {
       transform: "scale(3)",
       transition: {
-        ease: "linear",
-        duration: 0.3,
+        ease: "easeIn",
+        duration: 0.4,
       },
     },
   }
@@ -133,7 +141,7 @@ export default function ProjectsBlob(props) {
 
   const blobwrap = {
     inactive: {
-      zIndex: 3,
+      transitionEnd: { zIndex: 3 },
     },
     active: {
       zIndex: 4,
@@ -161,8 +169,28 @@ export default function ProjectsBlob(props) {
     >
       <motion.div
         className="flexwrapper-blob"
-        style={{ display: "flex", width: "800px", justifyContent: "center" }}
+        style={{
+          display: "flex",
+          width: "800px",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
       >
+        <motion.div
+          className="wrap_imagecardone"
+          variants={imgwrapper}
+          style={{ width: "500px", margin: "auto", height: "280px" }}
+          id={props.id}
+          animate={isOpen ? "large" : "small"}
+          initial="small"
+        >
+          <motion.img
+            className="imageplaceholder"
+            src={props.assetfill}
+            width="100%"
+            height="100%"
+          ></motion.img>
+        </motion.div>
         <motion.div
           className="overlay"
           variants={overlay}
@@ -199,26 +227,6 @@ export default function ProjectsBlob(props) {
               ></LearnmoreStaticBlob>
             </ul>
           </motion.div>
-        </motion.div>
-        <motion.div
-          className="wrap_imagecardone"
-          variants={imgwrapper}
-          style={{ width: "300px", margin: "auto" }}
-          animate={isOpen ? "large" : "small"}
-          initial="small"
-        >
-          {/* <a
-            href="https://www.framer.com/learn/guide/accordion-design-part-1/"
-            target="_blank"
-            rel="noopener noreferrer"
-          > */}
-          <motion.img
-            className="imageplaceholder"
-            src={props.assetfill}
-            width="100%"
-            height="100%"
-          ></motion.img>
-          {/* </a> */}
         </motion.div>
       </motion.div>
       <motion.div className="svg-wrapper" style={{ position: "absolute" }}>
