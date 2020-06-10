@@ -40,17 +40,6 @@ export function Projects(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 40 })
 
-  // Setting global state
-
-  const [global, setGlobalState] = useGlobal()
-
-  const onClickBlob = () => {
-    console.log("oi")
-    // setGlobalState({
-    //   blob: global.blob === props.key ? props.key : "null",
-    // }),
-  }
-
   return (
     <motion.section
       initial="hidden"
@@ -79,6 +68,7 @@ export function Projects(props) {
         initial="hidden"
       >
         <ProjectsBlob
+          identifier={"accordion"}
           key={"accordion"}
           h1={"Creating an accordion design"}
           label={"FRAMER TUTORIAL"}
@@ -102,6 +92,7 @@ export function Projects(props) {
           }
         ></ProjectsBlob>
         <ProjectsBlob
+          identifier={"ladimora"}
           id={"ladimoraimgwrapper"}
           key={"ladimora"}
           h1={"La Dimora"}

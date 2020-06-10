@@ -5,6 +5,7 @@ import {
   useViewportScroll,
   useMotionValue,
 } from "framer-motion"
+import { useGlobal } from "reactn"
 
 import LearnmoreStaticBlob from "../components/learnmore-staticblob"
 
@@ -31,26 +32,22 @@ export default function ProjectsBlob(props) {
 
   // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
 
+  const [global, setGlobalState] = useGlobal()
+
   const onHoverStart = () => {
-    setOpen(true)
+    setOpen(!isOpen)
+    console.log(global.blob)
   }
 
   const onHoverEnd = () => {
-    setOpen(false)
+    setOpen(!isOpen)
+    console.log(global.blob)
   }
 
   const tapBlob = () => {
-    window.matchMedia("(any-hover: none)").matches ? setOpen(!isOpen) : "null",
-      console.log(props.key)
+    window.matchMedia("(any-hover: none)").matches ? setOpen(!isOpen) : null
+    console.log(isOpen)
   }
-
-  // const [global, setGlobalState] = useGlobal()
-
-  // const onClickBlob = () => {
-  //   // setGlobalState({
-  //   //   blob: global.blob === props.key ? props.key : "null",
-  //   // }),
-  // }
 
   // Variants
 
@@ -158,6 +155,7 @@ export default function ProjectsBlob(props) {
   }
   return (
     <motion.div
+      identifier={props.identifier}
       id="ProjectsBlob"
       variants={blobwrap}
       animate={isOpen ? "active" : "inactive"}
