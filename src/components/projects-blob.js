@@ -40,7 +40,6 @@ export default function ProjectsBlob(props) {
           props.selectedBlob === props.identifier ? undefined : props.identifier
         )
       : null
-    console.log(isOpen)
   }
 
   // Variants
