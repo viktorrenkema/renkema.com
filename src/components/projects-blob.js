@@ -160,6 +160,7 @@ export default function ProjectsBlob(props) {
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
       onTap={tapBlob}
+      onclick="void(0)"
     >
       <motion.div
         className="flexwrapper-blob"

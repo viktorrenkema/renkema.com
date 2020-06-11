@@ -18,7 +18,7 @@ export default function LearnmoreStaticBlob(props) {
     paddingTop: "1rem",
   }
   return (
-    <motion.div style={blobwrapper}>
+    <motion.div onclick="void(0)" style={blobwrapper}>
       <motion.div style={{ display: "flex", flexDirection: "row" }}>
         <motion.a
           className="learnmore copy"
