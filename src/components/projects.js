@@ -37,19 +37,10 @@ export function Projects(props) {
     visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   }
 
+  const [selectedBlob, setSelectedBlob] = React.useState(undefined)
+
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [FirstCardInViewport, targetRef1] = useIsInViewport({ threshold: 40 })
-
-  // Setting global state
-
-  const [global, setGlobalState] = useGlobal()
-
-  const onClickBlob = () => {
-    console.log("oi")
-    // setGlobalState({
-    //   blob: global.blob === props.key ? props.key : "null",
-    // }),
-  }
 
   return (
     <motion.section
@@ -79,6 +70,9 @@ export function Projects(props) {
         initial="hidden"
       >
         <ProjectsBlob
+          selectedBlob={selectedBlob}
+          setSelectedBlob={setSelectedBlob}
+          identifier={"accordion"}
           key={"accordion"}
           h1={"Creating an accordion design"}
           label={"FRAMER TUTORIAL"}
@@ -102,6 +96,9 @@ export function Projects(props) {
           }
         ></ProjectsBlob>
         <ProjectsBlob
+          selectedBlob={selectedBlob}
+          setSelectedBlob={setSelectedBlob}
+          identifier={"ladimora"}
           id={"ladimoraimgwrapper"}
           key={"ladimora"}
           h1={"La Dimora"}

@@ -12,7 +12,7 @@ export default function LearnmoreStaticBlob(props) {
   }
 
   const blobwrapper = {
-    width: "100px",
+    // width: "100px",
     // height: "200px",
     position: "relative",
     paddingTop: "1rem",

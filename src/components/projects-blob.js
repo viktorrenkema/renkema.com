@@ -1,10 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import {
-  motion,
-  useDomEvent,
-  useViewportScroll,
-  useMotionValue,
-} from "framer-motion"
+import { motion } from "framer-motion"
 
 import LearnmoreStaticBlob from "../components/learnmore-staticblob"
 
@@ -32,25 +27,21 @@ export default function ProjectsBlob(props) {
   // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
 
   const onHoverStart = () => {
-    setOpen(true)
+    props.setSelectedBlob(props.identifier)
   }
 
   const onHoverEnd = () => {
-    setOpen(false)
+    props.setSelectedBlob(undefined)
   }
 
   const tapBlob = () => {
-    window.matchMedia("(any-hover: none)").matches ? setOpen(!isOpen) : "null",
-      console.log(props.key)
+    window.matchMedia("(any-hover: none)").matches
+      ? props.setSelectedBlob(
+          props.selectedBlob === props.identifier ? undefined : props.identifier
+        )
+      : null
+    console.log(isOpen)
   }
-
-  // const [global, setGlobalState] = useGlobal()
-
-  // const onClickBlob = () => {
-  //   // setGlobalState({
-  //   //   blob: global.blob === props.key ? props.key : "null",
-  //   // }),
-  // }
 
   // Variants
 
@@ -156,11 +147,15 @@ export default function ProjectsBlob(props) {
     justifyContent: "space-evenly",
     alignItems: "center",
   }
+
+  const shouldAnimate = props.selectedBlob === props.identifier
+
   return (
     <motion.div
+      identifier={props.identifier}
       id="ProjectsBlob"
       variants={blobwrap}
-      animate={isOpen ? "active" : "inactive"}
+      animate={shouldAnimate ? "active" : "inactive"}
       initial="inactive"
       style={blobwrapper}
       onHoverStart={onHoverStart}
@@ -181,7 +176,7 @@ export default function ProjectsBlob(props) {
           variants={imgwrapper}
           style={{ width: "500px", margin: "auto", height: "280px" }}
           id={props.id}
-          animate={isOpen ? "large" : "small"}
+          animate={shouldAnimate ? "large" : "small"}
           initial="small"
         >
           <motion.img
@@ -194,7 +189,7 @@ export default function ProjectsBlob(props) {
         <motion.div
           className="overlay"
           variants={overlay}
-          animate={isOpen ? "visible" : "hidden"}
+          animate={shouldAnimate ? "visible" : "hidden"}
           initial="hidden"
         >
           <motion.p variants={item} className="copy_projecttitle">
@@ -239,7 +234,7 @@ export default function ProjectsBlob(props) {
             overflow: "visible",
           }}
           initial="normal"
-          animate={isOpen ? "hovered" : "normal"}
+          animate={shouldAnimate ? "hovered" : "normal"}
           xmlns="http://www.w3.org/2000/svg"
           width="400"
           height="355"
