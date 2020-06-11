@@ -115,7 +115,7 @@ li {
 
 .learnmore {
   display: inline-block;
-  user-select: none;
+  /* user-select: none; */
   color: #022435;
   width: max-content;
   font-weight: 600;
