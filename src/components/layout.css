@@ -120,6 +120,7 @@ li {
   width: max-content;
   font-weight: 600;
   font-size: 0.9em;
+  z-index: 100;
 }
 
 .learnmore--projectcards {
