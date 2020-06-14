@@ -95,7 +95,7 @@ export function Projects(props) {
             "M 269.349 65.192 C 298.372 77.85 334.65 81.836 361.566 100.824 C 388.483 119.578 406.037 153.1 395.972 180.762 C 385.908 208.659 348.459 230.46 329.969 263.749 C 311.245 297.271 311.947 341.812 292.755 352.126 C 273.796 362.441 235.412 338.061 200.304 332.435 C 165.196 326.809 133.364 339.702 100.831 337.123 C 68.531 334.779 35.53 316.963 17.04 289.301 C -1.217 261.639 -5.196 224.131 7.677 194.125 C 20.316 163.884 49.807 141.145 64.787 107.388 C 79.532 73.631 80 28.856 99.426 10.805 C 119.087 -7.48 158.174 1.194 188.367 15.962 C 218.794 30.966 240.327 52.298 269.349 65.192 Z"
           }
         ></ProjectsBlob>
-        <ProjectsBlob
+        {/* <ProjectsBlob
           selectedBlob={selectedBlob}
           setSelectedBlob={setSelectedBlob}
           identifier={"ladimora"}
@@ -117,7 +117,7 @@ export function Projects(props) {
           }
           assetfill={ladimora}
           scaleasset={"0.5"}
-        ></ProjectsBlob>
+        ></ProjectsBlob> */}
       </motion.div>
     </motion.section>
   )
