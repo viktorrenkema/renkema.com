@@ -29,10 +29,10 @@ export default function ProjectsBlob(props) {
       width: "0px",
       height: "0px",
       transition: {
-        when: "beforeChildren",
+        // when: "beforeChildren",
         duration: 0.4,
         ease: "easeIn",
-        staggerChildren: 0.01,
+        // staggerChildren: 0.01,
       },
       transitionEnd: { visibility: "hidden", zIndex: 0 },
     },
@@ -50,6 +50,11 @@ export default function ProjectsBlob(props) {
       },
       transitionEnd: { visibility: "visible" },
     },
+  }
+
+  const textstaggers = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, transitionEnd: { x: -10 } },
   }
 
   const imgwrapper = {
@@ -103,11 +108,6 @@ export default function ProjectsBlob(props) {
         flip: Infinity,
       },
     },
-  }
-
-  const item = {
-    visible: { opacity: 1, x: 0, visibility: "visible" },
-    hidden: { opacity: 0, x: -10, visibility: "hidden" },
   }
 
   const blobwrap = {
@@ -194,13 +194,13 @@ export default function ProjectsBlob(props) {
           animate={shouldAnimate ? "visible" : "hidden"}
           initial="hidden"
         >
-          <motion.p variants={item} className="copy_projecttitle">
+          <motion.p variants={textstaggers} className="copy_projecttitle">
             {props.h1}
           </motion.p>
-          <motion.p variants={item} class="copy_projectlabel">
+          <motion.p variants={textstaggers} class="copy_projectlabel">
             {props.label}
           </motion.p>
-          <motion.div variants={item}>
+          <motion.div variants={textstaggers}>
             <p className="projectdescriptions">
               {props.mainbody}
               <br></br>
