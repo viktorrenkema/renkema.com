@@ -21,27 +21,6 @@ export default function ProjectsBlob(props) {
   //   window.addEventListener("scroll", handleScroll, { passive: true })
   // }, [])
 
-  // Setting and controlling state
-  const [isOpen, setOpen] = React.useState(false)
-
-  // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
-
-  const onHoverStart = () => {
-    props.setSelectedBlob(props.identifier)
-  }
-
-  const onHoverEnd = () => {
-    props.setSelectedBlob(undefined)
-  }
-
-  const tapBlob = () => {
-    window.matchMedia("(any-hover: none)").matches
-      ? props.setSelectedBlob(
-          props.selectedBlob === props.identifier ? undefined : props.identifier
-        )
-      : null
-  }
-
   // Variants
 
   const overlay = {
@@ -149,6 +128,28 @@ export default function ProjectsBlob(props) {
 
   const shouldAnimate = props.selectedBlob === props.identifier
 
+  // Setting and controlling state
+  const [isOpen, setOpen] = React.useState(false)
+
+  // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
+
+  const onHoverStart = () => {
+    props.setSelectedBlob(props.identifier)
+  }
+
+  const onHoverEnd = () => {
+    props.setSelectedBlob(undefined)
+  }
+
+  const tapBlob = () => {
+    window.matchMedia("(any-hover: none)").matches
+      ? props.setSelectedBlob(
+          props.identifier
+          // props.selectedBlob === props.identifier ? undefined : props.identifier
+        )
+      : null
+  }
+
   return (
     <motion.div
       identifier={props.identifier}
@@ -160,7 +161,6 @@ export default function ProjectsBlob(props) {
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
       onTap={tapBlob}
-      onclick="void(0)"
     >
       <motion.div
         className="flexwrapper-blob"
