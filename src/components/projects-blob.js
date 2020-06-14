@@ -23,19 +23,18 @@ export default function ProjectsBlob(props) {
 
   // Variants
 
-  const overlay = {
+  const textcontainer = {
     hidden: {
       opacity: 0,
       width: "0px",
       height: "0px",
-      visibility: "hidden",
       transition: {
-        when: "beforeChildren",
+        when: "afterChildren",
         duration: 0.4,
         ease: "easeIn",
         staggerChildren: 0.01,
       },
-      transitionEnd: { zIndex: 0 },
+      transitionEnd: { visibility: "hidden", zIndex: 0 },
     },
     visible: {
       zIndex: 10,
@@ -49,7 +48,7 @@ export default function ProjectsBlob(props) {
         duration: 0.4,
         staggerChildren: 0.05,
       },
-      // transitionEnd: { visibility: "visible" },
+      transitionEnd: { visibility: "visible" },
     },
   }
 
@@ -107,8 +106,8 @@ export default function ProjectsBlob(props) {
   }
 
   const item = {
-    visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, visibility: "visible" },
+    hidden: { opacity: 0, x: -10, visibility: "hidden" },
   }
 
   const blobwrap = {
@@ -131,13 +130,9 @@ export default function ProjectsBlob(props) {
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    // marginBottom: "20rem",
   }
 
   const shouldAnimate = props.selectedBlob === props.identifier
-
-  // Setting and controlling state
-  const [isOpen, setOpen] = React.useState(false)
 
   // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
 
@@ -152,14 +147,13 @@ export default function ProjectsBlob(props) {
   const tapBlob = () => {
     window.matchMedia("(any-hover: none)").matches
       ? props.setSelectedBlob(
-          // props.identifier
           props.selectedBlob === props.identifier ? undefined : props.identifier
         )
       : null
   }
 
   return (
-    <motion.div
+    <motion.div // Wrapper of the entire project blob
       identifier={props.identifier}
       id="ProjectsBlob"
       variants={blobwrap}
@@ -170,7 +164,7 @@ export default function ProjectsBlob(props) {
       onHoverEnd={onHoverEnd}
       onTap={tapBlob}
     >
-      <motion.div
+      <motion.div // Flex wrapper of our text + image
         className="flexwrapper-blob"
         style={{
           display: "flex",
@@ -195,8 +189,8 @@ export default function ProjectsBlob(props) {
           ></motion.img>
         </motion.div>
         <motion.div
-          className="overlay"
-          variants={overlay}
+          className="textcontainer"
+          variants={textcontainer}
           animate={shouldAnimate ? "visible" : "hidden"}
           initial="hidden"
         >
@@ -232,7 +226,10 @@ export default function ProjectsBlob(props) {
           </motion.div>
         </motion.div>
       </motion.div>
-      <motion.div className="svg-wrapper" style={{ position: "absolute" }}>
+      <motion.div // Flex wrapper of our absolutely positioned blob SVG
+        className="svg-wrapper"
+        style={{ position: "absolute" }}
+      >
         <motion.svg
           variants={blob}
           style={{

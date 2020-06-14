@@ -1,11 +1,5 @@
 import React from "react"
-import Contact from "../components/contact"
-import {
-  motion,
-  useViewportScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function Footer(props) {
   const d = new Date()
@@ -20,7 +14,7 @@ export default function Footer(props) {
           <motion.p>
             Created with{" "}
             <a
-              href="https://www.gatsbyjs.com"
+              href="https://www.gatsbyjs.org"
               target="_blank"
               rel="noopener noreferrer"
               style={{ textDecoration: "none" }}

@@ -474,7 +474,7 @@ li {
   z-index: 2;
 }
 
-.overlay {
+.textcontainer {
   position: relative;
   z-index: 10;
   flex-direction: column;
