@@ -28,28 +28,28 @@ export default function ProjectsBlob(props) {
       opacity: 0,
       width: "0px",
       height: "0px",
-      // visibility: "hidden",
+      visibility: "hidden",
       transition: {
         when: "beforeChildren",
         duration: 0.4,
         ease: "easeIn",
         staggerChildren: 0.01,
       },
-      transitionEnd: { visibility: "hidden", zIndex: 0 },
+      transitionEnd: { zIndex: 0 },
     },
     visible: {
       zIndex: 10,
       opacity: 1,
       height: "400px",
       width: "600px",
-      // visibility: "visible",
+      visibility: "visible",
       transition: {
         ease: "easeIn",
         when: "beforeChildren",
         duration: 0.4,
         staggerChildren: 0.05,
       },
-      transitionEnd: { visibility: "visible" },
+      // transitionEnd: { visibility: "visible" },
     },
   }
 

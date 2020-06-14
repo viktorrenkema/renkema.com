@@ -227,10 +227,10 @@ li {
 .grid_intro {
   height: 100vh;
   justify-items: start;
-  align-content: center;
+  align-content: start;
+  margin-top: 30vh;
   display: grid;
   grid-template-columns: 100%;
-
   grid-template-rows: repeat(3, auto);
   grid-gap: 1rem;
 }

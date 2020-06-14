@@ -5,7 +5,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Scroller from "../components/scroller"
-
 import { Projects } from "../components/projects"
 import Framer from "../components/framer"
 import Footer from "../components/footer"
