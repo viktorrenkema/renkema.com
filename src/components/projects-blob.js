@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import { motion } from "framer-motion"
 
 import LearnmoreStaticBlob from "../components/learnmore-staticblob"
@@ -28,7 +28,6 @@ export default function ProjectsBlob(props) {
       opacity: 0,
       width: "0px",
       height: "0px",
-      zIndex: 10, // CHANGE BACK TO 1
       // visibility: "hidden",
       transition: {
         when: "beforeChildren",
@@ -36,7 +35,7 @@ export default function ProjectsBlob(props) {
         ease: "easeIn",
         staggerChildren: 0.01,
       },
-      transitionEnd: { visibility: "hidden" },
+      transitionEnd: { visibility: "hidden", zIndex: 0 },
     },
     visible: {
       zIndex: 10,
@@ -114,10 +113,10 @@ export default function ProjectsBlob(props) {
 
   const blobwrap = {
     inactive: {
-      transitionEnd: { zIndex: 4 }, // CHANGE BACK TO ZINDEX 3
+      transitionEnd: { zIndex: 3 },
     },
     active: {
-      zIndex: 4, // CHANGE BACK TO ZINDEX 4
+      zIndex: 4,
     },
   }
 
