@@ -127,6 +127,7 @@ export default function ProjectsBlob(props) {
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
+    marginBottom: "20rem",
   }
 
   const shouldAnimate = props.selectedBlob === props.identifier
