@@ -113,9 +113,13 @@ export default function ProjectsBlob(props) {
 
   const blobwrap = {
     inactive: {
+      opacity: 1,
+      transition: { duration: 0.5 },
       transitionEnd: { zIndex: 3 },
     },
     active: {
+      opacity: 0.99,
+      transition: { duration: 0.5 },
       zIndex: 4,
     },
   }
@@ -127,7 +131,7 @@ export default function ProjectsBlob(props) {
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",
-    marginBottom: "20rem",
+    // marginBottom: "20rem",
   }
 
   const shouldAnimate = props.selectedBlob === props.identifier
