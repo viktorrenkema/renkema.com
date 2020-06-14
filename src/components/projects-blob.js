@@ -34,7 +34,7 @@ export default function ProjectsBlob(props) {
         ease: "easeIn",
         staggerChildren: 0.01,
       },
-      visibility: "hidden",
+      transitionEnd: { visibility: "hidden" },
     },
     visible: {
       opacity: 1,
@@ -46,7 +46,7 @@ export default function ProjectsBlob(props) {
         duration: 0.4,
         staggerChildren: 0.05,
       },
-      visibility: "visible",
+      transitionEnd: { visibility: "visible" },
     },
   }
 
@@ -144,8 +144,8 @@ export default function ProjectsBlob(props) {
   const tapBlob = () => {
     window.matchMedia("(any-hover: none)").matches
       ? props.setSelectedBlob(
-          props.identifier
-          // props.selectedBlob === props.identifier ? undefined : props.identifier
+          // props.identifier
+          props.selectedBlob === props.identifier ? undefined : props.identifier
         )
       : null
   }
