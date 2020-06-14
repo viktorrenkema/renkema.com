@@ -29,7 +29,7 @@ export default function ProjectsBlob(props) {
       width: "0px",
       height: "0px",
       transition: {
-        when: "afterChildren",
+        when: "beforeChildren",
         duration: 0.4,
         ease: "easeIn",
         staggerChildren: 0.01,
