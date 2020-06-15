@@ -4,6 +4,7 @@ import useIsInViewport from "use-is-in-viewport"
 import { useGlobal } from "reactn"
 import accordion from "../../src/images/proj_accordion.gif"
 import ladimora from "../../src/images/proj_ladimora.gif"
+
 import ProjectsBlob from "../components/projects-blob"
 
 export function Projects(props) {
@@ -107,7 +108,7 @@ export function Projects(props) {
             "For La Dimora, a restored holiday farmhouse in Italy at Lake Como, I created a website to present the home to potential renters. It presents various carousels with an impression of the home, information about the area, and a calendar to show live availability synced with Airbnb."
           }
           link={"https://www.ladimora.org"}
-          blobfill={"#fa4466"}
+          blobfill={"#fb3a5a"}
           linktext={"Visit the site"}
           blobpath1={
             "M 323.587 70.076 C 359.851 100.548 396.902 130.233 399.004 163.069 C 401.107 195.906 368.785 231.633 344.084 270.249 C 319.646 308.865 302.828 350.108 278.652 350.371 C 254.214 350.633 222.155 310.178 183.527 293.629 C 145.161 277.079 99.963 284.172 62.912 264.995 C 25.86 245.556 -3.308 200.109 0.633 157.29 C 4.575 114.471 41.627 74.541 83.146 44.857 C 124.402 14.91 170.388 -4.53 211.118 1.512 C 251.586 7.554 287.324 39.34 323.587 70.076 Z"

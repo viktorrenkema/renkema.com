@@ -79,16 +79,16 @@ export default function Framer(props) {
             animate={isInViewport ? "visible" : "hidden"}
           >
             <motion.p className="copy">
-              At Framer, I started out as Community and Support Specialist. In
-              this role, I ensured users are getting the support they required.
-              Next to providing direct help via our support channels I wrote
-              support articles, created educational community posts, and
+              Joining Framer, I started out in the role of Community and Support
+              Specialist where I ensured users are getting the support they
+              required. Next to providing direct help via our support channels,
+              I wrote support articles, created educational community posts, and
               assisted users with organising meetups in their local communities.
               <br></br>
               <br></br>I have since moved into the Product Specialist role,
               where my focus extends to also help organizations like KLM,
-              Google, AirFrance and more become succesful by providing them with
-              on-site workshops, direct support, and learning materials.
+              Google, AirFrance and others become succesful by providing them
+              with on-site workshops, direct support, and learning materials.
             </motion.p>{" "}
             <LearnmoreBlob
               destination={"https://www.framer.com/"}

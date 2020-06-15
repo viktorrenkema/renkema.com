@@ -33,9 +33,9 @@ export default function Scroller(props) {
         zIndex: "3",
         marginLeft: "-13px",
       }}
-      onTap={() => {
-        window.scrollTo(0, 100)
-      }}
+      // onTap={() => {
+      //   window.scrollTo(0, 100)
+      // }}
       // animate={scrollYProgress > 0.95 ? "rotate: 90" : "rotate: 0"}
     >
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="30" height="33">

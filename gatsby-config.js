@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: ``,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Viktor Renkema`,
+    description: `Hey, my name is Viktor. I’m a Psychology graduate that moved into the space of web design and development.`,
     author: `@vrenkema`,
   },
   plugins: [
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `viktor-renkema-site`,
+        short_name: `renkema-site`,
         start_url: `/`,
         background_color: `#ff6661`,
         theme_color: `#ff6661`,
@@ -28,8 +28,5 @@ module.exports = {
         // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
