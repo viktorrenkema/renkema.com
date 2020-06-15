@@ -225,7 +225,7 @@ li {
 /* INTRODUCTION */
 
 .grid_intro {
-  height: 100vh;
+  height: 60vh;
   justify-items: start;
   align-content: start;
   margin-top: 30vh;
