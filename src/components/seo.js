@@ -17,6 +17,9 @@ function SEO({ description, lang, image, meta, title }) {
         site {
           siteMetadata {
             title
+            description
+            author
+            image
           }
         }
       }
