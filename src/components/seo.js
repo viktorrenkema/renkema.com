@@ -19,7 +19,6 @@ function SEO({ description, lang, image, meta, title }) {
             title
             description
             author
-            image
           }
         }
       }
@@ -34,6 +33,7 @@ function SEO({ description, lang, image, meta, title }) {
         lang,
       }}
       title={title}
+      description={description}
       titleTemplate={`%s`}
       image={image}
       meta={[
