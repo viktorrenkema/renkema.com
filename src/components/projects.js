@@ -106,7 +106,7 @@ export function Projects(props) {
           h1={"La Dimora"}
           label={"WEBSITE"}
           mainbody={
-            "For La Dimora, a restored holiday farmhouse in Italy at Lake Como, I created a website to present the home to potential renters. It presents various carousels with an impression of the home, information about the area, and a calendar to show live availability synced with Airbnb."
+            "For La Dimora, a holiday home in Italy, I created a website which can be shared with potential renters. It includes various carousels with an impression of the home, information about must-visit spots in the area, and a calendar to show live availability synced with AirBnb."
           }
           link={"https://www.ladimora.org"}
           blobfill={"#fb3a5a"}
