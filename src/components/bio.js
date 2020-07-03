@@ -91,16 +91,23 @@ export default function Background(props) {
               initial="hidden"
               animate={isInViewport ? "visible" : "hidden"}
             >
-              While obtaining my Master’s degree in Psychology, my interest in
-              human behaviour extended to include the field of behaviour in
-              combination with web technology. To pursue this, I started
-              learning more about web development and digital user experiences.
+              While obtaining my Master’s degree in Psychology, my interest grew
+              to include the field web technology in combination with behaviour.
+              To pursue this, I started learning more about web development and
+              digital user experiences.
               <br></br>
               <br></br>
               My first experience in this area was learning basic HTML & CSS to
               create A/B tests for an online webshop. After this, I got to learn
-              about UX when I started working at the Medical Center Groningen.
-              Here I studied the workflows of medical staff for whom we built
+              about UX when I started working at the{" "}
+              <a
+                href="https://www.umcg.nl/NL/Zorg/Paginas/default.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                University Medical Center Groningen
+              </a>
+              . Here I studied the workflows of medical staff for whom we built
               and implemented custom user interfaces in Epic, the hospital-wide
               electronic medical record.
               <br></br>

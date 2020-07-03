@@ -60,7 +60,8 @@ export function Projects(props) {
         Projects
       </motion.h1>
       <p className="copy-projects copy">
-        Various passion projects, educational articles, and other things.
+        Various passion projects, educational articles, and other things coming
+        up.
       </p>
       <motion.div
         className="section_project"
@@ -78,12 +79,12 @@ export function Projects(props) {
           h1={"Creating an accordion design"}
           label={"FRAMER TUTORIAL"}
           mainbody={
-            "While learning React, I documented some of the projects I worked on. One of these turned into a 3-part tutorial, guiding users through creating a single-select accordion effect within Framer."
+            "While learning React, I documented some of the projects I worked on as it helps me understand concepts better. One of these turned into a 3-part tutorial, guiding users through creating a single-select accordion effect within Framer."
           }
           listintro={"Some of the topics addressed include:"}
           list1={"applying React Hooks to toggle states"}
           list2={"creating custom animations"}
-          list3={"mapping over an array with JSON data"}
+          list3={"mapping over arrays from JSON files"}
           link={"https://www.framer.com/learn/guide/accordion-design-part-1/"}
           blobfill={"#ff2b64"}
           linktext={"Read the tutorial"}

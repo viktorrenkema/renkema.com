@@ -629,6 +629,9 @@ ul li::before {
   text-align: center;
 }
 
+.grid_intro {
+  padding-top: 3rem;
+}
 .wrap_contact {
   display: flex;
   justify-content: center;
