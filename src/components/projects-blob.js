@@ -17,10 +17,6 @@ export default function ProjectsBlob(props) {
   //   setScrollPosition(position)
   // }
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll, { passive: true })
-  // }, [])
-
   // Variants
 
   const textcontainer = {
@@ -150,6 +146,15 @@ export default function ProjectsBlob(props) {
           props.selectedBlob === props.identifier ? undefined : props.identifier
         )
       : null
+  }
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true })
+  }, [])
+
+  const handleScroll = () => {
+    if (window.matchMedia("(any-hover: none)").matches)
+      props.setSelectedBlob(undefined)
   }
 
   return (

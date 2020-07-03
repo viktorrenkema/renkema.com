@@ -257,6 +257,13 @@ li {
   grid-area: 2 / 1 / 2 / 1;
 }
 
+.section_project #ProjectsBlob:nth-child(2) .projectdescriptions > p {
+  display: none;
+}
+.section_project #ProjectsBlob:nth-child(2) .projectdescriptions div {
+  padding-top: 0 !important;
+}
+
 .intro-blob {
   position: absolute;
   z-index: -1;
