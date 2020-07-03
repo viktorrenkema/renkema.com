@@ -19,6 +19,8 @@ function SEO({ description, lang, image, meta, title }) {
             title
             description
             author
+            defaultImage: image
+            twitterUsername
           }
         }
       }
