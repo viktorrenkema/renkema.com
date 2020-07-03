@@ -3,6 +3,8 @@ module.exports = {
     title: `Viktor Renkema`,
     description: `Hey, my name is Viktor. I’m a Psychology graduate that moved into the space of web design and development.`,
     author: `@vrenkema`,
+    image: "images/site-icon.png",
+    twitterUsername: "@vrenkema",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
