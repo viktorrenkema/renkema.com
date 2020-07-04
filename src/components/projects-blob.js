@@ -24,6 +24,7 @@ export default function ProjectsBlob(props) {
       opacity: 0,
       width: "0px",
       height: "0px",
+      visibility: "hidden",
       transition: {
         // when: "beforeChildren",
         duration: 0.4,
@@ -50,7 +51,12 @@ export default function ProjectsBlob(props) {
 
   const textstaggers = {
     visible: { opacity: 1, x: 0 },
-    hidden: { opacity: 0, transitionEnd: { x: -10 } },
+    hidden: {
+      opacity: 0,
+      transitionEnd: {
+        x: -10,
+      },
+    },
   }
 
   const imgwrapper = {

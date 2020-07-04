@@ -36,13 +36,16 @@ export default function LearnmoreStaticBlob(props) {
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="8"
-            height="6"
+            height="8"
             style={{ paddingLeft: "3px", paddingTop: "3px" }}
           >
             <motion.path
-              d="M 0 2.479 L 6.578 2.479 L 4.65 0.455 L 5.083 0 L 7.749 2.801 L 5.082 5.601 L 4.65 5.147 L 6.579 3.122 L 0 3.122 Z"
-              transform="translate(0.125 0.199) rotate(-45 3.875 2.801)"
+              d="M 1.032 6.512 L 5.684 1.861 L 2.889 1.793 L 2.874 1.165 L 6.739 1.261 L 6.833 5.126 L 6.207 5.111 L 6.139 2.315 L 1.487 6.967 Z"
+              // transform="translate(0.125 0.199) rotate(-45 3.875 2.801)"
               fill={"hsl(0, 0%, 100%)"}
+              strokeWidth="0.4"
+              stroke="#FFFFFF"
+              strokeMiterlimit="10"
             ></motion.path>
           </motion.svg>
         </motion.div>

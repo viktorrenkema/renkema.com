@@ -295,6 +295,10 @@ li {
   max-width: 500px;
 }
 
+.break {
+  display: none;
+}
+
 /* EDUCATION */
 .grid-Education {
   display: grid;
@@ -568,21 +572,6 @@ ul {
   padding-top: 0.5em;
 }
 
-ul li::before {
-  content: ""; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #ff2b65; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 10px; /* Also needed for space (tweak if needed) */
-  height: 8px;
-  vertical-align: middle;
-  margin-left: 0em; /* Also needed for space (tweak if needed) */
-  margin-right: 5px; /* Also needed for space (tweak if needed) */
-  background-image: url("../../src/images/bullet2.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .projectdescriptions {
   color: white;
   font-size: 14px;
@@ -674,6 +663,9 @@ ul li::before {
   #ladimoraimgwrapper {
     width: 100vw !important;
     height: auto !important;
+  }
+  .break {
+    display: inline;
   }
 }
 
