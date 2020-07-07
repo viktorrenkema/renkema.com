@@ -163,10 +163,6 @@ export default function ProjectsBlob(props) {
   //     props.setSelectedBlob(undefined)
   // }
 
-  function handleDrag() {
-    console.log("dragged" + props.selectedBlob), props.setSelectedBlob(null)
-  }
-
   return (
     <motion.div // Wrapper of the entire project blob
       identifier={props.identifier}
@@ -178,26 +174,6 @@ export default function ProjectsBlob(props) {
       onHoverStart={onHoverStart}
       onHoverEnd={onHoverEnd}
       onTap={tapBlob}
-      drag="y"
-      dragConstraints={{ top: 0, bottom: 0 }}
-      dragElastic={0.3}
-      onDragEnd={(event, info) => {
-        info.point.y > 30 || info.point.y < -30 ? handleDrag() : null
-      }}
-      // onDragEnd={(event, info) => {
-      //   info.point.x > 30
-      //     ? setCurrentPageIndex(
-      //         currentPageIndex === 0 ? 0 : currentPageIndex - 1
-      //       )
-      //     : info.point.x < -30
-      //     ? setCurrentPageIndex(
-      //         currentPageIndex === props.n - 1
-      //           ? props.n - 1
-      //           : currentPageIndex + 1
-      //       )
-      //     : null
-      // }}
-
       dragTransition={{ bounceStiffness: 600, bounceDamping: 100 }}
     >
       <motion.div // Flex wrapper of our text + image
