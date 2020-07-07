@@ -24,7 +24,7 @@ export default function ProjectsBlob(props) {
       opacity: 0,
       width: "0px",
       height: "0px",
-      visibility: "hidden",
+      // visibility: "hidden",
       transition: {
         // when: "beforeChildren",
         duration: 0.4,
@@ -38,7 +38,7 @@ export default function ProjectsBlob(props) {
       opacity: 1,
       height: "400px",
       width: "600px",
-      visibility: "visible",
+      // visibility: "visible",
       transition: {
         ease: "easeIn",
         when: "beforeChildren",
