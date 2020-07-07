@@ -154,14 +154,14 @@ export default function ProjectsBlob(props) {
       : null
   }
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true })
-  }, [])
+  // React.useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true })
+  // }, [])
 
-  const handleScroll = () => {
-    if (window.matchMedia("(any-hover: none)").matches)
-      props.setSelectedBlob(undefined)
-  }
+  // const handleScroll = () => {
+  //   if (window.matchMedia("(any-hover: none)").matches)
+  //     props.setSelectedBlob(undefined)
+  // }
 
   return (
     <motion.div // Wrapper of the entire project blob
