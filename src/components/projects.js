@@ -79,10 +79,10 @@ export function Projects(props) {
           h1={"Creating an accordion design"}
           label={"FRAMER TUTORIAL"}
           mainbody={
-            "While learning React, I documented some of the projects I worked on as it helps me understand concepts better. One of these turned into a 3-part tutorial, guiding users through creating a single-select accordion effect within Framer."
+            "While learning React, I documented some of the projects I worked on as it helped me understand concepts better. One of these turned into a 3-part tutorial, guiding users through creating a single-select accordion effect within Framer."
           }
           listintro={"Some of the topics addressed include:"}
-          list1={"applying React Hooks to toggle states"}
+          list1={"using React Hooks to toggle states"}
           list2={"creating custom animations"}
           list3={"mapping over arrays from JSON files"}
           link={"https://www.framer.com/learn/guide/accordion-design-part-1/"}

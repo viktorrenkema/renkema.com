@@ -89,9 +89,6 @@ export default function Framer(props) {
               where my focus extends to also help organizations like KLM,
               Google, AirFrance and others become succesful by providing them
               with on-site workshops, direct support, and learning materials.
-              <br></br>
-              <br></br>Next to this, I enjoy creating educational content to
-              teach others the basics of code and help myself learn more.
             </motion.p>{" "}
             <LearnmoreBlob
               destination={"https://www.framer.com/"}

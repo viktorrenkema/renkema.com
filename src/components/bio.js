@@ -107,7 +107,7 @@ export default function Background(props) {
               >
                 University Medical Center Groningen
               </a>
-              . Here I studied the workflows of medical staff for whom we built
+              . Here, I studied the workflows of medical staff for whom we built
               and implemented custom user interfaces in Epic, the hospital-wide
               electronic medical record.
               <br></br>

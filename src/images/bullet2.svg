@@ -1,0 +1,6 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="100" height="125"><path d="M 71.203 63 L 68.359 59.719 L 36.359 22.719 L 28.797 29.281 L 57.953 63 L 28.797 96.719 L 36.359 103.281 L 68.359 66.281 Z" fill="#ff2b64"></path></svg> -->
+
+<!-- Arrow -->
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="6">
+  <path d="M 0.125 2.679 L 6.703 2.679 L 4.776 0.654 L 5.209 0.199 L 7.875 3 L 5.207 5.801 L 4.776 5.346 L 6.704 3.321 L 0.125 3.321 Z" fill="white"></path>
+</svg>
