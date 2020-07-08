@@ -19,22 +19,24 @@ export default function IndexPage() {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Helmet Title</title>
-        <meta name="title" content="Hey, my name is Helmet Title" />
-        <meta name="description" content="My Helmet Description" />
-        <meta property="og:title" content="European Travel Destinations" />
+        <title>Viktor Renkema</title>
+        <meta name="description" content="Viktor Renkema" />
         <meta
-          property="og:description"
-          content="Offering tour packages for individuals or groups."
+          property="og:title"
+          content="Hey, my name is Viktor. Psychologist by trade, but learning all about design, development and UX."
         />
+        <meta property="og:description" content="Viktor Renkema" />
         <meta
           property="og:image"
           content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
         />
         <meta property="og:url" content="http://framer.com" />
         <meta name="twitter:card" content="summary_large_image"></meta>
-
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://i.ibb.co/2d4ZHy4/site-icon.png"
+        />
       </Helmet>
       {/* <MetaTags>
         <title>Test: Page 1</title>
