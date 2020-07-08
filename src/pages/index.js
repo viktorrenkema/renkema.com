@@ -20,7 +20,20 @@ export default function IndexPage() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>My Helmet Title</title>
-        <description>My Helmet Description</description>
+        <meta name="title" content="Hey, my name is Helmet Title" />
+        <meta name="description" content="My Helmet Description" />
+        <meta property="og:title" content="European Travel Destinations" />
+        <meta
+          property="og:description"
+          content="Offering tour packages for individuals or groups."
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
+        />
+        <meta property="og:url" content="http://framer.com" />
+        <meta name="twitter:card" content="summary_large_image"></meta>
+
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       {/* <MetaTags>
