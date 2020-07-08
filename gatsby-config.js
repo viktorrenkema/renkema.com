@@ -3,7 +3,7 @@ module.exports = {
     title: `Viktor Renkema`,
     description: `Hey, my name is Viktor. Psychologist by trade, but learning all about design, development and UX.`,
     author: `@vrenkema`,
-    image: "images/site-icon.png",
+    image: "/groningen-7c27d7ef5c8875bad11adbda35810d08.jpeg",
     twitterUsername: "@vrenkema",
   },
   plugins: [
