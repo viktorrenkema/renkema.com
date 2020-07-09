@@ -52,7 +52,9 @@ export default function ProjectsBlob(props) {
   const textstaggers = {
     visible: { opacity: 1, x: 0, display: "block" },
     hidden: {
-      display: "none",
+      display: window.matchMedia("(any-hover: none)").matches
+        ? "block"
+        : "none",
       opacity: 0,
       transitionEnd: {
         x: -10,
