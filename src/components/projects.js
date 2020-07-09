@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
 import { useGlobal } from "reactn"
 import accordion from "../../src/images/proj_accordion.gif"
-import ladimora from "../../src/images/proj_ladimora2.gif"
+import ladimora from "../../src/images/proj_ladimora.gif"
 
 import ProjectsBlob from "../components/projects-blob"
 
@@ -106,7 +106,7 @@ export function Projects(props) {
           h1={"La Dimora"}
           label={"WEBSITE"}
           mainbody={
-            "For La Dimora, a holiday home in Italy, I created a website which can be shared with potential renters. It includes various carousels with an impression of the home, information about must-visit spots in the area, and a calendar to show live availability synced with AirBnb."
+            "For La Dimora, a holiday home in Italy, I created a website which can be visited by potential renters to learn more about the home. It includes various carousels with an impression of the home, information about must-visit spots in the area, and a calendar to show live availability synced with AirBnb."
           }
           link={"https://www.ladimora.org"}
           blobfill={"#fb3a5a"}
