@@ -50,8 +50,9 @@ export default function ProjectsBlob(props) {
   }
 
   const textstaggers = {
-    visible: { opacity: 1, x: 0 },
+    visible: { opacity: 1, x: 0, display: "block" },
     hidden: {
+      display: "none",
       opacity: 0,
       transitionEnd: {
         x: -10,
