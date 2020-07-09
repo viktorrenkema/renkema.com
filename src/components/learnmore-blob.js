@@ -75,7 +75,6 @@ export default function LearnmoreBlob(props) {
       onHoverEnd={onHoverEnd}
       onTapStart={onHoverStart}
       onTapCancel={onHoverEnd}
-      whileTap={onHoverStart}
     >
       <motion.svg
         variants={blob}

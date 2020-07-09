@@ -49,12 +49,18 @@ export default function ProjectsBlob(props) {
     },
   }
 
+  const [isDesktop, setIsDesktop] = React.useState(undefined)
+
+  React.useEffect(() => {
+    window.matchMedia("(any-hover: none)").matches
+      ? setIsDesktop(false)
+      : setIsDesktop(true)
+  }, [])
+
   const textstaggers = {
     visible: { opacity: 1, x: 0, display: "block" },
     hidden: {
-      display: window.matchMedia("(any-hover: none)").matches
-        ? "block"
-        : "none",
+      display: isDesktop ? "none" : "block",
       opacity: 0,
       transitionEnd: {
         x: -10,
