@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
 import { useGlobal } from "reactn"
 import accordion from "../../src/images/proj_accordion.gif"
-import ladimora from "../../src/images/proj_ladimora.gif"
+import ladimora from "../../src/images/proj_ladimora2.gif"
 
 import ProjectsBlob from "../components/projects-blob"
 
