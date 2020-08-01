@@ -67,6 +67,7 @@ export default function LearnmoreBlob(props) {
     // height: "200px",
     position: "relative",
     paddingTop: "1rem",
+    width: "max-content",
   }
   return (
     <motion.div
