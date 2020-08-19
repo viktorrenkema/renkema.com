@@ -7,35 +7,37 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ lang, image, meta, title }) {
+const SEO = ({ description, meta, title, defaultImage: image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            author
+            title
             defaultImage: image
-            twitterUsername
+            description
+            social {
+              twitter
+            }
           }
         }
       }
     `
   )
 
-  // const metaDescription = description || site.siteMetadata.description
-
+  const metaDescription = description || site.siteMetadata.description
+  // const image = "https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "en",
       }}
-      title={title}
-      // description={description}
-      titleTemplate={`%s`}
       image={image}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: `description`,
@@ -45,10 +47,10 @@ function SEO({ lang, image, meta, title }) {
           property: `og:title`,
           content: title,
         },
-        // {
-        //   property: `og:description`,
-        //   content: metaDescription,
-        // },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
         {
           property: `og:type`,
           content: `website`,
@@ -59,7 +61,7 @@ function SEO({ lang, image, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.social.twitter,
         },
         {
           name: `twitter:title`,
@@ -70,7 +72,17 @@ function SEO({ lang, image, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="creator" />
+      <meta name="twitter:title" content="title" />
+      <meta name="twitter:description" content="description" />
+
+      <meta
+        name="twitter:image"
+        content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
+      />
+    </Helmet>
   )
 }
 
@@ -78,7 +90,6 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-  image: null,
 }
 
 SEO.propTypes = {
@@ -86,7 +97,6 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
 }
 
 export default SEO
