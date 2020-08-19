@@ -61,7 +61,7 @@ export function Projects(props) {
       </motion.h1>
       <p className="copy-projects copy">
         Various passion projects, educational articles,
-        <br className="break" /> and other things coming up.
+        <br className="break" /> and more things coming up.
       </p>
       <motion.div
         className="section_project"
