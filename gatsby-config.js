@@ -1,9 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Viktor Renkema`,
-    author: `@vrenkema`,
-    image: "images/site-icon.png",
-    twitterUsername: "@vrenkema",
+    title: `Portfolio of Viktor Renkema`,
+    author: {
+      name: `Viktor Renkema`,
+      summary: `Psychology graduate moving into web development.`,
+    },
+    description: `Psychology graduate moving into web development.`,
+    image: `https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg`,
+    siteUrl: `https://renkema.com`,
+    social: {
+      twitter: `vrenkema`,
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
