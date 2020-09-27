@@ -106,17 +106,15 @@ export default function ProjectsBlob(props) {
     first: {
       d: props.blobpath1,
       transition: {
-        duration: 3,
-        yoyo: Infinity,
+        duration: 1,
         ease: "easeOut",
       },
     },
     second: {
       d: props.blobpath2,
       transition: {
-        duration: 3,
+        duration: 1,
         yoyo: "easeOut",
-        flip: Infinity,
       },
     },
   }
@@ -144,15 +142,20 @@ export default function ProjectsBlob(props) {
   }
 
   const shouldAnimate = props.selectedBlob === props.identifier
+  const [hover, setHover] = React.useState(false)
 
   // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
 
   const onHoverStart = () => {
-    props.setSelectedBlob(props.identifier)
+    props.setSelectedBlob(props.identifier),
+      setHover(true),
+      console.log("hovered")
   }
 
   const onHoverEnd = () => {
-    props.setSelectedBlob(undefined)
+    props.setSelectedBlob(undefined),
+      setHover(false),
+      console.log("not hovered")
   }
 
   const tapBlob = () => {
@@ -196,10 +199,10 @@ export default function ProjectsBlob(props) {
       >
         <motion.div
           className="wrap_imagecardone"
-          variants={imgwrapper}
+          // variants={imgwrapper}
           style={{ width: "500px", margin: "auto", height: "280px" }}
           id={props.id}
-          animate={shouldAnimate ? "large" : "small"}
+          animate={"small"}
           initial="small"
         >
           <motion.img
@@ -252,7 +255,6 @@ export default function ProjectsBlob(props) {
         style={{ position: "absolute" }}
       >
         <motion.svg
-          variants={blob}
           style={{
             zIndex: "4",
             pointerEvents: "none",
@@ -260,7 +262,6 @@ export default function ProjectsBlob(props) {
             overflow: "visible",
           }}
           initial="normal"
-          animate={shouldAnimate ? "hovered" : "normal"}
           xmlns="http://www.w3.org/2000/svg"
           width="400"
           height="355"
@@ -268,7 +269,7 @@ export default function ProjectsBlob(props) {
           <motion.path
             variants={blobpath}
             initial={"first"}
-            animate={"second"}
+            animate={hover ? "second" : "first"}
             fill={props.blobfill}
           ></motion.path>
         </motion.svg>

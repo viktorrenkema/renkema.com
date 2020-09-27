@@ -1,0 +1,12 @@
+{
+  "cardData": [
+    {
+      "title": "First Card",
+      "subtext": "Text pulled from 1st object in .json file.",
+      "lefth2": "Heading 1",
+      "righth2": "Heading 2",
+      "leftsubtext": "A column with extra information exposed on tap.",
+      "rightsubtext": "Another column with some text."
+    }
+  ]
+}

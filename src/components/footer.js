@@ -41,7 +41,7 @@ export default function Footer(props) {
               </motion.p>
             </a>
           </motion.p>
-          © {n} - Viktor Renkema{" "}
+          {/* © {n} - Viktor Renkema{" "} */}
         </p>
         {/* <p>Created with Gatsby and Framer Motion</p> */}
         {/* <Contact></Contact> */}
