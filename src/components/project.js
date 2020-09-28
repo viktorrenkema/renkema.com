@@ -53,7 +53,6 @@ export default function Project(props) {
     letterSpacing: 0,
     lineHeight: 1.2,
     fontWeight: 900,
-    textTransform: "capitalize",
     paddingBottom: "20px",
   }
 

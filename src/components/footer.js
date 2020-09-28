@@ -12,7 +12,7 @@ export default function Footer(props) {
       <div className="container">
         <p>
           <motion.p>
-            Created with{" "}
+            Made with{" "}
             <a
               href="https://www.gatsbyjs.org"
               target="_blank"
@@ -20,8 +20,8 @@ export default function Footer(props) {
               style={{ textDecoration: "none" }}
             >
               <motion.p
-                whileHover={{ color: "#532b84" }}
-                style={{ display: "inline" }}
+                whileHover={{ textDecoration: "underline" }}
+                style={{ display: "inline", color: "#532b84" }}
               >
                 GatsbyJS
               </motion.p>{" "}
@@ -34,8 +34,8 @@ export default function Footer(props) {
               style={{ textDecoration: "none" }}
             >
               <motion.p
-                whileHover={{ color: "#60f" }}
-                style={{ display: "inline" }}
+                whileHover={{ textDecoration: "underline" }}
+                style={{ display: "inline", color: "#9a21ed" }}
               >
                 Framer Motion
               </motion.p>

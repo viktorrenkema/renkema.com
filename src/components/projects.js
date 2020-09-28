@@ -55,7 +55,7 @@ export function Projects(props) {
         assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#ebe0e5"}
         projectlabel={"component generator"}
-        projecttitle={"loaders"}
+        projecttitle={"Loaders"}
         projectinfo={
           "Loaders is a tool that generates production-ready code for a loader, allowing the user to fully customize the loader’s style and animation."
         }

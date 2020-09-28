@@ -1,12 +1,21 @@
 {
   "cardData": [
     {
-      "title": "First Card",
-      "subtext": "Text pulled from 1st object in .json file.",
-      "lefth2": "Heading 1",
-      "righth2": "Heading 2",
-      "leftsubtext": "A column with extra information exposed on tap.",
-      "rightsubtext": "Another column with some text."
+      "title": "Amsterdam",
+      "subtext": "Mostly sunny",
+      "temperature": "18°",
+      "time1": "NOW",
+      "time2": "18:00",
+      "time3": "19:00",
+      "time4": "20:00",
+      "time5": "21:00",
+      "time6": "22:00",
+      "temp1": "18°",
+      "temp2": "18°",
+      "temp3": "17°",
+      "temp4": "15°",
+      "temp5": "13°",
+      "temp6": "11°"
     }
   ]
 }
