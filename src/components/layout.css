@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap");
 
 /* Border gradient border-image: linear-gradient(45deg, #ff6661, #ff9563)  */
 
@@ -59,7 +60,8 @@ li {
 }
 a {
   color: #ff285e;
-  text-decoration: underline #ff285e;
+  text-decoration: none;
+  /* text-decoration: underline #ff285e; */
 }
 
 li {
@@ -425,9 +427,9 @@ ul li::before {
 
 /* PROJECTS */
 .projects {
-  background: #efefef;
+  /* background: #efefef; */
   align-self: center;
-  padding: 6em 4em 6em 4em;
+  padding: 4em 0em;
   justify-content: center;
 }
 
@@ -605,7 +607,6 @@ ul {
   right: 0;
   width: 100%;
   margin: 0 auto;
-  border-top: 2px solid #ececec;
   height: 70px;
 }
 

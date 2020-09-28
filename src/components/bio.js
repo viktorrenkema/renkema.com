@@ -99,17 +99,10 @@ export default function Background(props) {
               <br></br>
               My first experience in this area was learning basic HTML & CSS to
               create A/B tests for an online webshop. After this, I got to learn
-              more about UX when I started working at the{" "}
-              <a
-                href="https://www.umcg.nl/NL/Zorg/Paginas/default.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                University Medical Center Groningen
-              </a>
-              . Here, I studied the workflows of medical staff for whom we built
-              and implemented custom user interfaces in Epic, the hospital-wide
-              electronic medical record.
+              more about UX when I started working at the University Medical
+              Center Groningen . Here, I studied the workflows of medical staff
+              for whom we built and implemented custom user interfaces in Epic,
+              the hospital-wide electronic medical record.
               <br></br>
               {/* <br></br>About a year later I started working at Framer, where I
             manage our thriving communities and ensure all our users and

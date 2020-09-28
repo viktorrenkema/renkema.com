@@ -1,0 +1,21 @@
+{
+  "cardData": [
+    {
+      "title": "Amsterdam",
+      "subtext": "Mostly sunny",
+      "temperature": "18°",
+      "time1": "NOW",
+      "time2": "18:00",
+      "time3": "19:00",
+      "time4": "20:00",
+      "time5": "21:00",
+      "time6": "22:00",
+      "temp1": "18°",
+      "temp2": "18°",
+      "temp3": "17°",
+      "temp4": "15°",
+      "temp5": "13°",
+      "temp6": "11°"
+    }
+  ]
+}
