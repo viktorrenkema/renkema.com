@@ -48,7 +48,6 @@ export default function Background(props) {
     >
       <div className="grid grid--bio">
         <motion.div
-          style={{ position: "relative" }}
           variants={image}
           className="imagecard imgleft"
           initial="hidden"

@@ -221,68 +221,6 @@ ul li::before {
   justify-content: flex-end;
 }
 
-.Outter-Wave1 {
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 6;
-  width: 572px;
-  right: -0px;
-  height: 270px;
-  position: absolute;
-}
-
-.Inner-Wave1 {
-  pointer-events: none;
-  position: relative;
-  right: -10px;
-  top: -10px;
-}
-
-.Outter-Wave2 {
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 7;
-  width: 572px;
-  right: 0px;
-  height: 270px;
-  position: absolute;
-}
-.Inner-Wave2 {
-  pointer-events: none;
-  position: relative;
-
-  right: -50px;
-  top: -25px;
-}
-
-.Outter-Wave3 {
-  pointer-events: none;
-  overflow: hidden;
-  z-index: -5;
-  width: 183px;
-  left: 0;
-  height: 160px;
-  position: relative;
-}
-
-.Inner-Wave3 {
-  position: relative;
-  z-index: 6;
-}
-
-.SVG-Wave3 {
-  transform: "rotate(180deg)";
-}
-
-.IconEmail {
-  width: 100px;
-  height: 100px;
-  bottom: 0px;
-  display: none;
-  position: fixed;
-  left: 90%;
-}
-
 .LinkButton {
   color: black;
   font-size: 13px;
@@ -434,7 +372,7 @@ ul li::before {
 }
 
 .img-groningen {
-  height: auto;
+  /* height: auto; */
   width: 100%;
   position: relative;
 }
@@ -469,6 +407,8 @@ ul li::before {
 }
 
 .img-framer {
+  /* height: auto; */
+  width: 100%;
   position: relative;
 }
 
@@ -795,22 +735,6 @@ ul {
   .grid--framer {
     grid-template-columns: auto 50%;
   }
-
-  .img-groningen {
-    border: 7px solid;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
-  }
-
-  .img-framer {
-    border: 7px solid;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
-  }
 }
 
 @media (max-width: 376px) {
@@ -989,20 +913,10 @@ ul {
   }
 
   .img-groningen {
-    border: 5px solid;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
     width: 90%;
   }
 
   .img-framer {
-    border: 5px solid;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    border-image: linear-gradient(220deg, #ff285e, #fc5982) 1;
     width: 90%;
   }
 
