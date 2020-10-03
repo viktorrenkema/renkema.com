@@ -1,5 +1,5 @@
 import React from "react"
-import useIsInViewport from "use-is-in-viewport"
+// import useIsInViewport from "use-is-in-viewport"
 import { motion } from "framer-motion"
 import framerlogo from "../../src/images/framerlogo.png"
 import Link from "./link"
@@ -112,14 +112,14 @@ export default function Framer(props) {
 }
 
 function FramerImg(props) {
-  const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
+  // const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
   return (
     <motion.img
       variants={image}
-      ref={targetRef}
-      initial="hidden"
-      animate={isInViewportImg ? "visible" : "hidden"}
+      // ref={targetRef}
+      initial="visible"
+      // animate={isInViewportImg ? "visible" : "hidden"}
       className="img-framer image"
       src={framerlogo}
       width={"100%"}

@@ -1,5 +1,5 @@
 import React from "react"
-import useIsInViewport from "use-is-in-viewport"
+// import useIsInViewport from "use-is-in-viewport"
 import Groningen from "../../src/images/groningen.jpeg"
 import { motion } from "framer-motion"
 import Link from "./link"
@@ -32,22 +32,22 @@ const section = {
 }
 
 export default function Background(props) {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
     <motion.section
-      ref={targetRef}
+      // ref={targetRef}
       className="bio"
       variants={section}
-      initial="hidden"
-      animate={isInViewport ? "visible" : "hidden"}
+      initial="visible"
+      // animate={isInViewport ? "visible" : "hidden"}
     >
       <div className="grid grid--bio">
         <motion.div
           variants={image}
           className="imagecard imgleft"
-          initial="hidden"
-          animate={isInViewport ? "visible" : "hidden"}
+          initial="visible"
+          // animate={isInViewport ? "visible" : "hidden"}
         >
           {/* <motion.div style={svgstyle}>
             <motion.svg
@@ -75,8 +75,8 @@ export default function Background(props) {
           <motion.h1
             className={"subject subject-bio header"}
             variants={header}
-            initial="hidden"
-            animate={isInViewport ? "visible" : "hidden"}
+            initial="visible"
+            // animate={isInViewport ? "visible" : "hidden"}
           >
             About me.
           </motion.h1>
@@ -84,8 +84,8 @@ export default function Background(props) {
             <motion.p
               className="copy"
               variants={copy}
-              initial="hidden"
-              animate={isInViewport ? "visible" : "hidden"}
+              initial="visible"
+              // animate={isInViewport ? "visible" : "hidden"}
             >
               While obtaining my Master’s degree in Psychology, my interest for
               behaviour grew to also include the field of web technology. Around
@@ -128,14 +128,14 @@ export default function Background(props) {
 }
 
 function PictureFrame(props) {
-  const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
+  // const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
   return (
     <motion.img
       variants={image}
-      ref={targetRef}
-      initial="hidden"
-      animate={isInViewportImg ? "visible" : "hidden"}
+      // ref={targetRef}
+      initial="visible"
+      // animate={isInViewportImg ? "visible" : "hidden"}
       className="img-groningen image"
       src={Groningen}
       width={"100%"}
