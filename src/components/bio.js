@@ -2,15 +2,11 @@ import React from "react"
 import useIsInViewport from "use-is-in-viewport"
 import Groningen from "../../src/images/groningen.jpeg"
 import { motion } from "framer-motion"
-import LearnmoreBlob from "../components/learnmore-blob"
 import Link from "./link"
 
 const image = {
   default: {
     scale: 1,
-  },
-  hovered: {
-    scale: 1.05,
   },
   hidden: { opacity: 0 },
   visible: {
@@ -134,20 +130,8 @@ export default function Background(props) {
 function PictureFrame(props) {
   const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
-  const [, setHovered] = React.useState(false)
-
-  const onHoverStart = () => {
-    setHovered(true)
-  }
-
-  const onHoverEnd = () => {
-    setHovered(false)
-  }
-
   return (
     <motion.img
-      onHoverStart={onHoverStart}
-      onHoverEnd={onHoverEnd}
       variants={image}
       ref={targetRef}
       initial="hidden"

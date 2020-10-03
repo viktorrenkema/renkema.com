@@ -2,15 +2,11 @@ import React from "react"
 import useIsInViewport from "use-is-in-viewport"
 import { motion } from "framer-motion"
 import framerlogo from "../../src/images/framerlogo.png"
-import LearnmoreBlob from "../components/learnmore-blob"
 import Link from "./link"
 
 const image = {
   default: {
     scale: 1,
-  },
-  hovered: {
-    scale: 1.05,
   },
   hidden: {
     opacity: 0,
@@ -41,20 +37,13 @@ const imagebackground = {
 }
 
 export default function Framer(props) {
-  const [hovered, setHovered] = React.useState(false)
-
-  const onHoverStart = () => {
-    setHovered(true)
-  }
-
-  const onHoverEnd = () => {
-    setHovered(false)
-  }
-
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
-    <section className="framer" ref={targetRef}>
+    <section
+      className="framer"
+      // ref={targetRef}
+    >
       <div className="grid grid--framer">
         <motion.div
           style={{
@@ -68,16 +57,16 @@ export default function Framer(props) {
           <motion.h1
             className="subject subject-framer header"
             variants={header}
-            initial="hidden"
-            animate={isInViewport ? "visible" : "hidden"}
+            initial="visible"
+            // animate={isInViewport ? "visible" : "hidden"}
           >
             Framer.
           </motion.h1>
           <motion.div
             variants={copy}
             className="description carddescriptionleft"
-            initial="hidden"
-            animate={isInViewport ? "visible" : "hidden"}
+            initial="visible"
+            // animate={isInViewport ? "visible" : "hidden"}
           >
             <motion.p className="copy">
               Joining Framer, I started out in the role of Community and Support
@@ -112,8 +101,8 @@ export default function Framer(props) {
         <motion.div
           className="imgright imagecard"
           variants={imagebackground}
-          initial="hidden"
-          animate={isInViewport ? "visible" : "hidden"}
+          initial="visible"
+          // animate={isInViewport ? "visible" : "hidden"}
         >
           <FramerImg></FramerImg>
         </motion.div>
@@ -125,20 +114,8 @@ export default function Framer(props) {
 function FramerImg(props) {
   const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
-  const [, setHovered] = React.useState(false)
-
-  const onHoverStart = () => {
-    setHovered(true)
-  }
-
-  const onHoverEnd = () => {
-    setHovered(false)
-  }
-
   return (
     <motion.img
-      onHoverStart={onHoverStart}
-      onHoverEnd={onHoverEnd}
       variants={image}
       ref={targetRef}
       initial="hidden"
