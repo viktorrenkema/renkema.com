@@ -14,20 +14,53 @@ export default function Scroller(props) {
     return x
   })
 
+  const modifier2 = useTransform(scrollYProgress, x => {
+    if (x < 0.1) {
+      return 1
+    }
+    if (x > 0.1 && x < 0.2) {
+      return 0.5
+    }
+    if (x > 0.2) {
+      return 0
+    }
+  })
+
+  const yRange = [0, 0.1]
+  const opacityRange = [1, 0]
+
+  const reverse = useTransform(scrollYProgress, yRange, opacityRange)
+
+  const styleScrolldownP = {
+    opacity: reverse,
+    width: "fit-content",
+    height: "fit-content",
+    bottom: "58px",
+    position: "fixed",
+    zIndex: 3,
+    color: "#171717",
+    fontSize: "12px",
+    left: "50%",
+    transform: "translate(-50%, 0%)",
+  }
   return (
-    <motion.div
-      className="scroller"
-      style={{
-        width: "fit-content",
-        height: "fit-content",
-        bottom: "25px",
-        position: "fixed",
-        left: "50%",
-        zIndex: "3",
-        marginLeft: "-13px",
-      }}
-    >
-      {/* <motion.svg
+    <motion.div>
+      <motion.p style={styleScrolldownP} className="subcopy-intro">
+        Scroll down to learn a little more and view some projects.
+      </motion.p>
+      <motion.div
+        className="scroller"
+        style={{
+          width: "fit-content",
+          height: "fit-content",
+          bottom: "25px",
+          position: "fixed",
+          left: "50%",
+          zIndex: "3",
+          marginLeft: "-13px",
+        }}
+      >
+        {/* <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="14"
         height="13"
@@ -48,24 +81,30 @@ export default function Scroller(props) {
           stroke="rgb(255, 40, 92)"
         />
       </motion.svg> */}
-      <motion.svg width="14" height="13">
-        <motion.defs>
-          <linearGradient id="progress" x1="0" y1="1" x2="0" y2="0">
-            <motion.stop id="stop1" offset={modifier} stopColor="transparent" />
-            <motion.stop
-              id="stop2"
-              offset={modifier}
-              stopColor="rgb(255, 40, 92)"
-            />
-          </linearGradient>
-        </motion.defs>
-        <motion.path
-          d="M 7.649 1.41 L 7.791 10.464 L 10.577 7.855 L 11.221 8.461 L 7.367 12.07 L 3.399 8.337 L 4.024 7.753 L 6.893 10.451 L 6.752 1.396 Z"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="url(#progress)"
-        ></motion.path>
-      </motion.svg>
+
+        <motion.svg width="23" height="22">
+          <motion.defs>
+            <linearGradient id="progress" x1="0" y1="1" x2="0" y2="0">
+              <motion.stop
+                id="stop1"
+                offset={modifier}
+                stopColor="transparent"
+              />
+              <motion.stop
+                id="stop2"
+                offset={modifier}
+                stopColor="rgb(255, 40, 92)"
+              />
+            </linearGradient>
+          </motion.defs>
+          <motion.path
+            d="M 10.927 2.061 L 11.13 15.294 L 15.11 11.48 L 16.03 12.366 L 10.524 17.641 L 4.856 12.185 L 5.749 11.331 L 9.847 15.275 L 9.646 2.04 Z"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="url(#progress)"
+          ></motion.path>
+        </motion.svg>
+      </motion.div>
     </motion.div>
   )
 }

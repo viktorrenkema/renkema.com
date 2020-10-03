@@ -3,6 +3,7 @@ import useIsInViewport from "use-is-in-viewport"
 import { motion } from "framer-motion"
 import framerlogo from "../../src/images/framerlogo.png"
 import LearnmoreBlob from "../components/learnmore-blob"
+import Link from "./link"
 
 const image = {
   default: {
@@ -61,7 +62,7 @@ export default function Framer(props) {
             opacity: "1",
             transform: "none",
             display: "flex",
-            placeContent: "start",
+            placeContent: "center",
           }}
         >
           <motion.h1
@@ -70,7 +71,7 @@ export default function Framer(props) {
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
           >
-            Framer
+            Framer.
           </motion.h1>
           <motion.div
             variants={copy}
@@ -90,7 +91,13 @@ export default function Framer(props) {
               Google, AirFrance and others become succesful by providing them
               with on-site workshops, direct support, and learning materials.
             </motion.p>{" "}
-            <LearnmoreBlob
+            <Link
+              inline={false}
+              forbio={true}
+              linktext={"Visit Framer.com"}
+              url={"https://www.framer.com/"}
+            ></Link>{" "}
+            {/* <LearnmoreBlob
               destination={"https://www.framer.com/"}
               text={"Visit Framer.com"}
               d1={
@@ -99,7 +106,7 @@ export default function Framer(props) {
               d2={
                 "M 122.599 18.203 C 138.399 27.303 157.799 36.203 160.099 48.203 C 162.299 60.303 147.399 75.503 135.799 89.803 C 124.299 104.103 115.999 117.503 102.899 125.703 C 89.799 133.903 71.899 137.003 55.299 132.603 C 38.599 128.303 23.199 116.603 12.599 100.903 C 1.999 85.103 -3.801 65.303 2.799 51.103 C 9.299 36.903 28.199 28.303 43.599 19.103 C 58.899 9.903 70.699 0.203 82.699 0.003 C 94.599 -0.197 106.799 9.103 122.599 18.203 Z"
               }
-            ></LearnmoreBlob>
+            ></LearnmoreBlob> */}
           </motion.div>
         </motion.div>
         <motion.div

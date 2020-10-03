@@ -3,6 +3,7 @@ import useIsInViewport from "use-is-in-viewport"
 import Groningen from "../../src/images/groningen.jpeg"
 import { motion } from "framer-motion"
 import LearnmoreBlob from "../components/learnmore-blob"
+import Link from "./link"
 
 const image = {
   default: {
@@ -73,7 +74,7 @@ export default function Background(props) {
             opacity: "1",
             transform: "none",
             display: "flex",
-            placeContent: "start",
+            placeContent: "center",
           }}
         >
           <motion.h1
@@ -82,7 +83,7 @@ export default function Background(props) {
             initial="hidden"
             animate={isInViewport ? "visible" : "hidden"}
           >
-            About me
+            About me.
           </motion.h1>
           <motion.div className="description carddescriptionright">
             <motion.p
@@ -92,24 +93,29 @@ export default function Background(props) {
               animate={isInViewport ? "visible" : "hidden"}
             >
               While obtaining my Master’s degree in Psychology, my interest for
-              behaviour grew to also include the field of web technology. To
-              pursue this, I started learning more about web development and
-              digital user experiences.
+              behaviour grew to also include the field of web technology. Around
+              the start of 2019 I began learning more about web development and
+              digital user experiences to learn more about the web.
               <br></br>
               <br></br>
-              My first experience in this area was learning basic HTML & CSS to
-              create A/B tests for an online webshop. After this, I got to learn
-              more about UX when I started working at the University Medical
-              Center Groningen . Here, I studied the workflows of medical staff
-              for whom we built and implemented custom user interfaces in Epic,
-              the hospital-wide electronic medical record.
+              My first experience in this area was learning HTML & CSS to create
+              A/B tests for an online webshop. After this, I got to learn more
+              about UX when I started working at the University Medical Center
+              Groningen. Here, I studied the workflows of medical staff for whom
+              we built and implemented custom user interfaces in Epic, the
+              hospital-wide electronic medical record.
               <br></br>
               {/* <br></br>About a year later I started working at Framer, where I
             manage our thriving communities and ensure all our users and
             organizations are receiving the technical support they require. */}
             </motion.p>
-
-            <LearnmoreBlob
+            <Link
+              inline={false}
+              forbio={true}
+              linktext={"Ask me more"}
+              url={"mailto:viktor@renkema.com"}
+            ></Link>{" "}
+            {/* <LearnmoreBlob
               destination={"mailto:viktor@renkema.com"}
               text={"Ask me more"}
               d1={
@@ -118,7 +124,7 @@ export default function Background(props) {
               d2={
                 "M 138.613 0.28 C 156.669 2.744 169.567 23.978 168.981 44.04 C 168.395 64.219 154.324 83.225 140.606 97.89 C 126.77 112.555 113.169 122.762 97.574 129.097 C 81.98 135.433 64.392 137.779 52.901 130.505 C 41.528 123.231 36.134 106.337 26.52 91.203 C 16.905 76.069 3.069 62.577 0.49 46.621 C -2.207 30.666 6.469 12.012 20.774 8.844 C 34.962 5.677 54.66 17.761 76.117 15.766 C 97.574 13.772 120.673 -2.301 138.613 0.28 Z"
               }
-            ></LearnmoreBlob>
+            ></LearnmoreBlob> */}
           </motion.div>
         </motion.div>{" "}
       </div>
