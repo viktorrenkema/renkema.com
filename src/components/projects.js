@@ -4,6 +4,7 @@ import useIsInViewport from "use-is-in-viewport"
 import { useGlobal } from "reactn"
 import accordion from "../../src/images/proj_accordion.gif"
 import ladimora from "../../src/images/ladimora.png"
+import ladimorascroll from "../../src/images/ladimorascroll.png"
 
 import Project from "../components/Project"
 
@@ -54,8 +55,8 @@ export function Projects(props) {
       <Project
         assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#ebe0e5"}
-        projectlabel={"component generator"}
-        projecttitle={"Loaders"}
+        projectlabel={"web app"}
+        projecttitle={"Loaders.io"}
         projectinfo={
           "Loaders is a tool that generates production-ready code for a loader, allowing the user to fully customize the loader’s style and animation."
         }
@@ -66,14 +67,16 @@ export function Projects(props) {
       <Project
         assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#E3EAED"}
-        projectlabel={"holiday home site"}
+        projectlabel={"site"}
         projecttitle={"La Dimora"}
         projectinfo={
           "A website created to provide information about casa La Dimora, a holiday home in northern Italy at lake Como."
         }
-        asset={ladimora}
+        asset={ladimorascroll}
         linktext={"Visit ladimora.org"}
+        ladimora={true}
         url={"https://ladimora.org/"}
+        // assetid={"ladimorawrapper"}
       ></Project>
       <Project
         assetBackgroundColor={"#fbf8f8"}

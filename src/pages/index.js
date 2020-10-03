@@ -19,12 +19,12 @@ export default function IndexPage() {
         <title>Viktor Renkema</title>
         <meta
           name="description"
-          content="Psychologist by trade, now learning all about design and web development."
+          content="Front-end developer with a background in psychology, exploring the field of design & development."
         />
         <meta property="og:title" content="Hey, my name is Viktor." />
         <meta
           property="twitter:description"
-          content="Psychologist by trade, now learning all about design and web development."
+          content="Front-end developer with a background in psychology, exploring the field of design & development."
         />
         <meta
           property="og:image"
@@ -35,7 +35,7 @@ export default function IndexPage() {
         <link
           rel="icon"
           type="image/png"
-          href="https://i.ibb.co/2d4ZHy4/site-icon.png"
+          href="https://i.ibb.co/nsPWwRb/Fav.png"
         />
       </Helmet>
       <Intro></Intro>

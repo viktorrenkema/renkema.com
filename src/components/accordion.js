@@ -38,6 +38,8 @@ export default function Accordion(props) {
     // boxShadow: "0px 1px 3px 0px rgba(0, 0, 0, 0.25)",
     borderRadius: 5,
     background: "white",
+    filter:
+      "drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px) drop-shadow(rgba(0, 0, 0, 0.027) 0px 6.7px 3px) drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px) drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px) drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px) drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px)",
   }
 
   const styleFlexWrapper = {

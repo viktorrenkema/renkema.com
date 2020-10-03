@@ -1,10 +1,35 @@
 import React from "react"
-import { motion } from "framer-motion"
+import {
+  motion,
+  useViewportScroll,
+  useDomEvent,
+  useRef,
+  useTransform,
+} from "framer-motion"
+import useIsInViewport from "use-is-in-viewport"
+
 import Link from "./link"
 import Loader from "../components/loader"
+import Input from "../components/input"
 import Accordion from "../components/accordion"
 
 export default function Project(props) {
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
+
+  console.log(isInViewport)
+
+  let { scrollYProgress } = useViewportScroll() // Track the y scroll
+
+  const modifier = useTransform(scrollYProgress, x => x * -300)
+
+  setTimeout(function() {
+    console.log(modifier)
+  }, 1000)
+
+  // useDomEvent(useRef(window), "scroll", () => console.log(scrollYProgress))
+
+  const [quantityLoaders, setQuantityLoaders] = React.useState(5)
+
   const styleFlexWrapper = {
     width: "100%",
     display: "flex",
@@ -23,6 +48,7 @@ export default function Project(props) {
     alignItems: "center",
     overflow: "visible",
     backgroundColor: "rgba(255, 255, 255, 0.5)",
+    borderTop: "1px solid #e6e6e6",
   }
 
   const styleBottomSection = {
@@ -66,27 +92,43 @@ export default function Project(props) {
     textAlign: "center",
     width: "50%",
     paddingBottom: "20px",
+    maxWidth: "500px",
   }
 
-  const styleAssetFrame = {
-    width: 704,
-    height: 391,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "visible",
+  const styleAssetFrameMask = {
+    overflow: "hidden",
+    width: 800,
+    height: 360,
     WebkitFilter: props.loaders
       ? "none"
       : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
     filter: props.loaders
       ? "none"
       : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
+  }
+
+  const styleAssetFrame = {
+    top: props.ladimora && isInViewport ? modifier : 0,
+    width: 800,
+    height: 883,
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "visible",
+  }
+
+  const styleAssetInnerFrame = {
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    overflow: "hidden",
     background: props.loaders || props.accordion ? "none" : "#fff",
     backgroundImage: `url(${props.asset})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    backgroundPosition: "top",
   }
 
   // const [isDesktop, setIsDesktop] = React.useState(undefined)
@@ -98,18 +140,47 @@ export default function Project(props) {
   // }, [])
 
   return (
-    <motion.div style={styleFlexWrapper}>
+    <motion.div style={styleFlexWrapper} ref={targetRef}>
       <motion.div style={styleTopSection}>
         <span style={styleLabel}>{props.projectlabel}</span>
         <span style={styleTitle}>{props.projecttitle}</span>
         <span style={styleInfo}>{props.projectinfo}</span>
-        <Link linktext={props.linktext} url={props.url}></Link>
+        <Link inline={false} linktext={props.linktext} url={props.url}></Link>
       </motion.div>
       <motion.div style={styleBottomSection}>
-        <motion.div style={styleAssetFrame}>
-          {props.loaders && <Loader />}
-          {props.accordion && <Accordion />}
-        </motion.div>
+        {props.ladimora && (
+          <motion.div style={styleAssetFrameMask}>
+            <motion.div style={styleAssetFrame}>
+              <motion.div style={styleAssetInnerFrame}></motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+        {props.accordion && (
+          <motion.div style={styleAssetFrame}>
+            <Accordion />
+          </motion.div>
+        )}
+        {props.loaders && (
+          <motion.div style={styleAssetFrame}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Input
+                // quantityLoaders={quantityLoaders}
+                value={quantityLoaders}
+                onChange={setQuantityLoaders}
+              />
+              <Loader
+                setQuantityLoaders={setQuantityLoaders}
+                quantityLoaders={quantityLoaders}
+              />
+            </div>
+          </motion.div>
+        )}
       </motion.div>
     </motion.div>
   )

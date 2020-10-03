@@ -17,11 +17,15 @@ export default function Footer(props) {
               href="https://www.gatsbyjs.org"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "underline", color: "#949494" }}
             >
               <motion.p
-                whileHover={{ textDecoration: "underline" }}
-                style={{ display: "inline", color: "#532b84" }}
+                whileHover={{
+                  textDecoration: "underline",
+                  textDecorationColor: "#532b84",
+                  color: "#532b84",
+                }}
+                style={{ display: "inline", color: "#949494" }}
               >
                 GatsbyJS
               </motion.p>{" "}
@@ -31,11 +35,15 @@ export default function Footer(props) {
               href="https://www.framer.com/motion/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "underline", color: "#949494" }}
             >
               <motion.p
-                whileHover={{ textDecoration: "underline" }}
-                style={{ display: "inline", color: "#9a21ed" }}
+                whileHover={{
+                  textDecoration: "underline",
+                  textDecorationColor: "#9a21ed",
+                  color: "#9a21ed",
+                }}
+                style={{ display: "inline", color: "#949494" }}
               >
                 Framer Motion
               </motion.p>
