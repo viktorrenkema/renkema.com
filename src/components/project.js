@@ -15,27 +15,47 @@ import Accordion from "../components/accordion"
 
 export default function Project(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
-
-  console.log(isInViewport)
+  const [isDesktop, setIsDesktop] = React.useState(undefined)
 
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
   const scrollRange = [0, 0.75, 0.9]
   const ladimoraRange = [0, 0, -520]
 
+  const ladimoraRangeMobile = [0, 0, -10]
+
   const adjustScrollY = useTransform(
     scrollYProgress,
     scrollRange,
     ladimoraRange
   )
+  const adjustScrollYMobile = useTransform(
+    scrollYProgress,
+    scrollRange,
+    ladimoraRangeMobile
+  )
 
-  const modifier = useTransform(scrollYProgress, x => x * -300)
+  const stringify = JSON.stringify(adjustScrollYMobile)
+  const toPercentage = adjustScrollYMobile.current.toString() + "%"
 
-  setTimeout(function() {
-    console.log(modifier)
-  }, 1000)
+  console.log(adjustScrollYMobile)
 
-  // useDomEvent(useRef(window), "scroll", () => console.log(scrollYProgress))
+  console.log("toPercentage:" + toPercentage)
+  console.log("stringify: " + stringify)
+
+  React.useEffect(() => {
+    const clientWidth = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    )
+    if (clientWidth > 768) {
+      setIsDesktop(true)
+    } else {
+      setIsDesktop(false)
+    }
+  }, [])
+
+  console.log(isDesktop)
 
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
 
@@ -107,7 +127,7 @@ export default function Project(props) {
   const styleAssetFrameMask = {
     overflow: "hidden",
     width: 800,
-    height: 360,
+    height: !isDesktop ? 300 : 360,
     WebkitFilter: props.loaders
       ? "none"
       : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
@@ -117,9 +137,14 @@ export default function Project(props) {
   }
 
   const styleAssetFrame = {
-    top: props.ladimora && isInViewport ? adjustScrollY : 0,
+    top:
+      props.ladimora && isInViewport && isDesktop
+        ? adjustScrollY
+        : props.ladimora && isInViewport && !isDesktop
+        ? `-${adjustScrollYMobile.current}` + `%`
+        : 0,
     width: 800,
-    height: 883,
+    height: !isDesktop ? "-webkit-fill-available" : 883,
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -160,8 +185,8 @@ export default function Project(props) {
       </motion.div>
       <motion.div style={styleBottomSection}>
         {props.ladimora && (
-          <motion.div style={styleAssetFrameMask}>
-            <motion.div style={styleAssetFrame}>
+          <motion.div style={styleAssetFrameMask} className="assetframemask">
+            <motion.div style={styleAssetFrame} className="assetframe">
               <motion.div style={styleAssetInnerFrame}></motion.div>
             </motion.div>
           </motion.div>

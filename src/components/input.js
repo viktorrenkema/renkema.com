@@ -10,11 +10,8 @@ export default function Input(props) {
     onChange,
   ])
 
-  console.log(focused)
-
   const handleFocus = () => setFocused(true)
-  const handleBlur = () =>
-    setTimeout((console.log("timeout"), setFocused(false)), 5000)
+  const handleBlur = () => setTimeout(setFocused(false), 5000)
 
   // const handleKey = event => {
   //   event.key === "Enter"

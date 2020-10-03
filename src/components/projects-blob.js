@@ -147,15 +147,11 @@ export default function ProjectsBlob(props) {
   // useDomEvent(useRef(window), "scroll", () => isOpen && setOpen(false))
 
   const onHoverStart = () => {
-    props.setSelectedBlob(props.identifier),
-      setHover(true),
-      console.log("hovered")
+    props.setSelectedBlob(props.identifier), setHover(true)
   }
 
   const onHoverEnd = () => {
-    props.setSelectedBlob(undefined),
-      setHover(false),
-      console.log("not hovered")
+    props.setSelectedBlob(undefined), setHover(false)
   }
 
   const tapBlob = () => {
