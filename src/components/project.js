@@ -20,6 +20,15 @@ export default function Project(props) {
 
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
+  const scrollRange = [0, 0.75, 0.9]
+  const ladimoraRange = [0, 0, -520]
+
+  const adjustScrollY = useTransform(
+    scrollYProgress,
+    scrollRange,
+    ladimoraRange
+  )
+
   const modifier = useTransform(scrollYProgress, x => x * -300)
 
   setTimeout(function() {
@@ -90,7 +99,7 @@ export default function Project(props) {
     lineHeight: 1.2,
     fontWeight: 400,
     textAlign: "center",
-    width: "50%",
+    width: "90%",
     paddingBottom: "20px",
     maxWidth: "500px",
   }
@@ -108,7 +117,7 @@ export default function Project(props) {
   }
 
   const styleAssetFrame = {
-    top: props.ladimora && isInViewport ? modifier : 0,
+    top: props.ladimora && isInViewport ? adjustScrollY : 0,
     width: 800,
     height: 883,
     position: "relative",
@@ -143,7 +152,9 @@ export default function Project(props) {
     <motion.div style={styleFlexWrapper} ref={targetRef}>
       <motion.div style={styleTopSection}>
         <span style={styleLabel}>{props.projectlabel}</span>
-        <span style={styleTitle}>{props.projecttitle}</span>
+        <span style={styleTitle} className="projectheader">
+          {props.projecttitle}
+        </span>
         <span style={styleInfo}>{props.projectinfo}</span>
         <Link inline={false} linktext={props.linktext} url={props.url}></Link>
       </motion.div>

@@ -15,7 +15,7 @@ export default function Link(props) {
     overflow: "visible",
     fontFamily: `"Lato", serif`,
     color: "var(--Portfolio, #ff285c)",
-    fontSize: 14,
+    fontSize: 12,
     letterSpacing: 0.2,
     lineHeight: 1.2,
     fontWeight: 600,
