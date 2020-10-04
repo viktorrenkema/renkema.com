@@ -74,7 +74,7 @@ export default function Introduction(props) {
             {/* I’m a psychologist exploring design and web development. Right now
             I’m helping people make fun prototypes at Framer. */}
           </motion.p>
-          <motion.p variants={reachout_stagger} className="subcopy-intro">
+          <motion.p variants={reachout_stagger} className="contactlinks">
             Find me{" "}
             <Link
               inline={true}

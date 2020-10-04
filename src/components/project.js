@@ -157,7 +157,7 @@ export default function Project(props) {
     color: "#1c1c1c",
     fontSize: 16,
     letterSpacing: 0,
-    lineHeight: 1.2,
+    lineHeight: 1.4,
     fontWeight: 400,
     textAlign: "center",
     width: "90%",

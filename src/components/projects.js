@@ -58,7 +58,7 @@ export function Projects(props) {
         projectlabel={"web app"}
         projecttitle={"Loaders.io"}
         projectinfo={
-          "Loaders is a tool that generates production-ready code for a loader, allowing the user to fully customize the loader’s style and animation."
+          "Loaders is a tool that generates production-ready code for a React loader component, while allowing the user to customize its style and animation."
         }
         linktext={"Visit loaders.io"}
         url={"http://loaders.io/"}
@@ -70,7 +70,7 @@ export function Projects(props) {
         projectlabel={"site"}
         projecttitle={"La Dimora"}
         projectinfo={
-          "A website to provide information about casa La Dimora, a holiday home in northern Italy at lake Como."
+          "A website providing information about Casa La Dimora, a holiday home in northern Italy overlooking beautiful lake Como."
         }
         asset={ladimorascroll}
         linktext={"Visit ladimora.org"}
