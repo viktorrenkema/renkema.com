@@ -26,7 +26,7 @@ export default function Scroller(props) {
     }
   })
 
-  const yRange = [0, 0.1]
+  const yRange = [0, 0.05]
   const opacityRange = [1, 0]
 
   const reverse = useTransform(scrollYProgress, yRange, opacityRange)

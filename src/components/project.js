@@ -12,50 +12,91 @@ import Link from "./link"
 import Loader from "../components/loader"
 import Input from "../components/input"
 import Accordion from "../components/accordion"
+import ladimora from "../../src/images/ladimora.png"
 
 export default function Project(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [isDesktop, setIsDesktop] = React.useState(undefined)
+  const [isTablet, setIsTablet] = React.useState(undefined)
+  const [isMobile, setIsMobile] = React.useState(undefined)
+  const [isLowMobile, setIsLowMobile] = React.useState(undefined)
+  const [isLowTablet, setIsLowTablet] = React.useState(undefined)
+
+  console.log(isLowMobile, isMobile, isLowTablet, isTablet, isDesktop)
 
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
-  const scrollRange = [0, 0.75, 0.9]
+  const scrollRange = [0, 0.75, 0.85]
   const ladimoraRange = [0, 0, -520]
-
-  const ladimoraRangeMobile = [0, 0, -10]
+  const ladimoraTablet = [0, 0, -400]
+  const ladimoraLowTablet = [0, 0, -295]
+  const ladimoraMobile = [0, 0, -170]
+  const ladimoraLowMobile = [0, 0, -140]
 
   const adjustScrollY = useTransform(
     scrollYProgress,
     scrollRange,
     ladimoraRange
   )
+  const adjustScrollYTablet = useTransform(
+    scrollYProgress,
+    scrollRange,
+    ladimoraTablet
+  )
+
+  const adjustScrollYLowTablet = useTransform(
+    scrollYProgress,
+    scrollRange,
+    ladimoraLowTablet
+  )
   const adjustScrollYMobile = useTransform(
     scrollYProgress,
     scrollRange,
-    ladimoraRangeMobile
+    ladimoraMobile
+  )
+  const adjustScrollYLowMobile = useTransform(
+    scrollYProgress,
+    scrollRange,
+    ladimoraLowMobile
   )
 
-  const stringify = JSON.stringify(adjustScrollYMobile)
-  const toPercentage = adjustScrollYMobile.current.toString() + "%"
+  /// Issues converting motionvalues to percentages
 
-  console.log(adjustScrollYMobile)
+  // const adjustScrollYMobile = useTransform(
+  //   scrollYProgress,
+  //   scrollRange,
+  //   ladimoraRangeMobile
+  // )
 
-  console.log("toPercentage:" + toPercentage)
-  console.log("stringify: " + stringify)
+  // const ladimoraRangeMobile = [0, 0, -10]
+
+  // const stringify = JSON.stringify(adjustScrollYMobile)
+  // const toPercentage = adjustScrollYMobile.current.toString() + "%"
+
+  // console.log(adjustScrollYMobile)
+
+  // console.log("toPercentage:" + toPercentage)
+  // console.log("stringify: " + stringify)
+
+  ///
 
   React.useEffect(() => {
     const clientWidth = Math.max(
       document.documentElement.clientWidth,
       window.innerWidth || 0
     )
-    if (clientWidth > 768) {
+    if (clientWidth < 370) {
+      setIsLowMobile(true)
+    } else if (clientWidth < 426) {
+      setIsMobile(true)
+    } else if (clientWidth < 600) {
+      setIsLowTablet(true)
+    } else if (clientWidth < 769) {
+      setIsTablet(true)
+    } else if (clientWidth > 769) {
       setIsDesktop(true)
-    } else {
-      setIsDesktop(false)
     }
   }, [])
-
-  console.log(isDesktop)
 
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
 
@@ -124,27 +165,38 @@ export default function Project(props) {
     maxWidth: "500px",
   }
 
+  console.log(isMobile)
+
   const styleAssetFrameMask = {
     overflow: "hidden",
-    width: 800,
-    height: !isDesktop ? 300 : 360,
-    WebkitFilter: props.loaders
-      ? "none"
-      : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
-    filter: props.loaders
-      ? "none"
-      : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
+    width: isDesktop ? 800 : "90%",
+    height: isDesktop || isTablet ? 360 : 200,
+
+    // WebkitFilter: props.loaders
+    //   ? "none"
+    //   : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
+    // filter: props.loaders
+    //   ? "none"
+    //   : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
+    boxShadow:
+      "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
   }
 
   const styleAssetFrame = {
     top:
-      props.ladimora && isInViewport && isDesktop
+      props.ladimora && isInViewport && isLowMobile
+        ? adjustScrollYLowMobile
+        : props.ladimora && isInViewport && isDesktop
         ? adjustScrollY
-        : props.ladimora && isInViewport && !isDesktop
-        ? `-${adjustScrollYMobile.current}` + `%`
-        : 0,
-    width: 800,
-    height: !isDesktop ? "-webkit-fill-available" : 883,
+        : props.ladimora && isInViewport && isTablet
+        ? adjustScrollYTablet
+        : props.ladimora && isInViewport && isMobile
+        ? adjustScrollYMobile // : props.ladimora && isInViewport && !isDesktop
+        : // ? `-${adjustScrollYMobile.current}` + `%`
+          0,
+    width: "100%",
+    height: 883,
+    // height: !isDesktop ? "-webkit-fill-available" : 883,
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -160,9 +212,12 @@ export default function Project(props) {
     overflow: "hidden",
     background: props.loaders || props.accordion ? "none" : "#fff",
     backgroundImage: `url(${props.asset})`,
-    backgroundSize: "cover",
+    // backgroundImage: isDesktop ? `url(${props.asset})` : `url(${ladimora})`,
+    backgroundSize:
+      isMobile || isTablet || isLowTablet || isLowMobile ? "contain" : "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top",
+    // transform: isTablet ? "scale(0.9)" : "unset",
   }
 
   // const [isDesktop, setIsDesktop] = React.useState(undefined)

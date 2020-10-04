@@ -70,7 +70,7 @@ export function Projects(props) {
         projectlabel={"site"}
         projecttitle={"La Dimora"}
         projectinfo={
-          "A website created to provide information about casa La Dimora, a holiday home in northern Italy at lake Como."
+          "A website to provide information about casa La Dimora, a holiday home in northern Italy at lake Como."
         }
         asset={ladimorascroll}
         linktext={"Visit ladimora.org"}

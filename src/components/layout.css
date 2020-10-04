@@ -36,12 +36,14 @@ select {
   border-radius: 5px;
   border: 1px solid transparent;
   outline: none;
-  filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
-    drop-shadow(rgba(0, 0, 0, 0.027) 0px 6.7px 3px)
+  /* filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
+    (rgba(0, 0, 0, 0.027) 0px 6.7px 3px)
     drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px)
     drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px)
     drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px)
-    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px);
+    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px); */
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
 input[type="number"]:focus,
@@ -126,12 +128,14 @@ ul li::before {
   background-image: url("../../src/images/bullet2.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
+  /* filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
     drop-shadow(rgba(0, 0, 0, 0.027) 0px 6.7px 3px)
     drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px)
     drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px)
     drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px)
-    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px);
+    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px); */
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
 /* GENERAL */
@@ -352,14 +356,16 @@ ul li::before {
 }
 
 .imagecard img {
-  filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
+  /* filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
     drop-shadow(rgba(0, 0, 0, 0.027) 0px 6.7px 3px)
     drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px)
     drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px)
     drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px)
-    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px);
+    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px); */
   border: 8px solid #fbf8f8;
   background-size: cover;
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
 .imgleft {
@@ -441,10 +447,12 @@ ul li::before {
   display: flex;
   margin: 0 auto;
   background: #f3f3f3;
-  box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
+  /* box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
     0 1.9px 13.8px -5px rgba(0, 0, 0, 0.025),
     0 4.2px 33.2px -5px rgba(0, 0, 0, 0.033),
-    0 10px 110px -5px rgba(0, 0, 0, 0.05);
+    0 10px 110px -5px rgba(0, 0, 0, 0.05); */
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
 .card_lg_projecttwo,
@@ -453,10 +461,12 @@ ul li::before {
   display: flex;
   margin: 0 auto;
   background: #f3f3f3;
-  box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
+  /* box-shadow: 0 0.7px 5px -5px rgba(0, 0, 0, 0.017),
     0 1.9px 13.8px -5px rgba(0, 0, 0, 0.025),
     0 4.2px 33.2px -5px rgba(0, 0, 0, 0.033),
-    0 10px 110px -5px rgba(0, 0, 0, 0.05);
+    0 10px 110px -5px rgba(0, 0, 0, 0.05); */
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
 .sm_projectdescriptions {
@@ -784,8 +794,10 @@ ul {
     justify-content: flex-start;
     background: #f3f3f3;
     padding: 1rem 0rem;
-    box-shadow: 0 0px 2.9px rgba(0, 0, 0, 0.016),
-      0 5.6px 9.8px rgba(0, 0, 0, 0.024), 0 75px 44px rgba(0, 0, 0, 0.04);
+    /* box-shadow: 0 0px 2.9px rgba(0, 0, 0, 0.016),
+      0 5.6px 9.8px rgba(0, 0, 0, 0.024), 0 75px 44px rgba(0, 0, 0, 0.04); */
+    box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
   }
 
   .sm_copy_projecttitle {
@@ -953,10 +965,10 @@ ul {
   .container {
     width: 80%;
   }
-  .assetframemask,
+  /* .assetframemask,
   .assetframe {
     width: 90% !important;
-  }
+  } */
   /* .flexwrapper-blob {
     width: 200px !important;
   } */

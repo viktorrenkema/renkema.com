@@ -38,8 +38,10 @@ export default function Accordion(props) {
     // boxShadow: "0px 1px 3px 0px rgba(0, 0, 0, 0.25)",
     borderRadius: 5,
     background: "white",
-    filter:
-      "drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px) drop-shadow(rgba(0, 0, 0, 0.027) 0px 6.7px 3px) drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px) drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px) drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px) drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px)",
+    // filter:
+    //   "drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px) drop-shadow(rgba(0, 0, 0, 0.027) 0px 6.7px 3px) drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px) drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px) drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px) drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px)",
+    boxShadow:
+      "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
   }
 
   const styleFlexWrapper = {
@@ -169,8 +171,8 @@ export default function Accordion(props) {
               <span style={styleForecastText}>Show forecast</span>
               <motion.div
                 variants={chevron}
-                animate={activeCard ? "closed" : "open"}
-                initial={activeCard ? "closed" : "open"}
+                animate={activeCard ? "open" : "closed"}
+                initial={activeCard ? "open" : "closed"}
               >
                 <Chevrondown></Chevrondown>
               </motion.div>
