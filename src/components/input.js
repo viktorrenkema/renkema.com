@@ -49,7 +49,7 @@ export default function Input(props) {
         // onKeyPress={handleKey}
         onChange={handleChange}
       ></input>
-      <motion.div
+      {/* <motion.div
         animate={focused ? "show" : "hide"}
         initial={"hide"}
         variants={variants}
@@ -64,7 +64,7 @@ export default function Input(props) {
           the site
         </a>{" "}
         to create your own loader.
-      </motion.div>
+      </motion.div> */}
     </div>
   )
 }
