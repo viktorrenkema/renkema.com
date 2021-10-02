@@ -69,8 +69,8 @@ export default function Introduction(props) {
           animate="visible"
         >
           <motion.p variants={name_stagger} className="copy-intro">
-            Front-end developer with a background in psychology, exploring the
-            field of design & development.
+            I’m a front-end developer with a background in psychology, exploring
+            the field of design & development.
             {/* I’m a psychologist exploring design and web development. Right now
             I’m helping people make fun prototypes at Framer. */}
           </motion.p>

@@ -6,7 +6,7 @@ import accordion from "../../src/images/proj_accordion.gif"
 import ladimora from "../../src/images/ladimora.png"
 import ladimorascroll from "../../src/images/ladimorascroll.png"
 
-import Project from "../components/Project"
+import Project from "../components/project"
 
 export function Projects(props) {
   const container = {

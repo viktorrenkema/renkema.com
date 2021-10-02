@@ -1,7 +1,7 @@
 import React from "react"
 // import useIsInViewport from "use-is-in-viewport"
 import Groningen from "../../src/images/groningen.jpeg"
-import { motion } from "framer-motion"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 import Link from "./link"
 
 const image = {
@@ -32,35 +32,31 @@ const section = {
 }
 
 export default function Background(props) {
-  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+  // parallax for images
+  // let { scrollYProgress } = useViewportScroll() // Track the y scroll of value 0 to 1
 
+  // const scrollRange = [0.1, 0.4]
+  // const imagePositions = [-100, 100]
+
+  // const position = useTransform(scrollYProgress, scrollRange, imagePositions)
+
+  // function scrolling() {
+  //   console.log("scrollinngggggg")
+  // }
   return (
     <motion.section
-      // ref={targetRef}
       className="bio"
       variants={section}
       initial="visible"
-      // animate={isInViewport ? "visible" : "hidden"}
+      // onscroll={scrolling}
     >
       <div className="grid grid--bio">
         <motion.div
           variants={image}
+          // top={position}
           className="imagecard imgleft"
           initial="visible"
-          // animate={isInViewport ? "visible" : "hidden"}
         >
-          {/* <motion.div style={svgstyle}>
-            <motion.svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="500"
-              height="475"
-            >
-              <motion.path
-                d="M 478.723 378.759 C 402.128 505.308 97.34 505.308 20.745 379.291 C -55.319 252.743 97.34 0.177 250 0.177 C 402.66 0.177 555.319 252.743 478.723 378.759 Z"
-                fill="rgb(255,0,102)"
-              ></motion.path>
-            </motion.svg>
-          </motion.div> */}
           <PictureFrame></PictureFrame>
         </motion.div>
         <motion.div
@@ -128,14 +124,10 @@ export default function Background(props) {
 }
 
 function PictureFrame(props) {
-  // const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
-
   return (
     <motion.img
       variants={image}
-      // ref={targetRef}
       initial="visible"
-      // animate={isInViewportImg ? "visible" : "hidden"}
       className="img-groningen image"
       src={Groningen}
       width={"100%"}

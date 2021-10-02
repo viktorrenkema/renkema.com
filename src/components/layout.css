@@ -343,7 +343,7 @@ select:focus {
   justify-content: center;
   grid-template-rows: repeat(1, auto);
   grid-template-columns: repeat(2, auto);
-  grid-column-gap: 90px;
+  grid-column-gap: 10rem;
   padding: 4em;
 }
 
@@ -351,6 +351,7 @@ select:focus {
   justify-self: center;
   align-self: center;
   max-width: 650px;
+  position: relative;
 }
 
 .imagecard img {

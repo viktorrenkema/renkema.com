@@ -237,6 +237,20 @@ export default function Project(props) {
         </span>
         <span style={styleInfo}>{props.projectinfo}</span>
         <Link inline={false} linktext={props.linktext} url={props.url}></Link>
+        {props.loaders && (
+          <div style={{ transform: "scale(0.7)", paddingTop: "2rem" }}>
+            <a
+              href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
+              target="_blank"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=light"
+                alt="Loader generator - Create animated loaders and generate production React code | Product Hunt"
+                style={{ width: "250px", height: "54px" }}
+              />
+            </a>
+          </div>
+        )}
       </motion.div>
       <motion.div style={styleBottomSection}>
         {props.ladimora && (
