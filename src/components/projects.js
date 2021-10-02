@@ -61,7 +61,7 @@ export function Projects(props) {
           "Loaders is a tool that generates production-ready code for a React loader component, while allowing the user to customize its style and animation."
         }
         linktext={"Visit loaders.io"}
-        url={"http://loaders.io/"}
+        url={"https://loadergenerator.vercel.app/"}
         loaders={true}
       ></Project>
       <Project
