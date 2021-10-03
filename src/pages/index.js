@@ -19,12 +19,12 @@ export default function IndexPage() {
         <title>Viktor Renkema</title>
         <meta
           name="description"
-          content="Front-end developer with a background in psychology, exploring the field of design & development."
+          content="Front-end developer with a background in psychology, exploring the field of design and development."
         />
         <meta property="og:title" content="Hey, my name is Viktor." />
         <meta
           property="twitter:description"
-          content="Front-end developer with a background in psychology, exploring the field of design & development."
+          content="Front-end developer with a background in psychology, exploring the field of design and development."
         />
         <meta
           property="og:image"
@@ -42,7 +42,11 @@ export default function IndexPage() {
       <Bio></Bio>
       <Framer></Framer>
       <Projects></Projects>
-      <Scroller></Scroller>
+      <div style={{ display: "flex" }}>
+        <Scroller label={"About me"}></Scroller>
+        <Scroller label={"Roles"}></Scroller>
+        <Scroller label={"Projects"}></Scroller>
+      </div>
       <Footer></Footer>
     </Layout>
   )

@@ -1,7 +1,7 @@
 import React from "react"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
 
-export default function Scroller(props) {
+export default function Scroller({ label }) {
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
   const modifier = useTransform(scrollYProgress, x => {
@@ -34,7 +34,7 @@ export default function Scroller(props) {
   return (
     <motion.div>
       <motion.p style={styleScrolldownP} className="subcopy-intro">
-        Scroll down to learn a little more and view some projects.
+        {label}
       </motion.p>
       <motion.div
         className="scroller"
@@ -56,11 +56,7 @@ export default function Scroller(props) {
                 offset={modifier}
                 stopColor="transparent"
               />
-              <motion.stop
-                id="stop2"
-                offset={modifier}
-                stopColor="rgb(255, 40, 92)"
-              />
+              <motion.stop id="stop2" offset={modifier} stopColor="black" />
             </linearGradient>
           </motion.defs>
           <motion.path

@@ -53,12 +53,12 @@ export function Projects(props) {
       variants={container}
     >
       <Project
-        assetBackgroundColor={"#fbf8f8"}
+        // assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#ebe0e5"}
         projectlabel={"web app"}
         projecttitle={"Loaders.io"}
         projectinfo={
-          "Loaders is a tool that generates production-ready code for a React loader component, while allowing the user to customize its style and animation."
+          "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize style and animation using a UI instead of code."
         }
         linktext={"Visit loaders.io"}
         url={"https://loadergenerator.vercel.app/"}
@@ -67,7 +67,7 @@ export function Projects(props) {
       <Project
         assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#E3EAED"}
-        projectlabel={"site"}
+        projectlabel={"website"}
         projecttitle={"La Dimora"}
         projectinfo={
           "A website providing information about Casa La Dimora, a holiday home in northern Italy overlooking beautiful lake Como."
@@ -76,9 +76,18 @@ export function Projects(props) {
         linktext={"Visit ladimora.org"}
         ladimora={true}
         url={"https://ladimora.org/"}
-        // assetid={"ladimorawrapper"}
       ></Project>
       <Project
+        assetBackgroundColor={"#fbf8f8"}
+        projectlabel={"Progressive Web App"}
+        projecttitle={"Workout Tracker"}
+        projectinfo={
+          "This project was kickstarted by a frustration of lack of workout apps that offered exactly the features that I needed without any unnecessary features around it."
+        }
+        linktext={"Read the tutorial"}
+        url={"https://esteem-app.vercel.app/"}
+      ></Project>
+      {/* <Project
         assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#EDE3E6"}
         projectlabel={"TUTORIAL"}
@@ -89,7 +98,7 @@ export function Projects(props) {
         accordion={true}
         linktext={"Read the tutorial"}
         url={"https://www.framer.com/learn/guide/accordion-design-part-1"}
-      ></Project>
+      ></Project> */}
     </motion.section>
   )
 }

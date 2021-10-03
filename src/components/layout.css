@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300&display=swap");
+@font-face {
+  font-family: "GT-Walsheim";
+  src: url("../../public/fonts/GT-Walsheim-Thin-Trial.woff2");
+}
+@font-face {
+  font-family: "GT-Walsheim-Bold";
+  src: url("../../public/fonts/GT-Walsheim-Bold-Trial.woff2");
+}
+@font-face {
+  font-family: "GT-Eesti";
+  src: url("../../public/fonts/GT-Eesti-Display-Thin-Trial.woff2");
+}
 
 :root {
   --white: #fff;
@@ -13,17 +26,17 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "GT-Walsheim", sans-serif;
 }
 
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  background: var(--softwhite);
+  font-family: "GT-Walsheim", sans-serif;
+  /* background: var(--softwhite); */
   margin: 0;
   line-height: 1.3;
 }
@@ -46,7 +59,7 @@ h1::-moz-selection {
 
 h1 {
   font-size: 58px;
-  font-family: "Lato", sans-serif;
+  font-family: "GT-Walsheim", sans-serif;
   font-weight: 600;
   line-height: 1;
 }
@@ -54,10 +67,6 @@ p,
 li {
   line-height: 15px;
   color: #171717;
-}
-a {
-  color: var(--accent);
-  text-decoration: none;
 }
 
 li {
@@ -90,26 +99,17 @@ ul li::before {
 /* Project: Loader */
 input[type="number"],
 select {
-  width: 80px;
+  width: 90px;
   padding: 5px;
   margin-bottom: 20px;
-  padding-left: 20px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
   color: #5a5a5a;
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;
   outline: none;
-  /* filter: drop-shadow(rgba(0, 0, 0, 0.02) 0px 2.8px 1px)
-    (rgba(0, 0, 0, 0.027) 0px 6.7px 3px)
-    drop-shadow(rgba(0, 0, 0, 0.035) 0px 12.5px 5px)
-    drop-shadow(rgba(0, 0, 0, 0.043) 0px 22.3px 8px)
-    drop-shadow(rgba(0, 0, 0, 0.05) 0px 41px 15px)
-    drop-shadow(rgba(0, 0, 0, 0.07) 0px 100px 34px); */
-  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
 input[type="number"]:focus,
@@ -124,7 +124,6 @@ select:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 60px;
 }
 
 /* GENERAL */
@@ -264,11 +263,6 @@ select:focus {
   padding-top: 0 !important;
 }
 
-.intro-blob {
-  position: absolute;
-  z-index: -1;
-}
-
 .about {
   grid-area: 2 / 1 / 2 / 1;
 
@@ -276,7 +270,7 @@ select:focus {
 }
 
 .copy-intro {
-  font-family: Lato, serif;
+  /* font-family: Lato, serif; */
   color: rgb(28, 28, 28);
   font-size: 20px;
   vertical-align: middle;
@@ -287,7 +281,7 @@ select:focus {
 
 .subcopy-intro {
   margin-top: 1rem;
-  font-family: Lato, serif;
+  /* font-family: Lato, serif; */
   color: #181818;
   font-size: 12px;
   line-height: 24px;
@@ -297,7 +291,7 @@ select:focus {
 
 .contactlinks {
   margin-top: 1rem;
-  font-family: Lato, serif;
+  /* font-family: Lato, serif; */
   color: #181818;
   font-size: 12px !important;
   line-height: 24px;
@@ -669,9 +663,7 @@ ul {
   select {
     padding-left: 10px;
   }
-  .flexwrapper-blob {
-    flex-direction: column;
-  }
+
   .textcontainer {
     margin: 0 auto;
     width: 100vw !important;
@@ -734,7 +726,7 @@ ul {
 /* Show thinner frames around images */
 @media (min-width: 768px) and (max-width: 1200px) {
   .grid {
-    padding: 1.5rem;
+    padding: 2.5rem;
     column-gap: 5%;
   }
 
@@ -970,9 +962,6 @@ ul {
   .assetframe {
     width: 90% !important;
   } */
-  /* .flexwrapper-blob {
-    width: 200px !important;
-  } */
 }
 
 /* @media (min-width: 768px) {
@@ -993,4 +982,41 @@ ul {
 button {
   border-style: solid !important;
   border-color: #1c2021 !important;
+}
+/* 
+.inverted-bar:before,
+.inverted-bar:after {
+  padding: 10px 0;
+  text-indent: 10px;
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  content: attr(data-content);
+}
+
+.inverted-bar:before {
+  background-color: aqua;
+  color: red;
+  width: 100%;
+}
+
+.inverted-bar:after {
+  background-color: red;
+  color: aqua;
+  width: 20%;
+} */
+
+.typed-cursor {
+  color: black;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

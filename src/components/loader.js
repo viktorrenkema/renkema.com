@@ -10,12 +10,13 @@ const styleLoaderWrapper = {
   overflow: "visible",
 }
 
-export default function Loader(props) {
-  const { quantityLoaders } = props
+export default function Loader({ ease, quantityLoaders, rotation }) {
   let renderdots = []
 
   for (let i = 0; i < quantityLoaders; i = i + 1) {
-    renderdots.push(<Dot key={i} customdelay={0.2 * i}></Dot>)
+    renderdots.push(
+      <Dot key={i} ease={ease} rotation={rotation} customdelay={0.2 * i}></Dot>
+    )
   }
 
   return (
@@ -25,7 +26,8 @@ export default function Loader(props) {
   )
 }
 
-function Dot(props) {
+function Dot({ ease, customdelay, rotation }) {
+  console.log("loader", rotation)
   const dot = {
     width: `20px`,
     height: `20px`,
@@ -33,7 +35,7 @@ function Dot(props) {
     margin: 8,
     borderRadius: 0,
     display: "inline-block",
-    background: "#c81c60",
+    background: "#eb7085",
     transform: "translateZ(42px)",
     perspective: "20px",
   }
@@ -45,16 +47,16 @@ function Dot(props) {
     },
     hide: {
       scale: 0.8,
-      rotate: 360,
+      rotate: rotation,
     },
   }
 
   const transition = {
     repeat: "Infinity",
     repeatType: "reverse",
-    ease: "easeInOut",
+    ease: ease,
     duration: 1,
-    delay: props.customdelay,
+    delay: customdelay,
   }
 
   return (

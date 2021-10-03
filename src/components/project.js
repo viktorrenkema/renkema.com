@@ -1,3 +1,4 @@
+// 📦 Packages
 import React from "react"
 import {
   motion,
@@ -7,12 +8,23 @@ import {
   useTransform,
 } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
+import styled from "styled-components"
+
+// Components
 
 import Link from "./link"
-import Loader from "../components/loader"
-import Input from "../components/input"
 import Accordion from "../components/accordion"
-import ladimora from "../../src/images/ladimora.png"
+import LoaderExample from "./projectExamples/loaderExample"
+
+// 🧰 Utils
+import { palette } from "../../style/palette"
+
+// 💅🏽 Styled Components
+const DemoLoaders = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`
 
 export default function Project(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
@@ -22,7 +34,7 @@ export default function Project(props) {
   const [isLowMobile, setIsLowMobile] = React.useState(undefined)
   const [isLowTablet, setIsLowTablet] = React.useState(undefined)
 
-  console.log(isLowMobile, isMobile, isLowTablet, isTablet, isDesktop)
+  // console.log(isLowMobile, isMobile, isLowTablet, isTablet, isDesktop)
 
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
@@ -106,62 +118,67 @@ export default function Project(props) {
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "center",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#181818",
   }
 
   const styleTopSection = {
     width: "100%",
-    height: 500,
+    height: 600,
+    gap: "1rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     overflow: "visible",
-    backgroundColor: "rgba(255, 255, 255, 0.5)",
-    borderTop: "1px solid #e6e6e6",
+    backgroundColor: "#181818",
+    // borderTop: "1px solid #e6e6e6",
   }
 
   const styleBottomSection = {
     width: "100%",
-    height: 600,
+    height: "fit-content",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: props.assetBackgroundColor,
+    padding: "2rem",
+    background: "#1e1e1e",
   }
 
   const styleLabel = {
-    fontFamily: `"Lato", serif`,
-    color: "#1c1c1c",
-    fontSize: 14,
-    letterSpacing: 0,
+    color: "hsl(350, 75%, 68%)",
+    fontSize: "12px",
+    letterSpacing: "0px",
     lineHeight: 1,
-    fontWeight: 400,
+    fontWeight: 800,
     textTransform: "uppercase",
+    borderRadius: "8px",
+    padding: "10px",
+    background: "#eb70852b",
     paddingBottom: "10px",
+    fontFamily: "GT-Walsheim-Bold",
   }
 
   const styleTitle = {
-    fontFamily: `"Lato", serif`,
-    color: "#000000",
+    // fontFamily: `"Lato", serif`,
+    color: palette.greys100,
     fontSize: 44,
     letterSpacing: 0,
     lineHeight: 1.2,
     fontWeight: 900,
-    paddingBottom: "20px",
+    // paddingBottom: "20px",
   }
 
   const styleInfo = {
-    fontFamily: `"Lato", serif`,
-    color: "#1c1c1c",
+    // fontFamily: `"Lato", serif`,
+    color: palette.greys100med,
     fontSize: 16,
     letterSpacing: 0,
     lineHeight: 1.4,
     fontWeight: 400,
     textAlign: "center",
     width: "90%",
-    paddingBottom: "20px",
+    // paddingBottom: "20px",
     maxWidth: "500px",
   }
 
@@ -194,8 +211,8 @@ export default function Project(props) {
         ? adjustScrollYMobile // : props.ladimora && isInViewport && !isDesktop
         : // ? `-${adjustScrollYMobile.current}` + `%`
           0,
-    width: "100%",
-    height: 883,
+    // width: "100%",
+
     // height: !isDesktop ? "-webkit-fill-available" : 883,
     position: "relative",
     display: "flex",
@@ -238,7 +255,7 @@ export default function Project(props) {
         <span style={styleInfo}>{props.projectinfo}</span>
         <Link inline={false} linktext={props.linktext} url={props.url}></Link>
         {props.loaders && (
-          <div style={{ transform: "scale(0.7)", paddingTop: "2rem" }}>
+          <div style={{ transform: "scale(0.7)" }}>
             <a
               href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
               target="_blank"
@@ -266,25 +283,10 @@ export default function Project(props) {
           </motion.div>
         )}
         {props.loaders && (
-          <motion.div style={styleAssetFrame}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Input
-                // quantityLoaders={quantityLoaders}
-                value={quantityLoaders}
-                onChange={setQuantityLoaders}
-              />
-              <Loader
-                setQuantityLoaders={setQuantityLoaders}
-                quantityLoaders={quantityLoaders}
-              />
-            </div>
-          </motion.div>
+          <LoaderExample
+            setQuantityLoaders={setQuantityLoaders}
+            quantityLoaders={quantityLoaders}
+          />
         )}
       </motion.div>
     </motion.div>

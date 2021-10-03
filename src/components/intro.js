@@ -2,7 +2,9 @@ import { motion } from "framer-motion"
 import React from "react"
 import useIsInViewport from "use-is-in-viewport"
 import Link from "./link"
+import Typed from "typed.js"
 
+console.log(Typed)
 const name_stagger = {
   hidden: { x: 20, opacity: 0 },
   visible: {
@@ -46,6 +48,29 @@ export default function Introduction(props) {
     visible: { opacity: 1, transition: { duration: 0.5 } },
   }
 
+  // Create reference to store the DOM element containing the animation
+  const el = React.useRef(null)
+  // Create reference to store the Typed instance itself
+  const typed = React.useRef(null)
+
+  React.useEffect(() => {
+    const options = {
+      strings: ["web development"],
+      typeSpeed: 50,
+      backSpeed: 50,
+      startDelay: 1000,
+    }
+
+    // elRef refers to the <span> rendered below
+    typed.current = new Typed(el.current, options)
+
+    return () => {
+      // Make sure to destroy Typed instance during cleanup
+      // to prevent memory leaks
+      typed.current.destroy()
+    }
+  }, [])
+
   return (
     <motion.section
       className={"intro"}
@@ -69,26 +94,49 @@ export default function Introduction(props) {
           animate="visible"
         >
           <motion.p variants={name_stagger} className="copy-intro">
-            I’m a front-end developer with a background in psychology, exploring
-            the field of design & development.
-            {/* I’m a psychologist exploring design and web development. Right now
-            I’m helping people make fun prototypes at Framer. */}
+            Front-end developer with a background in psychology, exploring the
+            field of design and
+            <motion.span
+              variants={name_stagger}
+              style={{
+                fontFamily: "'Roboto Mono', monospace",
+                display: "inline",
+                fontSize: "16px",
+                marginLeft: "4px",
+                paddingLeft: "2px",
+                paddingRight: "2px",
+                bottom: "3px",
+                position: "relative",
+                color: "white",
+                background: "black",
+              }}
+              className="copy-intro"
+              id="typedid"
+              ref={el}
+            ></motion.span>
           </motion.p>
-          <motion.p variants={reachout_stagger} className="contactlinks">
-            Find me{" "}
+          <motion.div
+            variants={reachout_stagger}
+            className="contactlinks"
+            style={{ display: "flex", gap: 5 }}
+          >
             <Link
               inline={true}
-              linktext={"on Twitter"}
+              text={"Twitter"}
               url={"https://www.twitter.com/vrenkema"}
             ></Link>{" "}
-            or{" "}
             <Link
               inline={true}
-              linktext={"by email"}
+              text={"Linkedin"}
+              url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
+            ></Link>{" "}
+            <Link
+              inline={true}
+              text={"Email"}
               url={"mailto:viktor@renkema.com"}
             ></Link>{" "}
             {/* to chat motorcycles, neurotransmitters, or anything, really. */}
-          </motion.p>
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.section>
