@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "css-loader": "^6.3.0",
     "framer-motion": "2.7.0",
     "gatsby": "^2.17.11",
     "gatsby-cli": "2.8.29",
