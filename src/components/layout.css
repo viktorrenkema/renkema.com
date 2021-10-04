@@ -6,10 +6,10 @@
   font-family: "GT-Walsheim";
   src: url("../fonts/GT-Walsheim-Thin-Trial.woff2");
 }
-/* @font-face {
+@font-face {
   font-family: "GT-Walsheim-Bold";
-  src: url("../../public/fonts/GT-Walsheim-Bold-Trial.woff2");
-} */
+  src: url("../fonts/GT-Walsheim-Bold-Trial.woff2");
+}
 
 :root {
   --white: #fff;
