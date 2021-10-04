@@ -47,7 +47,7 @@ function Dot({ ease, customdelay, rotation }) {
     },
     hide: {
       scale: 0.8,
-      rotate: rotation,
+      rotate: parseInt(rotation),
     },
   }
 

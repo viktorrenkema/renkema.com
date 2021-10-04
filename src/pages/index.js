@@ -42,11 +42,9 @@ export default function IndexPage() {
       <Bio></Bio>
       <Framer></Framer>
       <Projects></Projects>
-      <div style={{ display: "flex" }}>
-        <Scroller label={"About me"}></Scroller>
-        <Scroller label={"Roles"}></Scroller>
-        <Scroller label={"Projects"}></Scroller>
-      </div>
+      {/* <div style={{ display: "flex" }}>
+        <Scroller></Scroller>
+      </div> */}
       <Footer></Footer>
     </Layout>
   )

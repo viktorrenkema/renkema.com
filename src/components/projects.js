@@ -5,8 +5,17 @@ import { useGlobal } from "reactn"
 import accordion from "../../src/images/proj_accordion.gif"
 import ladimora from "../../src/images/ladimora.png"
 import ladimorascroll from "../../src/images/ladimorascroll.png"
+import ladimorascroll2 from "../../src/images/ladimorascroll2.png"
+import styled from "styled-components"
 
 import Project from "../components/project"
+
+const Separator = styled(motion.div)`
+  background: white;
+  height: 1px;
+  margin: 4rem;
+  opacity: 0.1;
+`
 
 export function Projects(props) {
   const container = {
@@ -53,8 +62,6 @@ export function Projects(props) {
       variants={container}
     >
       <Project
-        // assetBackgroundColor={"#fbf8f8"}
-        // assetBackgroundColor={"#ebe0e5"}
         projectlabel={"web app"}
         projecttitle={"Loaders.io"}
         projectinfo={
@@ -62,29 +69,30 @@ export function Projects(props) {
         }
         linktext={"Visit loaders.io"}
         url={"https://loadergenerator.vercel.app/"}
-        loaders={true}
+        loaders
       ></Project>
+      <Separator />
       <Project
         assetBackgroundColor={"#fbf8f8"}
         // assetBackgroundColor={"#E3EAED"}
         projectlabel={"website"}
         projecttitle={"La Dimora"}
         projectinfo={
-          "A website providing information about Casa La Dimora, a holiday home in northern Italy overlooking beautiful lake Como."
+          "La Dimora is a beautiful house located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
         }
-        asset={ladimorascroll}
+        asset={ladimorascroll2}
         linktext={"Visit ladimora.org"}
-        ladimora={true}
+        ladimora
         url={"https://ladimora.org/"}
       ></Project>
+      <Separator />
       <Project
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"Progressive Web App"}
         projecttitle={"Workout Tracker"}
         projectinfo={
-          "This project was kickstarted by a frustration of lack of workout apps that offered exactly the features that I needed without any unnecessary features around it."
+          "The sole purpose of this project was to build a workout tracker that offers exactly the features that I needed and nothing more. "
         }
-        linktext={"Read the tutorial"}
         url={"https://esteem-app.vercel.app/"}
       ></Project>
       {/* <Project

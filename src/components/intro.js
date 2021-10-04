@@ -1,10 +1,24 @@
+// 📦 Packages
 import { motion } from "framer-motion"
 import React from "react"
+import styled from "styled-components"
 import useIsInViewport from "use-is-in-viewport"
-import Link from "./link"
 import Typed from "typed.js"
 
-console.log(Typed)
+// 🌱 Components
+import SocialLink from "./sociallink"
+
+// 🧰 Utils
+
+// 💅🏽 Styled Components
+const SectionIntro = styled(motion.section)`
+  background: white;
+  min-height: 100vh;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+`
+
 const name_stagger = {
   hidden: { x: 20, opacity: 0 },
   visible: {
@@ -72,11 +86,10 @@ export default function Introduction(props) {
   }, [])
 
   return (
-    <motion.section
-      className={"intro"}
-      variants={section}
-      initial="hidden"
-      animate={isInViewport ? "visible" : "hidden"}
+    <SectionIntro
+    // variants={section}
+    // initial="hidden"
+    // animate={isInViewport ? "visible" : "hidden"}
     >
       <motion.div className={"grid_intro container"}>
         <motion.div
@@ -120,25 +133,25 @@ export default function Introduction(props) {
             className="contactlinks"
             style={{ display: "flex", gap: 5 }}
           >
-            <Link
+            <SocialLink
               inline={true}
               text={"Twitter"}
               url={"https://www.twitter.com/vrenkema"}
-            ></Link>{" "}
-            <Link
+            ></SocialLink>{" "}
+            <SocialLink
               inline={true}
               text={"Linkedin"}
               url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
-            ></Link>{" "}
-            <Link
+            ></SocialLink>{" "}
+            <SocialLink
               inline={true}
               text={"Email"}
               url={"mailto:viktor@renkema.com"}
-            ></Link>{" "}
+            ></SocialLink>{" "}
             {/* to chat motorcycles, neurotransmitters, or anything, really. */}
           </motion.div>
         </motion.div>
       </motion.div>
-    </motion.section>
+    </SectionIntro>
   )
 }

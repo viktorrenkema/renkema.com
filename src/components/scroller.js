@@ -20,7 +20,8 @@ export default function Scroller({ label }) {
   const reverse = useTransform(scrollYProgress, yRange, opacityRange)
 
   const styleScrolldownP = {
-    opacity: reverse,
+    opacity: 1,
+    // opacity: reverse,
     width: "fit-content",
     height: "fit-content",
     bottom: "58px",
@@ -34,7 +35,7 @@ export default function Scroller({ label }) {
   return (
     <motion.div>
       <motion.p style={styleScrolldownP} className="subcopy-intro">
-        {label}
+        Welcome
       </motion.p>
       <motion.div
         className="scroller"

@@ -1,8 +1,32 @@
+// 📦 Packages
 import React from "react"
-// import useIsInViewport from "use-is-in-viewport"
+import useIsInViewport from "use-is-in-viewport"
 import { motion } from "framer-motion"
+import styled from "styled-components"
+
+// 🌱 Components
+import SocialLink from "./sociallink"
 import framerlogo from "../../src/images/framerlogo.png"
-import Link from "./link"
+
+// 🧰 Utils
+
+// 💅🏽 Styled Components
+const SectionFramer = styled(motion.section)`
+  background: white;
+  min-height: 100vh;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+`
+
+const sectionVariants = {
+  default: {
+    background: "white",
+  },
+  black: {
+    background: "#181818",
+  },
+}
 
 const image = {
   default: {
@@ -37,12 +61,14 @@ const imagebackground = {
 }
 
 export default function Framer(props) {
-  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
 
   return (
-    <section
-      className="framer"
-      // ref={targetRef}
+    <SectionFramer
+      ref={targetRef}
+      // variants={sectionVariants}
+      // animate={!isInViewport ? "black" : "default"}
+      // initial="default"
     >
       <div className="grid grid--framer">
         <motion.div
@@ -58,15 +84,15 @@ export default function Framer(props) {
             style={{ textDecoration: "none", color: "black" }}
             href="https://www.framer.com/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <motion.h1
               className="subject subject-framer header"
               variants={header}
               initial="visible"
-              // animate={isInViewport ? "visible" : "hidden"}
+              animate={isInViewport ? "visible" : "hidden"}
             >
               Framer
-              <LinkArrow />
             </motion.h1>
           </a>
 
@@ -74,7 +100,7 @@ export default function Framer(props) {
             variants={copy}
             className="description carddescriptionleft"
             initial="visible"
-            // animate={isInViewport ? "visible" : "hidden"}
+            animate={isInViewport ? "visible" : "hidden"}
           >
             <motion.p className="copy">
               Joining Framer, I started out in the role of Community and Support
@@ -88,12 +114,12 @@ export default function Framer(props) {
               Google, AirFrance and others become succesful by providing them
               with on-site workshops, direct support, and learning materials.
             </motion.p>{" "}
-            <Link
+            <SocialLink
               inline={false}
               forbio={true}
               linktext={"Visit Framer.com"}
               url={"https://www.framer.com/"}
-            ></Link>{" "}
+            ></SocialLink>{" "}
           </motion.div>
         </motion.div>
         <a href="https://www.framer.com" target="_blank">
@@ -101,26 +127,26 @@ export default function Framer(props) {
             className="imgright imagecard"
             variants={imagebackground}
             initial="visible"
-            whileHover={{ rotate: 5 }}
-            // animate={isInViewport ? "visible" : "hidden"}
+            // whileHover={{ rotate: 5 }}
+            animate={isInViewport ? "visible" : "hidden"}
           >
             <FramerImg></FramerImg>
           </motion.div>
         </a>
       </div>
-    </section>
+    </SectionFramer>
   )
 }
 
 function FramerImg(props) {
-  // const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
+  const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 30 })
 
   return (
     <motion.img
       variants={image}
-      // ref={targetRef}
+      ref={targetRef}
       initial="visible"
-      // animate={isInViewportImg ? "visible" : "hidden"}
+      animate={isInViewportImg ? "visible" : "hidden"}
       className="img-framer image"
       src={framerlogo}
       width={"100%"}

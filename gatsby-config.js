@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Viktor Renkema`,
     author: `@vrenkema`,
-    image: "images/site-icon.png",
+    image: "images/fav.png",
     twitterUsername: "@vrenkema",
   },
   plugins: [
@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#ff6661`,
         theme_color: `#ff6661`,
         display: `minimal-ui`,
-        icon: `src/images/site-icon.png`,
+        icon: `src/images/fav.png`,
         // This path is relative to the root of the site.
       },
     },

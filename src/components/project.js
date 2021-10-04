@@ -9,10 +9,14 @@ import {
 } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
 import styled from "styled-components"
+import Mesh from "../images/mesh-gradient.png"
 
 // Components
 
-import Link from "./link"
+// import Heading from "./heading"
+{
+  /* <Heading projecttitle={projecttitle} url={"www.google.com"}></Heading> */
+}
 import Accordion from "../components/accordion"
 import LoaderExample from "./projectExamples/loaderExample"
 
@@ -25,8 +29,41 @@ const DemoLoaders = styled.div`
   width: 100%;
   justify-content: center;
 `
+const MeshBg = styled.div`
+  border-radius: 10px;
+  width: fit-content;
+  height: auto;
+  padding: 2rem;
+  background-image: url(${Mesh});
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(1deg);
+`
 
-export default function Project(props) {
+const LaDimoraScrollMask = styled(motion.div)`
+  overflow: hidden;
+  border-radius: 4px;
+  width: ${props => (props.isDesktop ? "1023px" : "90%")};
+  height: ${props => (props.isDesktop || props.isTablet ? "520px" : "200px")};
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+`
+
+export default function Project({
+  ladimora,
+  loaders,
+  accordion,
+  hyperlink,
+  asset,
+  projectlabel,
+  projecttitle,
+  projectinfo,
+  linktext,
+  url,
+}) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
   const [isDesktop, setIsDesktop] = React.useState(undefined)
   const [isTablet, setIsTablet] = React.useState(undefined)
@@ -38,7 +75,7 @@ export default function Project(props) {
 
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
-  const scrollRange = [0, 0.75, 0.85]
+  const scrollRange = [0, 0.82, 0.92]
   const ladimoraRange = [0, 0, -520]
   const ladimoraTablet = [0, 0, -400]
   const ladimoraLowTablet = [0, 0, -295]
@@ -123,7 +160,7 @@ export default function Project(props) {
 
   const styleTopSection = {
     width: "100%",
-    height: 600,
+    height: "500px",
     gap: "1rem",
     display: "flex",
     flexDirection: "column",
@@ -184,36 +221,21 @@ export default function Project(props) {
 
   console.log(isMobile)
 
-  const styleAssetFrameMask = {
-    overflow: "hidden",
-    width: isDesktop ? 800 : "90%",
-    height: isDesktop || isTablet ? 360 : 200,
-
-    // WebkitFilter: props.loaders
-    //   ? "none"
-    //   : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
-    // filter: props.loaders
-    //   ? "none"
-    //   : "drop-shadow(0px 2.8px 1px rgba(0, 0, 0, 0.02)) drop-shadow(0px 6.7px 3px rgba(0, 0, 0, 0.028)) drop-shadow(0px 12.5px 5px rgba(0, 0, 0, 0.035)) drop-shadow(0px 22.3px 8px rgba(0, 0, 0, 0.042)) drop-shadow(0px 41px 15px rgba(0, 0, 0, 0.05)) drop-shadow(0px 100px 34px rgba(0, 0, 0, 0.07))",
-    boxShadow:
-      "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
-  }
-
   const styleAssetFrame = {
     top:
-      props.ladimora && isInViewport && isLowMobile
+      ladimora && isInViewport && isLowMobile
         ? adjustScrollYLowMobile
-        : props.ladimora && isInViewport && isDesktop
+        : ladimora && isInViewport && isDesktop
         ? adjustScrollY
-        : props.ladimora && isInViewport && isTablet
+        : ladimora && isInViewport && isTablet
         ? adjustScrollYTablet
-        : props.ladimora && isInViewport && isMobile
-        ? adjustScrollYMobile // : props.ladimora && isInViewport && !isDesktop
+        : ladimora && isInViewport && isMobile
+        ? adjustScrollYMobile // : ladimora && isInViewport && !isDesktop
         : // ? `-${adjustScrollYMobile.current}` + `%`
           0,
-    // width: "100%",
+    width: "100%",
 
-    // height: !isDesktop ? "-webkit-fill-available" : 883,
+    height: !isDesktop ? "-webkit-fill-available" : 1035,
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -227,9 +249,9 @@ export default function Project(props) {
     height: "100%",
     position: "relative",
     overflow: "hidden",
-    background: props.loaders || props.accordion ? "none" : "#fff",
-    backgroundImage: `url(${props.asset})`,
-    // backgroundImage: isDesktop ? `url(${props.asset})` : `url(${ladimora})`,
+    background: loaders || accordion ? "none" : "#fff",
+    backgroundImage: `url(${asset})`,
+    // backgroundImage: isDesktop ? `url(${asset})` : `url(${ladimora})`,
     backgroundSize:
       isMobile || isTablet || isLowTablet || isLowMobile ? "contain" : "cover",
     backgroundRepeat: "no-repeat",
@@ -248,13 +270,26 @@ export default function Project(props) {
   return (
     <motion.div style={styleFlexWrapper} ref={targetRef}>
       <motion.div style={styleTopSection}>
-        <span style={styleLabel}>{props.projectlabel}</span>
+        <span style={styleLabel}>{projectlabel}</span>
         <span style={styleTitle} className="projectheader">
-          {props.projecttitle}
+          <motion.a
+            style={{
+              color: "white",
+              textDecoration: "underline",
+              textDecorationColor: "rgba(235, 112, 133, 0)",
+            }}
+            target="_blank"
+            href={url}
+            whileHover={{
+              textDecoration: "underline",
+              textDecorationColor: "rgba(235, 112, 133, 0.9)",
+            }}
+          >
+            {projecttitle}
+          </motion.a>
         </span>
-        <span style={styleInfo}>{props.projectinfo}</span>
-        <Link inline={false} linktext={props.linktext} url={props.url}></Link>
-        {props.loaders && (
+        <span style={styleInfo}>{projectinfo}</span>
+        {loaders && (
           <div style={{ transform: "scale(0.7)" }}>
             <a
               href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
@@ -270,19 +305,18 @@ export default function Project(props) {
         )}
       </motion.div>
       <motion.div style={styleBottomSection}>
-        {props.ladimora && (
-          <motion.div style={styleAssetFrameMask} className="assetframemask">
-            <motion.div style={styleAssetFrame} className="assetframe">
-              <motion.div style={styleAssetInnerFrame}></motion.div>
-            </motion.div>
-          </motion.div>
+        {/* Project == La Dimora */}
+        {ladimora && (
+          <MeshBg>
+            <LaDimoraScrollMask isDesktop={isDesktop} isTablet={isTablet}>
+              <motion.div style={styleAssetFrame} className="assetframe">
+                <motion.div style={styleAssetInnerFrame}></motion.div>
+              </motion.div>
+            </LaDimoraScrollMask>
+          </MeshBg>
         )}
-        {props.accordion && (
-          <motion.div style={styleAssetFrame}>
-            <Accordion />
-          </motion.div>
-        )}
-        {props.loaders && (
+        {/* Project == Loaders */}
+        {loaders && (
           <LoaderExample
             setQuantityLoaders={setQuantityLoaders}
             quantityLoaders={quantityLoaders}

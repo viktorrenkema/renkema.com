@@ -10,10 +10,6 @@
   font-family: "GT-Walsheim-Bold";
   src: url("../../public/fonts/GT-Walsheim-Bold-Trial.woff2");
 }
-@font-face {
-  font-family: "GT-Eesti";
-  src: url("../../public/fonts/GT-Eesti-Display-Thin-Trial.woff2");
-}
 
 :root {
   --white: #fff;
@@ -26,7 +22,28 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "GT-Walsheim", sans-serif;
+  /* font-family: "GT-Walsheim", sans-serif; */
+}
+
+code {
+  font-family: "Roboto Mono" !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  /* padding: 0 !important; */
+}
+
+/* .module {
+  color: #df929f !important;
+  font-weight: 500 !important;
+} */
+
+/* .token {
+  color: #fc5982 !important;
+  font-weight: 900 !important;
+} */
+
+#CodeColumn button {
+  background: #ffffff17 !important;
 }
 
 html {
@@ -44,6 +61,7 @@ body {
 main {
   overflow: hidden;
   position: relative;
+  background: #181818;
 }
 p::selection,
 h1::selection {
@@ -67,6 +85,7 @@ p,
 li {
   line-height: 15px;
   color: #171717;
+  font-family: "GT-Walsheim", sans-serif;
 }
 
 li {
@@ -96,6 +115,11 @@ ul li::before {
     0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 }
 
+input,
+select {
+  background: #2a2a2a;
+}
+
 /* Project: Loader */
 input[type="number"],
 select {
@@ -105,7 +129,7 @@ select {
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  color: #5a5a5a;
+  color: #e7e7e7;
   font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;
@@ -114,7 +138,7 @@ select {
 
 input[type="number"]:focus,
 select:focus {
-  border: 1px solid #f1f1f1;
+  border: 1px solid #eb7085;
   outline: none;
   filter: none;
 }
@@ -323,14 +347,6 @@ select:focus {
   width: 100px;
 }
 
-/* WORK */
-.bio {
-  min-height: 100vh;
-  max-height: 700px;
-  display: flex;
-  justify-content: center;
-}
-
 .grid {
   display: grid;
   align-self: center;
@@ -367,7 +383,7 @@ select:focus {
 
 .imgright {
   grid-area: 1 / 2 / 1 / 2;
-  background: #edf0f1;
+  /* background: #edf0f1; */
 }
 
 .img-groningen {
@@ -398,6 +414,7 @@ select:focus {
   min-height: 700px;
   display: flex;
   justify-content: center;
+  background: white;
 }
 
 .Framer .learnmore {
@@ -592,18 +609,6 @@ ul {
   line-height: 1.5;
   text-align: justify;
   min-width: 300px;
-}
-
-.footer {
-  background: #ffffff;
-  display: inline-flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  margin: 0 auto;
-  height: 70px;
 }
 
 .footer li::before {
@@ -958,10 +963,6 @@ ul {
   .container {
     width: 80%;
   }
-  /* .assetframemask,
-  .assetframe {
-    width: 90% !important;
-  } */
 }
 
 /* @media (min-width: 768px) {

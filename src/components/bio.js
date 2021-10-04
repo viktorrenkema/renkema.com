@@ -1,8 +1,23 @@
+// 📦 Packages
+// 🌱 Components
+// 🧰 Utils
+// 💅🏽 Styled Components
+
 import React from "react"
-// import useIsInViewport from "use-is-in-viewport"
+import styled from "styled-components"
+
+const SectionBio = styled(motion.section)`
+  background: white;
+  min-height: 100vh;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+`
+
+import useIsInViewport from "use-is-in-viewport"
 import Groningen from "../../src/images/groningen.jpeg"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
-import Link from "./link"
+import SocialLink from "./sociallink"
 
 const image = {
   default: {
@@ -32,6 +47,8 @@ const section = {
 }
 
 export default function Background(props) {
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
+
   // parallax for images
   // let { scrollYProgress } = useViewportScroll() // Track the y scroll of value 0 to 1
 
@@ -44,11 +61,12 @@ export default function Background(props) {
   //   console.log("scrollinngggggg")
   // }
   return (
-    <motion.section
+    <SectionBio
       className="bio"
       variants={section}
       initial="visible"
       // onscroll={scrolling}
+      ref={targetRef}
     >
       <div className="grid grid--bio">
         <motion.div
@@ -72,7 +90,7 @@ export default function Background(props) {
             className={"subject subject-bio header"}
             variants={header}
             initial="visible"
-            // animate={isInViewport ? "visible" : "hidden"}
+            animate={isInViewport ? "visible" : "hidden"}
           >
             About me.
           </motion.h1>
@@ -81,7 +99,7 @@ export default function Background(props) {
               className="copy"
               variants={copy}
               initial="visible"
-              // animate={isInViewport ? "visible" : "hidden"}
+              animate={isInViewport ? "visible" : "hidden"}
             >
               While obtaining my Master’s degree in Psychology, my interest for
               behaviour expanded to the field of web technology. Around the
@@ -100,12 +118,12 @@ export default function Background(props) {
             manage our thriving communities and ensure all our users and
             organizations are receiving the technical support they require. */}
             </motion.p>
-            <Link
+            <SocialLink
               inline={false}
               forbio={true}
               linktext={"Ask me more"}
               url={"mailto:viktor@renkema.com"}
-            ></Link>{" "}
+            ></SocialLink>{" "}
             {/* <LearnmoreBlob
               destination={"mailto:viktor@renkema.com"}
               text={"Ask me more"}
@@ -119,13 +137,17 @@ export default function Background(props) {
           </motion.div>
         </motion.div>{" "}
       </div>
-    </motion.section>
+    </SectionBio>
   )
 }
 
-function PictureFrame(props) {
+function PictureFrame({ isInViewport }) {
+  const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 40 })
+
   return (
     <motion.img
+      animate={isInViewportImg ? "visible" : "hidden"}
+      ref={targetRef}
       variants={image}
       initial="visible"
       className="img-groningen image"
