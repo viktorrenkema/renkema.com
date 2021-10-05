@@ -114,12 +114,12 @@ export default function Framer(props) {
               Google, AirFrance and others become succesful by providing them
               with on-site workshops, direct support, and learning materials.
             </motion.p>{" "}
-            <SocialLink
+            {/* <SocialLink
               inline={false}
               forbio={true}
               linktext={"Visit Framer.com"}
               url={"https://www.framer.com/"}
-            ></SocialLink>{" "}
+            ></SocialLink>{" "} */}
           </motion.div>
         </motion.div>
         <a href="https://www.framer.com" target="_blank">

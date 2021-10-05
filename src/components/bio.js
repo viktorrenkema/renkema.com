@@ -118,12 +118,12 @@ export default function Background(props) {
             manage our thriving communities and ensure all our users and
             organizations are receiving the technical support they require. */}
             </motion.p>
-            <SocialLink
+            {/* <SocialLink
               inline={false}
               forbio={true}
               linktext={"Ask me more"}
               url={"mailto:viktor@renkema.com"}
-            ></SocialLink>{" "}
+            ></SocialLink>{" "} */}
             {/* <LearnmoreBlob
               destination={"mailto:viktor@renkema.com"}
               text={"Ask me more"}
