@@ -2,9 +2,20 @@
 import React from "react"
 import { motion } from "framer-motion"
 import styled from "styled-components"
+import Typed from "typed.js"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
+
+// 🌀 Variants
+const variants = {
+  default: {
+    height: "0px",
+  },
+  hover: {
+    height: "100%",
+  },
+}
 
 // 💅🏽 Styled Components
 const Btn = styled(motion.button)`
@@ -15,6 +26,8 @@ const Btn = styled(motion.button)`
   border: 0px;
   justify-content: center;
   display: flex;
+  border-style: solid !important;
+  border-color: #1c2021 !important;
 `
 
 const HoverFill = styled(motion.div)`
@@ -35,15 +48,6 @@ const Hyperlink = styled.a`
 `
 
 export default function SocialLink({ text, inline, forbio, url }) {
-  const variants = {
-    default: {
-      height: "0px",
-    },
-    hover: {
-      height: "100%",
-    },
-  }
-
   return (
     <Btn whileHover="hover" className={"inverted-bar"}>
       <HoverFill

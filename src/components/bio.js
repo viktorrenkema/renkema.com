@@ -1,82 +1,177 @@
 // 📦 Packages
-// 🌱 Components
-// 🧰 Utils
-// 💅🏽 Styled Components
-
-import React from "react"
+import React, { useRef } from "react"
 import styled from "styled-components"
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion"
 
-const SectionBio = styled(motion.section)`
+// 🌱 Components
+
+// 🧰 Utils
+
+// 💅🏽 Styled Components
+import { H1 } from "./resources/styledGlobal.js"
+
+const Section = styled(motion.section)`
   background: white;
-  min-height: 100vh;
+  margin: 10rem 0rem;
   max-height: 700px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    display: inherit;
+    max-height: none;
+    padding: 3rem 0rem;
+  }
+`
+const Grid = styled(motion.div)`
+  display: grid;
+  align-self: center;
+  justify-content: center;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 10rem;
+  padding: 4em;
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    padding: 2.5rem;
+    column-gap: 5%;
+    grid-template-columns: ${props =>
+      props.positioning == "left" ? "50% auto" : `auto 50%`};
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    padding: 0rem;
+  }
+`
+const BioH1 = styled(H1)`
+  grid-area: ${props =>
+    props.positioning == "left" ? "1 / 2 / 2 / 3" : `1 / 1 / 2 / 1`};
+  padding-bottom: 1rem;
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+  }
+  @media (max-width: 767px) {
+    grid-area: 1/1/1/1;
+    opacity: 1;
+    font-size: 40px;
+    justify-self: start;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+  }
+`
+const ImageContainer = styled(motion.div)`
+  justify-self: center;
+  align-self: center;
+  max-width: 650px;
+  position: relative;
+
+  grid-area: ${props =>
+    props.positioning == "left" ? "1 / 1 / 1 / 1" : `1 / 2 / 1 / 2`};
+
+  @media (max-width: 767px) {
+    height: auto;
+    background: none;
+    /* width: 90%; */
+    grid-area: 1 / 1 / 1 / 1;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+  }
+`
+const Image = styled(motion.img)` 
+  border: 8px solid #fbf8f8;
+  background-size: cover;
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
+  /* src: ${props => props.img}; */
+  height: 100%;
+  width: 100%;
+  @media (max-width: 767px) {
+    height: auto;
+    background: none;
+    /* width: 90%; */
+    grid-area: 1 / 1 / 1 / 1;
+    display: flex;
+    justify-content: center;
+  }
+`
+const Copy = styled(motion.p)`
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  letter-spacing: 0.1px;
+  text-justify: inter-word;
+  max-width: 700px;
+  @media (max-width: 767px) {
+    font-size: 14px;
+    opacity: 1;
+  }
+`
+const CopyContainer = styled(motion.div)`
+  align-self: start;
+  flex-direction: column;
+  display: flex;
+  grid-area: ${props =>
+    props.positioning == "left" ? "2/ 2 / 3 / 2" : `2/ 1 / 3 / 1`};
+
+  @media (max-width: 767px) {
+    grid-area: 2 / 1 / 3 / 1;
+    text-align: center;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+  }
 `
 
-import useIsInViewport from "use-is-in-viewport"
-import Groningen from "../../src/images/groningen.jpeg"
-import { motion, useViewportScroll, useTransform } from "framer-motion"
-import SocialLink from "./sociallink"
+// 🌀 Variants
+// const variants = {
+//   default: {
+//     scale: 1,
+//   },
+//   hidden: { opacity: 0.5 },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       duration: 0.5,
+//     },
+//   },
+// }
 
-const image = {
-  default: {
-    scale: 1,
-  },
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-}
-const header = {
-  hidden: { opacity: 0, transition: { duration: 1.3 } },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-}
+export default function BioSection({
+  positioning,
+  asset,
+  title,
+  description,
+  id,
+}) {
+  const [inputRange, setInputRange] = React.useState([0, 0])
 
-const copy = {
-  hidden: { opacity: 0, transition: { duration: 1.3 } },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-}
+  React.useEffect(() => {
+    let el = document.querySelector(`#${id}`)
+    // console.log(el)
+    // console.log(
+    //   el.getBoundingClientRect().top,
+    //   "el.getBoundingClientRect().top"
+    // )
+    setInputRange([
+      el.getBoundingClientRect().top - 200,
+      el.getBoundingClientRect().top + 200,
+    ])
+  }, [])
 
-const section = {
-  hidden: { opacity: 0, transition: { duration: 1.3 } },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-}
+  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
+  const dynamicRotate = useTransform(scrollY, inputRange, [10, 0])
+  const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
-export default function Background(props) {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
-
-  // parallax for images
-  // let { scrollYProgress } = useViewportScroll() // Track the y scroll of value 0 to 1
-
-  // const scrollRange = [0.1, 0.4]
-  // const imagePositions = [-100, 100]
-
-  // const position = useTransform(scrollYProgress, scrollRange, imagePositions)
-
-  // function scrolling() {
-  //   console.log("scrollinngggggg")
-  // }
   return (
-    <SectionBio
-      className="bio"
-      variants={section}
-      initial="visible"
-      // onscroll={scrolling}
-      ref={targetRef}
-    >
-      <div className="grid grid--bio">
-        <motion.div
-          variants={image}
-          // top={position}
-          className="imagecard imgleft"
-          initial="visible"
-        >
-          <PictureFrame></PictureFrame>
-        </motion.div>
+    <Section id={`${id}`} style={{ transform: rotate }}>
+      <Grid positioning={positioning}>
+        <ImageContainer positioning={positioning}>
+          <Image src={asset}></Image>
+        </ImageContainer>
         <motion.div
           style={{
             flexDirection: "column",
@@ -86,74 +181,25 @@ export default function Background(props) {
             placeContent: "center",
           }}
         >
-          <motion.h1
-            className={"subject subject-bio header"}
-            variants={header}
-            initial="visible"
-            animate={isInViewport ? "visible" : "hidden"}
-          >
-            About me.
-          </motion.h1>
-          <motion.div className="description carddescriptionright">
-            <motion.p
-              className="copy"
-              variants={copy}
-              initial="visible"
-              animate={isInViewport ? "visible" : "hidden"}
-            >
-              While obtaining my Master’s degree in Psychology, my interest for
-              behaviour expanded to the field of web technology. Around the
-              start of 2019, I began learning more about web development and
-              digital user experiences to learn more about the web.
-              <br></br>
-              <br></br>
-              My first experience in this area was learning HTML and CSS to
-              create A/B tests for an online webshop. After this, I got to learn
-              more about UX when I started working at the University Medical
-              Center Groningen. Here, I studied the workflows of medical staff
-              for whom we built and implemented custom user interfaces in Epic,
-              the hospital-wide electronic medical record.
-              <br></br>
-              {/* <br></br>About a year later I started working at Framer, where I
-            manage our thriving communities and ensure all our users and
-            organizations are receiving the technical support they require. */}
-            </motion.p>
+          <BioH1 positioning={positioning}>{title}</BioH1>
+          {/* <h2>{pathLength.current}</h2> */}
+          <CopyContainer positioning={positioning}>
+            <Copy id={"section"}>{description}</Copy>
             {/* <SocialLink
               inline={false}
               forbio={true}
               linktext={"Ask me more"}
               url={"mailto:viktor@renkema.com"}
             ></SocialLink>{" "} */}
-            {/* <LearnmoreBlob
-              destination={"mailto:viktor@renkema.com"}
-              text={"Ask me more"}
-              d1={
-                "M 135.781 20.857 C 143.104 33.576 138.9 53.464 137.815 69.7 C 136.73 85.801 138.9 98.113 135.781 111.237 C 132.662 124.361 124.389 138.162 112.998 141.274 C 101.742 144.385 87.231 136.944 75.297 129.503 C 63.363 122.196 54.006 114.89 39.224 103.796 C 24.306 92.701 4.1 77.683 0.574 59.959 C -2.952 42.37 10.203 22.075 27.968 11.116 C 45.733 0.292 68.11 -1.196 88.723 0.698 C 109.336 2.727 128.322 8.139 135.781 20.857 Z"
-              }
-              d2={
-                "M 138.613 0.28 C 156.669 2.744 169.567 23.978 168.981 44.04 C 168.395 64.219 154.324 83.225 140.606 97.89 C 126.77 112.555 113.169 122.762 97.574 129.097 C 81.98 135.433 64.392 137.779 52.901 130.505 C 41.528 123.231 36.134 106.337 26.52 91.203 C 16.905 76.069 3.069 62.577 0.49 46.621 C -2.207 30.666 6.469 12.012 20.774 8.844 C 34.962 5.677 54.66 17.761 76.117 15.766 C 97.574 13.772 120.673 -2.301 138.613 0.28 Z"
-              }
-            ></LearnmoreBlob> */}
-          </motion.div>
+          </CopyContainer>
         </motion.div>{" "}
-      </div>
-    </SectionBio>
+      </Grid>
+    </Section>
   )
 }
 
-function PictureFrame({ isInViewport }) {
-  const [isInViewportImg, targetRef] = useIsInViewport({ threshold: 40 })
-
-  return (
-    <motion.img
-      animate={isInViewportImg ? "visible" : "hidden"}
-      ref={targetRef}
-      variants={image}
-      initial="visible"
-      className="img-groningen image"
-      src={Groningen}
-      width={"100%"}
-      height="100%"
-    ></motion.img>
-  )
-}
+// scrollY.onChange(value => {
+//   console.log(value)
+//   console.log(inputRange, "inputRange")
+//   console.log(rotate.current, "rotate")
+// })

@@ -1,8 +1,12 @@
 // 📦 Packages
-import { motion } from "framer-motion"
 import React from "react"
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion"
 import styled from "styled-components"
-import useIsInViewport from "use-is-in-viewport"
 import Typed from "typed.js"
 
 // 🌱 Components
@@ -10,16 +14,13 @@ import SocialLink from "./sociallink"
 
 // 🧰 Utils
 
-// 💅🏽 Styled Components
-const SectionIntro = styled(motion.section)`
-  background: white;
-  min-height: 100vh;
-  max-height: 700px;
-  display: flex;
-  justify-content: center;
-`
+// 🌀 Variants
+const section = {
+  hidden: { opacity: 0.3, transition: { duration: 1.3 } },
+  visible: { opacity: 1, transition: { duration: 0.5 } },
+}
 
-const name_stagger = {
+const name = {
   hidden: { x: 20, opacity: 0 },
   visible: {
     x: 0,
@@ -30,7 +31,7 @@ const name_stagger = {
   },
 }
 
-const description_stagger = {
+const description = {
   hidden: { x: 20, opacity: 0 },
   visible: {
     x: 0,
@@ -42,7 +43,7 @@ const description_stagger = {
   },
 }
 
-const reachout_stagger = {
+const socials = {
   hidden: { x: 20, opacity: 0 },
   visible: {
     x: 0,
@@ -54,13 +55,74 @@ const reachout_stagger = {
   },
 }
 
-export default function Introduction(props) {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 40 })
+// 💅🏽 Styled Components
+import { H1, Paragraph } from "./resources/styledGlobal.js"
 
-  const section = {
-    hidden: { opacity: 0, transition: { duration: 1.3 } },
-    visible: { opacity: 1, transition: { duration: 0.5 } },
+const SectionIntro = styled(motion.section)`
+  background: white;
+  min-height: 100vh;
+  max-height: 700px;
+  display: flex;
+  justify-content: center;
+`
+
+const Grid = styled(motion.div)`
+  height: 60vh;
+  justify-items: start;
+  align-content: start;
+  margin-top: 30vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 1rem;
+  padding-top: 3rem;
+  max-width: 600px;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: fit-content;
+
+  @media (max-width: 767px) {
+    row-gap: 0.5rem;
+    padding: 0em 1em 0em 1em;
+    width: auto;
+    grid-template-rows: repeat(4, auto);
   }
+`
+
+const GridParagraph = styled(Paragraph)`
+  grid-area: 2 / 1 / 2 / 1;
+  justify-self: start;
+`
+
+const GridH1 = styled(H1)`
+  grid-area: 1 / 1 / 2 / 1;
+  @media (max-width: 767px) {
+    grid-area: 1 / 1 / 2 / 1;
+  }
+`
+
+const MonospaceSpan = styled.span`
+  font-family: "Roboto Mono", monospace;
+  display: inline;
+  font-size: 16px;
+  margin-left: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+  bottom: 2px;
+  position: relative;
+  color: white;
+  background: black;
+`
+
+const SocialsContainer = styled(motion.div)`
+  display: flex;
+  gap: 5px;
+`
+
+export default function Introduction({ id }) {
+  const [inputRange, setInputRange] = React.useState([0, 0])
 
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null)
@@ -85,73 +147,55 @@ export default function Introduction(props) {
     }
   }, [])
 
+  React.useEffect(() => {
+    let el = document.querySelector(`#${id}`)
+    setInputRange([
+      el.getBoundingClientRect().top - 200,
+      el.getBoundingClientRect().top + 200,
+    ])
+  }, [])
+
+  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
+  const dynamicRotate = useTransform(scrollY, inputRange, [10, 0])
+  const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
+
   return (
     <SectionIntro
-    // variants={section}
-    // initial="hidden"
-    // animate={isInViewport ? "visible" : "hidden"}
+      id={`${id}`}
+      // style={{ transform: rotate }}
     >
-      <motion.div className={"grid_intro container"}>
-        <motion.div
-          ref={targetRef}
-          className={"name nameStagger"}
+      <Grid>
+        <GridH1 initial="hidden" animate="visible" variants={name}>
+          Hey, my name is Viktor
+        </GridH1>
+
+        <GridParagraph
+          variants={description}
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 variants={name_stagger}>Hey, my name is Viktor.</motion.h1>
-        </motion.div>
-        <motion.div
-          className="about descriptionStagger"
-          variants={description_stagger}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.p variants={name_stagger} className="copy-intro">
-            Front-end developer with a background in psychology, exploring the
-            field of design and
-            <motion.span
-              variants={name_stagger}
-              style={{
-                fontFamily: "'Roboto Mono', monospace",
-                display: "inline",
-                fontSize: "16px",
-                marginLeft: "4px",
-                paddingLeft: "2px",
-                paddingRight: "2px",
-                bottom: "3px",
-                position: "relative",
-                color: "white",
-                background: "black",
-              }}
-              className="copy-intro"
-              id="typedid"
-              ref={el}
-            ></motion.span>
-          </motion.p>
-          <motion.div
-            variants={reachout_stagger}
-            className="contactlinks"
-            style={{ display: "flex", gap: 5 }}
-          >
-            <SocialLink
-              inline={true}
-              text={"Twitter"}
-              url={"https://www.twitter.com/vrenkema"}
-            ></SocialLink>{" "}
-            <SocialLink
-              inline={true}
-              text={"Linkedin"}
-              url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
-            ></SocialLink>{" "}
-            <SocialLink
-              inline={true}
-              text={"Email"}
-              url={"mailto:viktor@renkema.com"}
-            ></SocialLink>{" "}
-            {/* to chat motorcycles, neurotransmitters, or anything, really. */}
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          Front-end developer with a background in psychology, exploring the
+          field of design and
+          <MonospaceSpan ref={el}></MonospaceSpan>
+        </GridParagraph>
+        <SocialsContainer variants={socials}>
+          <SocialLink
+            inline={true}
+            text={"Twitter"}
+            url={"https://www.twitter.com/vrenkema"}
+          ></SocialLink>{" "}
+          <SocialLink
+            inline={true}
+            text={"Linkedin"}
+            url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
+          ></SocialLink>{" "}
+          <SocialLink
+            inline={true}
+            text={"Email"}
+            url={"mailto:viktor@renkema.com"}
+          ></SocialLink>
+        </SocialsContainer>
+      </Grid>
     </SectionIntro>
   )
 }

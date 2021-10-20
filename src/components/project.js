@@ -1,27 +1,17 @@
 // 📦 Packages
 import React from "react"
-import {
-  motion,
-  useViewportScroll,
-  useDomEvent,
-  useRef,
-  useTransform,
-} from "framer-motion"
+import { motion, useViewportScroll, useTransform } from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
 import styled from "styled-components"
-import Mesh from "../images/mesh-gradient.png"
-
-// Components
-
-// import Heading from "./heading"
-{
-  /* <Heading projecttitle={projecttitle} url={"www.google.com"}></Heading> */
-}
-import Accordion from "../components/accordion"
-import LoaderExample from "./projectExamples/loaderExample"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
+
+// 🌱 Components
+import LoaderExample from "./resources/loaderExample"
+
+// 🖼️ Assets
+import Mesh from "../images/mesh-gradient.png"
 
 // 💅🏽 Styled Components
 const DemoLoaders = styled.div`
@@ -31,26 +21,41 @@ const DemoLoaders = styled.div`
 `
 const MeshBg = styled.div`
   border-radius: 10px;
-  width: fit-content;
-  height: auto;
-  padding: 2rem;
+  width: 95vw;
+  height: 65vh;
+
   background-image: url(${Mesh});
   display: flex;
   align-content: center;
   justify-content: center;
   align-items: center;
   transform: rotate(1deg);
+  @media (max-width: 768px) {
+    padding: 0;
+    /* width: 80%; */
+    height: 30vh;
+  }
 `
 
 const LaDimoraScrollMask = styled(motion.div)`
   overflow: hidden;
   border-radius: 4px;
-  width: ${props => (props.isDesktop ? "1023px" : "90%")};
-  height: ${props => (props.isDesktop || props.isTablet ? "520px" : "200px")};
+  width: 90vw;
+  height: 60vh;
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
     0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
   transform: rotate(-1deg);
+  @media (max-width: 768px) {
+    padding: 0;
+    width: 80%;
+    height: 30vh;
+  }
 `
+
+// Small mobile: < 370
+// Mobile: <426
+// Tablet: <769
+// Desktop: >768
 
 export default function Project({
   ladimora,
@@ -71,43 +76,13 @@ export default function Project({
   const [isLowMobile, setIsLowMobile] = React.useState(undefined)
   const [isLowTablet, setIsLowTablet] = React.useState(undefined)
 
-  // console.log(isLowMobile, isMobile, isLowTablet, isTablet, isDesktop)
-
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
 
-  const scrollRange = [0, 0.82, 0.92]
-  const ladimoraRange = [0, 0, -520]
-  const ladimoraTablet = [0, 0, -400]
-  const ladimoraLowTablet = [0, 0, -295]
-  const ladimoraMobile = [0, 0, -170]
-  const ladimoraLowMobile = [0, 0, -140]
+  const scrollRange = [0, 1]
 
-  const adjustScrollY = useTransform(
-    scrollYProgress,
-    scrollRange,
-    ladimoraRange
-  )
-  const adjustScrollYTablet = useTransform(
-    scrollYProgress,
-    scrollRange,
-    ladimoraTablet
-  )
+  const range = isInViewport ? ["0%", "-100%"] : ["0%", "0%"]
 
-  const adjustScrollYLowTablet = useTransform(
-    scrollYProgress,
-    scrollRange,
-    ladimoraLowTablet
-  )
-  const adjustScrollYMobile = useTransform(
-    scrollYProgress,
-    scrollRange,
-    ladimoraMobile
-  )
-  const adjustScrollYLowMobile = useTransform(
-    scrollYProgress,
-    scrollRange,
-    ladimoraLowMobile
-  )
+  const adjustedScroll = useTransform(scrollYProgress, scrollRange, range)
 
   /// Issues converting motionvalues to percentages
 
@@ -134,6 +109,10 @@ export default function Project({
       document.documentElement.clientWidth,
       window.innerWidth || 0
     )
+    // console.log(
+    //   "client width and innerwidth",
+    //   Math.max(document.documentElement.clientWidth, window.innerWidth)
+    // )
     if (clientWidth < 370) {
       setIsLowMobile(true)
     } else if (clientWidth < 426) {
@@ -197,17 +176,14 @@ export default function Project({
   }
 
   const styleTitle = {
-    // fontFamily: `"Lato", serif`,
     color: palette.greys100,
     fontSize: 44,
     letterSpacing: 0,
     lineHeight: 1.2,
     fontWeight: 900,
-    // paddingBottom: "20px",
   }
 
   const styleInfo = {
-    // fontFamily: `"Lato", serif`,
     color: palette.greys100med,
     fontSize: 16,
     letterSpacing: 0,
@@ -215,24 +191,11 @@ export default function Project({
     fontWeight: 400,
     textAlign: "center",
     width: "90%",
-    // paddingBottom: "20px",
     maxWidth: "500px",
   }
 
-  console.log(isMobile)
-
   const styleAssetFrame = {
-    top:
-      ladimora && isInViewport && isLowMobile
-        ? adjustScrollYLowMobile
-        : ladimora && isInViewport && isDesktop
-        ? adjustScrollY
-        : ladimora && isInViewport && isTablet
-        ? adjustScrollYTablet
-        : ladimora && isInViewport && isMobile
-        ? adjustScrollYMobile // : ladimora && isInViewport && !isDesktop
-        : // ? `-${adjustScrollYMobile.current}` + `%`
-          0,
+    top: adjustedScroll,
     width: "100%",
 
     height: !isDesktop ? "-webkit-fill-available" : 1035,
@@ -249,7 +212,7 @@ export default function Project({
     height: "100%",
     position: "relative",
     overflow: "hidden",
-    background: loaders || accordion ? "none" : "#fff",
+    background: loaders ? "none" : "#fff",
     backgroundImage: `url(${asset})`,
     // backgroundImage: isDesktop ? `url(${asset})` : `url(${ladimora})`,
     backgroundSize:

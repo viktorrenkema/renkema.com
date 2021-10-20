@@ -1,5 +1,33 @@
+// 📦 Packages
 import React from "react"
 import { motion, useViewportScroll, useTransform } from "framer-motion"
+import styled from "styled-components"
+
+// 🌱 Components
+
+// 🧰 Utils
+
+// 🌀 Variants
+
+// 💅🏽 Styled Components
+import { Paragraph } from "./resources/styledGlobal.js"
+
+const ScrollerContainer = styled(motion.span)`
+  width: fit-content;
+  height: fit-content;
+  bottom: 25px;
+  position: fixed;
+  left: 50%;
+  z-index: 3;
+  margin-left: -13px;
+  width: fit-content;
+  height: fit-content;
+  bottom: 25px;
+  position: fixed;
+  left: 50%;
+  z-index: 3;
+  margin-left: -13px;
+`
 
 export default function Scroller({ label }) {
   let { scrollYProgress } = useViewportScroll() // Track the y scroll
@@ -34,21 +62,8 @@ export default function Scroller({ label }) {
   }
   return (
     <motion.div>
-      <motion.p style={styleScrolldownP} className="subcopy-intro">
-        Welcome
-      </motion.p>
-      <motion.div
-        className="scroller"
-        style={{
-          width: "fit-content",
-          height: "fit-content",
-          bottom: "25px",
-          position: "fixed",
-          left: "50%",
-          zIndex: "3",
-          marginLeft: "-13px",
-        }}
-      >
+      <Paragraph style={styleScrolldownP}>Welcome</Paragraph>
+      <ScrollerContainer>
         <motion.svg width="23" height="22">
           <motion.defs>
             <linearGradient id="progress" x1="0" y1="1" x2="0" y2="0">
@@ -67,7 +82,7 @@ export default function Scroller({ label }) {
             fill="url(#progress)"
           ></motion.path>
         </motion.svg>
-      </motion.div>
+      </ScrollerContainer>
     </motion.div>
   )
 }
