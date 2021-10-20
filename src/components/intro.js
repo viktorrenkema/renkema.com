@@ -74,7 +74,7 @@ const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: repeat(3, auto);
-  grid-gap: 1rem;
+  grid-gap: 1.25rem;
   padding-top: 3rem;
   max-width: 600px;
   align-self: center;
@@ -150,20 +150,17 @@ export default function Introduction({ id }) {
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
     setInputRange([
-      el.getBoundingClientRect().top - 200,
-      el.getBoundingClientRect().top + 200,
+      el.getBoundingClientRect().top,
+      el.getBoundingClientRect().top + 300,
     ])
   }, [])
 
   let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  const dynamicRotate = useTransform(scrollY, inputRange, [10, 0])
+  const dynamicRotate = useTransform(scrollY, inputRange, [0, 8])
   const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
   return (
-    <SectionIntro
-      id={`${id}`}
-      // style={{ transform: rotate }}
-    >
+    <SectionIntro id={`${id}`} style={{ transform: rotate }}>
       <Grid>
         <GridH1 initial="hidden" animate="visible" variants={name}>
           Hey, my name is Viktor
@@ -178,7 +175,7 @@ export default function Introduction({ id }) {
           field of design and
           <MonospaceSpan ref={el}></MonospaceSpan>
         </GridParagraph>
-        <SocialsContainer variants={socials}>
+        <SocialsContainer variants={socials} initial="hidden" animate="visible">
           <SocialLink
             inline={true}
             text={"Twitter"}

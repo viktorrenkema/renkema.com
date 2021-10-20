@@ -151,19 +151,19 @@ export default function BioSection({
 
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
-    // console.log(el)
+    console.log(el)
     // console.log(
     //   el.getBoundingClientRect().top,
     //   "el.getBoundingClientRect().top"
     // )
     setInputRange([
-      el.getBoundingClientRect().top - 200,
-      el.getBoundingClientRect().top + 200,
+      el.getBoundingClientRect().top + 400,
+      el.getBoundingClientRect().top - 400,
     ])
   }, [])
 
   let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  const dynamicRotate = useTransform(scrollY, inputRange, [10, 0])
+  const dynamicRotate = useTransform(scrollY, inputRange, [6, -6])
   const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
   return (

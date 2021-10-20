@@ -76,10 +76,9 @@ export default function IndexPage() {
         }
       ></Bio>
       <Projects></Projects>
-      <div style={{ display: "flex" }}>
-        <Scroller></Scroller>
-      </div>
-      <Footer></Footer>
+      <Scroller></Scroller>
+
+      {/* <Footer></Footer> */}
     </Layout>
   )
 }

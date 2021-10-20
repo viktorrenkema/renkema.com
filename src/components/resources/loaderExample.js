@@ -90,8 +90,8 @@ const FlexColumnLeft = styled.div`
   justify-content: center;
   align-items: flex-end;
   min-width: 30%;
-  border-right: 1px solid #ffffff29;
-  padding-right: 1rem;
+  border-right: 1px solid #ffffff12;
+  padding-right: 2rem;
 `
 const FlexColumnMiddle = styled.div`
   display: flex;
@@ -109,11 +109,11 @@ const FlexColumnRight = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 30%;
-  border-left: 1px solid #ffffff29;
+  border-left: 1px solid #ffffff12;
   max-height: 300px;
   overflow: scroll;
   position: relative;
-  padding-left: 1rem;
+  padding-left: 2rem;
   :-webkit-scrollbar {
     background-color: white;
   }

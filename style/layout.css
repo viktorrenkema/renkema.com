@@ -19,10 +19,14 @@ code {
   font-family: "Roboto Mono" !important;
   font-size: 14px !important;
   line-height: 1.4 !important;
+  padding: 0;
+  top: -24px;
+  position: relative;
 }
 
 #CodeColumn button {
-  background: #ffffff17 !important;
+  background: #8d8d8d17 !important;
+  border: 0px solid white;
 }
 
 html {
@@ -50,14 +54,6 @@ p {
   line-height: 15px;
   color: #171717;
   font-family: "GT-Walsheim", sans-serif;
-}
-
-@media (max-width: 500px) {
-  .projectheader {
-    font-size: 32px !important;
-    text-align: center !important;
-    max-width: 300px;
-  }
 }
 
 /* Large desktop */

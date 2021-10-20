@@ -25,10 +25,15 @@ const container = {
 
 // 💅🏽 Styled Components
 const Section = styled(motion.div)`
-  background: #181818;
+  /* background: #181818; */
+  width: 80%;
   align-self: center;
   padding: 4em 0em;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
   @media (max-width: 767px) {
     padding: 4em 0em;
   }
@@ -40,25 +45,48 @@ const Separator = styled(motion.div)`
   opacity: 0.1;
 `
 
+const ProjectsLabel = styled(motion.div)`
+  color: hsl(0deg 0% 10%);
+  font-size: 36px;
+  letter-spacing: 0px;
+  line-height: 1;
+  /* text-transform: uppercase; */
+  border-radius: 8px;
+  /* background: #eb70852b; */
+  padding-bottom: 6rem;
+  font-family: "GT-Walsheim", sans-serif;
+  align-self: center;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+  letter-spacing: 0.05rem;
+`
+
 export function Projects() {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
+  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 
   return (
     <Section
-      initial="hidden"
-      animate={isInViewport ? "visible" : "hidden"}
-      ref={targetRef}
-      variants={container}
+    // initial="hidden"
+    // animate={isInViewport ? "visible" : "hidden"}
+    // ref={targetRef}
+    // variants={container}
     >
+      {/* <ProjectsLabel>Projects</ProjectsLabel> */}
       <Project
         projectlabel={"web app"}
         projecttitle={"Loaders.io"}
         projectinfo={
-          "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize style and animation using a UI instead of code."
+          "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize style and animation using an interface instead of code."
         }
         linktext={"Visit loaders.io"}
         url={"https://loadergenerator.vercel.app/"}
         loaders
+        id={"loaders"}
       ></Project>
       <Separator />
       <Project
@@ -71,6 +99,7 @@ export function Projects() {
         asset={ladimorascroll}
         linktext={"Visit ladimora.org"}
         ladimora
+        id={"ladimora"}
         url={"https://ladimora.org/"}
       ></Project>
       <Separator />

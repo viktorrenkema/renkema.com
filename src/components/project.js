@@ -1,6 +1,11 @@
 // 📦 Packages
 import React from "react"
-import { motion, useViewportScroll, useTransform } from "framer-motion"
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion"
 import useIsInViewport from "use-is-in-viewport"
 import styled from "styled-components"
 
@@ -14,16 +19,81 @@ import LoaderExample from "./resources/loaderExample"
 import Mesh from "../images/mesh-gradient.png"
 
 // 💅🏽 Styled Components
+const ProjectFlexWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: #f5f5f5; */
+  background-color: hsl(0deg 0% 10%);
+`
+
+const TopSection = styled(motion.div)`
+  width: 100%;
+  padding: 4rem 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+`
+
+const BottomSection = styled(motion.div)`
+  width: 80%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  padding: 2rem;
+  background: #202020;
+`
+
+const Label = styled(motion.div)`
+  color: hsl(350, 75%, 68%);
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 1;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 8px;
+  padding: 10px;
+  background: #eb70852b;
+  padding-bottom: 10px;
+  font-family: "GT-Walsheim-Bold";
+`
+
+const Hyperlink = styled(motion.a)`
+  color: ${palette.greys100};
+  text-decoration: underline;
+  text-decoration-color: rgba(235, 112, 133, 0);
+`
+
+const Title = styled(motion.p)`
+  color: ${palette.greys100};
+  font-size: 44px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  font-weight: 900;
+  @media (max-width: 500px) {
+    font-size: 32px !important;
+    text-align: center !important;
+    max-width: 300px;
+  }
+`
+
 const DemoLoaders = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
 `
+
 const MeshBg = styled.div`
   border-radius: 10px;
   width: 95vw;
   height: 65vh;
-
   background-image: url(${Mesh});
   display: flex;
   align-content: center;
@@ -52,6 +122,27 @@ const LaDimoraScrollMask = styled(motion.div)`
   }
 `
 
+const ProjectsLabel = styled(motion.div)`
+  color: hsl(0deg 0% 10%);
+  font-size: 36px;
+  letter-spacing: 0px;
+  line-height: 1;
+  /* text-transform: uppercase; */
+  border-radius: 8px;
+  /* background: #eb70852b; */
+  padding-bottom: 6rem;
+  font-family: "GT-Walsheim", sans-serif;
+  align-self: center;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+  letter-spacing: 0.05rem;
+`
+
 // Small mobile: < 370
 // Mobile: <426
 // Tablet: <769
@@ -60,7 +151,6 @@ const LaDimoraScrollMask = styled(motion.div)`
 export default function Project({
   ladimora,
   loaders,
-  accordion,
   hyperlink,
   asset,
   projectlabel,
@@ -68,123 +158,25 @@ export default function Project({
   projectinfo,
   linktext,
   url,
+  id,
 }) {
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
-  const [isDesktop, setIsDesktop] = React.useState(undefined)
-  const [isTablet, setIsTablet] = React.useState(undefined)
-  const [isMobile, setIsMobile] = React.useState(undefined)
-  const [isLowMobile, setIsLowMobile] = React.useState(undefined)
-  const [isLowTablet, setIsLowTablet] = React.useState(undefined)
-
-  let { scrollYProgress } = useViewportScroll() // Track the y scroll
-
-  const scrollRange = [0, 1]
-
-  const range = isInViewport ? ["0%", "-100%"] : ["0%", "0%"]
-
-  const adjustedScroll = useTransform(scrollYProgress, scrollRange, range)
-
-  /// Issues converting motionvalues to percentages
-
-  // const adjustScrollYMobile = useTransform(
-  //   scrollYProgress,
-  //   scrollRange,
-  //   ladimoraRangeMobile
-  // )
-
-  // const ladimoraRangeMobile = [0, 0, -10]
-
-  // const stringify = JSON.stringify(adjustScrollYMobile)
-  // const toPercentage = adjustScrollYMobile.current.toString() + "%"
-
-  // console.log(adjustScrollYMobile)
-
-  // console.log("toPercentage:" + toPercentage)
-  // console.log("stringify: " + stringify)
-
-  ///
+  const [quantityLoaders, setQuantityLoaders] = React.useState(5)
+  const [inputRange, setInputRange] = React.useState([0, 0])
 
   React.useEffect(() => {
-    const clientWidth = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    )
-    // console.log(
-    //   "client width and innerwidth",
-    //   Math.max(document.documentElement.clientWidth, window.innerWidth)
-    // )
-    if (clientWidth < 370) {
-      setIsLowMobile(true)
-    } else if (clientWidth < 426) {
-      setIsMobile(true)
-    } else if (clientWidth < 600) {
-      setIsLowTablet(true)
-    } else if (clientWidth < 769) {
-      setIsTablet(true)
-    } else if (clientWidth > 769) {
-      setIsDesktop(true)
-    }
+    let el = document.querySelector(`#${id}`)
+    setInputRange([
+      el.getBoundingClientRect().top + 400,
+      el.getBoundingClientRect().top - 400,
+    ])
   }, [])
 
-  const [quantityLoaders, setQuantityLoaders] = React.useState(5)
-
-  const styleFlexWrapper = {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    backgroundColor: "#181818",
-  }
-
-  const styleTopSection = {
-    width: "100%",
-    height: "500px",
-    gap: "1rem",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "visible",
-    backgroundColor: "#181818",
-    // borderTop: "1px solid #e6e6e6",
-  }
-
-  const styleBottomSection = {
-    width: "100%",
-    height: "fit-content",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "2rem",
-    background: "#1e1e1e",
-  }
-
-  const styleLabel = {
-    color: "hsl(350, 75%, 68%)",
-    fontSize: "12px",
-    letterSpacing: "0px",
-    lineHeight: 1,
-    fontWeight: 800,
-    textTransform: "uppercase",
-    borderRadius: "8px",
-    padding: "10px",
-    background: "#eb70852b",
-    paddingBottom: "10px",
-    fontFamily: "GT-Walsheim-Bold",
-  }
-
-  const styleTitle = {
-    color: palette.greys100,
-    fontSize: 44,
-    letterSpacing: 0,
-    lineHeight: 1.2,
-    fontWeight: 900,
-  }
+  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
+  const dynamicRotate = useTransform(scrollY, inputRange, [6, -6])
+  const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
   const styleInfo = {
-    color: palette.greys100med,
+    color: palette.greys100,
     fontSize: 16,
     letterSpacing: 0,
     lineHeight: 1.4,
@@ -195,10 +187,9 @@ export default function Project({
   }
 
   const styleAssetFrame = {
-    top: adjustedScroll,
+    // top: adjustedScroll,
     width: "100%",
-
-    height: !isDesktop ? "-webkit-fill-available" : 1035,
+    height: 1035,
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -214,43 +205,20 @@ export default function Project({
     overflow: "hidden",
     background: loaders ? "none" : "#fff",
     backgroundImage: `url(${asset})`,
-    // backgroundImage: isDesktop ? `url(${asset})` : `url(${ladimora})`,
-    backgroundSize:
-      isMobile || isTablet || isLowTablet || isLowMobile ? "contain" : "cover",
+    backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top",
-    // transform: isTablet ? "scale(0.9)" : "unset",
   }
 
-  // const [isDesktop, setIsDesktop] = React.useState(undefined)
-
-  // React.useEffect(() => {
-  //   window.matchMedia("(any-hover: none)").matches
-  //     ? setIsDesktop(false)
-  //     : setIsDesktop(true)
-  // }, [])
-
   return (
-    <motion.div style={styleFlexWrapper} ref={targetRef}>
-      <motion.div style={styleTopSection}>
-        <span style={styleLabel}>{projectlabel}</span>
-        <span style={styleTitle} className="projectheader">
-          <motion.a
-            style={{
-              color: "white",
-              textDecoration: "underline",
-              textDecorationColor: "rgba(235, 112, 133, 0)",
-            }}
-            target="_blank"
-            href={url}
-            whileHover={{
-              textDecoration: "underline",
-              textDecorationColor: "rgba(235, 112, 133, 0.9)",
-            }}
-          >
+    <ProjectFlexWrapper id={`${id}`} style={{ transform: rotate }}>
+      <TopSection>
+        <Label>{projectlabel}</Label>
+        <Title>
+          <Hyperlink target="_blank" href={url}>
             {projecttitle}
-          </motion.a>
-        </span>
+          </Hyperlink>
+        </Title>
         <span style={styleInfo}>{projectinfo}</span>
         {loaders && (
           <div style={{ transform: "scale(0.7)" }}>
@@ -266,26 +234,26 @@ export default function Project({
             </a>
           </div>
         )}
-      </motion.div>
-      <motion.div style={styleBottomSection}>
-        {/* Project == La Dimora */}
-        {ladimora && (
-          <MeshBg>
-            <LaDimoraScrollMask isDesktop={isDesktop} isTablet={isTablet}>
-              <motion.div style={styleAssetFrame} className="assetframe">
-                <motion.div style={styleAssetInnerFrame}></motion.div>
-              </motion.div>
-            </LaDimoraScrollMask>
-          </MeshBg>
-        )}
-        {/* Project == Loaders */}
-        {loaders && (
-          <LoaderExample
-            setQuantityLoaders={setQuantityLoaders}
-            quantityLoaders={quantityLoaders}
-          />
-        )}
-      </motion.div>
-    </motion.div>
+        <BottomSection>
+          {/* If project is La Dimora */}
+          {ladimora && (
+            <MeshBg>
+              <LaDimoraScrollMask>
+                <motion.div style={styleAssetFrame} className="assetframe">
+                  <motion.div style={styleAssetInnerFrame}></motion.div>
+                </motion.div>
+              </LaDimoraScrollMask>
+            </MeshBg>
+          )}
+          {/* If project is Loaders */}
+          {loaders && (
+            <LoaderExample
+              setQuantityLoaders={setQuantityLoaders}
+              quantityLoaders={quantityLoaders}
+            />
+          )}
+        </BottomSection>
+      </TopSection>
+    </ProjectFlexWrapper>
   )
 }

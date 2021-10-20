@@ -16,6 +16,7 @@ const Wrapper = styled(motion.div)`
   position: absolute;
   top: 0px;
   background: none;
+  /* padding-left: 2rem; */
 `
 
 export default function CodeBlock({ text }) {
