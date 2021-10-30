@@ -9,18 +9,21 @@ import Loader from "./loader"
 import { generateCodeSnippet } from "./generateCode"
 import CodeBlock from "./codeSnippet"
 
+// 🧰 Utils
+import { palette } from "../../../style/palette"
+
 // 🌀 Variants
 const labelVariants = {
   show: {
     display: "inline-block",
     y: "0px",
-    color: "white",
+    color: "#545454",
     opacity: "0.6",
   },
   hide: {
     display: "none",
     y: "5px",
-    color: "white",
+    color: "#545454",
     opacity: "0.6",
   },
   focus: {
@@ -33,14 +36,14 @@ const labelVariants = {
 
 // 💅🏽 Styled Components
 const Select = styled.select`
-  background: #2a2a2a;
+  background: #f9f9f9;
   width: 90px;
   padding: 5px;
   margin-bottom: 20px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  color: #e7e7e7;
+  color: #545454;
   font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;
@@ -60,8 +63,6 @@ const DemoLoaders = styled.div`
 
 const Label = styled(motion.span)`
   font-size: 10px;
-  color: white;
-  opacity: 0.6;
   margin-bottom: 0.25rem;
   font-family: Open Sans;
   text-transform: uppercase;
@@ -88,10 +89,12 @@ const FlexColumnLeft = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-items: flex-end;
-  min-width: 30%;
-  border-right: 1px solid #ffffff12;
+  align-items: center;
+  width: 30%;
   padding-right: 2rem;
+  padding: 2rem;
+  /* border-radius: 10px; */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 `
 const FlexColumnMiddle = styled.div`
   display: flex;
@@ -101,6 +104,12 @@ const FlexColumnMiddle = styled.div`
   align-items: center;
   min-width: 30%;
   padding: 0rem 1rem;
+  /* border: 2px solid #fbfbfb; */
+  align-items: center;
+  margin: 0rem 1rem;
+  overflow: hidden;
+  /* box-shadow: 0 6.7px 5.3px rgb(0 0 0 / 4%), 0 22.3px 17.9px rgb(0 0 0 / 6%),
+    0 100px 80px rgb(0 0 0 / 2%); */
 `
 const FlexColumnRight = styled.div`
   display: flex;
@@ -109,11 +118,13 @@ const FlexColumnRight = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 30%;
-  border-left: 1px solid #ffffff12;
   max-height: 300px;
   overflow: scroll;
   position: relative;
   padding-left: 2rem;
+  /* border-radius: 10px; */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+
   :-webkit-scrollbar {
     background-color: white;
   }
@@ -241,7 +252,7 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
       </FlexColumnLeft>
       <FlexColumnMiddle>
         {render == false ? (
-          <p style={{ color: "white" }}>
+          <p style={{ color: "darkgrey" }}>
             Hit <code>enter</code> (or click anywhere) to generate{" "}
           </p>
         ) : (

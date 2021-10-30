@@ -17,7 +17,7 @@ import { H1 } from "./resources/styledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;
-  margin: 10rem 0rem;
+  margin: 10rem 0rem 2rem 0rem;
   max-height: 700px;
   display: flex;
   justify-content: center;
@@ -107,6 +107,10 @@ const Copy = styled(motion.p)`
   letter-spacing: 0.1px;
   text-justify: inter-word;
   max-width: 700px;
+  &:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+
   @media (max-width: 767px) {
     font-size: 14px;
     opacity: 1;
@@ -163,11 +167,19 @@ export default function BioSection({
   }, [])
 
   let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  const dynamicRotate = useTransform(scrollY, inputRange, [6, -6])
-  const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
+  // const dynamicRotate = useTransform(scrollY, inputRange, [3, -3])
+  // const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
+  const descriptions = description.map((p, index) => (
+    <Copy key={p.index}>{p}</Copy>
+  ))
+
+  console.log(descriptions)
   return (
-    <Section id={`${id}`} style={{ transform: rotate }}>
+    <Section
+      id={`${id}`}
+      // style={{ transform: rotate }}
+    >
       <Grid positioning={positioning}>
         <ImageContainer positioning={positioning}>
           <Image src={asset}></Image>
@@ -184,7 +196,8 @@ export default function BioSection({
           <BioH1 positioning={positioning}>{title}</BioH1>
           {/* <h2>{pathLength.current}</h2> */}
           <CopyContainer positioning={positioning}>
-            <Copy id={"section"}>{description}</Copy>
+            {descriptions}
+            {/* <Copy id={"section"}>{description}</Copy> */}
             {/* <SocialLink
               inline={false}
               forbio={true}

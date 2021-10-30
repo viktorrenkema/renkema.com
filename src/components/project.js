@@ -14,9 +14,12 @@ import { palette } from "../../style/palette"
 
 // 🌱 Components
 import LoaderExample from "./resources/loaderExample"
+import SocialLink from "./sociallink"
+import Headinglink from "./headinglink"
 
 // 🖼️ Assets
-import Mesh from "../images/mesh-gradient.png"
+// import Mesh from "../images/mesh-gradient.png"
+import Macbook from "../images/macbook.png"
 
 // 💅🏽 Styled Components
 const ProjectFlexWrapper = styled(motion.div)`
@@ -25,7 +28,7 @@ const ProjectFlexWrapper = styled(motion.div)`
   justify-content: flex-start;
   align-items: center;
   /* background-color: #f5f5f5; */
-  background-color: hsl(0deg 0% 10%);
+  /* background-color: hsl(0deg 0% 10%); */
 `
 
 const TopSection = styled(motion.div)`
@@ -40,7 +43,7 @@ const TopSection = styled(motion.div)`
 `
 
 const BottomSection = styled(motion.div)`
-  width: 80%;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -48,7 +51,7 @@ const BottomSection = styled(motion.div)`
   align-items: center;
   margin: 2rem;
   padding: 2rem;
-  background: #202020;
+  /* background: #202020; */
 `
 
 const Label = styled(motion.div)`
@@ -65,10 +68,15 @@ const Label = styled(motion.div)`
   font-family: "GT-Walsheim-Bold";
 `
 
-const Hyperlink = styled(motion.a)`
-  color: ${palette.greys100};
-  text-decoration: underline;
-  text-decoration-color: rgba(235, 112, 133, 0);
+const ProjectDetails = styled(motion.span)`
+  color: ${palette.greys700};
+  font-size: 16;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
 `
 
 const Title = styled(motion.p)`
@@ -90,21 +98,21 @@ const DemoLoaders = styled.div`
   justify-content: center;
 `
 
-const MeshBg = styled.div`
-  border-radius: 10px;
-  width: 95vw;
-  height: 65vh;
-  background-image: url(${Mesh});
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  transform: rotate(1deg);
-  @media (max-width: 768px) {
+const MacbookRender = styled.div`
+  background-image: url(${Macbook});
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 0;
+  padding-top: 66.64%; /* (img-height / img-width * container-width) */
+  /* (853 / 1280 * 100) */
+  /* display: block;
+  width: 100%;
+  height: auto; */
+  /* @media (max-width: 768px) {
     padding: 0;
-    /* width: 80%; */
     height: 30vh;
-  }
+  } */
 `
 
 const LaDimoraScrollMask = styled(motion.div)`
@@ -114,7 +122,7 @@ const LaDimoraScrollMask = styled(motion.div)`
   height: 60vh;
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
     0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
-  transform: rotate(-1deg);
+  /* transform: rotate(-1deg); */
   @media (max-width: 768px) {
     padding: 0;
     width: 80%;
@@ -141,6 +149,7 @@ const ProjectsLabel = styled(motion.div)`
   margin-bottom: 1rem;
   display: block;
   letter-spacing: 0.05rem;
+  height: fit-content;
 `
 
 // Small mobile: < 370
@@ -161,7 +170,12 @@ export default function Project({
   id,
 }) {
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
+
   const [inputRange, setInputRange] = React.useState([0, 0])
+  const [
+    inputRangeLaDimoraScroller,
+    setInputRangeLaDimoraScroller,
+  ] = React.useState([0, 0])
 
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
@@ -169,39 +183,38 @@ export default function Project({
       el.getBoundingClientRect().top + 400,
       el.getBoundingClientRect().top - 400,
     ])
+
+    setInputRangeLaDimoraScroller([
+      el.getBoundingClientRect().top - 400,
+      el.getBoundingClientRect().top,
+    ])
   }, [])
 
   let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  const dynamicRotate = useTransform(scrollY, inputRange, [6, -6])
-  const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
-  const styleInfo = {
-    color: palette.greys100,
-    fontSize: 16,
-    letterSpacing: 0,
-    lineHeight: 1.4,
-    fontWeight: 400,
-    textAlign: "center",
-    width: "90%",
-    maxWidth: "500px",
-  }
+  // For the css transform, transform the scrollY into a 3, -3 range
+  // const dynamicRotate = useTransform(scrollY, inputRange, [3, -3])
+
+  // For the dynamic top position scroll, transform the scrollY into a distance range
+  const dynamicTop = useTransform(scrollY, inputRangeLaDimoraScroller, [
+    0,
+    -675,
+  ])
+  // const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
   const styleAssetFrame = {
-    // top: adjustedScroll,
+    top: dynamicTop,
     width: "100%",
     height: 1035,
     position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
     overflow: "visible",
   }
 
   const styleAssetInnerFrame = {
+    // top: dynamicTop,
+    height: 1035,
     width: "100%",
-    height: "100%",
-    position: "relative",
+    position: "absolute",
     overflow: "hidden",
     background: loaders ? "none" : "#fff",
     backgroundImage: `url(${asset})`,
@@ -210,41 +223,57 @@ export default function Project({
     backgroundPosition: "top",
   }
 
+  const PenScript = styled.span`
+    font-family: "Nanum Pen Script", cursive;
+  `
+
+  const styleAssetFrameMask = {
+    overflow: "hidden",
+    width: 800,
+    height: 360,
+    border: "8px solid white",
+    boxShadow:
+      "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
+  }
+
   return (
-    <ProjectFlexWrapper id={`${id}`} style={{ transform: rotate }}>
+    <ProjectFlexWrapper
+      id={`${id}`}
+      // style={{ transform: rotate }}
+    >
       <TopSection>
         <Label>{projectlabel}</Label>
         <Title>
-          <Hyperlink target="_blank" href={url}>
-            {projecttitle}
-          </Hyperlink>
+          <Headinglink title={projecttitle} url={url}></Headinglink>
         </Title>
-        <span style={styleInfo}>{projectinfo}</span>
+
+        <ProjectDetails>{projectinfo}</ProjectDetails>
         {loaders && (
-          <div style={{ transform: "scale(0.7)" }}>
+          <div>
             <a
               href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
               target="_blank"
+              rel="noreferrer"
             >
               <img
                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=light"
                 alt="Loader generator - Create animated loaders and generate production React code | Product Hunt"
-                style={{ width: "250px", height: "54px" }}
+                style={{ width: "175px", height: "37.8px" }}
               />
             </a>
           </div>
         )}
+        {/* <SocialLink text="Github" url="github.com" /> */}
         <BottomSection>
           {/* If project is La Dimora */}
           {ladimora && (
-            <MeshBg>
-              <LaDimoraScrollMask>
-                <motion.div style={styleAssetFrame} className="assetframe">
-                  <motion.div style={styleAssetInnerFrame}></motion.div>
-                </motion.div>
-              </LaDimoraScrollMask>
-            </MeshBg>
+            <motion.div style={styleAssetFrameMask} className="assetframemask">
+              <motion.div style={styleAssetFrame} className="assetframe">
+                <motion.div style={styleAssetInnerFrame}></motion.div>
+              </motion.div>
+            </motion.div>
           )}
+
           {/* If project is Loaders */}
           {loaders && (
             <LoaderExample
@@ -256,4 +285,27 @@ export default function Project({
       </TopSection>
     </ProjectFlexWrapper>
   )
+}
+
+{
+  /* {ladimora && (
+            <>
+              <motion.img
+                style={{ maxWidth: "80%" }}
+                src={Macbook}
+              ></motion.img>
+              <motion.div style={styleAssetInnerFrame}></motion.div>
+            </>
+          )} */
+}
+{
+  /* {ladimora && (
+            <MacbookRender>
+              <LaDimoraScrollMask>
+                <motion.div style={styleAssetFrame} className="assetframe">
+                  <motion.div style={styleAssetInnerFrame}></motion.div>
+                </motion.div>
+              </LaDimoraScrollMask>
+            </MacbookRender>
+          )} */
 }

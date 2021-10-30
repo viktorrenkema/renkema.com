@@ -6,11 +6,12 @@ import Intro from "../components/intro"
 import Bio from "../components/bio"
 import Layout from "../components/resources/layout"
 import Scroller from "../components/scroller"
-import Footer from "../components/footer"
 import { Projects } from "../components/projects"
+import Nav from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
+import { Link } from "gatsby"
 
 // 🌀 Variants
 
@@ -56,29 +57,8 @@ export default function IndexPage() {
           href="https://i.ibb.co/nsPWwRb/Fav.png"
         />
       </Helmet>
+      <Nav></Nav>
       <Intro id={"intro"}></Intro>
-      <Bio
-        positioning={"left"}
-        id={"groningen"}
-        asset={Groningen}
-        title={"About me"}
-        description={
-          "While obtaining my Master’s degree in Psychology, my interest for behaviour expanded to the field of web technology. Around the start of 2019, I began learning more about web development and digital user experiences to learn more about the web. My first experience in this area was learning HTML and CSS to create A/B tests for an online webshop. After this, I got to learn more about UX when I started working at the University Medical Center Groningen. Here, I studied the workflows of medical staff  for whom we built and implemented custom user interfaces in Epic, the hospital-wide electronic medical record."
-        }
-      ></Bio>
-      <Bio
-        positioning={"right"}
-        id={"framer"}
-        asset={FramerIcon}
-        title={"Framer"}
-        description={
-          "Joining Framer, I started out in the role of Community and Support Specialist where I ensured users are getting the support they required. Next to providing direct help via our support channels, I wrote support articles, created educational community posts, and assisted users with organising meetups in their local communities. I have since moved into the Product Specialist role, where my focus extends to also help organizations like KLM, Google, AirFrance and others become succesful by providing them with on-site workshops, direct support, and learning materials."
-        }
-      ></Bio>
-      <Projects></Projects>
-      <Scroller></Scroller>
-
-      {/* <Footer></Footer> */}
     </Layout>
   )
 }

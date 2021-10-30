@@ -32,8 +32,8 @@ const Section = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
+  /* perspective: 1000px;
+  perspective-origin: 50% 50%; */
   @media (max-width: 767px) {
     padding: 4em 0em;
   }
@@ -88,7 +88,7 @@ export function Projects() {
         loaders
         id={"loaders"}
       ></Project>
-      <Separator />
+      {/* <Separator /> */}
       <Project
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"website"}
@@ -102,7 +102,7 @@ export function Projects() {
         id={"ladimora"}
         url={"https://ladimora.org/"}
       ></Project>
-      <Separator />
+      {/* <Separator /> */}
       {/* <Project
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"Progressive Web App"}

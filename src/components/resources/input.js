@@ -8,14 +8,14 @@ import styled from "styled-components"
 // 💅🏽 Styled Components
 
 const InputField = styled.input`
-  background: #2a2a2a;
+  background: #f9f9f9;
   width: 90px;
   padding: 5px;
   margin-bottom: 20px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  color: #e7e7e7;
+  color: #545454;
   font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;

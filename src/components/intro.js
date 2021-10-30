@@ -44,14 +44,37 @@ const description = {
 }
 
 const socials = {
-  hidden: { x: 20, opacity: 0 },
+  hidden: {
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+  },
+  visible: {
+    transition: {
+      delayChildren: 1,
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const items = {
+  hidden: {
+    x: +50,
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
   visible: {
     x: 0,
     opacity: 1,
     transition: {
-      delay: 1,
       duration: 0.5,
     },
+  },
+  hover: {
+    opacity: 0.5,
   },
 }
 
@@ -155,12 +178,15 @@ export default function Introduction({ id }) {
     ])
   }, [])
 
-  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  const dynamicRotate = useTransform(scrollY, inputRange, [0, 8])
-  const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
+  // let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
+  // const dynamicRotate = useTransform(scrollY, inputRange, [0, 3])
+  // const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
 
   return (
-    <SectionIntro id={`${id}`} style={{ transform: rotate }}>
+    <SectionIntro
+      id={`${id}`}
+      // style={{ transform: rotate }}
+    >
       <Grid>
         <GridH1 initial="hidden" animate="visible" variants={name}>
           Hey, my name is Viktor
@@ -175,18 +201,29 @@ export default function Introduction({ id }) {
           field of design and
           <MonospaceSpan ref={el}></MonospaceSpan>
         </GridParagraph>
-        <SocialsContainer variants={socials} initial="hidden" animate="visible">
+
+        <SocialsContainer
+          variants={socials}
+          initial="hidden"
+          animate={"visible"}
+        >
           <SocialLink
+            variants={items}
+            whileHover="hover"
             inline={true}
             text={"Twitter"}
             url={"https://www.twitter.com/vrenkema"}
           ></SocialLink>{" "}
           <SocialLink
+            variants={items}
+            whileHover="hover"
             inline={true}
             text={"Linkedin"}
             url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
           ></SocialLink>{" "}
           <SocialLink
+            variants={items}
+            whileHover="hover"
             inline={true}
             text={"Email"}
             url={"mailto:viktor@renkema.com"}

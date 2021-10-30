@@ -16,36 +16,11 @@ const Wrapper = styled(motion.div)`
   position: absolute;
   top: 0px;
   background: none;
-  /* padding-left: 2rem; */
 `
 
 export default function CodeBlock({ text }) {
-  // const controls = useAnimation()
-
-  // const variants = {
-  //   start: { top: "0px" },
-  //   end: { top: "-1100px" },
-  // }
-
-  // React.useEffect(() => {
-  //   controls.start("end")
-  // }, [])
-
   return (
-    <Wrapper
-    // onHoverStart={() => {
-    //   return controls.stop
-    // }}
-    // onHoverEnd={() => {
-    //   controls.start
-    // }}
-    // onClick={() => {
-    //   controls.stop
-    // }}
-    // animate={controls}
-    // variants={variants}
-    // transition={{ duration: 10 }}
-    >
+    <Wrapper>
       <CopyBlock
         text={text}
         language={"jsx"}

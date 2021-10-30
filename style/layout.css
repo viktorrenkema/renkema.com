@@ -10,6 +10,10 @@
   src: url("../src/fonts/GT-Walsheim-Bold-Trial.woff2");
 }
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +21,7 @@
 
 code {
   font-family: "Roboto Mono" !important;
-  font-size: 14px !important;
+  font-size: 12px !important;
   line-height: 1.4 !important;
   padding: 0;
   top: -24px;
@@ -44,8 +48,8 @@ main {
   overflow: hidden;
   position: relative;
   background: white;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
+  /* perspective: 1000px;
+  perspective-origin: 50% 50%; */
   display: flex;
   flex-direction: column;
 }
