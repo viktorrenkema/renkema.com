@@ -57,7 +57,7 @@ export default function IndexPage() {
           href="https://i.ibb.co/nsPWwRb/Fav.png"
         />
       </Helmet>
-      <Nav></Nav>
+      <Nav dark={false}></Nav>
       <Intro id={"intro"}></Intro>
     </Layout>
   )

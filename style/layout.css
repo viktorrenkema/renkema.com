@@ -23,9 +23,8 @@ code {
   font-family: "Roboto Mono" !important;
   font-size: 12px !important;
   line-height: 1.4 !important;
-  padding: 0;
-  top: -24px;
   position: relative;
+  color: white;
 }
 
 #CodeColumn button {
@@ -79,3 +78,13 @@ p {
 /* Large desktop */
 /* @media (min-width: 1200px) {
 } */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // 🌀 Variants
 // 💅🏽 Styled Components
 
-const Layout = ({ children }) => {
+const Layout = props => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,20 +23,22 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const { dark, children } = props
+
   return (
     <>
       <motion.main
         initial={{
           opacity: 0,
-          x: -50,
+          // x: -50,
         }}
         animate={{
           opacity: 1,
-          x: 0,
+          // x: 0,
         }}
         exit={{
           opacity: 0,
-          x: 50,
+          // x: 50,
         }}
         transition={{
           type: "spring",
@@ -44,6 +46,13 @@ const Layout = ({ children }) => {
           stiffness: 75,
           duration: 0.3,
         }}
+        style={
+          dark
+            ? {
+                background: "linear-gradient(180deg, #1E2035 0%, #000000 100%)",
+              }
+            : { background: "white" }
+        }
       >
         {children}
       </motion.main>

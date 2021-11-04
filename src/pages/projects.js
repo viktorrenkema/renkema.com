@@ -32,10 +32,10 @@ import FramerIcon from "../../src/images/framerlogo.png"
 
 export default function Me() {
   return (
-    <Layout>
+    <Layout dark>
       <Helmet></Helmet>
-      <Nav></Nav>
-      <Projects></Projects>
+      <Nav dark></Nav>
+      <Projects dark></Projects>
       <Scroller></Scroller>
     </Layout>
   )

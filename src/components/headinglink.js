@@ -31,7 +31,7 @@ const HoverLine = styled(motion.div)`
 `
 
 const Hyperlink = styled(motion.a)`
-  color: ${palette.greys700};
+  color: ${props => (props.dark ? palette.greys100 : palette.greys700)};
   text-decoration: underline;
   text-decoration-color: rgba(235, 112, 133, 0);
 `
@@ -47,25 +47,26 @@ const arrowVariants = {
   rotate: { transform: "rotate(45deg)" },
 }
 
-export default function Headinglink({ text, url, title }) {
+export default function Headinglink({ text, url, title, dark }) {
   const [hoverTitle, setHoverTitle] = React.useState("")
 
   return (
     <LinkWrapper
-      whileHover={{ opacity: 0.5 }}
-      // onMouseEnter={() => setHoverTitle("enter")}
-      // onMouseLeave={() => setHoverTitle("release")}
+
+    // onMouseEnter={() => setHoverTitle("enter")}
+    // onMouseLeave={() => setHoverTitle("release")}
     >
-      <Hyperlink target="_blank" href={url}>
+      <Hyperlink whileHover={{ opacity: 0.7 }} dark target="_blank" href={url}>
         {title}
       </Hyperlink>
 
       <ArrowLink
-        variants={arrowVariants}
-        animate={hoverTitle ? "rotate" : "default"}
-        initial={"hoverTitle"}
+        whileHover={{ opacity: 1 }}
+        // variants={arrowVariants}
+        // animate={hoverTitle ? "rotate" : "default"}
+        // initial={"hoverTitle"}
       ></ArrowLink>
-      <HoverLine
+      {/* <HoverLine
         variants={hoverTitleVariants}
         animate={
           hoverTitle === "enter"
@@ -76,7 +77,7 @@ export default function Headinglink({ text, url, title }) {
         }
         onHoverStart={() => setHoverTitle("enter")}
         onHoverEnd={() => setHoverTitle("release")}
-      ></HoverLine>
+      ></HoverLine> */}
     </LinkWrapper>
   )
 }

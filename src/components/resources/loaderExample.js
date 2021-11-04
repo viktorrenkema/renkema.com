@@ -17,15 +17,15 @@ const labelVariants = {
   show: {
     display: "inline-block",
     y: "0px",
-    color: "#545454",
-    opacity: "0.6",
+    color: "white",
+    opacity: "1",
   },
-  hide: {
-    display: "none",
-    y: "5px",
-    color: "#545454",
-    opacity: "0.6",
-  },
+  // hide: {
+  //   display: "none",
+  //   y: "5px",
+  //   color: "white",
+  //   opacity: "0.6",
+  // },
   focus: {
     color: "#eb7084",
     opacity: 1,
@@ -36,14 +36,13 @@ const labelVariants = {
 
 // 💅🏽 Styled Components
 const Select = styled.select`
-  background: #f9f9f9;
+  background: #25273f;
   width: 90px;
   padding: 5px;
-  margin-bottom: 20px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  color: #545454;
+  color: white;
   font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;
@@ -56,6 +55,7 @@ const Select = styled.select`
 `
 const DemoLoaders = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   position: relative;
@@ -67,12 +67,14 @@ const Label = styled(motion.span)`
   font-family: Open Sans;
   text-transform: uppercase;
   font-weight: 500;
+  color: white;
+  letter-spacing: 1px;
 `
 
 const Notice = styled(motion.span)`
   font-family: Open Sans;
   font-weight: 500;
-  color: #fb4560;
+  color: white;
   opacity: 1;
   font-size: 12px;
   margin-bottom: 0.35rem;
@@ -81,20 +83,17 @@ const Notice = styled(motion.span)`
 const LabelWrap = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
   position: relative;
 `
-const FlexColumnLeft = styled.div`
+const FlexInputs = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   align-items: center;
-  width: 30%;
-  padding-right: 2rem;
   padding: 2rem;
-  /* border-radius: 10px; */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  gap: 1rem;
 `
 const FlexColumnMiddle = styled.div`
   display: flex;
@@ -130,6 +129,14 @@ const FlexColumnRight = styled.div`
   }
 `
 
+const Span = styled(motion.span)`
+  color: ${palette.greys100};
+  font-size: 12;
+  letter-spacing: 0;
+  line-height: 1.4;
+  font-weight: 400;
+`
+
 export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
   const [render, startRender] = React.useState(true)
   const [error, setError] = React.useState(false)
@@ -149,7 +156,7 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
 
   return (
     <DemoLoaders>
-      <FlexColumnLeft>
+      <FlexInputs>
         <LabelWrap>
           <Label
             variants={labelVariants}
@@ -159,14 +166,14 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
           >
             Quantity
           </Label>
-          <Notice
+          {/* <Notice
             variants={labelVariants}
             animate={focus === "quantity" ? "focus" : error ? "show" : "hide"}
             initial={"hide"}
             transition={{ duration: "0.3" }}
           >
             Max is 10
-          </Notice>
+          </Notice> */}
           <Input
             quantityLoaders={quantityLoaders}
             value={quantityLoaders}
@@ -249,12 +256,12 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
             <option value="backInOut">backInOut</option>
           </Select>
         </LabelWrap>
-      </FlexColumnLeft>
+      </FlexInputs>
       <FlexColumnMiddle>
         {render == false ? (
-          <p style={{ color: "darkgrey" }}>
+          <Span>
             Hit <code>enter</code> (or click anywhere) to generate{" "}
-          </p>
+          </Span>
         ) : (
           <Loader
             ease={ease}

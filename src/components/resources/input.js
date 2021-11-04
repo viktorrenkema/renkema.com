@@ -8,23 +8,24 @@ import styled from "styled-components"
 // 💅🏽 Styled Components
 
 const InputField = styled.input`
-  background: #f9f9f9;
+  background: #25273f;
   width: 90px;
   padding: 5px;
-  margin-bottom: 20px;
   display: inline-block;
   box-sizing: border-box;
   text-align: center;
-  color: #545454;
+  color: white;
   font-size: 12px;
   border-radius: 5px;
   border: 1px solid transparent;
   outline: none;
+
   :focus {
     border: 1px solid #eb7085;
     outline: none;
     filter: none;
   }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;

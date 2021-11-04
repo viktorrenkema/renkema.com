@@ -33,7 +33,7 @@ const ProjectFlexWrapper = styled(motion.div)`
 
 const TopSection = styled(motion.div)`
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 8rem 2rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -50,8 +50,6 @@ const BottomSection = styled(motion.div)`
   justify-content: center;
   align-items: center;
   margin: 2rem;
-  padding: 2rem;
-  /* background: #202020; */
 `
 
 const Label = styled(motion.div)`
@@ -69,7 +67,7 @@ const Label = styled(motion.div)`
 `
 
 const ProjectDetails = styled(motion.span)`
-  color: ${palette.greys700};
+  color: ${palette.greys100};
   font-size: 16;
   letter-spacing: 0;
   line-height: 1.4;
@@ -249,14 +247,14 @@ export default function Project({
 
         <ProjectDetails>{projectinfo}</ProjectDetails>
         {loaders && (
-          <div>
+          <div style={{ paddingTop: "24px" }}>
             <a
               href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=light"
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=dark"
                 alt="Loader generator - Create animated loaders and generate production React code | Product Hunt"
                 style={{ width: "175px", height: "37.8px" }}
               />

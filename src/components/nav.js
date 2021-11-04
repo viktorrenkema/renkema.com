@@ -14,7 +14,7 @@ const Container = styled(motion.div)`
   font-size: 14px;
   display: inline-flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
   top: 0;
@@ -23,6 +23,11 @@ const Container = styled(motion.div)`
   width: 100%;
   margin: 0 auto;
   height: 70px;
+  background-color: ${props =>
+    props.dark ? "rgba(29, 32, 53, 0)" : `rgba(255, 255, 255, 0);`};
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  z-index: 10;
 `
 
 const Segment = styled.div`
@@ -43,10 +48,10 @@ const Paragraph = styled(motion.p)`
 const containerVariants = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: -20,
     transition: {
-      delay: 0.4,
-      duration: 0.3,
+      delay: 0.2,
+      duration: 0.6,
       ease: "easeIn",
     },
   },
@@ -54,21 +59,27 @@ const containerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.4,
-      duration: 0.3,
+      delay: 0.2,
+      duration: 0.6,
       ease: "easeIn",
     },
   },
 }
 
-export default function Nav() {
+export default function Nav(props) {
+  const { dark } = props
   return (
-    <Container animate="visible" initial="hidden" variants={containerVariants}>
-      <SocialLink nav text={"home"}></SocialLink>
-      <Segment>
-        <SocialLink nav text={"me"}></SocialLink>
-        <SocialLink nav text={"projects"}></SocialLink>
-      </Segment>
+    <Container
+      dark={dark}
+      animate="visible"
+      initial="hidden"
+      variants={containerVariants}
+    >
+      <SocialLink nav dark={dark} text={"home"}></SocialLink>
+      {/* <Segment> */}
+      <SocialLink nav dark={dark} text={"me"}></SocialLink>
+      <SocialLink nav dark={dark} text={"projects"}></SocialLink>
+      {/* </Segment> */}
     </Container>
   )
 }

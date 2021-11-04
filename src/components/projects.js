@@ -66,7 +66,8 @@ const ProjectsLabel = styled(motion.div)`
   letter-spacing: 0.05rem;
 `
 
-export function Projects() {
+export function Projects(props) {
+  const { dark } = props
   // const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 
   return (
@@ -88,7 +89,7 @@ export function Projects() {
         loaders
         id={"loaders"}
       ></Project>
-      {/* <Separator /> */}
+
       <Project
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"website"}
@@ -102,7 +103,6 @@ export function Projects() {
         id={"ladimora"}
         url={"https://ladimora.org/"}
       ></Project>
-      {/* <Separator /> */}
       {/* <Project
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"Progressive Web App"}
