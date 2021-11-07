@@ -14,12 +14,13 @@ import { palette } from "../../style/palette"
 
 // 🌱 Components
 import LoaderExample from "./resources/loaderExample"
-import SocialLink from "./sociallink"
+import LinkSocial from "./LinkSocial"
 import Headinglink from "./headinglink"
 
 // 🖼️ Assets
-// import Mesh from "../images/mesh-gradient.png"
-import Macbook from "../images/macbook.png"
+import ladimoradesktop from "../../src/images/ladimoradesktop.png"
+import ladimoramobile from "../../src/images/ladimoramobile.png"
+import ladimoramobilenav from "../../src/images/ladimoramobilenav.png"
 
 // 💅🏽 Styled Components
 const ProjectFlexWrapper = styled(motion.div)`
@@ -33,7 +34,7 @@ const ProjectFlexWrapper = styled(motion.div)`
 
 const TopSection = styled(motion.div)`
   width: 100%;
-  padding: 4rem 2rem 8rem 2rem;
+  padding: 6rem 2rem 6rem 2rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -96,23 +97,6 @@ const DemoLoaders = styled.div`
   justify-content: center;
 `
 
-const MacbookRender = styled.div`
-  background-image: url(${Macbook});
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 0;
-  padding-top: 66.64%; /* (img-height / img-width * container-width) */
-  /* (853 / 1280 * 100) */
-  /* display: block;
-  width: 100%;
-  height: auto; */
-  /* @media (max-width: 768px) {
-    padding: 0;
-    height: 30vh;
-  } */
-`
-
 const LaDimoraScrollMask = styled(motion.div)`
   overflow: hidden;
   border-radius: 4px;
@@ -150,14 +134,44 @@ const ProjectsLabel = styled(motion.div)`
   height: fit-content;
 `
 
+const MobileLaDimoraMask = styled.div`
+  overflow: hidden;
+  width: 267px;
+  height: 360px;
+  border-radius: 4px;
+  border: 8px solid rgb(36 38 70);
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
+`
+
+const MobileLaDimoraNav = styled.div`
+  background-image: url(${ladimoramobilenav});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position-x: left;
+  position: relative;
+  top: 0;
+  width: 267px;
+  height: 43px;
+  z-index: 20;
+`
+
+// const MobileLaDimoraFrame = styled.div`
+
+// `
+
+// const MobileLaDimoraInnerFrame = styled.div`
+
+// `
+
 // Small mobile: < 370
 // Mobile: <426
 // Tablet: <769
 // Desktop: >768
 
 export default function Project({
-  ladimora,
-  loaders,
+  project,
   hyperlink,
   asset,
   projectlabel,
@@ -169,56 +183,76 @@ export default function Project({
 }) {
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
 
-  const [inputRange, setInputRange] = React.useState([0, 0])
   const [
     inputRangeLaDimoraScroller,
     setInputRangeLaDimoraScroller,
   ] = React.useState([0, 0])
 
+  const [viewportWidth, setViewportWidth] = React.useState(0)
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
-    setInputRange([
-      el.getBoundingClientRect().top + 400,
-      el.getBoundingClientRect().top - 400,
-    ])
 
     setInputRangeLaDimoraScroller([
-      el.getBoundingClientRect().top - 400,
-      el.getBoundingClientRect().top,
+      el.getBoundingClientRect().top - 300,
+      el.getBoundingClientRect().top + 300,
     ])
+
+    setViewportWidth(window.innerWidth)
   }, [])
 
   let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
 
-  // For the css transform, transform the scrollY into a 3, -3 range
-  // const dynamicRotate = useTransform(scrollY, inputRange, [3, -3])
-
   // For the dynamic top position scroll, transform the scrollY into a distance range
   const dynamicTop = useTransform(scrollY, inputRangeLaDimoraScroller, [
     0,
-    -675,
+    -446,
   ])
-  // const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
+  const dynamicTopMobile = useTransform(scrollY, inputRangeLaDimoraScroller, [
+    0,
+    -1200,
+  ])
+
+  console.log(viewportWidth)
 
   const styleAssetFrame = {
     top: dynamicTop,
     width: "100%",
-    height: 1035,
     position: "relative",
     overflow: "visible",
   }
 
   const styleAssetInnerFrame = {
-    // top: dynamicTop,
-    height: 1035,
-    width: "100%",
+    height: 810,
+    width: "800px",
     position: "absolute",
     overflow: "hidden",
-    background: loaders ? "none" : "#fff",
-    backgroundImage: `url(${asset})`,
+    background: project === "loaders" ? "none" : "#fff",
+    backgroundImage: `url(${ladimoradesktop})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top",
+    backgroundPositionX: "left",
+  }
+
+  const MobileLaDimoraFrame = {
+    top: dynamicTopMobile,
+    width: "100%",
+    position: "relative",
+    overflow: "visible",
+  }
+
+  const MobileLaDimoraInnerFrame = {
+    // To calculate the height and width, use the intrinsic aspect ratio. Find the asset’s dimensions, calculate (https://andrew.hedges.name/experiments/aspect_ratio/) the new height (or width) by plugging in the asset’s dimensions and the Frame’s set width (or height)
+    height: 1518,
+    width: 267,
+    position: "absolute",
+    overflow: "hidden",
+    background: project === "loaders" ? "none" : "#fff",
+    backgroundImage: `url(${ladimoramobile})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top",
+    backgroundPositionX: "left",
   }
 
   const PenScript = styled.span`
@@ -227,18 +261,16 @@ export default function Project({
 
   const styleAssetFrameMask = {
     overflow: "hidden",
-    width: 800,
+    width: 425,
     height: 360,
-    border: "8px solid white",
+    borderRadius: "4px",
+    border: "8px solid rgb(36 38 70)",
     boxShadow:
       "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
   }
 
   return (
-    <ProjectFlexWrapper
-      id={`${id}`}
-      // style={{ transform: rotate }}
-    >
+    <ProjectFlexWrapper id={`${id}`}>
       <TopSection>
         <Label>{projectlabel}</Label>
         <Title>
@@ -246,7 +278,7 @@ export default function Project({
         </Title>
 
         <ProjectDetails>{projectinfo}</ProjectDetails>
-        {loaders && (
+        {project === "loaders" && (
           <div style={{ paddingTop: "24px" }}>
             <a
               href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
@@ -263,8 +295,18 @@ export default function Project({
         )}
         {/* <SocialLink text="Github" url="github.com" /> */}
         <BottomSection>
-          {/* If project is La Dimora */}
-          {ladimora && (
+          {/* If project is La Dimora & viewport is under laptop */}
+          {project === "ladimora" && viewportWidth <= 1024 && (
+            <MobileLaDimoraMask>
+              <MobileLaDimoraNav></MobileLaDimoraNav>
+              <motion.div style={MobileLaDimoraFrame}>
+                <motion.div style={MobileLaDimoraInnerFrame}></motion.div>
+              </motion.div>
+            </MobileLaDimoraMask>
+          )}
+
+          {/* If project is La Dimora & viewport is over laptop */}
+          {project === "ladimora" && viewportWidth > 1024 && (
             <motion.div style={styleAssetFrameMask} className="assetframemask">
               <motion.div style={styleAssetFrame} className="assetframe">
                 <motion.div style={styleAssetInnerFrame}></motion.div>
@@ -273,37 +315,29 @@ export default function Project({
           )}
 
           {/* If project is Loaders */}
-          {loaders && (
+          {project === "loaders" && (
             <LoaderExample
               setQuantityLoaders={setQuantityLoaders}
               quantityLoaders={quantityLoaders}
             />
           )}
+
+          {/* If project is Pulse */}
+          {project === "pulse" && (
+            <div
+              style={{
+                width: 267,
+                height: 396,
+                backgroundColor: "rgb(57 63 110)",
+                overflow: "visible",
+                opacity: 0.3,
+                borderRadius: 30,
+                border: "8px solid rgb(36 38 70)",
+              }}
+            ></div>
+          )}
         </BottomSection>
       </TopSection>
     </ProjectFlexWrapper>
   )
-}
-
-{
-  /* {ladimora && (
-            <>
-              <motion.img
-                style={{ maxWidth: "80%" }}
-                src={Macbook}
-              ></motion.img>
-              <motion.div style={styleAssetInnerFrame}></motion.div>
-            </>
-          )} */
-}
-{
-  /* {ladimora && (
-            <MacbookRender>
-              <LaDimoraScrollMask>
-                <motion.div style={styleAssetFrame} className="assetframe">
-                  <motion.div style={styleAssetInnerFrame}></motion.div>
-                </motion.div>
-              </LaDimoraScrollMask>
-            </MacbookRender>
-          )} */
 }

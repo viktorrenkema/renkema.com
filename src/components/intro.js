@@ -10,7 +10,7 @@ import styled from "styled-components"
 import Typed from "typed.js"
 
 // 🌱 Components
-import SocialLink from "./sociallink"
+import LinkSocial from "./LinkSocial"
 
 // 🧰 Utils
 
@@ -121,6 +121,7 @@ const GridParagraph = styled(Paragraph)`
 
 const GridH1 = styled(H1)`
   grid-area: 1 / 1 / 2 / 1;
+  text-align: start;
   @media (max-width: 767px) {
     grid-area: 1 / 1 / 2 / 1;
   }
@@ -141,7 +142,11 @@ const MonospaceSpan = styled.span`
 
 const SocialsContainer = styled(motion.div)`
   display: flex;
-  gap: 5px;
+  gap: 16px;
+
+  @media (max-width: 479px) {
+    gap: 8px;
+  }
 `
 
 export default function Introduction({ id }) {
@@ -207,27 +212,24 @@ export default function Introduction({ id }) {
           initial="hidden"
           animate={"visible"}
         >
-          <SocialLink
+          <LinkSocial
             variants={items}
             whileHover="hover"
-            inline={true}
             text={"Twitter"}
             url={"https://www.twitter.com/vrenkema"}
-          ></SocialLink>{" "}
-          <SocialLink
+          ></LinkSocial>{" "}
+          <LinkSocial
             variants={items}
             whileHover="hover"
-            inline={true}
             text={"Linkedin"}
             url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
-          ></SocialLink>{" "}
-          <SocialLink
+          ></LinkSocial>{" "}
+          <LinkSocial
             variants={items}
             whileHover="hover"
-            inline={true}
             text={"Email"}
             url={"mailto:viktor@renkema.com"}
-          ></SocialLink>
+          ></LinkSocial>
         </SocialsContainer>
       </Grid>
     </SectionIntro>

@@ -8,7 +8,8 @@ import useIsInViewport from "use-is-in-viewport"
 import Project from "../components/project"
 
 // 🧰 Utils
-import ladimorascroll from "../../src/images/ladimorascroll.png"
+import ladimoradesktop from "../../src/images/ladimoradesktop.png"
+import ladimoramobile from "../../src/images/ladimoramobile.png"
 
 // 🌀 Variants
 const container = {
@@ -37,12 +38,6 @@ const Section = styled(motion.div)`
   @media (max-width: 767px) {
     padding: 4em 0em;
   }
-`
-const Separator = styled(motion.div)`
-  background: white;
-  height: 1px;
-  margin: 12rem 4rem 4rem 4rem;
-  opacity: 0.1;
 `
 
 const ProjectsLabel = styled(motion.div)`
@@ -86,7 +81,7 @@ export function Projects(props) {
         }
         linktext={"Visit loaders.io"}
         url={"https://loadergenerator.vercel.app/"}
-        loaders
+        project="loaders"
         id={"loaders"}
       ></Project>
 
@@ -97,21 +92,22 @@ export function Projects(props) {
         projectinfo={
           "La Dimora is a beautiful house located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
         }
-        asset={ladimorascroll}
+        asset={ladimoradesktop}
         linktext={"Visit ladimora.org"}
-        ladimora
+        project="ladimora"
         id={"ladimora"}
         url={"https://ladimora.org/"}
       ></Project>
-      {/* <Project
+      <Project
+        project="pulse"
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"Progressive Web App"}
-        projecttitle={"Workout Tracker"}
+        projecttitle={"Pulse"}
         projectinfo={
           "The sole purpose of this project was to build a workout tracker that offers exactly the features that I needed and nothing more. "
         }
         url={"https://esteem-app.vercel.app/"}
-      ></Project> */}
+      ></Project>
     </Section>
   )
 }

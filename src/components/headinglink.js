@@ -11,23 +11,40 @@ import { ArrowLink } from "./resources/icons"
 import { palette } from "../../style/palette"
 
 // 🌀 Variants
-const variants = {
+const hoverTitleVariants = {
   default: {
-    height: "0px",
+    width: "0px",
+    transition: {
+      ease: "easeOut",
+    },
   },
   hover: {
-    height: "100%",
+    width: "60%",
+    transition: {
+      ease: "easeIn",
+    },
   },
+}
+
+const arrowVariants = {
+  default: { transform: "rotate(0deg)" },
+  rotate: { transform: "rotate(45deg)" },
 }
 
 // 💅🏽 Styled Components
 const LinkWrapper = styled(motion.div)`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 `
+const FlexHyperlinkArrow = styled(motion.div)`
+  display: flex;
+`
+
 const HoverLine = styled(motion.div)`
   height: 2px;
-  width: 100px;
-  background-color: black;
+  background-color: white;
+  /* margin-left: 30%; */
 `
 
 const Hyperlink = styled(motion.a)`
@@ -36,48 +53,31 @@ const Hyperlink = styled(motion.a)`
   text-decoration-color: rgba(235, 112, 133, 0);
 `
 
-const hoverTitleVariants = {
-  default: { width: "0%" },
-  hover: { width: "100%" },
-  release: { width: "0%" },
-}
-
-const arrowVariants = {
-  default: { transform: "rotate(0deg)" },
-  rotate: { transform: "rotate(45deg)" },
-}
-
 export default function Headinglink({ text, url, title, dark }) {
-  const [hoverTitle, setHoverTitle] = React.useState("")
+  const [hoverTitle, setHoverTitle] = React.useState(false)
 
   return (
     <LinkWrapper
-
-    // onMouseEnter={() => setHoverTitle("enter")}
-    // onMouseLeave={() => setHoverTitle("release")}
+      onMouseEnter={() => setHoverTitle(true)}
+      onMouseLeave={() => setHoverTitle(false)}
     >
-      <Hyperlink whileHover={{ opacity: 0.7 }} dark target="_blank" href={url}>
-        {title}
-      </Hyperlink>
+      <FlexHyperlinkArrow>
+        <Hyperlink dark target="_blank" href={url}>
+          {title}
+        </Hyperlink>
 
-      <ArrowLink
-        whileHover={{ opacity: 1 }}
-        // variants={arrowVariants}
-        // animate={hoverTitle ? "rotate" : "default"}
-        // initial={"hoverTitle"}
-      ></ArrowLink>
-      {/* <HoverLine
+        <ArrowLink
+          whileHover={{ opacity: 1 }}
+          // variants={arrowVariants}
+          // animate={hoverTitle ? "rotate" : "default"}
+          // initial={"hoverTitle"}
+        ></ArrowLink>
+      </FlexHyperlinkArrow>
+      <HoverLine
         variants={hoverTitleVariants}
-        animate={
-          hoverTitle === "enter"
-            ? "hover"
-            : hoverTitle === "release"
-            ? "release"
-            : "default"
-        }
-        onHoverStart={() => setHoverTitle("enter")}
-        onHoverEnd={() => setHoverTitle("release")}
-      ></HoverLine> */}
+        animate={hoverTitle ? "hover" : "default"}
+        initial="default"
+      ></HoverLine>
     </LinkWrapper>
   )
 }

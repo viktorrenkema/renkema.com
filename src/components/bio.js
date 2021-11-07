@@ -17,7 +17,7 @@ import { H1 } from "./resources/styledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;
-  margin: 10rem 0rem 2rem 0rem;
+  margin: 12rem 2rem 6rem 2rem;
   max-height: 700px;
   display: flex;
   justify-content: center;
@@ -53,7 +53,6 @@ const BioH1 = styled(H1)`
   grid-area: ${props =>
     props.positioning == "left" ? "1 / 2 / 2 / 3" : `1 / 1 / 2 / 1`};
   padding-bottom: 1rem;
-
   @media (min-width: 768px) and (max-width: 1200px) {
   }
   @media (max-width: 767px) {
@@ -63,11 +62,15 @@ const BioH1 = styled(H1)`
     justify-self: start;
     padding: 3rem 1.5rem 1.5rem 1.5rem;
   }
+
+  @media (max-width: 479px) {
+    font-size: 32px;
+  }
 `
 const ImageContainer = styled(motion.div)`
   justify-self: center;
   align-self: center;
-  max-width: 650px;
+  max-width: 450px;
   position: relative;
 
   grid-area: ${props =>
@@ -198,12 +201,6 @@ export default function BioSection({
           <CopyContainer positioning={positioning}>
             {descriptions}
             {/* <Copy id={"section"}>{description}</Copy> */}
-            {/* <SocialLink
-              inline={false}
-              forbio={true}
-              linktext={"Ask me more"}
-              url={"mailto:viktor@renkema.com"}
-            ></SocialLink>{" "} */}
           </CopyContainer>
         </motion.div>{" "}
       </Grid>

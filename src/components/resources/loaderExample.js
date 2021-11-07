@@ -95,17 +95,16 @@ const FlexInputs = styled.div`
   padding: 2rem;
   gap: 1rem;
 `
-const FlexColumnMiddle = styled.div`
+const FlexLoadersPreview = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   align-items: center;
   min-width: 30%;
-  padding: 0rem 1rem;
   /* border: 2px solid #fbfbfb; */
   align-items: center;
-  margin: 0rem 1rem;
+  margin: 2rem;
   overflow: hidden;
   /* box-shadow: 0 6.7px 5.3px rgb(0 0 0 / 4%), 0 22.3px 17.9px rgb(0 0 0 / 6%),
     0 100px 80px rgb(0 0 0 / 2%); */
@@ -257,7 +256,7 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
           </Select>
         </LabelWrap>
       </FlexInputs>
-      <FlexColumnMiddle>
+      <FlexLoadersPreview>
         {render == false ? (
           <Span>
             Hit <code>enter</code> (or click anywhere) to generate{" "}
@@ -270,7 +269,7 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
             quantityLoaders={quantityLoaders}
           />
         )}
-      </FlexColumnMiddle>
+      </FlexLoadersPreview>
       <FlexColumnRight id={"CodeColumn"}>
         <CodeBlock
           text={generateCodeSnippet({

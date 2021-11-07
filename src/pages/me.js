@@ -2,16 +2,13 @@
 import React from "react"
 
 // 🌱 Components
-import Intro from "../components/intro"
 import Bio from "../components/bio"
 import Layout from "../components/resources/layout"
 import Scroller from "../components/scroller"
-import { Projects } from "../components/projects"
 import Nav from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
-import { Link } from "gatsby"
 
 // 🌀 Variants
 
@@ -25,15 +22,15 @@ export default function Me() {
   return (
     <Layout>
       <Helmet></Helmet>
-      <Nav></Nav>
+      <Nav current="me"></Nav>
       <Bio
         positioning={"left"}
         id={"groningen"}
         asset={Groningen}
-        title={"A bit more about me"}
+        title={"More about me"}
         description={[
-          "I graduated with a Master’s degree in Psychology back in 2018. At the same time, an interest in web technology grew which brought me to two roles focused more on entry-level HTML/CSS user experience.",
-          "After joining Framer in 2019, I started to focus more seriously on web development and design.",
+          "While achieving a Master’s in Psychology in 2018, an interest in web technology also started to develop. After briefly working in semi-technical roles at an e-commerce startup and the IT dept. of an academic hospital, I started at Framer in 2019.",
+          // "After joining Framer in 2019, I started to focus more seriously on web development and design.",
         ]}
       ></Bio>
       <Bio
@@ -42,8 +39,9 @@ export default function Me() {
         asset={FramerIcon}
         title={"Framer"}
         description={[
-          "Joining Framer, I started out in the role of Community and Support Specialist where I ensured users are getting the support they required. Next to providing direct help via our support channels, I wrote support articles, created educational community posts, and assisted users with organising meetups in their local communities.",
-          "I have since moved into the Product Specialist role, where my focus extends to also help organizations like KLM, Google, AirFrance and others become succesful by providing them with on-site workshops, direct support, and learning materials.",
+          "At Framer, I started out in the role of Community and Support Specialist which allowed me to get some exposure to design and code.",
+          "In 2020, I moved into the Product Specialist role where I now focused on helping Enterprises such as Facebook, Microsoft, Shopify and many others become succesful with (on-site) workshops, technical support, and learning materials.",
+          "I am currently in the Lead Product Specialist role, involving more strategic work as the team and company grows.",
         ]}
       ></Bio>
       <Scroller />

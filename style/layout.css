@@ -88,3 +88,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+#framer {
+  margin: 4rem 2rem 10rem 2rem !important;
+}

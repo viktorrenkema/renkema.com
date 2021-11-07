@@ -3,21 +3,11 @@ import React from "react"
 
 // 🌱 Components
 import Intro from "../components/intro"
-import Bio from "../components/bio"
 import Layout from "../components/resources/layout"
-import Scroller from "../components/scroller"
-import { Projects } from "../components/projects"
 import Nav from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
-import { Link } from "gatsby"
-
-// 🌀 Variants
-
-// 🖼️ Assets
-import Groningen from "../../src/images/groningen.jpeg"
-import FramerIcon from "../../src/images/framerlogo.png"
 
 // 💅🏽 Styled Components
 
@@ -57,7 +47,7 @@ export default function IndexPage() {
           href="https://i.ibb.co/nsPWwRb/Fav.png"
         />
       </Helmet>
-      <Nav dark={false}></Nav>
+      <Nav current="home" dark={false}></Nav>
       <Intro id={"intro"}></Intro>
     </Layout>
   )
