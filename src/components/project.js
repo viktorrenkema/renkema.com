@@ -261,7 +261,7 @@ export default function Project({
 
   const styleAssetFrameMask = {
     overflow: "hidden",
-    width: 425,
+    width: 800,
     height: 360,
     borderRadius: "4px",
     border: "8px solid rgb(36 38 70)",
