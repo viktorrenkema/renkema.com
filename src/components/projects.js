@@ -5,7 +5,7 @@ import styled from "styled-components"
 import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
-import Project from "./Project"
+import Project from "./Project.js"
 
 // 🧰 Utils
 

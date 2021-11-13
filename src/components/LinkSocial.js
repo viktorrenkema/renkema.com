@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import { ArrowLink } from "./resources/Icons"
+import { ArrowLink } from "./resources/Icons.js"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"

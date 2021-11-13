@@ -2,9 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import Introduction from "../components/intro"
-import LayoutComponent from "../components/resources/layout"
-import Navigation from "../components/nav"
+import Introduction from "../components/intro.js"
+import LayoutComponent from "../components/resources/layout.js"
+import Navigation from "../components/nav.js"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"

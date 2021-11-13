@@ -2,9 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import Biography from "../components/bio"
-import LayoutComponent from "../components/resources/layout"
-import Navigation from "../components/nav"
+import Biography from "../components/bio.js"
+import LayoutComponent from "../components/resources/layout.js"
+import Navigation from "../components/nav.js"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
