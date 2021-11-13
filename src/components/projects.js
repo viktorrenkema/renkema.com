@@ -35,7 +35,7 @@ const Section = styled(motion.div)`
   }
 `
 
-export function Projects(props) {
+export function ProjectsList(props) {
   const { dark } = props
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 

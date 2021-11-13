@@ -2,9 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import Bio from "../components/Bio"
-import Layout from "../components/resources/Layout"
-import Nav from "../components/Nav"
+import Biography from "../components/Bio"
+import LayoutComponent from "../components/resources/Layout"
+import Navigation from "../components/Nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -19,10 +19,10 @@ import FramerIcon from "../../src/images/framerlogo.png"
 
 export default function Me() {
   return (
-    <Layout>
+    <LayoutComponent>
       <Helmet></Helmet>
-      <Nav current="me"></Nav>
-      <Bio
+      <Navigation current="me"></Navigation>
+      <Biography
         positioning={"left"}
         id={"groningen"}
         asset={Groningen}
@@ -32,8 +32,8 @@ export default function Me() {
         ]}
         linktext="Visit LinkedIn for more"
         hyperlink="https://www.linkedin.com/in/vrenkema/"
-      ></Bio>
-      <Bio
+      ></Biography>
+      <Biography
         positioning={"right"}
         id={"framer"}
         asset={FramerIcon}
@@ -42,14 +42,9 @@ export default function Me() {
           "At Framer, I started out as Community and Support Specialist. In this role, I learned about design and code by helping users with their projects. In 2020, I moved into the Product Specialist role to enable Enterprises like Facebook, Microsoft, Shopify with on-site and digital workshops, technical support, and documentation.",
           "As of 2021, I moved into the Lead Product Specialist role, which now also involves helping leadership with strategic work around Enterprise expansion, fostering our large community, onboarding team hires, and more.",
         ]}
-        // description={[
-        //   "At Framer, I started out in the role of Community and Support Specialist. In this role, I was able to get exposure to design and code by helping users with their projects.",
-        //   "In 2020, I moved into the Product Specialist role where I now focused on enabling Enterprises such as Facebook, Microsoft, Shopify with on-site and digital workshops, technical support, and learning materials.",
-        //   "Currently I moved into the Lead Product Specialist role, which involves helping leadership with more strategic work around team expansion, fostering the community, and onboarding team hires.",
-        // ]}
         linktext="Visit Framer"
         hyperlink="https://www.framer.com"
-      ></Bio>
-    </Layout>
+      ></Biography>
+    </LayoutComponent>
   )
 }

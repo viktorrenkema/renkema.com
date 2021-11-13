@@ -2,9 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import Layout from "../components/resources/Layout"
-import { Projects } from "../components/Projects"
-import Nav from "../components/Nav"
+import LayoutComponent from "../components/resources/Layout"
+import { ProjectsList } from "../components/Projects"
+import Navigation from "../components/Nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -15,10 +15,10 @@ import { Helmet } from "react-helmet"
 
 export default function Me() {
   return (
-    <Layout dark>
+    <LayoutComponent dark>
       <Helmet></Helmet>
-      <Nav current="projects" dark></Nav>
-      <Projects dark></Projects>
-    </Layout>
+      <Navigation current="projects" dark></Navigation>
+      <ProjectsList dark></ProjectsList>
+    </LayoutComponent>
   )
 }

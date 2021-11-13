@@ -2,27 +2,18 @@
 import React from "react"
 
 // 🌱 Components
-import Intro from "../components/Intro"
-import Layout from "../components/resources/Layout"
-import Nav from "../components/Nav"
+import Introduction from "../components/Intro"
+import LayoutComponent from "../components/resources/Layout"
+import Navigation from "../components/Nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
 
 // 💅🏽 Styled Components
 
-// const variants = {
-//   rotated: {
-//     transform: "rotateX(5deg)",
-//   },
-//   normal: {
-//     transform: "rotateX(0deg)",
-//   },
-// }
-
 export default function IndexPage() {
   return (
-    <Layout>
+    <LayoutComponent>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Viktor Renkema</title>
@@ -47,8 +38,8 @@ export default function IndexPage() {
           href="https://i.ibb.co/nsPWwRb/Fav.png"
         />
       </Helmet>
-      <Nav current="home" dark={false}></Nav>
-      <Intro id={"intro"}></Intro>
-    </Layout>
+      <Navigation current="home" dark={false}></Navigation>
+      <Introduction id={"intro"}></Introduction>
+    </LayoutComponent>
   )
 }

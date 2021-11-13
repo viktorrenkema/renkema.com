@@ -80,7 +80,7 @@ const items = {
 }
 
 // 💅🏽 Styled Components
-import { H1, Paragraph } from "./resources/StyledGlobal.js"
+import { H1, Paragraph } from "./resources/styledGlobal.js"
 
 const SectionIntro = styled(motion.section)`
   background: white;
