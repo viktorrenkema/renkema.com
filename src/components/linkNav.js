@@ -40,7 +40,7 @@ const GatsbyLink = styled(Link)`
 export default function LinkNav(props) {
   const { text, variants, style, dark } = props
   return (
-    <Btn style={style} variants={variants}>
+    <Btn style={style}>
       <GatsbyLink dark={dark} to={text == "home" ? "/" : "/" + text}>
         {text}
       </GatsbyLink>

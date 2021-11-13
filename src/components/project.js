@@ -99,6 +99,7 @@ const ClayMobileMask = styled.div`
   width: 300px;
   height: 548px;
   border-radius: 40px;
+  z-index: 20;
   border: 12px solid rgb(36 38 70);
   background-color: rgb(57 63 110);
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
