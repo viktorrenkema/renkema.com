@@ -34,7 +34,7 @@ import { FlexVertCenter } from "./resources/styledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;
-  margin: 8rem 2rem 4rem 2rem;
+  margin: 12rem 2rem 4rem 2rem;
   max-height: 700px;
   display: flex;
   justify-content: center;

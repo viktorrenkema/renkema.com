@@ -123,7 +123,7 @@ const ClayMobileNotch = styled(motion.div)`
 
 const TopSection = styled(motion.div)`
   width: 100%;
-  padding: 4rem 2rem 4rem 2rem;
+  padding: 10rem 2rem 4rem 2rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;
