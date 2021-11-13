@@ -21,12 +21,6 @@ const labelVariants = {
     color: "white",
     opacity: "1",
   },
-  // hide: {
-  //   display: "none",
-  //   y: "5px",
-  //   color: "white",
-  //   opacity: "0.6",
-  // },
   focus: {
     color: "#eb7084",
     opacity: 1,
@@ -42,6 +36,7 @@ const PenScript = styled.span`
   color: hsl(14, 99%, 72%);
   transform: rotate(346deg);
   top: 0px;
+  width: 120px;
   color: ${palette.primary500};
 `
 
@@ -147,6 +142,10 @@ const FlexVertCenterPenScript = styled(FlexVertCenter)`
   @media (max-width: 767px) {
     left: -50px;
   }
+  @media (max-width: 385px) {
+    left: -24px;
+    top: -46px;
+  }
 `
 
 const Span = styled(motion.span)`
@@ -179,7 +178,7 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
       <FlexInputs>
         <LabelWrap>
           <FlexVertCenterPenScript>
-            <PenScript>Take this light demo for a spin</PenScript>
+            <PenScript>Take it for a spin</PenScript>
             <Arrow></Arrow>
           </FlexVertCenterPenScript>
           <Label

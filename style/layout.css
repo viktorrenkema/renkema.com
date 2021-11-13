@@ -101,5 +101,11 @@ input[type="number"] {
 }
 
 #framer {
-  margin: 4rem 2rem 10rem 2rem !important;
+  margin: 4rem 2rem 4rem 2rem !important;
+}
+
+@media (min-width: 768px) {
+  #framer {
+    margin: 4rem 2rem 8rem 2rem !important;
+  }
 }

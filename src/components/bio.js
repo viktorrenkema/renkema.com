@@ -34,7 +34,7 @@ import { FlexVertCenter } from "./resources/StyledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;
-  margin: 8rem 2rem 6rem 2rem;
+  margin: 8rem 2rem 4rem 2rem;
   max-height: 700px;
   display: flex;
   justify-content: center;
@@ -42,7 +42,6 @@ const Section = styled(motion.section)`
   @media (max-width: 768px) {
     display: inherit;
     max-height: none;
-    padding: 3rem 0rem;
   }
 `
 
@@ -54,27 +53,27 @@ const FlexWrapper = styled(motion.div)`
 `
 
 // Old, use for updating above flexcontainer
-// const Grid = styled(motion.div)`
-//   display: grid;
-//   align-self: center;
-//   justify-content: center;
-//   grid-template-rows: repeat(1, auto);
-//   grid-template-columns: repeat(2, auto);
-//   grid-column-gap: 10rem;
-//   padding: 4em;
+const Grid = styled(motion.div)`
+  display: grid;
+  align-self: center;
+  justify-content: center;
+  grid-template-rows: repeat(1, auto);
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 10rem;
+  padding: 4em;
 
-//   @media (min-width: 768px) and (max-width: 1200px) {
-//     padding: 2.5rem;
-//     column-gap: 5%;
-//     grid-template-columns: ${props =>
-//       props.positioning == "left" ? "50% auto" : `auto 50%`};
-//   }
-//   @media (max-width: 767px) {
-//     grid-template-columns: 1fr;
-//     grid-template-rows: repeat(3, auto);
-//     padding: 0rem;
-//   }
-// `
+  @media (min-width: 768px) and (max-width: 1200px) {
+    padding: 2.5rem;
+    column-gap: 5%;
+    grid-template-columns: ${props =>
+      props.positioning == "left" ? "50% auto" : `auto 50%`};
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    padding: 0rem;
+  }
+`
 const BioH1 = styled(H1)`
   padding-bottom: 1rem;
   text-align: center;
@@ -88,6 +87,13 @@ const BioH1 = styled(H1)`
 
   @media (max-width: 479px) {
     font-size: 32px;
+  }
+`
+const FlexVertCenterBio = styled(FlexVertCenter)`
+  margin-top: 4rem;
+
+  @media (max-width: 767px) {
+    margin-top: 0rem;
   }
 `
 
@@ -142,19 +148,6 @@ const Copy = styled(motion.p)`
   @media (max-width: 767px) {
     font-size: 14px;
     opacity: 1;
-  }
-`
-const CopyContainer = styled(motion.div)`
-  align-self: start;
-  flex-direction: column;
-  display: flex;
-  grid-area: ${props =>
-    props.positioning == "left" ? "2/ 2 / 3 / 2" : `2/ 1 / 3 / 1`};
-
-  @media (max-width: 767px) {
-    grid-area: 2 / 1 / 3 / 1;
-    text-align: center;
-    padding: 0rem 1.5rem 1.5rem 1.5rem;
   }
 `
 
@@ -213,7 +206,7 @@ export default function BioSection({
         <ImageContainer positioning={positioning}>
           <Image src={asset}></Image>
         </ImageContainer>
-        <FlexVertCenter style={{ marginTop: "4rem" }}>
+        <FlexVertCenterBio>
           <BioH1 positioning={positioning}>{title}</BioH1>
           {descriptions}
           <LinkSocial
@@ -222,7 +215,7 @@ export default function BioSection({
             style={{ padding: "0px" }}
             fill={palette.greys900}
           ></LinkSocial>{" "}
-        </FlexVertCenter>{" "}
+        </FlexVertCenterBio>{" "}
       </FlexWrapper>
     </Section>
   )

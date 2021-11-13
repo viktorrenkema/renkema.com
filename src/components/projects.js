@@ -24,7 +24,7 @@ const container = {
 
 // 💅🏽 Styled Components
 const Section = styled(motion.div)`
-  width: 80%;
+  width: 90%;
   align-self: center;
   padding: 4em 0em;
   display: flex;
@@ -78,7 +78,7 @@ export function Projects(props) {
         projectinfo={
           "The sole purpose of this project was to build a workout tracker that offers exactly the features that I needed and nothing more. "
         }
-        url={"https://esteem-app.vercel.app/"}
+        url={"comingsoon.com"}
         githuburl={"https://www.github.com/viktorrenkema"}
       ></Project>
     </Section>
