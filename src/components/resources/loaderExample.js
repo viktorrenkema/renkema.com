@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import Input from "./input"
-import Loader from "./loader"
+import Input from "./input.js"
+import Loader from "./loader.js"
 import { generateCodeSnippet } from "./generateCode"
-import CodeBlock from "./codeBlock"
+import CodeBlock from "./codeBlock.js"
 import { FlexVertCenter } from "./styledGlobal.js"
 
 // 🧰 Utils

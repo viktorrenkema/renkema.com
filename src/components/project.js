@@ -8,8 +8,8 @@ import styled from "styled-components"
 import { palette } from "../../style/palette"
 
 // 🌱 Components
-import LoaderExample from "./resources/loaderExample"
-import LinkSocial from "./linkSocial"
+import LoaderExample from "./resources/loaderExample.js"
+import LinkSocial from "./linkSocial.js"
 import { ProductHunt } from "./resources/styledGlobal.js"
 import { FlexVertCenter } from "./resources/styledGlobal.js"
 

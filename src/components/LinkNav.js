@@ -37,7 +37,7 @@ const GatsbyLink = styled(Link)`
   width: 100px;
 `
 
-export default function SocialLink(props) {
+export default function LinkNav(props) {
   const { text, variants, style, dark } = props
   return (
     <Btn style={style} variants={variants}>

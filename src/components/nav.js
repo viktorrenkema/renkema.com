@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import LinkNav from "./linkNav"
+import LinkNav from "./linkNav.js"
 
 // 🧰 Utils
 
