@@ -32,3 +32,10 @@ export const Paragraph = styled(motion.p)`
     font-size: 16px;
   }
 `
+
+export const FlexVertCenter = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`

@@ -80,6 +80,7 @@ export function Projects(props) {
         }
         linktext={"Visit loaders.io"}
         url={"https://loadergenerator.vercel.app/"}
+        githuburl={"https://www.github.com/viktorrenkema"}
         project="loaders"
         id={"loaders"}
       ></Project>
@@ -96,6 +97,7 @@ export function Projects(props) {
         project="ladimora"
         id={"ladimora"}
         url={"https://ladimora.org/"}
+        githuburl={"https://www.github.com/viktorrenkema"}
       ></Project>
       <Project
         project="pulse"
@@ -106,6 +108,7 @@ export function Projects(props) {
           "The sole purpose of this project was to build a workout tracker that offers exactly the features that I needed and nothing more. "
         }
         url={"https://esteem-app.vercel.app/"}
+        githuburl={"https://www.github.com/viktorrenkema"}
       ></Project>
     </Section>
   )

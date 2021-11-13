@@ -13,6 +13,7 @@ import Typed from "typed.js"
 import LinkSocial from "./LinkSocial"
 
 // 🧰 Utils
+import { palette } from "../../style/palette"
 
 // 🌀 Variants
 const section = {
@@ -208,18 +209,21 @@ export default function Introduction({ id }) {
             variants={items}
             whileHover="hover"
             text={"Twitter"}
+            fill={palette.greys900}
             url={"https://www.twitter.com/vrenkema"}
           ></LinkSocial>{" "}
           <LinkSocial
             variants={items}
             whileHover="hover"
             text={"Linkedin"}
+            fill={palette.greys900}
             url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
           ></LinkSocial>{" "}
           <LinkSocial
             variants={items}
             whileHover="hover"
             text={"Email"}
+            fill={palette.greys900}
             url={"mailto:viktor@renkema.com"}
           ></LinkSocial>
         </SocialsContainer>

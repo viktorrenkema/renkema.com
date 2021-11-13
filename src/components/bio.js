@@ -13,6 +13,7 @@ import useIsInViewport from "use-is-in-viewport"
 import LinkSocial from "./LinkSocial"
 
 // 🧰 Utils
+import { palette } from "../../style/palette"
 
 // 🌀 Variants
 const container = {
@@ -29,6 +30,7 @@ const container = {
 
 // 💅🏽 Styled Components
 import { H1 } from "./resources/styledGlobal.js"
+import { FlexVertCenter } from "./resources/styledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;
@@ -49,7 +51,6 @@ const FlexWrapper = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 4rem;
 `
 
 // Old, use for updating above flexcontainer
@@ -196,10 +197,6 @@ export default function BioSection({
     ])
   }, [])
 
-  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  // const dynamicRotate = useTransform(scrollY, inputRange, [3, -3])
-  // const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
-
   const descriptions = description.map((p, index) => (
     <Copy key={p.index}>{p}</Copy>
   ))
@@ -216,24 +213,16 @@ export default function BioSection({
         <ImageContainer positioning={positioning}>
           <Image src={asset}></Image>
         </ImageContainer>
-        <motion.div
-          style={{
-            flexDirection: "column",
-            opacity: "1",
-            transform: "none",
-            display: "flex",
-            placeContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <FlexVertCenter style={{ marginTop: "4rem" }}>
           <BioH1 positioning={positioning}>{title}</BioH1>
           {descriptions}
           <LinkSocial
             text={linktext}
             url={hyperlink}
             style={{ padding: "0px" }}
+            fill={palette.greys900}
           ></LinkSocial>{" "}
-        </motion.div>{" "}
+        </FlexVertCenter>{" "}
       </FlexWrapper>
     </Section>
   )

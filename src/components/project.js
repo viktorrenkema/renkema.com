@@ -15,12 +15,12 @@ import { palette } from "../../style/palette"
 // 🌱 Components
 import LoaderExample from "./resources/loaderExample"
 import LinkSocial from "./LinkSocial"
-import Headinglink from "./headinglink"
 
 // 🖼️ Assets
 import ladimoradesktop from "../../src/images/ladimoradesktop.png"
 import ladimoramobile from "../../src/images/ladimoramobile.png"
 import ladimoramobilenav from "../../src/images/ladimoramobilenav.png"
+import SocialLink from "./LinkNav"
 
 // 🌀 Variants
 const container = {
@@ -41,6 +41,13 @@ const ProjectFlexWrapper = styled(motion.div)`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+`
+
+const FlexHorizontal = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 `
 
 //// Clay models
@@ -89,14 +96,29 @@ const ClayMobileFrame = styled.div`
 
 const ClayMobileMask = styled.div`
   overflow: hidden;
+  position: relative;
   width: 300px;
   height: 548px;
-  border-radius: 20px;
+  border-radius: 40px;
   border: 12px solid rgb(36 38 70);
   background-color: rgb(57 63 110);
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
     0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 `
+
+const ClayMobileNotch = styled(motion.div)`
+  width: 32.7%; // iPhone 13  notch is 0.99", total screen width is 2.56"
+  background: rgb(36 38 70);
+  height: 18px;
+  top: -1px;
+  border-radius: 0px 0px 12px 12px;
+  z-index: 8;
+  position: absolute;
+  z-index: 22;
+  margin: 0 auto;
+  left: 34%;
+`
+
 //// Clay models
 
 const TopSection = styled(motion.div)`
@@ -186,6 +208,7 @@ export default function Project({
   linktext,
   url,
   id,
+  githuburl,
 }) {
   // State
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
@@ -256,7 +279,7 @@ export default function Project({
     overflow: "hidden",
     width: 800,
     height: 360,
-    borderRadius: "4px",
+    borderRadius: "4px 4px 0px 0px",
     border: "8px solid rgb(36 38 70)",
     boxShadow:
       "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
@@ -297,13 +320,12 @@ export default function Project({
     >
       <TopSection>
         <Label>{projectlabel}</Label>
-        <Title>
-          <Headinglink title={projecttitle} url={url}></Headinglink>
-        </Title>
+        <Title>{projecttitle}</Title>
 
         <ProjectDetails>{projectinfo}</ProjectDetails>
+
         {project === "loaders" && (
-          <div style={{ paddingTop: "24px" }}>
+          <div style={{ paddingTop: "4px" }}>
             <a
               href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
               target="_blank"
@@ -317,19 +339,21 @@ export default function Project({
             </a>
           </div>
         )}
-        {/* <SocialLink text="Github" url="github.com" /> */}
-        <BottomSection>
-          {/* 🇮🇹 📱 If project is La Dimora & viewport is under laptop */}
-          {project === "ladimora" && viewportWidth <= 1024 && (
-            <ClayMobileMask>
-              <MobileLaDimoraNav></MobileLaDimoraNav>
-              <motion.div style={MobileLaDimoraFrame}>
-                <motion.div style={MobileLaDimoraInnerFrame}></motion.div>
-              </motion.div>
-            </ClayMobileMask>
-          )}
+        <FlexHorizontal>
+          <LinkSocial
+            text={"Visit " + projecttitle}
+            url={url}
+            fill={palette.greys100}
+          ></LinkSocial>
+          <LinkSocial
+            text={"View code on Github"}
+            url={githuburl}
+            fill={palette.greys100}
+          ></LinkSocial>
+        </FlexHorizontal>
 
-          {/* 🇮🇹 💻 If project is La Dimora & viewport is over laptop */}
+        <BottomSection>
+          {/* 💡 La dimora & desktop  */}
           {project === "ladimora" && viewportWidth > 1024 && (
             <>
               {" "}
@@ -346,6 +370,17 @@ export default function Project({
             </>
           )}
 
+          {/* 💡 La dimora & mobile */}
+          {project === "ladimora" && viewportWidth <= 1024 && (
+            <ClayMobileMask>
+              <ClayMobileNotch />
+              <MobileLaDimoraNav></MobileLaDimoraNav>
+              <motion.div style={MobileLaDimoraFrame}>
+                <motion.div style={MobileLaDimoraInnerFrame}></motion.div>
+              </motion.div>
+            </ClayMobileMask>
+          )}
+
           {/* If project is Loaders */}
           {project === "loaders" && (
             <LoaderExample
@@ -356,17 +391,24 @@ export default function Project({
 
           {/* If project is Pulse */}
           {project === "pulse" && (
-            <div
-              style={{
-                width: 300,
-                height: 548,
-                backgroundColor: "rgb(57 63 110)",
-                overflow: "visible",
-                opacity: 0.3,
-                borderRadius: 30,
-                border: "8px solid rgb(36 38 70)",
-              }}
-            ></div>
+            // <div
+            //   style={{
+            //     width: 300,
+            //     height: 548,
+            //     backgroundColor: "rgb(57 63 110)",
+            //     overflow: "visible",
+            //     opacity: 0.3,
+            //     borderRadius: 30,
+            //     border: "8px solid rgb(36 38 70)",
+            //   }}
+            // ></div>
+            <ClayMobileMask>
+              <ClayMobileNotch />
+
+              {/* <motion.div style={MobileLaDimoraFrame}>
+              <motion.div style={MobileLaDimoraInnerFrame}></motion.div>
+            </motion.div> */}
+            </ClayMobileMask>
           )}
         </BottomSection>
       </TopSection>
