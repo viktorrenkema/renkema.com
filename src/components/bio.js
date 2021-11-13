@@ -29,8 +29,8 @@ const container = {
 }
 
 // 💅🏽 Styled Components
-import { H1 } from "./resources/styledGlobal.js"
-import { FlexVertCenter } from "./resources/styledGlobal.js"
+import { H1 } from "./resources/StyledGlobal.js"
+import { FlexVertCenter } from "./resources/StyledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;

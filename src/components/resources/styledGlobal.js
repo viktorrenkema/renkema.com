@@ -10,8 +10,8 @@ import { motion } from "framer-motion"
 
 export const H1 = styled(motion.h1)`
   font-size: 56px;
-  font-family: "GT-Walsheim", sans-serif;
-  font-weight: 600;
+  font-family: "GT-Ultra", sans-serif;
+  font-weight: 400;
   line-height: 1;
 
   @media (max-width: 479px) {
@@ -43,7 +43,7 @@ export const FlexVertCenter = styled(motion.div)`
 
 export function ProductHunt() {
   return (
-    <div style={{ paddingTop: "4px" }}>
+    <div style={{ paddingTop: "24px" }}>
       <a
         href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
         target="_blank"

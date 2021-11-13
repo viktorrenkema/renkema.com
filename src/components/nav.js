@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import LinkSocial from "./LinkSocial"
 import LinkNav from "./LinkNav"
 
 // 🧰 Utils
@@ -13,7 +12,6 @@ import LinkNav from "./LinkNav"
 const containerVariants = {
   hidden: {
     opacity: 0,
-    y: -20,
     transition: {
       delay: 0.1,
       duration: 0.3,
@@ -22,7 +20,6 @@ const containerVariants = {
   },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
       delay: 0.1,
       duration: 0.3,

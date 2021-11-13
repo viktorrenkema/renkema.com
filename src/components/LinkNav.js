@@ -2,21 +2,12 @@
 import React from "react"
 import { motion } from "framer-motion"
 import styled from "styled-components"
-import Typed from "typed.js"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
 import { Link } from "gatsby"
 
 // 🌀 Variants
-const variantsHoverFill = {
-  default: {
-    height: "0px",
-  },
-  hover: {
-    height: "100%",
-  },
-}
 
 // 💅🏽 Styled Components
 const Btn = styled(motion.div)`
@@ -33,10 +24,8 @@ const Btn = styled(motion.div)`
 const GatsbyLink = styled(Link)`
   font-weight: 400;
   font-size: 14px;
-  color: ${props => (props.dark ? palette.greys200 : palette.greys900)}
-  ;
+  color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
   text-decoration: none;
-  /* color: ${palette.greys500}; */
   font-family: "GT-Walsheim", sans-serif;
   display: flex;
   justify-content: center;

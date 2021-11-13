@@ -5,11 +5,9 @@ import styled from "styled-components"
 import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
-import Project from "../components/project"
+import Project from "./Project"
 
 // 🧰 Utils
-import ladimoradesktop from "../../src/images/ladimoradesktop.png"
-import ladimoramobile from "../../src/images/ladimoramobile.png"
 
 // 🌀 Variants
 const container = {
@@ -26,39 +24,15 @@ const container = {
 
 // 💅🏽 Styled Components
 const Section = styled(motion.div)`
-  /* background: #181818; */
   width: 80%;
   align-self: center;
   padding: 4em 0em;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* perspective: 1000px;
-  perspective-origin: 50% 50%; */
   @media (max-width: 767px) {
     padding: 4em 0em;
   }
-`
-
-const ProjectsLabel = styled(motion.div)`
-  color: hsl(0deg 0% 10%);
-  font-size: 36px;
-  letter-spacing: 0px;
-  line-height: 1;
-  /* text-transform: uppercase; */
-  border-radius: 8px;
-  /* background: #eb70852b; */
-  padding-bottom: 6rem;
-  font-family: "GT-Walsheim", sans-serif;
-  align-self: center;
-  font-size: 36px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: block;
-  letter-spacing: 0.05rem;
 `
 
 export function Projects(props) {
@@ -67,7 +41,6 @@ export function Projects(props) {
 
   return (
     <Section>
-      {/* <ProjectsLabel>Projects</ProjectsLabel> */}
       <Project
         initial="hidden"
         animate={isInViewport ? "visible" : "hidden"}
@@ -76,7 +49,7 @@ export function Projects(props) {
         projectlabel={"web app"}
         projecttitle={"Loaders.io"}
         projectinfo={
-          "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize style and animation using an interface instead of code."
+          "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize the style and animation properties using an interface instead of code."
         }
         linktext={"Visit loaders.io"}
         url={"https://loadergenerator.vercel.app/"}
@@ -84,7 +57,6 @@ export function Projects(props) {
         project="loaders"
         id={"loaders"}
       ></Project>
-
       <Project
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"website"}
@@ -92,7 +64,6 @@ export function Projects(props) {
         projectinfo={
           "La Dimora is a beautiful house located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
         }
-        asset={ladimoradesktop}
         linktext={"Visit ladimora.org"}
         project="ladimora"
         id={"ladimora"}

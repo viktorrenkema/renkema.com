@@ -2,10 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import Bio from "../components/bio"
-import Layout from "../components/resources/layout"
-import Scroller from "../components/scroller"
-import Nav from "../components/nav"
+import Bio from "../components/Bio"
+import Layout from "../components/resources/Layout"
+import Nav from "../components/Nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -51,7 +50,6 @@ export default function Me() {
         linktext="Visit Framer"
         hyperlink="https://www.framer.com"
       ></Bio>
-      <Scroller />
     </Layout>
   )
 }

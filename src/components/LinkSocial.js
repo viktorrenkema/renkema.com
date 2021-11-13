@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import { ArrowLink } from "./resources/icons"
+import { ArrowLink } from "./resources/Icons"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -53,7 +53,12 @@ export default function LinkSocial(props) {
   const { text, url, variants, nav, style, fill } = props
 
   return (
-    <Btn nav={nav} style={style} variants={variants}>
+    <Btn
+      whileHover={{ textDecoration: "underline" }}
+      nav={nav}
+      style={style}
+      variants={variants}
+    >
       <Hyperlink
         fill={fill}
         target="_blank"
