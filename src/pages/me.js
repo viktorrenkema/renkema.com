@@ -27,9 +27,9 @@ export default function Me() {
         positioning={"left"}
         id={"groningen"}
         asset={Groningen}
-        title={"Lil bit about me"}
+        title={"About myself"}
         description={[
-          "While achieving my Master’ degree in Psychology in 2018, I also started to develop an interest in web technology. After briefly working in semi-technical roles at an e-commerce startup and the IT dept. of an academic hospital, I started at Framer in 2019. After joining Framer, I started to focus on web development and design.",
+          "While achieving my Master’ degree in Psychology, I also started to develop an interest in web technology. After briefly working in semi-technical roles at an e-commerce startup and the IT dept. of an academic hospital, I started at Framer in 2019. After joining Framer, I began learning web development and design.",
         ]}
         linktext="Visit LinkedIn for more"
         hyperlink="https://www.linkedin.com/in/vrenkema/"

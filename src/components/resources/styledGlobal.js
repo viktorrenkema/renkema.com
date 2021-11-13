@@ -1,4 +1,5 @@
 // 📦 Packages
+import React from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 
@@ -8,7 +9,7 @@ import { motion } from "framer-motion"
 // 💅🏽 Styled Components
 
 export const H1 = styled(motion.h1)`
-  font-size: 44px;
+  font-size: 56px;
   font-family: "GT-Walsheim", sans-serif;
   font-weight: 600;
   line-height: 1;
@@ -39,3 +40,21 @@ export const FlexVertCenter = styled(motion.div)`
   justify-content: center;
   align-items: center;
 `
+
+export function ProductHunt() {
+  return (
+    <div style={{ paddingTop: "4px" }}>
+      <a
+        href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=dark"
+          alt="Loader generator - Create animated loaders and generate production React code | Product Hunt"
+          style={{ width: "175px", height: "37.8px" }}
+        />
+      </a>
+    </div>
+  )
+}
