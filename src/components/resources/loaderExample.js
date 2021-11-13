@@ -102,9 +102,9 @@ const FlexInputs = styled.div`
   align-items: center;
   padding: 2rem;
   gap: 1rem;
-  @media (max-width: 385px) {
-    padding: 3rem;
-  }
+  /* @media (max-width: 385px) {
+    padding: 2rem;
+  } */
 `
 const FlexLoadersPreview = styled.div`
   display: flex;
@@ -149,6 +149,7 @@ const FlexVertCenterPenScript = styled(FlexVertCenter)`
     left: 50px;
     top: -35px;
     transform: rotate(8deg);
+    display: none;
   }
 `
 

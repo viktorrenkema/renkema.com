@@ -7,6 +7,7 @@ export const palette = {
   greys700: "hsl(230, 12%, 10%)",
   greys600: "hsl(230, 12%, 15%)",
   greys500: "hsl(229, 11%, 20%)",
+  greys400: "hsl(229, 11%, 60%)",
   greys300: "hsl(230, 20%, 94%)",
   greys200: "hsl(240, 14%, 99%)",
   greys100: "hsl(0, 0%, 100%)",

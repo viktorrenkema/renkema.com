@@ -319,12 +319,12 @@ export default function Project({
             <LinkSocial
               text={"Visit " + projecttitle}
               url={url}
-              fill={palette.greys100}
+              fill={palette.greys400}
             ></LinkSocial>
             <LinkSocial
               text={"View code on Github"}
               url={githuburl}
-              fill={palette.greys100}
+              fill={palette.greys400}
             ></LinkSocial>
           </FlexHorizontal>
           {project === "loaders" && <ProductHunt />}
