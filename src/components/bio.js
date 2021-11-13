@@ -42,6 +42,7 @@ const Section = styled(motion.section)`
   @media (max-width: 768px) {
     display: inherit;
     max-height: none;
+    margin: 8rem 2rem 4rem 2rem;
   }
 `
 

@@ -130,6 +130,9 @@ const TopSection = styled(motion.div)`
   justify-content: center;
   align-items: center;
   overflow: visible;
+  @media (max-width: 768px) {
+    padding: 4rem 2rem 4rem 2rem;
+  }
 `
 
 const BottomSection = styled(motion.div)`
