@@ -7,10 +7,25 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion"
+import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
+import LinkSocial from "./LinkSocial"
 
 // 🧰 Utils
+
+// 🌀 Variants
+const container = {
+  hidden: { opacity: 0.5 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.1,
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+}
 
 // 💅🏽 Styled Components
 import { H1 } from "./resources/styledGlobal.js"
@@ -28,35 +43,42 @@ const Section = styled(motion.section)`
     padding: 3rem 0rem;
   }
 `
-const Grid = styled(motion.div)`
-  display: grid;
-  align-self: center;
-  justify-content: center;
-  grid-template-rows: repeat(1, auto);
-  grid-template-columns: repeat(2, auto);
-  grid-column-gap: 10rem;
-  padding: 4em;
 
-  @media (min-width: 768px) and (max-width: 1200px) {
-    padding: 2.5rem;
-    column-gap: 5%;
-    grid-template-columns: ${props =>
-      props.positioning == "left" ? "50% auto" : `auto 50%`};
-  }
-  @media (max-width: 767px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-    padding: 0rem;
-  }
+const FlexWrapper = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
 `
+
+// Old, use for updating above flexcontainer
+// const Grid = styled(motion.div)`
+//   display: grid;
+//   align-self: center;
+//   justify-content: center;
+//   grid-template-rows: repeat(1, auto);
+//   grid-template-columns: repeat(2, auto);
+//   grid-column-gap: 10rem;
+//   padding: 4em;
+
+//   @media (min-width: 768px) and (max-width: 1200px) {
+//     padding: 2.5rem;
+//     column-gap: 5%;
+//     grid-template-columns: ${props =>
+//       props.positioning == "left" ? "50% auto" : `auto 50%`};
+//   }
+//   @media (max-width: 767px) {
+//     grid-template-columns: 1fr;
+//     grid-template-rows: repeat(3, auto);
+//     padding: 0rem;
+//   }
+// `
 const BioH1 = styled(H1)`
-  grid-area: ${props =>
-    props.positioning == "left" ? "1 / 2 / 2 / 3" : `1 / 1 / 2 / 1`};
   padding-bottom: 1rem;
-  @media (min-width: 768px) and (max-width: 1200px) {
-  }
+  text-align: center;
+
   @media (max-width: 767px) {
-    grid-area: 1/1/1/1;
     opacity: 1;
     font-size: 40px;
     justify-self: start;
@@ -67,6 +89,7 @@ const BioH1 = styled(H1)`
     font-size: 32px;
   }
 `
+
 const ImageContainer = styled(motion.div)`
   justify-self: center;
   align-self: center;
@@ -106,10 +129,11 @@ const Image = styled(motion.img)`
 const Copy = styled(motion.p)`
   font-size: 16px;
   line-height: 1.8;
-  text-align: justify;
+  text-align: center;
   letter-spacing: 0.1px;
   text-justify: inter-word;
-  max-width: 700px;
+  max-width: 600px;
+  margin-bottom: 1rem;
   &:nth-child(1) {
     margin-bottom: 1rem;
   }
@@ -153,8 +177,11 @@ export default function BioSection({
   title,
   description,
   id,
+  linktext,
+  hyperlink,
 }) {
   const [inputRange, setInputRange] = React.useState([0, 0])
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
 
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
@@ -177,13 +204,15 @@ export default function BioSection({
     <Copy key={p.index}>{p}</Copy>
   ))
 
-  console.log(descriptions)
   return (
     <Section
       id={`${id}`}
-      // style={{ transform: rotate }}
+      initial="hidden"
+      animate={isInViewport ? "visible" : "hidden"}
+      ref={targetRef}
+      variants={container}
     >
-      <Grid positioning={positioning}>
+      <FlexWrapper positioning={positioning}>
         <ImageContainer positioning={positioning}>
           <Image src={asset}></Image>
         </ImageContainer>
@@ -194,16 +223,18 @@ export default function BioSection({
             transform: "none",
             display: "flex",
             placeContent: "center",
+            alignItems: "center",
           }}
         >
           <BioH1 positioning={positioning}>{title}</BioH1>
-          {/* <h2>{pathLength.current}</h2> */}
-          <CopyContainer positioning={positioning}>
-            {descriptions}
-            {/* <Copy id={"section"}>{description}</Copy> */}
-          </CopyContainer>
+          {descriptions}
+          <LinkSocial
+            text={linktext}
+            url={hyperlink}
+            style={{ padding: "0px" }}
+          ></LinkSocial>{" "}
         </motion.div>{" "}
-      </Grid>
+      </FlexWrapper>
     </Section>
   )
 }

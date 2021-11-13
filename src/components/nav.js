@@ -30,6 +30,7 @@ const containerVariants = {
     },
     transitionEnd: {
       backdropFilter: "blur(8px)",
+      webkitbackdropFilter: "blur(8px)",
     },
   },
 }

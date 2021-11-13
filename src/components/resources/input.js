@@ -16,6 +16,7 @@ const InputField = styled.input`
   text-align: center;
   color: white;
   font-size: 12px;
+  height: 26px;
   border-radius: 5px;
   border: 1px solid transparent;
   outline: none;

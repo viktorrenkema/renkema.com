@@ -38,6 +38,7 @@ const labelVariants = {
 const Select = styled.select`
   background: #25273f;
   width: 90px;
+  height: 26px;
   padding: 5px;
   display: inline-block;
   box-sizing: border-box;

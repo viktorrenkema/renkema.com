@@ -24,7 +24,7 @@ import ladimoramobilenav from "../../src/images/ladimoramobilenav.png"
 
 // 🌀 Variants
 const container = {
-  hidden: { opacity: 0.5 },
+  hidden: { opacity: 0.2 },
   visible: {
     opacity: 1,
     transition: {
@@ -42,6 +42,8 @@ const ProjectFlexWrapper = styled(motion.div)`
   justify-content: flex-start;
   align-items: center;
 `
+
+//// Clay models
 
 const ClayMacbookBottom = styled(motion.div)`
   width: 875px;
@@ -64,6 +66,38 @@ const ClayMacbookNotch = styled(motion.div)`
   z-index: 8;
   position: relative;
 `
+
+const ClayMobileAsset = styled.div`
+  height: 810px;
+  width: 800px;
+  position: absolute;
+  overflow: hidden;
+  background: #fff;
+  background-image: url(${ladimoramobile});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position-x: left;
+`
+
+const ClayMobileFrame = styled.div`
+  top: ${props => props.top}px;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+`
+
+const ClayMobileMask = styled.div`
+  overflow: hidden;
+  width: 300px;
+  height: 548px;
+  border-radius: 20px;
+  border: 12px solid rgb(36 38 70);
+  background-color: rgb(57 63 110);
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
+`
+//// Clay models
 
 const TopSection = styled(motion.div)`
   width: 100%;
@@ -124,59 +158,6 @@ const Title = styled(motion.p)`
   }
 `
 
-const DemoLoaders = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-`
-
-const LaDimoraScrollMask = styled(motion.div)`
-  overflow: hidden;
-  border-radius: 4px;
-  width: 90vw;
-  height: 60vh;
-  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
-  /* transform: rotate(-1deg); */
-  @media (max-width: 768px) {
-    padding: 0;
-    width: 80%;
-    height: 30vh;
-  }
-`
-
-const ProjectsLabel = styled(motion.div)`
-  color: hsl(0deg 0% 10%);
-  font-size: 36px;
-  letter-spacing: 0px;
-  line-height: 1;
-  /* text-transform: uppercase; */
-  border-radius: 8px;
-  /* background: #eb70852b; */
-  padding-bottom: 6rem;
-  font-family: "GT-Walsheim", sans-serif;
-  align-self: center;
-  font-size: 36px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: block;
-  letter-spacing: 0.05rem;
-  height: fit-content;
-`
-
-const MobileLaDimoraMask = styled.div`
-  overflow: hidden;
-  width: 267px;
-  height: 360px;
-  border-radius: 4px;
-  border: 12px solid rgb(36 38 70);
-  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
-`
-
 const MobileLaDimoraNav = styled.div`
   background-image: url(${ladimoramobilenav});
   background-size: cover;
@@ -185,18 +166,10 @@ const MobileLaDimoraNav = styled.div`
   background-position-x: left;
   position: relative;
   top: 0;
-  width: 267px;
+  width: 300px;
   height: 43px;
   z-index: 20;
 `
-
-// const MobileLaDimoraFrame = styled.div`
-
-// `
-
-// const MobileLaDimoraInnerFrame = styled.div`
-
-// `
 
 // Small mobile: < 370
 // Mobile: <426
@@ -214,14 +187,28 @@ export default function Project({
   url,
   id,
 }) {
+  // State
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
-
+  const [viewportWidth, setViewportWidth] = React.useState(0)
   const [
     inputRangeLaDimoraScroller,
     setInputRangeLaDimoraScroller,
   ] = React.useState([0, 0])
 
-  const [viewportWidth, setViewportWidth] = React.useState(0)
+  // Other hooks
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
+  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
+  // For the dynamic top position scroll, transform the scrollY into a distance range
+  const dynamicTop = useTransform(scrollY, inputRangeLaDimoraScroller, [
+    0,
+    -446,
+  ])
+  const dynamicTopMobile = useTransform(scrollY, inputRangeLaDimoraScroller, [
+    0,
+    -1200,
+  ])
+
+  // useEffect
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
 
@@ -233,38 +220,11 @@ export default function Project({
     setViewportWidth(window.innerWidth)
   }, [])
 
-  let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-
-  // For the dynamic top position scroll, transform the scrollY into a distance range
-  const dynamicTop = useTransform(scrollY, inputRangeLaDimoraScroller, [
-    0,
-    -446,
-  ])
-  const dynamicTopMobile = useTransform(scrollY, inputRangeLaDimoraScroller, [
-    0,
-    -1200,
-  ])
-
-  console.log(viewportWidth)
-
   const styleAssetFrame = {
     top: dynamicTop,
     width: "100%",
     position: "relative",
     overflow: "visible",
-  }
-
-  const styleAssetInnerFrame = {
-    height: 810,
-    width: "800px",
-    position: "absolute",
-    overflow: "hidden",
-    background: project === "loaders" ? "none" : "#fff",
-    backgroundImage: `url(${ladimoradesktop})`,
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "top",
-    backgroundPositionX: "left",
   }
 
   const MobileLaDimoraFrame = {
@@ -276,8 +236,8 @@ export default function Project({
 
   const MobileLaDimoraInnerFrame = {
     // To calculate the height and width, use the intrinsic aspect ratio. Find the asset’s dimensions, calculate (https://andrew.hedges.name/experiments/aspect_ratio/) the new height (or width) by plugging in the asset’s dimensions and the Frame’s set width (or height)
-    height: 1518,
-    width: 267,
+    height: 1712,
+    width: 300,
     position: "absolute",
     overflow: "hidden",
     background: project === "loaders" ? "none" : "#fff",
@@ -301,7 +261,31 @@ export default function Project({
     boxShadow:
       "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
   }
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
+
+  const styleAssetInnerFrame = {
+    height: 810,
+    width: "800px",
+    position: "absolute",
+    overflow: "hidden",
+    background: project === "loaders" ? "none" : "#fff",
+    backgroundImage: `url(${ladimoradesktop})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top",
+    backgroundPositionX: "left",
+  }
+
+  const ClayMobileAsset = styled.div`
+    height: 810px;
+    width: 800px;
+    position: absolute;
+    overflow: hidden;
+    background-image: url(${ladimoradesktop});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-x: left;
+  `
 
   return (
     <ProjectFlexWrapper
@@ -335,17 +319,17 @@ export default function Project({
         )}
         {/* <SocialLink text="Github" url="github.com" /> */}
         <BottomSection>
-          {/* If project is La Dimora & viewport is under laptop */}
+          {/* 🇮🇹 📱 If project is La Dimora & viewport is under laptop */}
           {project === "ladimora" && viewportWidth <= 1024 && (
-            <MobileLaDimoraMask>
+            <ClayMobileMask>
               <MobileLaDimoraNav></MobileLaDimoraNav>
               <motion.div style={MobileLaDimoraFrame}>
                 <motion.div style={MobileLaDimoraInnerFrame}></motion.div>
               </motion.div>
-            </MobileLaDimoraMask>
+            </ClayMobileMask>
           )}
 
-          {/* If project is La Dimora & viewport is over laptop */}
+          {/* 🇮🇹 💻 If project is La Dimora & viewport is over laptop */}
           {project === "ladimora" && viewportWidth > 1024 && (
             <>
               {" "}
@@ -374,8 +358,8 @@ export default function Project({
           {project === "pulse" && (
             <div
               style={{
-                width: 267,
-                height: 396,
+                width: 300,
+                height: 548,
                 backgroundColor: "rgb(57 63 110)",
                 overflow: "visible",
                 opacity: 0.3,
