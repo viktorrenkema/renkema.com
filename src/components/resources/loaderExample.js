@@ -8,7 +8,7 @@ import Input from "./Input"
 import Loader from "./Loader"
 import { generateCodeSnippet } from "./generateCode"
 import CodeBlock from "./CodeBlock"
-import { FlexVertCenter } from "./StyledGlobal.js"
+import { FlexVertCenter } from "./styledGlobal.js"
 
 // 🧰 Utils
 import { palette } from "../../../style/palette"

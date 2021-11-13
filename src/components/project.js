@@ -10,8 +10,8 @@ import { palette } from "../../style/palette"
 // 🌱 Components
 import LoaderExample from "./resources/LoaderExample"
 import LinkSocial from "./LinkSocial"
-import { ProductHunt } from "./resources/StyledGlobal.js"
-import { FlexVertCenter } from "./resources/StyledGlobal.js"
+import { ProductHunt } from "./resources/styledGlobal.js"
+import { FlexVertCenter } from "./resources/styledGlobal.js"
 
 // 🖼️ Assets
 import ladimoradesktop from "../../src/images/ladimoradesktop.png"
