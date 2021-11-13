@@ -15,8 +15,8 @@ const containerVariants = {
     opacity: 0,
     y: -20,
     transition: {
-      delay: 0.2,
-      duration: 0.6,
+      delay: 0.1,
+      duration: 0.3,
       ease: "easeIn",
     },
   },
@@ -24,8 +24,8 @@ const containerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.2,
-      duration: 0.6,
+      delay: 0.1,
+      duration: 0.3,
       ease: "easeIn",
     },
     transitionEnd: {
@@ -50,8 +50,6 @@ const Container = styled(motion.div)`
   height: 70px;
   background-color: ${props =>
     props.dark ? "rgba(29, 32, 53, 0)" : `rgba(255, 255, 255, 0);`};
-  /* -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px); */
   z-index: 10;
 `
 
@@ -65,9 +63,6 @@ const Indicator = styled.div`
   width: 20px;
   height: 1px;
   background: ${props => (props.dark ? "white" : "black")};
-  /* background: ${props =>
-    props.positioning == "left" ? "50% auto" : `auto 50%`};
-  } */
 `
 
 export default function Nav(props) {

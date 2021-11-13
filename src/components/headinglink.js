@@ -19,7 +19,7 @@ const hoverTitleVariants = {
     },
   },
   hover: {
-    width: "60%",
+    width: "100%",
     transition: {
       ease: "easeIn",
     },
@@ -71,6 +71,7 @@ export default function Headinglink({ text, url, title, dark }) {
           // variants={arrowVariants}
           // animate={hoverTitle ? "rotate" : "default"}
           // initial={"hoverTitle"}
+          fill="white"
         ></ArrowLink>
       </FlexHyperlinkArrow>
       <HoverLine

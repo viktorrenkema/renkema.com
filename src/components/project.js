@@ -22,19 +22,52 @@ import ladimoradesktop from "../../src/images/ladimoradesktop.png"
 import ladimoramobile from "../../src/images/ladimoramobile.png"
 import ladimoramobilenav from "../../src/images/ladimoramobilenav.png"
 
+// 🌀 Variants
+const container = {
+  hidden: { opacity: 0.5 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.1,
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+}
+
 // 💅🏽 Styled Components
 const ProjectFlexWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* background-color: #f5f5f5; */
-  /* background-color: hsl(0deg 0% 10%); */
+`
+
+const ClayMacbookBottom = styled(motion.div)`
+  width: 875px;
+  background: rgb(36 38 70);
+  height: 16px;
+  margin: 0px 4px;
+  box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  border-radius: 4px 4px 8px 8px;
+  padding: 0px 8px;
+`
+
+const ClayMacbookNotch = styled(motion.div)`
+  width: 60px;
+  background: rgb(36 38 70);
+  height: 12px;
+  top: 20px;
+  border-radius: 0px 0px 4px 4px;
+  z-index: 8;
+  position: relative;
 `
 
 const TopSection = styled(motion.div)`
   width: 100%;
-  padding: 6rem 2rem 6rem 2rem;
+  padding: 8rem 2rem 6rem 2rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;
@@ -139,7 +172,7 @@ const MobileLaDimoraMask = styled.div`
   width: 267px;
   height: 360px;
   border-radius: 4px;
-  border: 8px solid rgb(36 38 70);
+  border: 12px solid rgb(36 38 70);
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
     0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
 `
@@ -268,9 +301,16 @@ export default function Project({
     boxShadow:
       "0 6.7px 5.3px rgba(0, 0, 0, 0.04),0 22.3px 17.9px rgba(0, 0, 0, 0.06),0 100px 80px rgba(0, 0, 0, 0.1)",
   }
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
 
   return (
-    <ProjectFlexWrapper id={`${id}`}>
+    <ProjectFlexWrapper
+      id={`${id}`}
+      initial="hidden"
+      animate={isInViewport ? "visible" : "hidden"}
+      ref={targetRef}
+      variants={container}
+    >
       <TopSection>
         <Label>{projectlabel}</Label>
         <Title>
@@ -307,11 +347,19 @@ export default function Project({
 
           {/* If project is La Dimora & viewport is over laptop */}
           {project === "ladimora" && viewportWidth > 1024 && (
-            <motion.div style={styleAssetFrameMask} className="assetframemask">
-              <motion.div style={styleAssetFrame} className="assetframe">
-                <motion.div style={styleAssetInnerFrame}></motion.div>
+            <>
+              {" "}
+              <ClayMacbookNotch />
+              <motion.div
+                style={styleAssetFrameMask}
+                className="assetframemask"
+              >
+                <motion.div style={styleAssetFrame} className="assetframe">
+                  <motion.div style={styleAssetInnerFrame}></motion.div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+              <ClayMacbookBottom />
+            </>
           )}
 
           {/* If project is Loaders */}

@@ -2,24 +2,17 @@
 import React from "react"
 import { motion } from "framer-motion"
 import styled from "styled-components"
-import Typed from "typed.js"
+
+// 🌱 Components
+import { ArrowLink } from "./resources/icons"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
-import { Link } from "gatsby"
 
 // 🌀 Variants
-// const variantsHoverFill = {
-//   default: {
-//     height: "rgba(240, 240, 240, 0.5)",
-//   },
-//   hover: {
-//     background: "rgba(240, 240, 240, 1)",
-//   },
-// }
 
 // 💅🏽 Styled Components
-const Btn = styled(motion.div)`
+const Btn = styled(motion.button)`
   position: relative;
   width: fit-content;
   border: 0px;
@@ -33,8 +26,8 @@ const Btn = styled(motion.div)`
   justify-content: center;
   align-items: center;
   padding: 8px 0px;
-  /* background-color: rgba(240, 240, 240, 0.5); */
-  gap: 16px;
+  gap: 0px;
+  background-color: transparent;
 
   @media (max-width: 479px) {
     transform: scale(0.9);
@@ -58,30 +51,17 @@ const Hyperlink = styled(motion.a)`
 
 export default function LinkSocial(props) {
   const { text, url, variants, nav, style } = props
-  const [hover, setHover] = React.useState(false)
 
   return (
-    <Btn
-      nav={nav}
-      style={style}
-      // variants={variantsHoverFill}
-      // onHoverStart={() => {
-      //   setHover(true)
-      // }}
-      // onHoverEnd={() => {
-      //   setHover(false)
-      // }}
-      // animate={hover ? "hover" : "default"}
-      // whileHover={{ background: "rgba(240, 240, 240, 1)" }}
-      // initial="default"
-    >
+    <Btn nav={nav} style={style} variants={variants}>
       <Hyperlink target="_blank" rel="noopener noreferrer" href={url}>
-        {text === "Twitter" && <Twitter />}
+        {/* {text === "Twitter" && <Twitter />}
         {text === "Email" && <Email />}
         {text === "Linkedin" && <Linkedin />}
-        {text === "Github" && <Github />}
+        {text === "Github" && <Github />} */}
         {text}
       </Hyperlink>
+      <ArrowLink fill={"black"} />
     </Btn>
   )
 }

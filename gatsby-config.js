@@ -28,11 +28,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `viktor-renkema-site`,
-        short_name: `renkema-site`,
+        name: `viktor-renkema-portfolio`,
+        short_name: `viktor-renkema-portfolio`,
         start_url: `/`,
-        background_color: `#ff6661`,
-        theme_color: `#ff6661`,
+        background_color: `rgb(30, 32, 53)`,
+        theme_color: `rgb(30, 32, 53)`,
         display: `minimal-ui`,
         icon: `src/images/fav.png`,
         // This path is relative to the root of the site.

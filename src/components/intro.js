@@ -169,8 +169,7 @@ export default function Introduction({ id }) {
     typed.current = new Typed(el.current, options)
 
     return () => {
-      // Make sure to destroy Typed instance during cleanup
-      // to prevent memory leaks
+      // Make sure to destroy Typed instance during cleanup to prevent memory leaks
       typed.current.destroy()
     }
   }, [])
@@ -183,15 +182,8 @@ export default function Introduction({ id }) {
     ])
   }, [])
 
-  // let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
-  // const dynamicRotate = useTransform(scrollY, inputRange, [0, 3])
-  // const rotate = useMotionTemplate`rotateX(${dynamicRotate}deg`
-
   return (
-    <SectionIntro
-      id={`${id}`}
-      // style={{ transform: rotate }}
-    >
+    <SectionIntro id={`${id}`}>
       <Grid>
         <GridH1 initial="hidden" animate="visible" variants={name}>
           Hey, my name is Viktor

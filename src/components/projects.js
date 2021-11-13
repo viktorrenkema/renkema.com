@@ -63,17 +63,16 @@ const ProjectsLabel = styled(motion.div)`
 
 export function Projects(props) {
   const { dark } = props
-  // const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 
   return (
-    <Section
-    // initial="hidden"
-    // animate={isInViewport ? "visible" : "hidden"}
-    // ref={targetRef}
-    // variants={container}
-    >
+    <Section>
       {/* <ProjectsLabel>Projects</ProjectsLabel> */}
       <Project
+        initial="hidden"
+        animate={isInViewport ? "visible" : "hidden"}
+        ref={targetRef}
+        variants={container}
         projectlabel={"web app"}
         projecttitle={"Loaders.io"}
         projectinfo={
