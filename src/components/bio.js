@@ -10,7 +10,7 @@ import {
 import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
-import LinkSocial from "./LinkSocial"
+import LinkSocial from "./linkSocial"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"

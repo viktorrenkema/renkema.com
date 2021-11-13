@@ -10,7 +10,7 @@ import styled from "styled-components"
 import Typed from "typed.js"
 
 // 🌱 Components
-import LinkSocial from "./LinkSocial"
+import LinkSocial from "./linkSocial"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
