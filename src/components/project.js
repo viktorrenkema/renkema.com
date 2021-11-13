@@ -65,7 +65,7 @@ const ClayMacbookBottom = styled(motion.div)`
 
 const ClayMacbookNotch = styled(motion.div)`
   width: 60px;
-  background: rgb(36 38 70);
+  background: rgb(26, 28, 52);
   height: 12px;
   top: 28px;
   border-radius: 0px 0px 4px 4px;
