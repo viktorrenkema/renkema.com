@@ -101,7 +101,7 @@ const ClayMobileMask = styled.div`
 
 const TopSection = styled(motion.div)`
   width: 100%;
-  padding: 8rem 2rem 6rem 2rem;
+  padding: 6rem 2rem 6rem 2rem;
   gap: 1rem;
   display: flex;
   flex-direction: column;

@@ -48,6 +48,8 @@ const Select = styled.select`
   border-radius: 5px;
   border: 1px solid transparent;
   outline: none;
+  -webkit-appearance: none;
+
   :focus {
     border: 1px solid #eb7085;
     outline: none;

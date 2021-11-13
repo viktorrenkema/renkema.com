@@ -32,7 +32,7 @@ import { H1 } from "./resources/styledGlobal.js"
 
 const Section = styled(motion.section)`
   background: white;
-  margin: 12rem 2rem 6rem 2rem;
+  margin: 8rem 2rem 6rem 2rem;
   max-height: 700px;
   display: flex;
   justify-content: center;
