@@ -39,7 +39,7 @@ export default function Me() {
         asset={FramerIcon}
         title={"Framer"}
         description={[
-          "At Framer, I started out as Community and Support Specialist. In this role, I learned about design and code by helping users with their projects. In 2020, I moved into the Product Specialist role to enable Enterprises like Facebook, Microsoft, Shopify with on-site and digital workshops, technical support, and documentation.",
+          "At Framer, I started out as Community and Support Specialist. In this role, I learned about design and code by helping users with their projects. In 2020, I moved into the Product Specialist role to enable Enterprises like Google, Microsoft, Shopify, and KLM with on-site and digital workshops, technical support, and documentation.",
           "As of 2021, I moved into the Lead Product Specialist role, which now also involves helping leadership with strategic work around Enterprise expansion, fostering our large community, onboarding team hires, and more.",
         ]}
         linktext="Visit Framer"
