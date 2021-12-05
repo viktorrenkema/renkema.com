@@ -70,7 +70,7 @@ export function ProjectsList(props) {
         url={"https://ladimora.org/"}
         githuburl={"https://www.github.com/viktorrenkema"}
       ></Project>
-      <Project
+      {/* <Project
         project="pulse"
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"Progressive Web App"}
@@ -80,7 +80,7 @@ export function ProjectsList(props) {
         }
         url={"comingsoon.com"}
         githuburl={"https://www.github.com/viktorrenkema"}
-      ></Project>
+      ></Project> */}
     </Section>
   )
 }
