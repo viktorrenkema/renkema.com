@@ -76,7 +76,7 @@ export function ProjectsList(props) {
         projectlabel={"Progressive Web App"}
         projecttitle={"Pulse (WIP)"}
         projectinfo={
-          "Upcoming porjects with the purpose of building a workout tracker that offers exactly the features that I needed and nothing more. Still in progress."
+          "Upcoming project with the purpose of building a workout tracker that offers exactly the features that I needed and nothing more. Still in progress."
         }
         // url={""}
         // githuburl={"https://www.github.com/viktorrenkema"}
