@@ -68,19 +68,19 @@ export function ProjectsList(props) {
         project="ladimora"
         id={"ladimora"}
         url={"https://ladimora.org/"}
-        githuburl={"https://www.github.com/viktorrenkema"}
+        // githuburl={"https://www.github.com/viktorrenkema"}
       ></Project>
-      {/* <Project
+      <Project
         project="pulse"
         assetBackgroundColor={"#fbf8f8"}
         projectlabel={"Progressive Web App"}
-        projecttitle={"Pulse"}
+        projecttitle={"Pulse (WIP)"}
         projectinfo={
-          "The sole purpose of this project was to build a workout tracker that offers exactly the features that I needed and nothing more. "
+          "Upcoming porjects with the purpose of building a workout tracker that offers exactly the features that I needed and nothing more. Still in progress."
         }
-        url={"comingsoon.com"}
-        githuburl={"https://www.github.com/viktorrenkema"}
-      ></Project> */}
+        // url={""}
+        // githuburl={"https://www.github.com/viktorrenkema"}
+      ></Project>
     </Section>
   )
 }
