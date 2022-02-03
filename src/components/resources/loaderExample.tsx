@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import Input from "./input.js"
-import Loader from "./loader.js"
+import Input from "./input"
+import Loader from "./loader"
 import { generateCodeSnippet } from "./generateCode"
-import CodeBlock from "./codeBlock.js"
-import { FlexVertCenter } from "./styledGlobal.js"
+import CodeBlock from "./codeBlock"
+import { FlexVertCenter } from "./styledGlobal"
 
 // 🧰 Utils
 import { palette } from "../../../style/palette"

@@ -2,9 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import Biography from "../components/bio.js"
-import LayoutComponent from "../components/resources/layout.js"
-import Navigation from "../components/nav.js"
+import Biography from "../components/bio"
+import LayoutComponent from "../components/resources/layout"
+import Navigation from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -28,7 +28,7 @@ export default function Me() {
         asset={Groningen}
         title={"About myself"}
         description={[
-          "While achieving my Master’ degree in Psychology, I also started to develop an interest in web technology. After briefly working in semi-technical roles at an e-commerce startup and the IT dept. of an academic hospital, I started at Framer in 2019. After joining Framer, I began learning web development and design.",
+          "While achieving my Masters degree in Psychology, I also started to develop an interest in web technology. After briefly working in semi-technical roles at an e-commerce startup and the IT dept. of an academic hospital, I started at Framer in 2019. After joining Framer, I began learning web development and design.",
         ]}
         linktext="Visit LinkedIn for more"
         hyperlink="https://www.linkedin.com/in/vrenkema/"

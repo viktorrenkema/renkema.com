@@ -2,9 +2,9 @@
 import React from "react"
 
 // 🌱 Components
-import LayoutComponent from "../components/resources/layout.js"
-import { ProjectsList } from "../components/projects.js"
-import Navigation from "../components/nav.js"
+import LayoutComponent from "../components/resources/layout"
+import { ProjectsList } from "../components/projects"
+import Navigation from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -13,9 +13,9 @@ import { Helmet } from "react-helmet"
 
 // 💅🏽 Styled Components
 
-export default function Me() {
+export default function Projects() {
   return (
-    <LayoutComponent dark>
+    <LayoutComponent dark={true}>
       <Helmet></Helmet>
       <Navigation current="projects" dark></Navigation>
       <ProjectsList dark></ProjectsList>

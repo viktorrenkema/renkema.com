@@ -19,7 +19,7 @@ export const wrapPageElement = ({ element }) => (
 //   routerProps: { location },
 //   getSavedScrollPosition
 // }) => {
-//   // transition duration from `layout.js` * 1000 to get time in ms
+//   // transition duration from `layout` * 1000 to get time in ms
 //   const TRANSITION_DELAY = 0.3 * 1000 * 2
 
 //   // if it's a "normal" route

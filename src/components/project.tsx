@@ -8,10 +8,10 @@ import styled from "styled-components"
 import { palette } from "../../style/palette"
 
 // 🌱 Components
-import LoaderExample from "./resources/loaderExample.js"
-import LinkSocial from "./linkSocial.js"
-import { ProductHunt } from "./resources/styledGlobal.js"
-import { FlexVertCenter } from "./resources/styledGlobal.js"
+import LoaderExample from "./resources/loaderExample"
+import LinkSocial from "./linkSocial"
+import { ProductHunt } from "./resources/styledGlobal"
+import { FlexVertCenter } from "./resources/styledGlobal"
 
 // 🖼️ Assets
 import ladimoradesktop from "../../src/images/ladimoradesktop.png"
@@ -323,7 +323,7 @@ export default function Project({
               <LinkSocial
                 text={"Visit " + projecttitle}
                 url={url}
-                fill={palette.greys400}
+                fill={palette.greys100}
               ></LinkSocial>
             )}
 

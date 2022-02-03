@@ -10,7 +10,7 @@ import styled from "styled-components"
 import Typed from "typed.js"
 
 // 🌱 Components
-import LinkSocial from "./linkSocial.js"
+import LinkSocial from "./linkSocial"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -80,7 +80,7 @@ const items = {
 }
 
 // 💅🏽 Styled Components
-import { H1, Paragraph } from "./resources/styledGlobal.js"
+import { H1, Paragraph } from "./resources/styledGlobal"
 
 const SectionIntro = styled(motion.section)`
   background: white;

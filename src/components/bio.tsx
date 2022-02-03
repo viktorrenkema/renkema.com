@@ -10,7 +10,7 @@ import {
 import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
-import LinkSocial from "./linkSocial.js"
+import LinkSocial from "./linkSocial"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -29,8 +29,8 @@ const container = {
 }
 
 // 💅🏽 Styled Components
-import { H1 } from "./resources/styledGlobal.js"
-import { FlexVertCenter } from "./resources/styledGlobal.js"
+import { H1 } from "./resources/styledGlobal"
+import { FlexVertCenter } from "./resources/styledGlobal"
 
 const Section = styled(motion.section)`
   background: white;
