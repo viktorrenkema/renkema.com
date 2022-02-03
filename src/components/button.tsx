@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 // 🌱 Components
 import { ArrowLink } from "./resources/icons"
+import { Link } from "gatsby"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -35,44 +36,53 @@ const Btn = styled(motion.button)`
   }
 `
 
-const Hyperlink = styled(motion.a)`
-  font-weight: 500;
-  font-size: 12px;
-  color: ${props => props.fill};
-  text-decoration: none;
-  font-family: "IBM Plex Sans", sans-serif;
+const GatsbyLink = styled(Link)`
+  font-weight: 400;
+  font-size: 14px;
+  color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
+  font-family: "GT-Walsheim", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.4px;
   font-family: "IBM Plex Sans", sans-serif;
   text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: "underline";
 `
 
-export default function LinkSocial(props) {
+export default function Button(props) {
   const { text, url, variants, nav, style, fill } = props
 
+  const [hovered, setHovered] = React.useState(false)
+
+  console.log(hovered)
   return (
     <Btn
-      whileHover={{ textDecoration: "underline" }}
       nav={nav}
-      style={style}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        alignContent: "center",
+      }}
       variants={variants}
+      onHoverStart={() => {
+        setHovered(true)
+      }}
+      onHoverEnd={() => {
+        setHovered(false)
+      }}
     >
-      <Hyperlink
+      <GatsbyLink to={"projects"}>View projects</GatsbyLink>
+      <ArrowLink
         fill={fill}
-        target="_blank"
-        rel="noopener noreferrer"
-        href={url}
-      >
-        {/* {text === "Twitter" && <Twitter />}
-        {text === "Email" && <Email />}
-        {text === "Linkedin" && <Linkedin />}
-        {text === "Github" && <Github />} */}
-        {text}
-      </Hyperlink>
-      <ArrowLink fill={fill} />
+        animate={
+          hovered
+            ? { transform: "rotate(45deg)" }
+            : { transform: "rotate(0deg)" }
+        }
+      />
     </Btn>
   )
 }

@@ -10,8 +10,9 @@ import { motion } from "framer-motion"
 
 export const H1 = styled(motion.h1)`
   font-size: 56px;
-  font-family: "GT-Ultra", sans-serif;
-  font-weight: 400;
+  /* font-family: "GT-Ultra", sans-serif; */
+  font-family: "GT-Walsheim-Bold", sans-serif;
+  font-weight: 600;
   line-height: 1;
 
   @media (max-width: 479px) {

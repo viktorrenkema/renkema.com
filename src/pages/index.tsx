@@ -4,7 +4,6 @@ import React from "react"
 // 🌱 Components
 import Introduction from "../components/intro"
 import LayoutComponent from "../components/resources/layout"
-import Navigation from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -38,7 +37,6 @@ export default function IndexPage() {
           href="https://i.ibb.co/nsPWwRb/Fav.png"
         />
       </Helmet>
-      <Navigation current="home" dark={false}></Navigation>
       <Introduction id={"intro"}></Introduction>
     </LayoutComponent>
   )

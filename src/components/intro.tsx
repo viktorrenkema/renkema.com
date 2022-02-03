@@ -10,7 +10,8 @@ import styled from "styled-components"
 import Typed from "typed.js"
 
 // 🌱 Components
-import LinkSocial from "./linkSocial"
+import LinkSocial from "./link-social"
+import Button from "./button"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -80,7 +81,7 @@ const items = {
 }
 
 // 💅🏽 Styled Components
-import { H1, Paragraph } from "./resources/styledGlobal"
+import { FlexVertCenter, H1, Paragraph } from "./resources/styledGlobal"
 
 const SectionIntro = styled(motion.section)`
   background: white;
@@ -91,28 +92,18 @@ const SectionIntro = styled(motion.section)`
 `
 
 const Grid = styled(motion.div)`
-  height: 60vh;
-  justify-items: start;
-  align-content: start;
-  margin-top: 30vh;
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(3, auto);
-  grid-gap: 1.25rem;
-  padding-top: 3rem;
-  max-width: 600px;
-  align-self: center;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 30%;
 
-  @media (max-width: 767px) {
+  /* @media (max-width: 767px) {
     row-gap: 0.5rem;
     padding: 0em 1em 0em 1em;
     width: auto;
     grid-template-rows: repeat(4, auto);
-  }
+  } */
 `
 
 const GridParagraph = styled(Paragraph)`
@@ -144,7 +135,7 @@ const MonospaceSpan = styled.span`
 const SocialsContainer = styled(motion.div)`
   display: flex;
   gap: 16px;
-
+  padding: 1rem 0rem;
   @media (max-width: 479px) {
     gap: 8px;
   }
@@ -183,21 +174,34 @@ export default function Introduction({ id }) {
     ])
   }, [])
 
+  const constraintsRef = React.useRef(null)
   return (
     <SectionIntro id={`${id}`}>
       <Grid>
-        <GridH1 initial="hidden" animate="visible" variants={name}>
-          Hey, my name is Viktor
-        </GridH1>
-
+        <Strip>
+          <AnimatingBar
+            variants={row}
+            animate={"finish"}
+            initial={"start"}
+            transition={{
+              duration: 60,
+              ease: "linear",
+            }}
+            drag={"x"}
+            dragConstraints={{ left: -2700, right: 0 }}
+          >
+            {words.map(item => {
+              return <NameH1 outline={item.name}>{item.title}</NameH1>
+            })}
+          </AnimatingBar>
+        </Strip>
         <GridParagraph
           variants={description}
           initial="hidden"
           animate="visible"
         >
-          Front-end developer with a background in psychology, exploring the
-          field of design and
-          <MonospaceSpan ref={el}></MonospaceSpan>
+          I like to build fun and interactive experiences for the web, focusing
+          on motion design and <MonospaceSpan ref={el}></MonospaceSpan>.
         </GridParagraph>
 
         <SocialsContainer
@@ -226,8 +230,89 @@ export default function Introduction({ id }) {
             fill={palette.greys900}
             url={"mailto:viktor@renkema.com"}
           ></LinkSocial>
+          <LinkSocial
+            variants={items}
+            whileHover="hover"
+            text={"Github"}
+            fill={palette.greys900}
+            url={"https://github.com/viktorrenkema"}
+          ></LinkSocial>
         </SocialsContainer>
+        <Button></Button>
       </Grid>
     </SectionIntro>
   )
 }
+
+const NameH1 = styled(H1)`
+  font-size: 62px;
+  white-space: nowrap;
+  -webkit-text-stroke: ${props => (props.outline ? "0px" : "1px black")};
+  }
+  color: ${props => (props.outline == true ? "inherit" : "transparent")}
+`
+
+const Strip = styled(motion.div)`
+  margin-top: 3rem;
+  width: 100vw;
+  height: 100px;
+`
+
+const AnimatingBar = styled(motion.div)`
+  display: flex;
+  gap: 20px;
+  margin: 5px;
+`
+
+const StripComponent = styled(motion.div)`
+  width: 50px;
+  height: 50px;
+`
+
+const row = {
+  start: { x: "5%" },
+  finish: { x: "-3000px" },
+}
+
+const words = [
+  {
+    title: "Hey, I’m Viktor. I enjoy:",
+    name: true,
+  },
+  {
+    title: "web development",
+    name: false,
+  },
+  {
+    title: "·",
+    name: false,
+  },
+  {
+    title: "design",
+    name: false,
+  },
+  {
+    title: "·",
+    name: false,
+  },
+  {
+    title: "interactions",
+    name: false,
+  },
+  {
+    title: "·",
+    name: false,
+  },
+  {
+    title: "creative coding",
+    name: false,
+  },
+  {
+    title: "·",
+    name: false,
+  },
+  {
+    title: "motion",
+    name: false,
+  },
+]

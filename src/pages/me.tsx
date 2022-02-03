@@ -4,7 +4,6 @@ import React from "react"
 // 🌱 Components
 import Biography from "../components/bio"
 import LayoutComponent from "../components/resources/layout"
-import Navigation from "../components/nav"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
@@ -21,7 +20,6 @@ export default function Me() {
   return (
     <LayoutComponent>
       <Helmet></Helmet>
-      <Navigation current="me"></Navigation>
       <Biography
         positioning={"left"}
         id={"groningen"}

@@ -9,7 +9,7 @@ import { palette } from "../../style/palette"
 
 // 🌱 Components
 import LoaderExample from "./resources/loaderExample"
-import LinkSocial from "./linkSocial"
+import LinkSocial from "./link-social"
 import { ProductHunt } from "./resources/styledGlobal"
 import { FlexVertCenter } from "./resources/styledGlobal"
 

@@ -3,7 +3,7 @@ import React from "react"
 import { motion } from "framer-motion"
 
 export function ArrowLink(props) {
-  const { fill, whileHover } = props
+  const { fill, animate } = props
 
   return (
     <motion.div
@@ -13,7 +13,7 @@ export function ArrowLink(props) {
         flexDirection: "column",
         alignItems: "top",
       }}
-      whileHover={whileHover}
+      animate={animate}
     >
       <motion.svg xmlns="http://www.w3.org/2000/svg" width="8" height="8">
         <motion.path
