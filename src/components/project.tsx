@@ -41,41 +41,54 @@ export default function Project({
   id,
   githuburl,
 }) {
-  // State
+  // State for the Loaders.io example to store how many loaders are selected
   const [quantityLoaders, setQuantityLoaders] = React.useState(5)
+  // Store the width of the user's viewport
   const [viewportWidth, setViewportWidth] = React.useState(0)
+  // Store an array reflecting the range input for La Dimora's scroll examples
   const [
-    inputRangeLaDimoraScroller,
-    setInputRangeLaDimoraScroller,
+    inputRangeLaDimoraScrollerDesktop,
+    setInputRangeLaDimoraScrollerDesktop,
+  ] = React.useState([0, 0])
+  const [
+    inputRangeLaDimoraScrollerMobile,
+    setInputRangeLaDimoraScrollerMobile,
   ] = React.useState([0, 0])
 
   // Other hooks
-  const [isInViewport, targetRef] = useIsInViewport({ threshold: 50 })
+  const [isInViewport, targetRef] = useIsInViewport({ threshold: 30 })
   let { scrollY } = useViewportScroll() // Track the y scroll in pixels from top
   // For the dynamic top position scroll, transform the scrollY into a distance range
-  const dynamicTop = useTransform(scrollY, inputRangeLaDimoraScroller, [
-    0,
-    -446,
-  ])
-  const dynamicTopMobile = useTransform(scrollY, inputRangeLaDimoraScroller, [
-    0,
-    -1200,
-  ])
+  const dynamicTopDesktop = useTransform(
+    scrollY,
+    inputRangeLaDimoraScrollerDesktop,
+    [0, -308]
+  )
+  const dynamicTopMobile = useTransform(
+    scrollY,
+    inputRangeLaDimoraScrollerMobile,
+    [0, -1200]
+  )
 
-  // useEffect
+  // useEffect to get the distance from the visual relative to the viewport & use it to set the range of 'parallax' scrolling
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
 
-    setInputRangeLaDimoraScroller([
+    setInputRangeLaDimoraScrollerDesktop([
       el.getBoundingClientRect().top - 300,
-      el.getBoundingClientRect().top + 300,
+      el.getBoundingClientRect().top + 600,
+    ])
+
+    setInputRangeLaDimoraScrollerMobile([
+      el.getBoundingClientRect().top - 100,
+      el.getBoundingClientRect().top + 600,
     ])
 
     setViewportWidth(window.innerWidth)
   }, [])
 
   const styleAssetFrame = {
-    top: dynamicTop,
+    top: dynamicTopDesktop,
     width: "100%",
     position: "relative",
     overflow: "visible",
@@ -105,7 +118,7 @@ export default function Project({
   const styleAssetFrameMask = {
     overflow: "hidden",
     width: 800,
-    height: 360,
+    height: 500,
     borderRadius: "4px 4px 0px 0px",
     border: "16px solid rgb(26 28 52)",
     boxShadow:
@@ -158,11 +171,11 @@ export default function Project({
           </FlexHorizontal>
         </FlexVertCenter>
         <BottomSection>
-          {/* 💡 La dimora example for desktop  */}
+          {/*                                */}
+          {/* La dimora example for desktop  */}
+          {/*                                */}
           {project === "ladimora" && viewportWidth > 1024 && (
             <>
-              {" "}
-              <ClayMacbookNotch />
               <motion.div
                 style={styleAssetFrameMask}
                 className="assetframemask"
@@ -175,7 +188,9 @@ export default function Project({
             </>
           )}
 
-          {/* 💡 La dimora example for mobile */}
+          {/*                              */}
+          {/* La dimora example for mobile */}
+          {/*                              */}
           {project === "ladimora" && viewportWidth <= 1024 && (
             <ClayMobileMask>
               <ClayMobileNotch />
@@ -186,7 +201,10 @@ export default function Project({
             </ClayMobileMask>
           )}
 
-          {/* 💡 Loaders example */}
+          {/*                 */}
+          {/* Loaders example */}
+          {/*                 */}
+
           {project === "loaders" && (
             <LoaderExample
               setQuantityLoaders={setQuantityLoaders}
@@ -194,7 +212,10 @@ export default function Project({
             />
           )}
 
-          {/* 💡 Pulse example */}
+          {/*               */}
+          {/* Pulse example */}
+          {/*               */}
+
           {project === "pulse" && (
             <ClayMobileMask style={{ backgroundColor: "rgb(57 63 110)" }}>
               <ClayMobileNotch />
@@ -236,16 +257,6 @@ const ClayMacbookBottom = styled(motion.div)`
   margin-top: 4px;
   border-radius: 4px 4px 8px 8px;
   padding: 0px 8px;
-`
-
-const ClayMacbookNotch = styled(motion.div)`
-  width: 60px;
-  background: rgb(26, 28, 52);
-  height: 12px;
-  top: 28px;
-  border-radius: 0px 0px 4px 4px;
-  z-index: 8;
-  position: relative;
 `
 
 const ClayMobileAsset = styled.div`

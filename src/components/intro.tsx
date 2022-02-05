@@ -189,7 +189,8 @@ export default function Introduction({ id }) {
                   style={{
                     whiteSpace: "nowrap",
                     WebkitTextStroke:
-                      windowWidth < 768 ? "0.5px black" : "1px black",
+                      windowWidth < 768 ? "0.1px black" : "0.5px black",
+                    textStroke: windowWidth < 768 ? "0.5px black" : "1px black",
                     color: "transparent",
                     backgroundImage: "none",
                   }}
