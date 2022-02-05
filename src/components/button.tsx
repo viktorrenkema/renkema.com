@@ -31,16 +31,15 @@ const Btn = styled(motion.button)`
   background-color: transparent;
 
   @media (max-width: 479px) {
-    transform: scale(0.85);
-    /* width: 175px; */
   }
 `
 
-const GatsbyLink = styled(Link)`
+const InternalLink = styled(Link)`
   font-weight: 400;
   font-size: 14px;
   color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
-  font-family: "GT-Walsheim", sans-serif;
+  /* font-family: "GT-Walsheim", sans-serif; */
+  font-family: "Object Sans Regular", "Arial";
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,21 +51,56 @@ const GatsbyLink = styled(Link)`
   text-decoration: "underline";
 `
 
+const ExternalLink = styled.a`
+  font-weight: 400;
+  font-size: 14px;
+  color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
+  /* font-family: "GT-Walsheim", sans-serif; */
+  font-family: "Object Sans Regular", "Arial";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  letter-spacing: 0.4px;
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 8px;
+  width: 55px;
+  border-radius: 8px;
+`
+
 export default function Button(props) {
-  const { text, url, variants, nav, style, fill } = props
+  const {
+    text,
+    url,
+    dark,
+    nav,
+    external,
+    style,
+    fill,
+    variants,
+    initial,
+    animate,
+    iconLeft,
+  } = props
 
   const [hovered, setHovered] = React.useState(false)
 
-  console.log(hovered)
   return (
     <Btn
+      variants={variants}
+      initial={initial}
+      animate={animate}
       nav={nav}
       style={{
         display: "flex",
         alignItems: "center",
         alignContent: "center",
+        ...style,
       }}
-      variants={variants}
       onHoverStart={() => {
         setHovered(true)
       }}
@@ -74,15 +108,37 @@ export default function Button(props) {
         setHovered(false)
       }}
     >
-      <GatsbyLink to={"projects"}>View projects</GatsbyLink>
-      <ArrowLink
-        fill={fill}
-        animate={
-          hovered
-            ? { transform: "rotate(45deg)" }
-            : { transform: "rotate(0deg)" }
-        }
-      />
+      {iconLeft && (
+        <ArrowLink
+          dark={dark}
+          animate={
+            hovered
+              ? { transform: "rotate(270deg)" }
+              : { transform: "rotate(225deg)" }
+          }
+        />
+      )}
+      {external && (
+        <ExternalLink target="_blank" href={url} dark={dark}>
+          {text}
+        </ExternalLink>
+      )}
+      {!external && (
+        <InternalLink to={url} dark={dark}>
+          {text}
+        </InternalLink>
+      )}
+
+      {/* {!iconLeft && (
+        <ArrowLink
+          dark={dark}
+          animate={
+            hovered
+              ? { transform: "rotate(45deg)" }
+              : { transform: "rotate(0deg)" }
+          }
+        />
+      )} */}
     </Btn>
   )
 }

@@ -6,6 +6,8 @@ import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
 import Project from "./project"
+import Button from "./button"
+import { ArrowLink } from "./resources/icons"
 
 // 🧰 Utils
 
@@ -40,47 +42,69 @@ export function ProjectsList(props) {
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 
   return (
-    <Section>
-      <Project
-        initial="hidden"
-        animate={isInViewport ? "visible" : "hidden"}
-        ref={targetRef}
-        variants={container}
-        projectlabel={"web app"}
-        projecttitle={"Loaders.io"}
-        projectinfo={
-          "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize the style and animation properties using an interface instead of code."
-        }
-        linktext={"Visit loaders.io"}
-        url={"https://loadergenerator.vercel.app/"}
-        githuburl={"https://www.github.com/viktorrenkema"}
-        project="loaders"
-        id={"loaders"}
-      ></Project>
-      <Project
-        assetBackgroundColor={"#fbf8f8"}
-        projectlabel={"website"}
-        projecttitle={"La Dimora"}
-        projectinfo={
-          "La Dimora is a beautiful house located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
-        }
-        linktext={"Visit ladimora.org"}
-        project="ladimora"
-        id={"ladimora"}
-        url={"https://ladimora.org/"}
-        // githuburl={"https://www.github.com/viktorrenkema"}
-      ></Project>
-      <Project
-        project="pulse"
-        assetBackgroundColor={"#fbf8f8"}
-        projectlabel={"Progressive Web App"}
-        projecttitle={"Pulse (WIP)"}
-        projectinfo={
-          "Upcoming project with the purpose of building a workout tracker that offers exactly the features that I needed and nothing more. Still in progress."
-        }
-        // url={""}
-        // githuburl={"https://www.github.com/viktorrenkema"}
-      ></Project>
-    </Section>
+    <>
+      <Button
+        text={"Home"}
+        url={"/"}
+        dark={true}
+        external={false}
+        style={{
+          position: "fixed",
+          top: "20px",
+          left: "20px",
+          zIndex: "99",
+        }}
+        iconLeft
+      ></Button>
+      {/* <ArrowLink
+        dark
+        style={{ transform: "rotate(225deg)" }}
+        // animate={
+        //   hovered
+        //     ? { transform: "rotate(45deg)" }
+        //     : { transform: "rotate(0deg)" }
+        // }
+      ></ArrowLink> */}
+      <Section>
+        <Project
+          initial="hidden"
+          animate={isInViewport ? "visible" : "hidden"}
+          ref={targetRef}
+          variants={container}
+          projectlabel={"web app"}
+          projecttitle={"Loaders.io"}
+          projectinfo={
+            "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize the style and animation properties using an interface instead of code."
+          }
+          url={"https://loadergenerator.vercel.app/"}
+          githuburl={"https://www.github.com/viktorrenkema"}
+          project="loaders"
+          id={"loaders"}
+        ></Project>
+        <Project
+          assetBackgroundColor={"#fbf8f8"}
+          projectlabel={"website"}
+          projecttitle={"La Dimora"}
+          projectinfo={
+            "La Dimora is a beautiful house located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
+          }
+          project="ladimora"
+          id={"ladimora"}
+          url={"https://www.ladimora.org/"}
+          // githuburl={"https://www.github.com/viktorrenkema"}
+        ></Project>
+        <Project
+          project="pulse"
+          assetBackgroundColor={"#fbf8f8"}
+          projectlabel={"PWA"}
+          projecttitle={"Pulse"}
+          projectinfo={
+            "A workout tracker for personal use that offers exactly the features that I needed and nothing more."
+          }
+          // url={""}
+          // githuburl={"https://www.github.com/viktorrenkema"}
+        ></Project>
+      </Section>
+    </>
   )
 }

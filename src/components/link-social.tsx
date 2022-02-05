@@ -30,8 +30,6 @@ const Btn = styled(motion.button)`
   background-color: transparent;
 
   @media (max-width: 479px) {
-    transform: scale(0.85);
-    /* width: 175px; */
   }
 `
 

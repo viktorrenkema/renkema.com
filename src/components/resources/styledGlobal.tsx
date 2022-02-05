@@ -9,14 +9,25 @@ import { motion } from "framer-motion"
 // 💅🏽 Styled Components
 
 export const H1 = styled(motion.h1)`
-  font-size: 56px;
+  font-size: 64px;
   /* font-family: "GT-Ultra", sans-serif; */
-  font-family: "GT-Walsheim-Bold", sans-serif;
-  font-weight: 600;
-  line-height: 1;
+  /* font-family: "GT-Walsheim-Bold", sans-serif; */
+  font-family: "Object Sans Heavy", "Arial";
+  line-height: 1.2;
 
+  @media (max-width: 767px) {
+    font-size: 54px;
+  }
+  @media (max-width: 425px) {
+    font-size: 38px;
+  }
+`
+export const H2 = styled(motion.h2)`
+  font-size: 48px;
+  font-family: "Object Sans Heavy", "Arial";
+  line-height: 1.2;
   @media (max-width: 479px) {
-    font-size: 30px;
+    font-size: 24px;
   }
   @media (max-width: 737px) {
     font-size: 36px;
@@ -29,6 +40,7 @@ export const Paragraph = styled(motion.p)`
   vertical-align: middle;
   line-height: 30px;
   text-align: start;
+  width: 90%;
   max-width: 550px;
   @media (max-width: 479px) {
     font-size: 16px;
@@ -40,6 +52,13 @@ export const FlexVertCenter = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`
+
+export const FlexColumn = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `
 
 export function ProductHunt() {
