@@ -1,6 +1,6 @@
 // 📦 Packages
 import React, { useEffect, useRef } from "react"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import styled from "styled-components"
 import Typed from "typed.js"
 
@@ -86,15 +86,17 @@ export default function Introduction({ id }) {
   const el = React.useRef(null)
   // Create reference to store the Typed instance itself
   const typed = React.useRef(null)
+  const controls = useAnimation()
 
   // Create a ref to get access to the width of the animating roles div
   const animatingDiv = React.useRef(null)
 
-  useEffect(() => {
-    console.log("width", animatingDiv.current.offsetWidth)
+  // Run an effect to measure the width of the roles + window
+  React.useEffect(() => {
     setRolesDiv(animatingDiv.current.offsetWidth)
     setWindowWidth(window.innerWidth)
   }, [])
+
   React.useEffect(() => {
     const options = {
       strings: ["web development"],
@@ -102,7 +104,6 @@ export default function Introduction({ id }) {
       backSpeed: 50,
       startDelay: 1000,
     }
-
     // elRef refers to the <span> rendered below
     typed.current = new Typed(el.current, options)
 
@@ -120,12 +121,33 @@ export default function Introduction({ id }) {
     ])
   }, [])
 
-  const constraintsRef = React.useRef(null)
+  // Run an effect to start the roles animation, run again once rolesDiv is measured & set
+  React.useEffect(() => {
+    controls.start("end")
+  }, [rolesDiv])
 
   const rolesVariants = {
-    start: { x: "5%" },
-    finish: { x: `-${rolesDiv}px` },
+    start: {
+      x: "1%",
+      transition: {
+        duration: 180,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    },
+    end: {
+      x: `-${rolesDiv}px`,
+      transition: {
+        duration: 180,
+        ease: "linear",
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    },
   }
+
+  console.log(rolesDiv)
 
   return (
     <SectionIntro id={`${id}`}>
@@ -144,17 +166,21 @@ export default function Introduction({ id }) {
           </ContainerForName>
           <ContainerForRoles
             variants={rolesVariants}
-            animate={"finish"}
+            animate={controls}
             initial={"start"}
-            transition={{
-              duration: 180,
-              ease: "linear",
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
             drag={"x"}
             dragConstraints={{ left: -rolesDiv, right: 0 }}
+            dragTransition={{
+              bounceStiffness: 1000,
+              bounceDamping: 100,
+              timeConstant: 400,
+            }}
             ref={animatingDiv}
+            onDragEnd={() => {
+              setTimeout(() => {
+                controls.start("end")
+              }, 2000)
+            }}
           >
             {roles.map(item => {
               return (
@@ -197,11 +223,11 @@ export default function Introduction({ id }) {
           initial="hidden"
           animate="visible"
         >
-          At{" "}
+          Helping teams build sites and prototypes at{" "}
           <a href="https://www.framer.com" target="_blank">
             Framer
           </a>
-          &nbsp;I help teams build sites and prototypes.
+          &nbsp;.
         </GridParagraph>
 
         <SocialsContainer
@@ -255,14 +281,6 @@ export default function Introduction({ id }) {
 const NameH1 = styled(H1)`
   white-space: nowrap;
   word-wrap: break-word;
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  ); */
 `
 const RolesH2 = styled(H2)`
   white-space: nowrap;
