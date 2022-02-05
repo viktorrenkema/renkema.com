@@ -152,10 +152,10 @@ export default function Project({
         <ProjectDetails>{projectinfo}</ProjectDetails>
 
         <FlexVertCenter>
+          {project === "loaders" && <ProductHunt />}
           <FlexHorizontal>
             {url && <Button text={"Visit"} url={url} dark external></Button>}
           </FlexHorizontal>
-          {project === "loaders" && <ProductHunt />}
         </FlexVertCenter>
         <BottomSection>
           {/* 💡 La dimora example for desktop  */}

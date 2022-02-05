@@ -80,6 +80,7 @@ export default function Introduction({ id }) {
   const [inputRange, setInputRange] = React.useState([0, 0])
   // Store the width of the div that animates roles
   const [rolesDiv, setRolesDiv] = React.useState(0)
+  const [windowWidth, setWindowWidth] = React.useState(0)
 
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null)
@@ -92,9 +93,8 @@ export default function Introduction({ id }) {
   useEffect(() => {
     console.log("width", animatingDiv.current.offsetWidth)
     setRolesDiv(animatingDiv.current.offsetWidth)
+    setWindowWidth(window.innerWidth)
   }, [])
-  console.log(rolesDiv)
-
   React.useEffect(() => {
     const options = {
       strings: ["web development"],
@@ -153,7 +153,7 @@ export default function Introduction({ id }) {
               repeatType: "reverse",
             }}
             drag={"x"}
-            dragConstraints={{ left: rolesDiv, right: 0 }}
+            dragConstraints={{ left: -rolesDiv, right: 0 }}
             ref={animatingDiv}
           >
             {roles.map(item => {
@@ -162,7 +162,8 @@ export default function Introduction({ id }) {
                   // Inline style required to avoid a bug where the backgroundImage reverts to the last gradient’s color instead of "none"
                   style={{
                     whiteSpace: "nowrap",
-                    WebkitTextStroke: "1px black",
+                    WebkitTextStroke:
+                      windowWidth < 768 ? "0.5px black" : "1px black",
                     color: "transparent",
                     backgroundImage: "none",
                   }}
@@ -296,9 +297,9 @@ const ContainerForRoles = styled(motion.div)`
 `
 
 const roles = [
-  {
-    title: "I enjoy:",
-  },
+  // {
+  //   title: "I enjoy:",
+  // },
   {
     title: "web development",
     gradient: "linear-gradient(-60deg,  #904e95 0%,#904e95, #e73c7e, #ee7752)",

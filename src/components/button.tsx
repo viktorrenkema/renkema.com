@@ -26,7 +26,7 @@ const Btn = styled(motion.button)`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px 0px;
+  /* padding: 8px 0px; */
   gap: 0px;
   background-color: transparent;
 
@@ -129,7 +129,7 @@ export default function Button(props) {
         </InternalLink>
       )}
 
-      {/* {!iconLeft && (
+      {!iconLeft && !external && (
         <ArrowLink
           dark={dark}
           animate={
@@ -138,7 +138,7 @@ export default function Button(props) {
               : { transform: "rotate(0deg)" }
           }
         />
-      )} */}
+      )}
     </Btn>
   )
 }

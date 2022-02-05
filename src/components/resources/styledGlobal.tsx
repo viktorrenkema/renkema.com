@@ -63,7 +63,7 @@ export const FlexColumn = styled(motion.div)`
 
 export function ProductHunt() {
   return (
-    <div style={{ paddingTop: "24px" }}>
+    <div style={{ marginBottom: "1rem" }}>
       <a
         href="https://www.producthunt.com/posts/loader-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-loader-generator"
         target="_blank"
