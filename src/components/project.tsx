@@ -350,7 +350,7 @@ const ProjectDetails = styled(motion.span)`
   color: ${palette.greys100};
   font-size: 16;
   letter-spacing: 0;
-  line-height: 1.4;
+  line-height: 1.8;
   font-weight: 400;
   text-align: center;
   width: 90%;

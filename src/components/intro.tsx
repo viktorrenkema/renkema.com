@@ -34,7 +34,7 @@ const FlexColumnPadded = styled(FlexColumn)`
 const GridParagraph = styled(Paragraph)`
   grid-area: 2 / 1 / 2 / 1;
   justify-self: start;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 `
 
 const MonospaceSpan = styled.span`
@@ -55,7 +55,7 @@ const MonospaceSpan = styled.span`
 const SocialsContainer = styled(motion.div)`
   display: flex;
   gap: 16px;
-  padding: 1rem 0rem 2rem 0rem;
+  padding: 2rem 0rem 2rem 0rem;
   @media (max-width: 479px) {
     gap: 8px;
   }
@@ -195,11 +195,11 @@ export default function Introduction({ id }) {
           motion design and <MonospaceSpan ref={el}></MonospaceSpan>.
         </GridParagraph>
         <GridParagraph
-          variants={description}
+          variants={currentlyat}
           initial="hidden"
           animate="visible"
         >
-          Helping teams build sites and prototypes at{" "}
+          Right now I'm helping teams build sites and prototypes at{" "}
           <a href="https://www.framer.com" target="_blank">
             Framer
           </a>
@@ -401,6 +401,17 @@ const description = {
     opacity: 1,
     transition: {
       delay: 0.5,
+      duration: 0.5,
+    },
+  },
+}
+const currentlyat = {
+  hidden: { x: 20, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      delay: 1,
       duration: 0.5,
     },
   },

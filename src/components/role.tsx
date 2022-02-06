@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { detect } from "detect-browser"
 
 // 🌱 Components
-import { H2 } from "./resources/styledGlobal"
+import { H2, Paragraph } from "./resources/styledGlobal"
 
 export default function Role(props) {
   const { style, title, id, gradient } = props
@@ -51,7 +51,9 @@ export default function Role(props) {
             clientRectFromRight > 0.2 * viewportWidth
               ? "0px black"
               : userBrowser === "chrome"
-              ? "1px black"
+              ? "0.8px black"
+              : userBrowser === "firefox"
+              ? "0.6px black"
               : "0.5px black",
         }
       }
@@ -59,11 +61,6 @@ export default function Role(props) {
       id={id}
     >
       {title}
-      {/* For debugging, uncomment to see the current position: */}
-      {/* <Paragraph>
-        {doneSettingRolePositions && rolePositions[id].position}
-      </Paragraph>
-      <Paragraph>{doneSettingRolePositions && fromRight}</Paragraph> */}
     </RolesH2>
   )
 }
@@ -72,7 +69,11 @@ export default function Role(props) {
 const RolesH2 = styled(H2)`
   white-space: nowrap;
   -webkit-text-stroke: ${props =>
-    props.userBrowser === "chrome" ? "1px black" : "0.5px black"};
+    props.userBrowser === "chrome"
+      ? "0.8px black"
+      : props.userBrowser === "firefox"
+      ? "0.6px black"
+      : "0.5px black"};
   color: transparent;
 
   @media (max-width: 767px) {

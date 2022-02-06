@@ -83,7 +83,7 @@ export function ProjectsList(props) {
           projectlabel={"web app"}
           projecttitle={"Loaders.io"}
           projectinfo={
-            "Loaders.io is a tool that generates production-ready code for a React loader component, only requiring the user to customize the style and animation properties using an interface instead of code."
+            "Loaders.io is a GUI that allows users to generate production code for a React loader component, allowing users to easily customize the style and animation properties."
           }
           url={"https://loadergenerator.vercel.app/"}
           githuburl={"https://www.github.com/viktorrenkema"}

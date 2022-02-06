@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 // 🌀 Variants
 // 💅🏽 Styled Components
 
+// Must use a motion.div due to how Firefox renders text-stroke with h1's
 export const H1 = styled(motion.h1)`
   font-size: 64px;
   font-family: "Object Sans Heavy", "Arial";
@@ -20,7 +21,7 @@ export const H1 = styled(motion.h1)`
     font-size: 38px;
   }
 `
-export const H2 = styled(motion.h2)`
+export const H2 = styled(motion.div)`
   font-size: 48px;
   font-family: "Object Sans Heavy", "Arial";
   /* font-family: "Object Sans Bold", "Arial"; */
@@ -41,7 +42,7 @@ export const Paragraph = styled(motion.p)`
   line-height: 30px;
   text-align: start;
   width: 90%;
-  max-width: 550px;
+  max-width: 600px;
   @media (max-width: 479px) {
     font-size: 16px;
   }
