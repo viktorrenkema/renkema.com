@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import styled from "styled-components"
 
 // 🌱 Components
-import { H2 } from "./resources/styledGlobal"
+import { H2, Paragraph } from "./resources/styledGlobal"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -13,67 +13,87 @@ import { palette } from "../../style/palette"
 
 // 💅🏽 Styled Components
 export default function Role(props) {
-  const { style, title, id, gradient, showGradient, setShowGradient } = props
+  const {
+    style,
+    title,
+    id,
+    gradient,
+    rolePositions,
+    setRolePositions,
+    doneSettingRolePositions,
+  } = props
   const [state, setState] = React.useState(false)
-  const [internal, setInteral] = React.useState(false)
+  const [clientRectFromLeft, setClientRectFromLeft] = React.useState(0)
+  const [clientRectFromRight, setClientRectFromRight] = React.useState(0)
+
+  // Testing
 
   // Store the width of the user's viewport
   const [viewportWidth, setViewportWidth] = React.useState(0)
 
-  setTimeout(() => {
-    setState(!state)
-  }, 2000)
-
+  // Once our component mounts, set the viewPort.
   React.useEffect(() => {
-    var myEl = document.getElementById(id.toString())
-
-    // console.log("State changed", myEl.getBoundingClientRect().x)
-    if (myEl.getBoundingClientRect().x < 0.3 * viewportWidth) {
-      console.log(showGradient[id] > showGradient[id - 1])
-
-      let newArray = [(showGradient[id] = myEl.getBoundingClientRect().x)]
-      // console.log(newArray)
-      setShowGradient(newArray)
-    }
-
     setViewportWidth(window.innerWidth)
-  }, [state])
+  }, [])
 
-  console.log(showGradient)
-  // const closest = showGradient.reduce((a, b) => {
-  //   return Math.abs(b - 0.3 * viewportWidth) < Math.abs(a - 0.3 * viewportWidth)
-  //     ? b
-  //     : a
-  // })
+  // Once our component mounts, at an interval, find this component el and calculate its position relative to left of viewport
+  React.useEffect(() => {
+    let myEl = document.getElementById(id.toString())
+    console.log(myEl.getBoundingClientRect())
+    const interval = setInterval(() => {
+      setClientRectFromLeft(Math.round(myEl.getBoundingClientRect().x))
+      setClientRectFromRight(Math.round(myEl.getBoundingClientRect().right))
+    }, 500)
+    return () => clearInterval(interval)
+  }, [])
 
-  // console.log("closest is: ", closest)
+  // Once doneSettingRolePositions is true at the intro.tsx component, the roles array is fully looped over and we have set a default `position` for each index. Now we can override the initial of 0 for the actual position (see above useEffect.
+  if (doneSettingRolePositions) {
+    // Create a new temporary array and set it to equal the rolePositions state array
+    let cloneRolePositions = rolePositions
+    // Override the `position` property at the current el’s index in the cloned array to the new position
+    cloneRolePositions[id].position = clientRectFromLeft
+    // Update the state with the new array
+    setRolePositions(cloneRolePositions)
+  }
+
+  // **Todo**
+  // ✔️ Store all elements rendered with their position one level up (`rolePositions` & `setRolePositions`)
+  // ✔️ Update the position at an interval
+  // Calculate which element is closest to a certain position
+  // Show gradient for said element
 
   return (
     <RolesH2
       style={
-        gradient && {
-          WebkitTextStroke:
-            showGradient[id] > showGradient[id - 1] ? "0px black" : "1px black",
+        gradient &&
+        doneSettingRolePositions && {
           color: "transparent",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
+          // WebkitTextStroke: "1px black",
+          // backgroundImage: "none",
           backgroundImage:
-            showGradient[id] > showGradient[id - 1] ? gradient : "none",
+            rolePositions[id].position < 0.2 * viewportWidth &&
+            clientRectFromRight > 0.2 * viewportWidth
+              ? gradient
+              : "none",
+          WebkitTextStroke:
+            rolePositions[id].position < 0.2 * viewportWidth &&
+            clientRectFromRight > 0.2 * viewportWidth
+              ? "0px black"
+              : "1px black",
         }
       }
       id={id}
       state={state}
-      whileHover={
-        gradient && {
-          WebkitTextStroke: "0px black",
-          color: "transparent",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundImage: gradient,
-        }
-      }
     >
       {title}
+      {/* For debugging, uncomment to see the current position: */}
+      {/* <Paragraph>
+        {doneSettingRolePositions && rolePositions[id].position}
+      </Paragraph>
+      <Paragraph>{doneSettingRolePositions && fromRight}</Paragraph> */}
     </RolesH2>
   )
 }
@@ -82,15 +102,6 @@ const RolesH2 = styled(H2)`
   white-space: nowrap;
   -webkit-text-stroke: 1px black;
   color: transparent;
-
-                    item.gradient && {
-                      WebkitTextStroke: "0px black",
-                      color: "transparent",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundImage: item.gradient,
-                    }
-                  }
 
   @media (max-width: 767px) {
     -webkit-text-stroke: 0.5px black;

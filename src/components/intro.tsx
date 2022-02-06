@@ -82,51 +82,14 @@ export default function Introduction({ id }) {
   // Store the width of the div that animates roles
   const [rolesDiv, setRolesDiv] = React.useState(0)
   const [windowWidth, setWindowWidth] = React.useState(0)
-  const [showGradient, setShowGradient] = React.useState([
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-  ])
-  const [gradientEnablingArray, setGradientEnablingArray] = React.useState([
-    false,
-    false,
-    false,
-    false,
-  ])
 
-  console.log(showGradient)
+  // **TODO** Store the positions of the roles animating across the screen
+  const [rolePositions, setRolePositions] = React.useState([])
+  const [
+    doneSettingRolePositions,
+    setDoneSettingRolePositions,
+  ] = React.useState(false)
+  // **Todo**
 
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null)
@@ -142,7 +105,20 @@ export default function Introduction({ id }) {
   React.useEffect(() => {
     setRolesDiv(animatingDiv.current.offsetWidth)
     setWindowWidth(window.innerWidth)
+
+    // On mounting, map over our Roles array and for each, push a new object to the array equal to store the position of the el at this index. This will make e.g. the 2nd item be tracked like: rolePositions[1].position
+    for (let i = 0; i < roles.length; i++) {
+      let newArr = rolePositions
+      let myObj = { position: 0 }
+      newArr.push(myObj)
+      setRolePositions(newArr)
+      console.log(rolePositions)
+    }
+    setDoneSettingRolePositions(true)
+    return
   }, [])
+
+  console.log(doneSettingRolePositions)
 
   React.useEffect(() => {
     const options = {
@@ -241,9 +217,9 @@ export default function Introduction({ id }) {
                   }}
                   title={item.title}
                   gradient={item.gradient}
-                  setShowGradient={setShowGradient}
-                  showGradient={showGradient}
-                 
+                  setRolePositions={setRolePositions}
+                  rolePositions={rolePositions}
+                  doneSettingRolePositions={doneSettingRolePositions}
                 ></Role>
               )
             })}
