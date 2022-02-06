@@ -62,7 +62,7 @@ export default function LinkSocial(props) {
         borderRadius: "8px",
         alignItems: "center",
         alignContent: "center",
-        border: "1px solid black",
+        border: "1px solid #1d1f35",
         background: "#ffffff",
       }}
       variants={variants}

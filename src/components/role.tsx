@@ -49,12 +49,12 @@ export default function Role(props) {
           WebkitTextStroke:
             clientRectFromLeft < 0.2 * viewportWidth &&
             clientRectFromRight > 0.2 * viewportWidth
-              ? "0px black"
+              ? "0px #1d1f35"
               : userBrowser === "chrome"
-              ? "0.8px black"
+              ? "0.8px #1d1f35"
               : userBrowser === "firefox"
-              ? "0.6px black"
-              : "0.5px black",
+              ? "0.6px #1d1f35"
+              : "0.5px #1d1f35",
         }
       }
       userBrowser={userBrowser}
@@ -70,10 +70,10 @@ const RolesH2 = styled(H2)`
   white-space: nowrap;
   -webkit-text-stroke: ${props =>
     props.userBrowser === "chrome"
-      ? "0.8px black"
+      ? "0.8px #1d1f35"
       : props.userBrowser === "firefox"
-      ? "0.6px black"
-      : "0.5px black"};
+      ? "0.6px #1d1f35"
+      : "0.5px #1d1f35"};
   color: transparent;
 
   @media (max-width: 767px) {

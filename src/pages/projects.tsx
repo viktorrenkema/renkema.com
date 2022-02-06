@@ -7,6 +7,7 @@ import { ProjectsList } from "../components/projects"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
+import "../../style/projects.css"
 
 // 🌀 Variants
 

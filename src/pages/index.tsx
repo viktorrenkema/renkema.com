@@ -7,6 +7,7 @@ import LayoutComponent from "../components/resources/layout"
 
 // 🧰 Utils
 import { Helmet } from "react-helmet"
+import "../../style/index.css"
 
 // 💅🏽 Styled Components
 

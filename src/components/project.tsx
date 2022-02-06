@@ -18,6 +18,7 @@ import Button from "./button"
 import ladimoradesktop from "../../src/images/ladimoradesktop.png"
 import ladimoramobile from "../../src/images/ladimoramobile.png"
 import ladimoramobilenav from "../../src/images/ladimoramobilenav.png"
+import pulse from "../../src/images/pulse.png"
 
 // 🌀 Variants
 const container = {
@@ -67,7 +68,7 @@ export default function Project({
   const dynamicTopMobile = useTransform(
     scrollY,
     inputRangeLaDimoraScrollerMobile,
-    [0, -1200]
+    [0, -1116]
   )
 
   // useEffect to get the distance from the visual relative to the  & use it to set the range of 'parallax' scrolling
@@ -103,12 +104,26 @@ export default function Project({
 
   const MobileLaDimoraInnerFrame = {
     // To calculate the height and width, use the intrinsic aspect ratio. Find the asset’s dimensions, calculate (https://andrew.hedges.name/experiments/aspect_ratio/) the new height (or width) by plugging in the asset’s dimensions and the Frame’s set width (or height)
-    height: 1712,
-    width: 300,
+    height: 1626,
+    width: 285,
     position: "absolute",
     overflow: "hidden",
     background: project === "loaders" ? "none" : "#fff",
     backgroundImage: `url(${ladimoramobile})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "top",
+    backgroundPositionX: "left",
+  }
+
+  const PulseImage = {
+    // To calculate the height and width, use the intrinsic aspect ratio. Find the asset’s dimensions, calculate (https://andrew.hedges.name/experiments/aspect_ratio/) the new height (or width) by plugging in the asset’s dimensions and the Frame’s set width (or height)
+    height: 617,
+    width: 285,
+    position: "absolute",
+    overflow: "hidden",
+    background: "#fff",
+    backgroundImage: `url(${pulse})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top",
@@ -217,8 +232,14 @@ export default function Project({
           {/*               */}
 
           {project === "pulse" && (
-            <ClayMobileMask style={{ backgroundColor: "rgb(57 63 110)" }}>
-              <ClayMobileNotch />
+            <ClayMobileMask
+              style={{
+                borderColor: "#e98a9a",
+                boxShadow: "1px 1px 20px 7px #eb708540",
+              }}
+            >
+              <ClayMobileNotch style={{ background: "#e98a9a" }} />
+              <motion.div style={PulseImage}></motion.div>
             </ClayMobileMask>
           )}
         </BottomSection>
@@ -282,11 +303,11 @@ const ClayMobileFrame = styled.div`
 const ClayMobileMask = styled.div`
   overflow: hidden;
   position: relative;
-  width: 300px;
+  width: 285px;
   height: 548px;
   border-radius: 40px;
   z-index: 20;
-  border: 12px solid rgb(36 38 70);
+  border: 8px solid rgb(36 38 70);
   background-color: rgb(57 63 110);
   box-shadow: 0 6.7px 5.3px rgba(0, 0, 0, 0.04),
     0 22.3px 17.9px rgba(0, 0, 0, 0.06), 0 100px 80px rgba(0, 0, 0, 0.1);
@@ -295,9 +316,9 @@ const ClayMobileMask = styled.div`
 const ClayMobileNotch = styled(motion.div)`
   width: 32.7%; // iPhone 13  notch is 0.99", total screen width is 2.56"
   background: rgb(36 38 70);
-  height: 18px;
+  height: 14px;
   top: -1px;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px 8px 8px;
   z-index: 8;
   position: absolute;
   z-index: 22;
@@ -380,7 +401,7 @@ const MobileLaDimoraNav = styled.div`
   background-position-x: left;
   position: relative;
   top: 0;
-  width: 300px;
+  width: 285px;
   height: 43px;
   z-index: 20;
 `

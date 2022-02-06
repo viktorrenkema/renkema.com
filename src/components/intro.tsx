@@ -45,7 +45,7 @@ const MonospaceSpan = styled.span`
   padding-right: 2px;
   position: relative;
   color: white;
-  background: black;
+  background: #1d1f35;
   white-space: nowrap;
   @media (max-width: 479px) {
     font-size: 14px;
@@ -165,6 +165,9 @@ export default function Introduction({ id }) {
                 controls.start("end")
               }, 2000)
             }}
+            onClick={() => {
+              controls.start("end")
+            }}
           >
             {roles.map((item, index) => {
               return (
@@ -174,8 +177,9 @@ export default function Introduction({ id }) {
                   id={index}
                   style={{
                     whiteSpace: "nowrap",
-                    WebkitTextStroke: "0.5px black",
-                    textStroke: windowWidth < 768 ? "0.5px black" : "1px black",
+                    WebkitTextStroke: "0.5px #1d1f35",
+                    textStroke:
+                      windowWidth < 768 ? "0.5px #1d1f35" : "1px #1d1f35",
                     color: "transparent",
                     backgroundImage: "none",
                   }}
