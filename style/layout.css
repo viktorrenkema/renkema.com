@@ -1,29 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300&display=swap");
-@font-face {
-  font-family: "GT-Walsheim";
-  src: url("../src/fonts/GT-Walsheim-Thin-Trial.woff2");
-}
-@font-face {
-  font-family: "GT-Walsheim-Bold";
-  src: url("../src/fonts/GT-Walsheim-Bold-Trial.woff2");
-}
-@font-face {
-  font-family: "GT-Ultra";
-  src: url("../src/fonts/GT-Ultra-Standard-Light-Trial.woff2");
-}
+
 @font-face {
   font-family: "Neue Montreal Medium";
   src: url("../src/fonts/PPNeueMontreal-Medium.otf");
 }
-@font-face {
-  font-family: "GT-Eesti-Display-Medium";
-  src: url("../src/fonts/GT-Eesti-Display-Light-Trial.woff2");
-}
-@font-face {
-  font-family: "GT-Eesti-Text-Medium";
-  src: url("../src/fonts/GT-Eesti-Text-Medium-Trial.woff2");
-}
+
 /* Object Sans */
 @font-face {
   font-family: "Object Sans Regular";
@@ -32,10 +14,6 @@
 @font-face {
   font-family: "Object Sans Heavy";
   src: url("../src/fonts/PPObjectSans-Heavy.otf");
-}
-@font-face {
-  font-family: "Object Sans Regular";
-  src: url("../src/fonts/PPObjectSans-Regular.otf");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap");

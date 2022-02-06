@@ -13,13 +13,7 @@ import Role from "./role"
 import { palette } from "../../style/palette"
 
 // 💅🏽 Styled Components
-import {
-  FlexVertCenter,
-  FlexColumn,
-  H1,
-  H2,
-  Paragraph,
-} from "./resources/styledGlobal"
+import { FlexColumn, H1, H2, Paragraph } from "./resources/styledGlobal"
 
 const SectionIntro = styled(motion.section)`
   background: white;
@@ -43,19 +37,10 @@ const GridParagraph = styled(Paragraph)`
   padding-top: 1rem;
 `
 
-const GridH1 = styled(H1)`
-  grid-area: 1 / 1 / 2 / 1;
-  text-align: start;
-  @media (max-width: 767px) {
-    grid-area: 1 / 1 / 2 / 1;
-  }
-`
-
 const MonospaceSpan = styled.span`
   font-family: "Roboto Mono", monospace;
   display: inline;
   font-size: 18px;
-  /* margin-left: 4px; */
   padding-left: 2px;
   padding-right: 2px;
   bottom: 2px;
@@ -83,14 +68,6 @@ export default function Introduction({ id }) {
   const [rolesDiv, setRolesDiv] = React.useState(0)
   const [windowWidth, setWindowWidth] = React.useState(0)
 
-  // **TODO** Store the positions of the roles animating across the screen
-  const [rolePositions, setRolePositions] = React.useState([])
-  const [
-    doneSettingRolePositions,
-    setDoneSettingRolePositions,
-  ] = React.useState(false)
-  // **Todo**
-
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null)
   // Create reference to store the Typed instance itself
@@ -105,20 +82,7 @@ export default function Introduction({ id }) {
   React.useEffect(() => {
     setRolesDiv(animatingDiv.current.offsetWidth)
     setWindowWidth(window.innerWidth)
-
-    // On mounting, map over our Roles array and for each, push a new object to the array equal to store the position of the el at this index. This will make e.g. the 2nd item be tracked like: rolePositions[1].position
-    for (let i = 0; i < roles.length; i++) {
-      let newArr = rolePositions
-      let myObj = { position: 0 }
-      newArr.push(myObj)
-      setRolePositions(newArr)
-      console.log(rolePositions)
-    }
-    setDoneSettingRolePositions(true)
-    return
   }, [])
-
-  console.log(doneSettingRolePositions)
 
   React.useEffect(() => {
     const options = {
@@ -217,9 +181,6 @@ export default function Introduction({ id }) {
                   }}
                   title={item.title}
                   gradient={item.gradient}
-                  setRolePositions={setRolePositions}
-                  rolePositions={rolePositions}
-                  doneSettingRolePositions={doneSettingRolePositions}
                 ></Role>
               )
             })}
@@ -319,9 +280,6 @@ const ContainerForRoles = styled(motion.div)`
 `
 
 const roles = [
-  // {
-  //   title: "I enjoy:",
-  // },
   {
     title: "web development",
     gradient: "linear-gradient(-60deg,  #904e95 0%,#904e95, #e73c7e, #ee7752)",
@@ -434,22 +392,6 @@ const roles = [
 const nameVariants = {
   start: { x: "20%" },
   finish: { x: "0%" },
-}
-
-const section = {
-  hidden: { opacity: 0.3, transition: { duration: 1.3 } },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-}
-
-const name = {
-  hidden: { x: 20, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
 }
 
 const description = {

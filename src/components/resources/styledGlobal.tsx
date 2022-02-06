@@ -10,8 +10,6 @@ import { motion } from "framer-motion"
 
 export const H1 = styled(motion.h1)`
   font-size: 64px;
-  /* font-family: "GT-Ultra", sans-serif; */
-  /* font-family: "GT-Walsheim-Bold", sans-serif; */
   font-family: "Object Sans Heavy", "Arial";
   line-height: 1.2;
 
@@ -35,6 +33,7 @@ export const H2 = styled(motion.h2)`
 `
 
 export const Paragraph = styled(motion.p)`
+  font-family: "Object Sans Regular", "Arial";
   color: rgb(28, 28, 28);
   font-size: 20px;
   vertical-align: middle;

@@ -38,7 +38,6 @@ const InternalLink = styled(Link)`
   font-weight: 400;
   font-size: 14px;
   color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
-  /* font-family: "GT-Walsheim", sans-serif; */
   font-family: "Object Sans Regular", "Arial";
   display: flex;
   justify-content: center;
@@ -55,7 +54,6 @@ const ExternalLink = styled.a`
   font-weight: 400;
   font-size: 14px;
   color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
-  /* font-family: "GT-Walsheim", sans-serif; */
   font-family: "Object Sans Regular", "Arial";
   display: flex;
   justify-content: center;

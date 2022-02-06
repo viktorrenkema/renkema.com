@@ -343,7 +343,6 @@ const Label = styled(motion.div)`
   padding: 10px;
   background: #eb70852b;
   padding-bottom: 10px;
-  /* font-family: "GT-Walsheim-Bold"; */
   font-family: "Object Sans Heavy", "Arial";
 `
 
