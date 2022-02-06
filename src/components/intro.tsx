@@ -7,6 +7,7 @@ import Typed from "typed.js"
 // 🌱 Components
 import LinkSocial from "./link-social"
 import Button from "./button"
+import Role from "./role"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -70,7 +71,7 @@ const MonospaceSpan = styled.span`
 const SocialsContainer = styled(motion.div)`
   display: flex;
   gap: 16px;
-  padding: 1rem 0rem;
+  padding: 1rem 0rem 2rem 0rem;
   @media (max-width: 479px) {
     gap: 8px;
   }
@@ -81,11 +82,57 @@ export default function Introduction({ id }) {
   // Store the width of the div that animates roles
   const [rolesDiv, setRolesDiv] = React.useState(0)
   const [windowWidth, setWindowWidth] = React.useState(0)
+  const [showGradient, setShowGradient] = React.useState([
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+  ])
+  const [gradientEnablingArray, setGradientEnablingArray] = React.useState([
+    false,
+    false,
+    false,
+    false,
+  ])
+
+  console.log(showGradient)
 
   // Create reference to store the DOM element containing the animation
   const el = React.useRef(null)
   // Create reference to store the Typed instance itself
   const typed = React.useRef(null)
+  const roleRef = React.useRef(null)
   const controls = useAnimation()
 
   // Create a ref to get access to the width of the animating roles div
@@ -147,8 +194,6 @@ export default function Introduction({ id }) {
     },
   }
 
-  console.log(rolesDiv)
-
   return (
     <SectionIntro id={`${id}`}>
       <FlexColumnPadded>
@@ -182,31 +227,24 @@ export default function Introduction({ id }) {
               }, 2000)
             }}
           >
-            {roles.map(item => {
+            {roles.map((item, index) => {
               return (
-                <RolesH2
+                <Role
                   // Inline style required to avoid a bug where the backgroundImage reverts to the last gradient’s color instead of "none"
+                  id={index}
                   style={{
                     whiteSpace: "nowrap",
-                    WebkitTextStroke:
-                      windowWidth < 768 ? "0.1px black" : "0.5px black",
+                    WebkitTextStroke: "0.5px black",
                     textStroke: windowWidth < 768 ? "0.5px black" : "1px black",
                     color: "transparent",
                     backgroundImage: "none",
                   }}
-                  whileHover={
-                    item.gradient && {
-                      WebkitTextStroke: "0px black",
-                      color: "transparent",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundImage: item.gradient,
-                    }
-                  }
-                  outline={false}
-                >
-                  {item.title}
-                </RolesH2>
+                  title={item.title}
+                  gradient={item.gradient}
+                  setShowGradient={setShowGradient}
+                  showGradient={showGradient}
+                 
+                ></Role>
               )
             })}
           </ContainerForRoles>
@@ -282,17 +320,6 @@ export default function Introduction({ id }) {
 const NameH1 = styled(H1)`
   white-space: nowrap;
   word-wrap: break-word;
-`
-const RolesH2 = styled(H2)`
-  white-space: nowrap;
-  -webkit-text-stroke: 1px black;
-  color: transparent;
-
-  @media (max-width: 767px) {
-    -webkit-text-stroke: 0.5px black;
-    color: transparent;
-    white-space: nowrap;
-  }
 `
 
 const Strip = styled(motion.div)`

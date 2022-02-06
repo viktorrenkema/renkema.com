@@ -70,7 +70,7 @@ export default function Project({
     [0, -1200]
   )
 
-  // useEffect to get the distance from the visual relative to the viewport & use it to set the range of 'parallax' scrolling
+  // useEffect to get the distance from the visual relative to the  & use it to set the range of 'parallax' scrolling
   React.useEffect(() => {
     let el = document.querySelector(`#${id}`)
 
