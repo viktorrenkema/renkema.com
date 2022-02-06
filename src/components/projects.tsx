@@ -44,15 +44,24 @@ export function ProjectsList(props) {
   return (
     <>
       <Button
-        text={"Home"}
+        text={""}
         url={"/"}
         dark={true}
         external={false}
         style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
           position: "fixed",
           top: "20px",
           left: "20px",
           zIndex: "99",
+          width: "40px",
+          height: "40px",
+          borderRadius: "8px",
+          padding: "8px",
+          border: "1px solid white",
         }}
         iconLeft
       ></Button>

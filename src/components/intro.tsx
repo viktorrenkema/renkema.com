@@ -40,10 +40,9 @@ const GridParagraph = styled(Paragraph)`
 const MonospaceSpan = styled.span`
   font-family: "Roboto Mono", monospace;
   display: inline;
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 2px;
   padding-right: 2px;
-  bottom: 2px;
   position: relative;
   color: white;
   background: black;
@@ -171,6 +170,7 @@ export default function Introduction({ id }) {
               return (
                 <Role
                   // Inline style required to avoid a bug where the backgroundImage reverts to the last gradient’s color instead of "none"
+                  key={index}
                   id={index}
                   style={{
                     whiteSpace: "nowrap",

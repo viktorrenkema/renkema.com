@@ -23,6 +23,7 @@ export const H1 = styled(motion.h1)`
 export const H2 = styled(motion.h2)`
   font-size: 48px;
   font-family: "Object Sans Heavy", "Arial";
+  /* font-family: "Object Sans Bold", "Arial"; */
   line-height: 1.2;
   @media (max-width: 479px) {
     font-size: 24px;
@@ -33,9 +34,9 @@ export const H2 = styled(motion.h2)`
 `
 
 export const Paragraph = styled(motion.p)`
-  font-family: "Object Sans Regular", "Arial";
+  font-family: "Object Sans Thin", "Arial";
   color: rgb(28, 28, 28);
-  font-size: 20px;
+  font-size: 18px;
   vertical-align: middle;
   line-height: 30px;
   text-align: start;

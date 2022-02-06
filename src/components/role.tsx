@@ -2,28 +2,26 @@
 import React from "react"
 import { motion } from "framer-motion"
 import styled from "styled-components"
+import { detect } from "detect-browser"
 
 // 🌱 Components
-import { H2, Paragraph } from "./resources/styledGlobal"
+import { H2 } from "./resources/styledGlobal"
 
-// 🧰 Utils
-import { palette } from "../../style/palette"
-
-// 🌀 Variants
-
-// 💅🏽 Styled Components
 export default function Role(props) {
   const { style, title, id, gradient } = props
-  const [state, setState] = React.useState(false)
+  // Store the width of the user's viewport
+  const [viewportWidth, setViewportWidth] = React.useState(0)
+  // Set the user's browser (necessary for differences in text-stroke across browsers)
+  const [userBrowser, setUserBrowser] = React.useState("")
+  // Set the distance of current el to left of viewport
   const [clientRectFromLeft, setClientRectFromLeft] = React.useState(0)
   const [clientRectFromRight, setClientRectFromRight] = React.useState(0)
 
-  // Store the width of the user's viewport
-  const [viewportWidth, setViewportWidth] = React.useState(0)
-
-  // Once our component mounts, set the viewPort.
+  // Once our component mounts, set the viewPort & the user browser
   React.useEffect(() => {
     setViewportWidth(window.innerWidth)
+    const browser = detect()
+    setUserBrowser(browser.name)
   }, [])
 
   // Once our component mounts, at an interval, find this component el and calculate its position relative to left of viewport
@@ -52,11 +50,13 @@ export default function Role(props) {
             clientRectFromLeft < 0.2 * viewportWidth &&
             clientRectFromRight > 0.2 * viewportWidth
               ? "0px black"
+              : userBrowser === "chrome"
+              ? "1px black"
               : "0.5px black",
         }
       }
+      userBrowser={userBrowser}
       id={id}
-      state={state}
     >
       {title}
       {/* For debugging, uncomment to see the current position: */}
@@ -68,13 +68,14 @@ export default function Role(props) {
   )
 }
 
+// 💅🏽 Styled Components
 const RolesH2 = styled(H2)`
   white-space: nowrap;
-  -webkit-text-stroke: 0.5px black;
+  -webkit-text-stroke: ${props =>
+    props.userBrowser === "chrome" ? "1px black" : "0.5px black"};
   color: transparent;
 
   @media (max-width: 767px) {
-    -webkit-text-stroke: 0.5px black;
     color: transparent;
     white-space: nowrap;
   }

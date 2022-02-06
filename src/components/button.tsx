@@ -19,8 +19,8 @@ const Btn = styled(motion.button)`
   border: 0px;
   justify-content: center;
   display: flex;
-  border-style: solid !important;
-  border-color: #1c2021 !important;
+  border-style: solid;
+  border-color: #1c2021;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -88,55 +88,57 @@ export default function Button(props) {
   const [hovered, setHovered] = React.useState(false)
 
   return (
-    <Btn
-      variants={variants}
-      initial={initial}
-      animate={animate}
-      nav={nav}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        alignContent: "center",
-        ...style,
-      }}
-      onHoverStart={() => {
-        setHovered(true)
-      }}
-      onHoverEnd={() => {
-        setHovered(false)
-      }}
-    >
-      {iconLeft && (
-        <ArrowLink
-          dark={dark}
-          animate={
-            hovered
-              ? { transform: "rotate(270deg)" }
-              : { transform: "rotate(225deg)" }
-          }
-        />
-      )}
-      {external && (
-        <ExternalLink target="_blank" href={url} dark={dark}>
-          {text}
-        </ExternalLink>
-      )}
-      {!external && (
-        <InternalLink to={url} dark={dark}>
-          {text}
-        </InternalLink>
-      )}
+    <InternalLink to={url} dark={dark}>
+      <Btn
+        variants={variants}
+        initial={initial}
+        animate={animate}
+        nav={nav}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          alignContent: "center",
+          ...style,
+        }}
+        onHoverStart={() => {
+          setHovered(true)
+        }}
+        onHoverEnd={() => {
+          setHovered(false)
+        }}
+      >
+        {iconLeft && (
+          <ArrowLink
+            dark={dark}
+            animate={
+              hovered
+                ? { transform: "rotate(270deg)" }
+                : { transform: "rotate(225deg)" }
+            }
+          />
+        )}
+        {external && (
+          <ExternalLink target="_blank" href={url} dark={dark}>
+            {text}
+          </ExternalLink>
+        )}
+        {!external && (
+          <InternalLink to={url} dark={dark}>
+            {text}
+          </InternalLink>
+        )}
 
-      {!iconLeft && !external && (
-        <ArrowLink
-          dark={dark}
-          animate={
-            hovered
-              ? { transform: "rotate(45deg)" }
-              : { transform: "rotate(0deg)" }
-          }
-        />
-      )}
-    </Btn>
+        {!iconLeft && !external && (
+          <ArrowLink
+            dark={dark}
+            animate={
+              hovered
+                ? { transform: "rotate(45deg)" }
+                : { transform: "rotate(0deg)" }
+            }
+          />
+        )}
+      </Btn>
+    </InternalLink>
   )
 }

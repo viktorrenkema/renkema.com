@@ -5,12 +5,32 @@
   font-family: "Neue Montreal Medium";
   src: url("../src/fonts/PPNeueMontreal-Medium.otf");
 }
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url("../src/fonts/PPNeueMontreal-Bold.otf");
+}
+
+@font-face {
+  font-family: "Tester";
+  src: url("../src/fonts/PPNeueMontreal-Bold.otf");
+}
 
 /* Object Sans */
+@font-face {
+  font-family: "Object Sans Thin";
+  src: url("../src/fonts/PPObjectSans-Thin.otf");
+}
+
 @font-face {
   font-family: "Object Sans Regular";
   src: url("../src/fonts/PPObjectSans-Regular.otf");
 }
+
+@font-face {
+  font-family: "Object Sans Bold";
+  src: url("../src/fonts/PPObjectSans-Bold.otf");
+}
+
 @font-face {
   font-family: "Object Sans Heavy";
   src: url("../src/fonts/PPObjectSans-Heavy.otf");
