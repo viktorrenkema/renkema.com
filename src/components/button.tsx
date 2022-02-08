@@ -47,7 +47,7 @@ const InternalLink = styled(Link)`
   font-family: "IBM Plex Sans", sans-serif;
   text-transform: uppercase;
   white-space: nowrap;
-  text-decoration: "underline";
+  text-decoration: none;
 `
 
 const ExternalLink = styled.a`

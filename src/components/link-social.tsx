@@ -13,24 +13,22 @@ import { palette } from "../../style/palette"
 
 // 💅🏽 Styled Components
 const Btn = styled(motion.button)`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: fit-content;
   border: 0px;
   justify-content: center;
   display: flex;
-  border-style: solid !important;
-  border-color: #1c2021 !important;
+  border: 1px solid #1d1f3580;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 8px 0px;
   gap: 0px;
-  background-color: transparent;
-
-  @media (max-width: 479px) {
-  }
+  border-radius: 8px;
+  align-items: center;
+  align-content: center;
 `
 
 const Hyperlink = styled(motion.a)`
@@ -54,17 +52,8 @@ export default function LinkSocial(props) {
   return (
     <Btn
       whileHover={{ background: "#f3f3f3" }}
+      style={{ background: "#ffffff" }}
       nav={nav}
-      style={{
-        width: "40px",
-        height: "40px",
-        display: "flex",
-        borderRadius: "8px",
-        alignItems: "center",
-        alignContent: "center",
-        border: "1px solid #1d1f35",
-        background: "#ffffff",
-      }}
       variants={variants}
     >
       <Hyperlink

@@ -152,34 +152,20 @@ export default function Introduction({ id }) {
             variants={rolesVariants}
             animate={controls}
             initial={"start"}
-            drag={"x"}
-            dragConstraints={{ left: -rolesDiv, right: 0 }}
-            dragTransition={{
-              bounceStiffness: 1000,
-              bounceDamping: 100,
-              timeConstant: 400,
-            }}
             ref={animatingDiv}
-            onDragEnd={() => {
-              setTimeout(() => {
-                controls.start("end")
-              }, 2000)
-            }}
-            onClick={() => {
-              controls.start("end")
-            }}
           >
             {roles.map((item, index) => {
               return (
                 <Role
                   // Inline style required to avoid a bug where the backgroundImage reverts to the last gradient’s color instead of "none"
+                  starter={item.starter}
                   key={index}
                   id={index}
                   style={{
                     whiteSpace: "nowrap",
-                    WebkitTextStroke: "0.5px #1d1f35",
+                    WebkitTextStroke: "0.5px #1d1f3580",
                     textStroke:
-                      windowWidth < 768 ? "0.5px #1d1f35" : "1px #1d1f35",
+                      windowWidth < 768 ? "0.5px #1d1f3580" : "1px #1d1f3580",
                     color: "transparent",
                     backgroundImage: "none",
                   }}
@@ -195,8 +181,9 @@ export default function Introduction({ id }) {
           initial="hidden"
           animate="visible"
         >
-          I build fun and interactive experiences for the web, focusing on
-          motion design and <MonospaceSpan ref={el}></MonospaceSpan>.
+          I’m a front-end web developer building fun and interactive experiences
+          for the web, focusing on motion design and{" "}
+          <MonospaceSpan ref={el}></MonospaceSpan>.
         </GridParagraph>
         <GridParagraph
           variants={currentlyat}
@@ -281,9 +268,14 @@ const ContainerForRoles = styled(motion.div)`
   display: flex;
   gap: 20px;
   width: fit-content;
+  user-select: none;
 `
 
 const roles = [
+  {
+    title: "I enjoy:",
+    gradient: "linear-gradient(-60deg,  #1d1f35 0%,#1d1f35)",
+  },
   {
     title: "web development",
     gradient: "linear-gradient(-60deg,  #904e95 0%,#904e95, #e73c7e, #ee7752)",

@@ -8,7 +8,7 @@ import { detect } from "detect-browser"
 import { H2, Paragraph } from "./resources/styledGlobal"
 
 export default function Role(props) {
-  const { style, title, id, gradient } = props
+  const { style, title, id, gradient, starter } = props
   // Store the width of the user's viewport
   const [viewportWidth, setViewportWidth] = React.useState(0)
   // Set the user's browser (necessary for differences in text-stroke across browsers)
@@ -34,6 +34,8 @@ export default function Role(props) {
     return () => clearInterval(interval)
   }, [])
 
+  console.log(starter)
+
   return (
     <RolesH2
       style={
@@ -41,20 +43,21 @@ export default function Role(props) {
           color: "transparent",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          backgroundImage:
-            clientRectFromLeft < 0.2 * viewportWidth &&
-            clientRectFromRight > 0.2 * viewportWidth
-              ? gradient
-              : "none",
+          backgroundImage: starter
+            ? "black"
+            : clientRectFromLeft < 0.2 * viewportWidth &&
+              clientRectFromRight > 0.1 * viewportWidth
+            ? gradient
+            : "none",
           WebkitTextStroke:
             clientRectFromLeft < 0.2 * viewportWidth &&
-            clientRectFromRight > 0.2 * viewportWidth
-              ? "0px #1d1f35"
+            clientRectFromRight > 0.1 * viewportWidth
+              ? "0px #1d1f3580"
               : userBrowser === "chrome"
-              ? "0.8px #1d1f35"
+              ? "0.8px #1d1f3580"
               : userBrowser === "firefox"
-              ? "0.6px #1d1f35"
-              : "0.5px #1d1f35",
+              ? "0.6px #1d1f3580"
+              : "0.5px #1d1f3580",
         }
       }
       userBrowser={userBrowser}
@@ -70,10 +73,10 @@ const RolesH2 = styled(H2)`
   white-space: nowrap;
   -webkit-text-stroke: ${props =>
     props.userBrowser === "chrome"
-      ? "0.8px #1d1f35"
+      ? "0.8px #1d1f3580"
       : props.userBrowser === "firefox"
-      ? "0.6px #1d1f35"
-      : "0.5px #1d1f35"};
+      ? "0.6px #1d1f3580"
+      : "0.5px #1d1f3580"};
   color: transparent;
 
   @media (max-width: 767px) {

@@ -356,7 +356,7 @@ const BottomSection = styled(motion.div)`
 const Label = styled(motion.div)`
   color: hsl(350, 75%, 68%);
   font-size: 12px;
-  letter-spacing: 0px;
+  letter-spacing: 1px;
   line-height: 1;
   font-weight: 800;
   text-transform: uppercase;

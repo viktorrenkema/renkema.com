@@ -19,7 +19,7 @@ export default function IndexPage() {
         <title>Viktor Renkema</title>
         <meta
           name="description"
-          content="Front-end developer with a background in psychology, exploring the field of design and development."
+          content="Front-end developer with an interest in motion and design."
         />
         <meta property="og:title" content="Hey, my name is Viktor." />
         <meta
