@@ -108,7 +108,7 @@ export function ProjectsList(props) {
           projectlabel={"PWA"}
           projecttitle={"Pulse"}
           projectinfo={
-            "This project got inspired by my need for a workout tracker that offers only the features that I needed and nothing more."
+            "I wanted a workout tracker that offers only the features that I needed, and nothing else. It allows for recording workouts on a daily calendar, including quick links and historic info on how I performed for a given exercise previously."
           }
           // url={""}
           // githuburl={"https://www.github.com/viktorrenkema"}
