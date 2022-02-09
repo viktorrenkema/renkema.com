@@ -85,7 +85,7 @@ export default function Introduction({ id }) {
 
   React.useEffect(() => {
     const options = {
-      strings: ["web development"],
+      strings: ["web developer"],
       typeSpeed: 50,
       backSpeed: 50,
       startDelay: 1000,
@@ -181,20 +181,19 @@ export default function Introduction({ id }) {
           initial="hidden"
           animate="visible"
         >
-          I’m a front-end web developer building fun and interactive experiences
-          for the web, focusing on motion design and{" "}
-          <MonospaceSpan ref={el}></MonospaceSpan>.
+          Front-end <MonospaceSpan ref={el}></MonospaceSpan> with a strong
+          interest in motion design.
         </GridParagraph>
         <GridParagraph
           variants={currentlyat}
           initial="hidden"
           animate="visible"
         >
-          Right now I'm helping teams build sites and prototypes at{" "}
+          Currently at{" "}
           <a href="https://www.framer.com" target="_blank">
             Framer
           </a>
-          &nbsp;.
+          , helping teams build sites and prototypes.
         </GridParagraph>
 
         <SocialsContainer

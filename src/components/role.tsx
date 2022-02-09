@@ -34,8 +34,6 @@ export default function Role(props) {
     return () => clearInterval(interval)
   }, [])
 
-  console.log(starter)
-
   return (
     <RolesH2
       style={
