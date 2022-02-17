@@ -19,17 +19,20 @@ export default function IndexPage() {
         <title>Viktor Renkema</title>
         <meta
           name="description"
-          content="Front-end developer with an interest in motion and design."
+          content="I‘m a front-end developer with an interest in design, motion, and interactivity."
         />
-        <meta property="og:title" content="Hey, my name is Viktor." />
+        <meta
+          property="og:title"
+          content="Nice to meet you, my name is Viktor!"
+        />
         <meta
           property="twitter:description"
-          content="Front-end developer with a background in psychology, exploring the field of design and development."
+          content="I‘m a front-end developer with an interest in design, motion, and interactivity."
         />
-        <meta
+        {/* <meta
           property="og:image"
           content="https://i.ibb.co/CVqpHwz/groningen-7c27d7ef5c8875bad11adbda35810d08.jpg"
-        />
+        /> */}
         <meta property="og:url" content="http://renkema.com" />
 
         <link
