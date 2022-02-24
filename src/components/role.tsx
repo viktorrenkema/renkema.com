@@ -36,6 +36,7 @@ export default function Role(props) {
 
   return (
     <RolesH2
+      // A bug with styled components and text-stroke caused the below to only work when using inline style. Text stroke looks much different across browsers, so we conditionally set a different text stroke for different browsers.
       style={
         gradient && {
           color: "transparent",

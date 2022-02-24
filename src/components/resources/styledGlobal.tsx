@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 
 // Must use a motion.div due to how Firefox renders text-stroke with h1's
 export const H1 = styled(motion.h1)`
-  font-size: 64px;
+  font-size: 56px;
   font-family: "Object Sans Heavy", "Arial";
   line-height: 1.2;
   color: #1d1f35;
@@ -24,7 +24,6 @@ export const H1 = styled(motion.h1)`
 export const H2 = styled(motion.div)`
   font-size: 48px;
   font-family: "Object Sans Heavy", "Arial";
-  /* font-family: "Object Sans Bold", "Arial"; */
   line-height: 1.2;
   @media (max-width: 479px) {
     font-size: 24px;

@@ -14,6 +14,11 @@ import { palette } from "../../style/palette"
 
 // 💅🏽 Styled Components
 import { FlexColumn, H1, H2, Paragraph } from "./resources/styledGlobal"
+import {
+  Arrow,
+  FlexVertCenterPenScript,
+  PenScript,
+} from "./resources/loaderExample"
 
 const SectionIntro = styled(motion.section)`
   background: white;
@@ -34,7 +39,7 @@ const FlexColumnPadded = styled(FlexColumn)`
 const GridParagraph = styled(Paragraph)`
   grid-area: 2 / 1 / 2 / 1;
   justify-self: start;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
 `
 
 const MonospaceSpan = styled.span`
@@ -148,6 +153,10 @@ export default function Introduction({ id }) {
           >
             <NameH1>Hey, I’m Viktor.</NameH1>
           </ContainerForName>
+          {/* <FlexVertCenterPenScript>
+            <PenScript>I enjoy learning about</PenScript>
+            <Arrow></Arrow>
+          </FlexVertCenterPenScript> */}
           <ContainerForRoles
             variants={rolesVariants}
             animate={controls}
@@ -158,7 +167,6 @@ export default function Introduction({ id }) {
               return (
                 <Role
                   // Inline style required to avoid a bug where the backgroundImage reverts to the last gradient’s color instead of "none"
-                  starter={item.starter}
                   key={index}
                   id={index}
                   style={{
@@ -253,6 +261,8 @@ const Strip = styled(motion.div)`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
 `
 
 const ContainerForName = styled(motion.div)`
@@ -273,7 +283,7 @@ const ContainerForRoles = styled(motion.div)`
 const roles = [
   {
     title: "I enjoy:",
-    gradient: "linear-gradient(-60deg,  #1d1f35 0%,#1d1f35)",
+    // gradient: "linear-gradient(-60deg,  #1d1f35 0%,#1d1f35)",
   },
   {
     title: "web development",

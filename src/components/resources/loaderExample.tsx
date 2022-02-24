@@ -30,7 +30,7 @@ const labelVariants = {
 // 🧰 Utils
 
 // 💅🏽 Styled Components
-const PenScript = styled.span`
+export const PenScript = styled.span`
   font-family: "Nanum Pen Script", cursive;
   font-size: 18px;
   color: hsl(14, 99%, 72%);
@@ -138,7 +138,7 @@ const FlexColumnRight = styled.div`
     background-color: white;
   }
 `
-const FlexVertCenterPenScript = styled(FlexVertCenter)`
+export const FlexVertCenterPenScript = styled(FlexVertCenter)`
   left: -80px;
   position: absolute;
   top: -30px;
@@ -312,7 +312,7 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
   )
 }
 
-function Arrow() {
+export function Arrow() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18">
       <path
