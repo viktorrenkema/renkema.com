@@ -1,6 +1,7 @@
 export const palette = {
   primary500: "hsl(350,75%,68%)",
 
+  blue900: "#1d1f35",
   // Greys
   greys900: "hsl(0, 0%, 0%)",
   greys800: "hsl(230, 12%, 6%)",

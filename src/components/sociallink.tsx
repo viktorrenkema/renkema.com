@@ -46,7 +46,7 @@ const Hyperlink = styled(motion.a)`
   text-transform: uppercase;
 `
 
-export default function LinkSocial(props) {
+export default function SocialLink(props) {
   const { text, url, variants, nav, style, fill } = props
 
   return (

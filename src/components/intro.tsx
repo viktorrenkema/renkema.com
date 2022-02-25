@@ -5,7 +5,7 @@ import styled from "styled-components"
 import Typed from "typed.js"
 
 // 🌱 Components
-import LinkSocial from "./link-social"
+import SocialLink from "./sociallink"
 import Button from "./button"
 import Role from "./role"
 
@@ -13,18 +13,22 @@ import Role from "./role"
 import { palette } from "../../style/palette"
 
 // 💅🏽 Styled Components
-import { FlexColumn, H1, H2, Paragraph } from "./resources/styledGlobal"
 import {
-  Arrow,
-  FlexVertCenterPenScript,
-  PenScript,
-} from "./resources/loaderExample"
+  FlexColumn,
+  FlexVertCenter,
+  H1,
+  H2,
+  Paragraph,
+} from "./resources/styledGlobal"
+import { Arrow, PenScript } from "./resources/loaderExample"
+import { roles } from "./resources/roles"
 
 const SectionIntro = styled(motion.section)`
   background: white;
   min-height: 100vh;
   max-height: 700px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 `
 
@@ -32,7 +36,7 @@ const FlexColumnPadded = styled(FlexColumn)`
   padding-left: 30%;
 
   @media (max-width: 767px) {
-    padding-left: 10%;
+    padding-left: 5%;
   }
 `
 
@@ -60,9 +64,25 @@ const MonospaceSpan = styled.span`
 const SocialsContainer = styled(motion.div)`
   display: flex;
   gap: 16px;
-  padding: 2rem 0rem 2rem 0rem;
+  padding: 1rem 0rem 2rem 0rem;
   @media (max-width: 479px) {
     gap: 8px;
+  }
+`
+
+const FlexVertHomePenScript = styled(FlexVertCenter)`
+  position: absolute;
+  left: 432px;
+  top: 30px;
+  @media (max-width: 767px) {
+    // Medium up to tablet device
+    left: 285px;
+    top: 10px;
+  }
+  @media (max-width: 345px) {
+    // Small up to medium device*
+    left: -10px;
+    top: 38px;
   }
 `
 
@@ -90,7 +110,7 @@ export default function Introduction({ id }) {
 
   React.useEffect(() => {
     const options = {
-      strings: ["web developer"],
+      strings: ["front-end web developer"],
       typeSpeed: 50,
       backSpeed: 50,
       startDelay: 1000,
@@ -153,10 +173,19 @@ export default function Introduction({ id }) {
           >
             <NameH1>Hey, I’m Viktor.</NameH1>
           </ContainerForName>
-          {/* <FlexVertCenterPenScript>
-            <PenScript>I enjoy learning about</PenScript>
-            <Arrow></Arrow>
-          </FlexVertCenterPenScript> */}
+          <FlexVertHomePenScript
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.75 }}
+            transition={{ duration: 2, delay: 1 }}
+          >
+            <PenScript rotate={"rotate(8deg)"} color={palette.blue900}>
+              I enjoy
+            </PenScript>
+            <Arrow
+              style={{ WebkitTransform: "scaleX(-1)", transform: "scaleX(-1)" }}
+              fill={palette.blue900}
+            ></Arrow>
+          </FlexVertHomePenScript>
           <ContainerForRoles
             variants={rolesVariants}
             animate={controls}
@@ -189,54 +218,46 @@ export default function Introduction({ id }) {
           initial="hidden"
           animate="visible"
         >
-          Front-end <MonospaceSpan ref={el}></MonospaceSpan> with a strong
-          interest in motion design.
-        </GridParagraph>
-        <GridParagraph
-          variants={currentlyat}
-          initial="hidden"
-          animate="visible"
-        >
-          Currently at{" "}
+          I’m a <MonospaceSpan ref={el}></MonospaceSpan> with a strong interest
+          in motion design. Right now I’m at{" "}
           <a href="https://www.framer.com" target="_blank">
             Framer
           </a>
           , helping teams build sites and prototypes.
         </GridParagraph>
-
         <SocialsContainer
           variants={socials}
           initial="hidden"
           animate={"visible"}
         >
-          <LinkSocial
+          <SocialLink
             variants={items}
             whileHover="hover"
             text={"Twitter"}
             fill={palette.greys900}
             url={"https://www.twitter.com/vrenkema"}
-          ></LinkSocial>{" "}
-          <LinkSocial
+          ></SocialLink>{" "}
+          <SocialLink
             variants={items}
             whileHover="hover"
             text={"Linkedin"}
             fill={palette.greys900}
             url={"https://www.linkedin.com/in/viktor-renkema-7b3505133/"}
-          ></LinkSocial>{" "}
-          <LinkSocial
+          ></SocialLink>{" "}
+          <SocialLink
             variants={items}
             whileHover="hover"
             text={"Email"}
             fill={palette.greys900}
             url={"mailto:viktor@renkema.com"}
-          ></LinkSocial>
-          <LinkSocial
+          ></SocialLink>
+          <SocialLink
             variants={items}
             whileHover="hover"
             text={"Github"}
             fill={palette.greys900}
             url={"https://github.com/viktorrenkema"}
-          ></LinkSocial>
+          ></SocialLink>
         </SocialsContainer>
         <Button
           variants={projectsLink}
@@ -263,6 +284,7 @@ const Strip = styled(motion.div)`
   flex-direction: column;
   gap: 0.5rem;
   padding-bottom: 0.5rem;
+  position: relative;
 `
 
 const ContainerForName = styled(motion.div)`
@@ -278,119 +300,8 @@ const ContainerForRoles = styled(motion.div)`
   gap: 20px;
   width: fit-content;
   user-select: none;
+  transform: rotate(90);
 `
-
-const roles = [
-  {
-    title: "I enjoy:",
-    // gradient: "linear-gradient(-60deg,  #1d1f35 0%,#1d1f35)",
-  },
-  {
-    title: "web development",
-    gradient: "linear-gradient(-60deg,  #904e95 0%,#904e95, #e73c7e, #ee7752)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "design",
-    gradient: "linear-gradient(43deg,  #b0eaed 0%, #c3f2c7 50%, #d9f89f 100% )",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "interactivity",
-    gradient: "linear-gradient(43deg,  #fa8495 0%,#f3aaab 46%,#eaf0da 100%)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "motion",
-    gradient: "linear-gradient(135deg,#e84c8e ,#fb8254)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "creative coding",
-    gradient: "linear-gradient(43deg,#4158d0 0%,#c850c0 46%,#ffcc70 100%)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "web development",
-    gradient: "linear-gradient(-60deg,  #904e95 0%,#904e95, #e73c7e, #ee7752)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "design",
-    gradient: "linear-gradient(43deg,  #b0eaed 0%, #c3f2c7 50%, #d9f89f 100% )",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "interactivity",
-    gradient: "linear-gradient(43deg,  #fa8495 0%,#f3aaab 46%,#eaf0da 100%)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "motion",
-    gradient: "linear-gradient(135deg,#e84c8e ,#fb8254)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "creative coding",
-    gradient: "linear-gradient(43deg,#4158d0 0%,#c850c0 46%,#ffcc70 100%)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "web development",
-    gradient: "linear-gradient(-60deg,  #904e95 0%,#904e95, #e73c7e, #ee7752)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "design",
-    gradient: "linear-gradient(43deg,  #b0eaed 0%, #c3f2c7 50%, #d9f89f 100% )",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "interactivity",
-    gradient: "linear-gradient(43deg,  #fa8495 0%,#f3aaab 46%,#eaf0da 100%)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "motion",
-    gradient: "linear-gradient(135deg,#e84c8e ,#fb8254)",
-  },
-  {
-    title: "·",
-  },
-  {
-    title: "creative coding",
-    gradient: "linear-gradient(43deg,#4158d0 0%,#c850c0 46%,#ffcc70 100%)",
-  },
-  {
-    title: "·",
-  },
-]
 
 // 🌀 Variants
 

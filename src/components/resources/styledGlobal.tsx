@@ -8,19 +8,20 @@ import { motion } from "framer-motion"
 // 🌀 Variants
 // 💅🏽 Styled Components
 
-// Must use a motion.div due to how Firefox renders text-stroke with h1's
 export const H1 = styled(motion.h1)`
   font-size: 56px;
   font-family: "Object Sans Heavy", "Arial";
   line-height: 1.2;
   color: #1d1f35;
   @media (max-width: 767px) {
-    font-size: 54px;
+    font-size: 38px;
   }
   @media (max-width: 425px) {
     font-size: 38px;
   }
 `
+
+// Must use a motion.div due to how Firefox renders text-stroke with h1's
 export const H2 = styled(motion.div)`
   font-size: 48px;
   font-family: "Object Sans Heavy", "Arial";
@@ -59,6 +60,7 @@ export const FlexColumn = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  position: relative;
 `
 
 export function ProductHunt() {
