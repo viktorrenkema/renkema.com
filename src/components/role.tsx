@@ -17,16 +17,23 @@ export default function Role(props) {
   const [clientRectFromLeft, setClientRectFromLeft] = React.useState(0)
   const [clientRectFromRight, setClientRectFromRight] = React.useState(0)
 
+  // const onResize = React.useCallback(() => {
+  //   setViewportWidth(window.innerWidth)
+  // })
+
+  // window.onresize
+
   // Once our component mounts, set the viewPort & the user browser
   React.useEffect(() => {
     setViewportWidth(window.innerWidth)
     const browser = detect()
     setUserBrowser(browser.name)
 
-    // Ensure all style and layout depending on viewportWidth is updated once users resize window
-    window.onresize = () => {
-      setViewportWidth(window.innerWidth)
-    }
+    // // Ensure all style and layout depending on viewportWidth is updated once users resize window
+    // window.addEventListener("resize", onResize)
+    // return () => {
+    //   window.removeEventListener('resize', onResize)
+    // }
   }, [])
 
   // Once our component mounts, at an interval, find this component el and calculate its position relative to left of viewport

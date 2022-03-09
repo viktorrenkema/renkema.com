@@ -104,9 +104,6 @@ const FlexInputs = styled.div`
   align-items: center;
   padding: 2rem;
   gap: 1rem;
-  /* @media (max-width: 385px) {
-    padding: 2rem;
-  } */
 `
 const FlexLoadersPreview = styled.div`
   display: flex;
@@ -115,12 +112,9 @@ const FlexLoadersPreview = styled.div`
   justify-content: center;
   align-items: center;
   min-width: 30%;
-  /* border: 2px solid #fbfbfb; */
   align-items: center;
   margin: 2rem;
   overflow: hidden;
-  /* box-shadow: 0 6.7px 5.3px rgb(0 0 0 / 4%), 0 22.3px 17.9px rgb(0 0 0 / 6%),
-    0 100px 80px rgb(0 0 0 / 2%); */
 `
 const FlexColumnRight = styled.div`
   display: flex;
@@ -133,7 +127,6 @@ const FlexColumnRight = styled.div`
   overflow: scroll;
   position: relative;
   padding-left: 2rem;
-  /* border-radius: 10px; */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 
   :-webkit-scrollbar {
@@ -206,14 +199,6 @@ export default function LoaderExample({ quantityLoaders, setQuantityLoaders }) {
           >
             Quantity
           </Label>
-          {/* <Notice
-            variants={labelVariants}
-            animate={focus === "quantity" ? "focus" : error ? "show" : "hide"}
-            initial={"hide"}
-            transition={{ duration: "0.3" }}
-          >
-            Max is 10
-          </Notice> */}
           <Input
             quantityLoaders={quantityLoaders}
             value={quantityLoaders}

@@ -6,7 +6,7 @@ import Typed from "typed.js"
 
 // 🌱 Components
 import SocialLink from "./sociallink"
-import Button from "./button"
+import Link from "./link"
 import Role from "./role"
 
 // 🧰 Utils
@@ -259,7 +259,7 @@ export default function Introduction({ id }) {
             url={"https://github.com/viktorrenkema"}
           ></SocialLink>
         </SocialsContainer>
-        <Button
+        <Link
           variants={projectsLink}
           initial="hidden"
           animate={"visible"}
@@ -267,7 +267,7 @@ export default function Introduction({ id }) {
           url={"projects"}
           dark={false}
           external={false}
-        ></Button>
+        ></Link>
       </FlexColumnPadded>
     </SectionIntro>
   )

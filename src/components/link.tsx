@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 // 🌱 Components
 import { ArrowLink } from "./resources/icons"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 
 // 🧰 Utils
 import { palette } from "../../style/palette"
@@ -34,7 +34,7 @@ const Btn = styled(motion.button)`
   }
 `
 
-const InternalLink = styled(Link)`
+const InternalLink = styled(GatsbyLink)`
   font-weight: 400;
   font-size: 14px;
   color: ${props => (props.dark ? palette.greys200 : palette.greys900)};
@@ -70,7 +70,7 @@ const ExternalLink = styled.a`
   border-radius: 8px;
 `
 
-export default function Button(props) {
+export default function Link(props) {
   const {
     text,
     url,

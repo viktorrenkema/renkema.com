@@ -31,12 +31,10 @@ function SEO({ lang, image, meta, title }) {
     `
   )
 
-  // const metaDescription = description || site.siteMetadata.description
-
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: "en",
       }}
       title={title}
       // description={description}

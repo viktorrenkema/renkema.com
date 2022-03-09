@@ -12,63 +12,47 @@ import { palette } from "../../style/palette"
 // 🌀 Variants
 
 // 💅🏽 Styled Components
-const Btn = styled(motion.button)`
+const Hyperlink = styled(motion.a)`
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  border: 0px;
-  justify-content: center;
-  display: flex;
-  border: 1px solid #1d1f3580;
-  cursor: pointer;
-  padding: 8px 0px;
-  gap: 0px;
-  border-radius: 8px;
-  align-items: center;
   align-content: center;
-`
-
-const Hyperlink = styled(motion.a)`
+  position: relative;
+  border-radius: 8px;
   font-weight: 500;
   font-size: 12px;
   color: ${props => props.fill};
   text-decoration: none;
   font-family: "IBM Plex Sans", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
   letter-spacing: 0.8px;
-  font-family: "IBM Plex Sans", sans-serif;
   text-transform: uppercase;
+  border: 1px solid #1d1f3580;
+  cursor: pointer;
+  gap: 0px;
 `
 
 export default function SocialLink(props) {
   const { text, url, variants, nav, style, fill } = props
 
   return (
-    <Btn
+    <Hyperlink
+      fill={fill}
+      target="_blank"
+      rel="noopener noreferrer"
+      href={url}
+      title={`Link to open my ` + text + ` profile`}
       whileHover={{ background: "#f3f3f3" }}
       style={{ background: "#ffffff" }}
       nav={nav}
       variants={variants}
     >
-      <Hyperlink
-        fill={fill}
-        target="_blank"
-        rel="noopener noreferrer"
-        href={url}
-      >
-        {text === "Twitter" && <Twitter />}
-        {text === "Email" && <Email />}
-        {text === "Linkedin" && <Linkedin />}
-        {text === "Github" && <Github />}
-      </Hyperlink>
-      {/* <ArrowLink fill={fill} /> */}
-    </Btn>
+      {text === "Twitter" && <Twitter />}
+      {text === "Email" && <Email />}
+      {text === "Linkedin" && <Linkedin />}
+      {text === "Github" && <Github />}
+    </Hyperlink>
   )
 }
 

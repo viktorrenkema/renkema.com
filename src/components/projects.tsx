@@ -6,7 +6,7 @@ import useIsInViewport from "use-is-in-viewport"
 
 // 🌱 Components
 import Project from "./project"
-import Button from "./button"
+import Link from "./link"
 import { ArrowLink } from "./resources/icons"
 
 // 🧰 Utils
@@ -37,43 +37,37 @@ const Section = styled(motion.div)`
   }
 `
 
+const backToHomeStyle = {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  position: "fixed",
+  top: "20px",
+  left: "20px",
+  zIndex: "99",
+  width: "40px",
+  height: "40px",
+  borderRadius: "8px",
+  padding: "8px",
+  border: "1px solid white",
+}
+
 export function ProjectsList(props) {
   const { dark } = props
   const [isInViewport, targetRef] = useIsInViewport({ threshold: 10 })
 
   return (
     <>
-      <Button
+      <Link
         text={""}
+        title={"Return to homepage"}
         url={"/"}
         dark={true}
         external={false}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "fixed",
-          top: "20px",
-          left: "20px",
-          zIndex: "99",
-          width: "40px",
-          height: "40px",
-          borderRadius: "8px",
-          padding: "8px",
-          border: "1px solid white",
-        }}
+        style={backToHomeStyle}
         iconLeft
-      ></Button>
-      {/* <ArrowLink
-        dark
-        style={{ transform: "rotate(225deg)" }}
-        // animate={
-        //   hovered
-        //     ? { transform: "rotate(45deg)" }
-        //     : { transform: "rotate(0deg)" }
-        // }
-      ></ArrowLink> */}
+      ></Link>
       <Section>
         <Project
           initial="hidden"
@@ -83,7 +77,7 @@ export function ProjectsList(props) {
           projectlabel={"web app"}
           projecttitle={"Loaders.io"}
           projectinfo={
-            "Loaders.io is a GUI that allows users to generate production code for a React loader component, allowing users to easily customize the style and animation properties."
+            "Loaders.io is a GUI to generate production code for a React loader component and allowing users to easily customize the style and animation properties."
           }
           url={"https://reactloaders.vercel.app/"}
           githuburl={"https://www.github.com/viktorrenkema"}
@@ -95,12 +89,11 @@ export function ProjectsList(props) {
           projectlabel={"website"}
           projecttitle={"La Dimora"}
           projectinfo={
-            "La Dimora is a beautiful house located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
+            "La Dimora is a holiday home located at lake Como in Lombardia, Italy. The website was designed to provide information about renting the home and about the area."
           }
           project="ladimora"
           id={"ladimora"}
           url={"https://www.ladimora.org/"}
-          // githuburl={"https://www.github.com/viktorrenkema"}
         ></Project>
         <Project
           project="pulse"
@@ -110,8 +103,6 @@ export function ProjectsList(props) {
           projectinfo={
             "I wanted a workout tracker that offers only the features that I needed, and nothing else. It allows for recording workouts on a daily calendar, including quick links and historic info on how I performed for a given exercise previously."
           }
-          // url={""}
-          // githuburl={"https://www.github.com/viktorrenkema"}
         ></Project>
       </Section>
     </>

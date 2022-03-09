@@ -12,7 +12,7 @@ import LoaderExample from "./resources/loaderExample"
 import LinkSocial from "./link-social"
 import { ProductHunt } from "./resources/styledGlobal"
 import { FlexVertCenter } from "./resources/styledGlobal"
-import Button from "./button"
+import Link from "./link"
 
 // 🖼️ Assets
 import ladimoradesktop from "../../src/images/ladimoradesktop.png"
@@ -182,7 +182,15 @@ export default function Project({
         <FlexVertCenter>
           {project === "loaders" && <ProductHunt />}
           <FlexHorizontal>
-            {url && <Button text={"Visit"} url={url} dark external></Button>}
+            {url && (
+              <Link
+                title={`Visit this site to open the ` + project + `site`}
+                text={"Visit"}
+                url={url}
+                dark
+                external
+              ></Link>
+            )}
           </FlexHorizontal>
         </FlexVertCenter>
         <BottomSection>
@@ -196,7 +204,11 @@ export default function Project({
                 className="assetframemask"
               >
                 <motion.div style={styleAssetFrame} className="assetframe">
-                  <motion.div style={styleAssetInnerFrame}></motion.div>
+                  <motion.div
+                    style={styleAssetInnerFrame}
+                    role="img"
+                    aria-label="An image of the website of La Dimora"
+                  ></motion.div>
                 </motion.div>
               </motion.div>
               <ClayMacbookBottom />
@@ -211,7 +223,11 @@ export default function Project({
               <ClayMobileNotch />
               <MobileLaDimoraNav></MobileLaDimoraNav>
               <motion.div style={MobileLaDimoraFrame}>
-                <motion.div style={MobileLaDimoraInnerFrame}></motion.div>
+                <motion.div
+                  style={MobileLaDimoraInnerFrame}
+                  role="img"
+                  aria-label="An image of the website of La Dimora"
+                ></motion.div>
               </motion.div>
             </ClayMobileMask>
           )}
@@ -239,7 +255,11 @@ export default function Project({
               }}
             >
               <ClayMobileNotch style={{ background: "#e98a9a" }} />
-              <motion.div style={PulseImage}></motion.div>
+              <motion.div
+                style={PulseImage}
+                role="img"
+                aria-label="An image of the progressive web app Pulse"
+              ></motion.div>
             </ClayMobileMask>
           )}
         </BottomSection>
