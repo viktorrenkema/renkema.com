@@ -219,7 +219,7 @@ export default function Introduction({ id }) {
           animate="visible"
         >
           I’m a <MonospaceSpan ref={el}></MonospaceSpan> with a strong interest
-          in motion design. I'm currently at{" "}
+          in motion design. Previously at {" "}
           <a href="https://www.framer.com" target="_blank">
             Framer
           </a>
