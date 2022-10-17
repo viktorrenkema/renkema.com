@@ -15,6 +15,7 @@ export default function IndexPage() {
   return (
     <LayoutComponent>
       <Helmet>
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
         <meta charSet="utf-8" />
         <title>Viktor Renkema</title>
         <meta
