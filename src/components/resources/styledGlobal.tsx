@@ -72,7 +72,7 @@ export function ProductHunt() {
         rel="noreferrer"
       >
         <img
-          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=dark"
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270365&theme=light"
           alt="Loader generator - Create animated loaders and generate production React code | Product Hunt"
           style={{ width: "175px", height: "37.8px" }}
         />

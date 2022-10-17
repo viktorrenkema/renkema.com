@@ -6,6 +6,14 @@ module.exports = {
     twitterUsername: "@vrenkema",
   },
   plugins: [
+    // Splitbee
+    {
+      resolve: `gatsby-plugin-splitbee`,
+      options: {
+        includeInDevelopment: false,
+        delayTimeout: 0,
+      },
+    },
     // Google analytics
     {
       resolve: `gatsby-plugin-google-analytics`,

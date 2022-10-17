@@ -218,8 +218,12 @@ export default function Introduction({ id }) {
           initial="hidden"
           animate="visible"
         >
-          I’m a <MonospaceSpan ref={el}></MonospaceSpan> with a strong interest
-          in motion design. Previously at {" "}
+          I’m a <MonospaceSpan ref={el} /> with a strong interest in motion
+          design. Happily contributing to the best platform to resell tickets at{" "}
+          <a href="https://www.ticketswap.com" target="_blank">
+            ticketswap
+          </a>
+          . Previously at{" "}
           <a href="https://www.framer.com" target="_blank">
             Framer
           </a>
